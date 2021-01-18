@@ -2,10 +2,7 @@ package org.example;
 
 import static org.junit.Assert.assertTrue;
 
-import org.example.leetcode.ConcatenateWords;
-import org.example.leetcode.GenerateParentheses;
-import org.example.leetcode.LetterCombination;
-import org.example.leetcode.TwoSum;
+import org.example.leetcode.*;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -57,6 +54,13 @@ public class AppTest {
 
         List<Integer> positions = concatenateWords.findSubstring("barfoothefoobarman", words);
         System.out.println(positions);
+    }
+
+    @Test
+    public void LongestPalindromicSubstringTest() {
+        LongestPalindromicSubstring longestPalindromicSubstring = new LongestPalindromicSubstring();
+
+        System.out.println(longestPalindromicSubstring.longestPalindrome("babbad"));
     }
 
 }

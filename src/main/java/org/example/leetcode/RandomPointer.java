@@ -1,4 +1,4 @@
-package org.example.leetcode;
+//package org.example.leetcode;
 
 
 //给定一个链表，每个节点包含一个额外增加的随机指针，该指针可以指向链表中的任何节点或空节点。
@@ -35,42 +35,42 @@ package org.example.leetcode;
 //        解释：给定的链表为空（空指针），因此返回 null。
 //
 
-import org.example.models.RandomNode;
+//import org.example.models.RandomNode;
 
-import java.util.HashMap;
+//import java.util.HashMap;
 
-public class RandomPointer {
-    // HashMap which holds old nodes as keys and new nodes as its values.
-    HashMap<RandomNode, RandomNode> visitedHash = new HashMap<RandomNode, RandomNode>();
-
-    public RandomNode copyRandomList(RandomNode head) {
-
-        if (head == null) {
-            return null;
-        }
-
-        // If we have already processed the current node, then we simply return the cloned version of
-        // it.
-        if (this.visitedHash.containsKey(head)) {
-            return this.visitedHash.get(head);
-        }
-
-        // Create a new node with the value same as old node. (i.e. copy the node)
-        RandomNode node = new RandomNode(head.val, null, null);
-
-        // Save this value in the hash map. This is needed since there might be
-        // loops during traversal due to randomness of random pointers and this would help us avoid
-        // them.
-        this.visitedHash.put(head, node);
-
-        // Recursively copy the remaining linked list starting once from the next pointer and then from
-        // the random pointer.
-        // Thus we have two independent recursive calls.
-        // Finally we update the next and random pointers for the new node created.
-        node.next = this.copyRandomList(head.next);
-        node.random = this.copyRandomList(head.random);
-
-        return node;
-    }
-}
+//public class RandomPointer {
+//    // HashMap which holds old nodes as keys and new nodes as its values.
+//    HashMap<RandomNode, RandomNode> visitedHash = new HashMap<RandomNode, RandomNode>();
+//
+//    public RandomNode copyRandomList(RandomNode head) {
+//
+//        if (head == null) {
+//            return null;
+//        }
+//
+//        // If we have already processed the current node, then we simply return the cloned version of
+//        // it.
+//        if (this.visitedHash.containsKey(head)) {
+//            return this.visitedHash.get(head);
+//        }
+//
+//        // Create a new node with the value same as old node. (i.e. copy the node)
+//        RandomNode node = new RandomNode(head.val, null, null);
+//
+//        // Save this value in the hash map. This is needed since there might be
+//        // loops during traversal due to randomness of random pointers and this would help us avoid
+//        // them.
+//        this.visitedHash.put(head, node);
+//
+//        // Recursively copy the remaining linked list starting once from the next pointer and then from
+//        // the random pointer.
+//        // Thus we have two independent recursive calls.
+//        // Finally we update the next and random pointers for the new node created.
+//        node.next = this.copyRandomList(head.next);
+//        node.random = this.copyRandomList(head.random);
+//
+//        return node;
+//    }
+//}
 
