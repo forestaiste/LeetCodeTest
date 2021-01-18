@@ -6,4 +6,6 @@ public class ListNodeForAddTwoNumbers {
     public ListNodeForAddTwoNumbers() {}
     public ListNodeForAddTwoNumbers(int val) { this.val = val; }
     public ListNodeForAddTwoNumbers(int val, ListNodeForAddTwoNumbers next) { this.val = val; this.next = next; }
+
+
 }
