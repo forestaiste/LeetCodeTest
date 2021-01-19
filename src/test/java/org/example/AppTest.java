@@ -37,7 +37,7 @@ public class AppTest {
     }
 
     @Test
-    public void GenerateParenthesesTest() {
+    public void generateParenthesesTest() {
         GenerateParentheses generateParentheses = new GenerateParentheses();
         List<String> parentheses = generateParentheses.generateParenthesis(3);
 
@@ -45,7 +45,7 @@ public class AppTest {
     }
 
     @Test
-    public void ConcatenateWordsTest() {
+    public void concatenateWordsTest() {
         ConcatenateWords concatenateWords = new ConcatenateWords();
         String[] words = {"foo", "bar"};
         List<String> wordsCombination = concatenateWords.concatenate(words);
@@ -57,10 +57,31 @@ public class AppTest {
     }
 
     @Test
-    public void LongestPalindromicSubstringTest() {
+    public void longestPalindromicSubstringTest() {
         LongestPalindromicSubstring longestPalindromicSubstring = new LongestPalindromicSubstring();
 
         System.out.println(longestPalindromicSubstring.longestPalindrome("babbad"));
     }
 
+    @Test
+    public  void nextPermutationTest() {
+        NextPermutation nextPermutation = new NextPermutation();
+        int[] nums = {4,5,2,6,3,1};
+        nextPermutation.nextPermutation(nums);
+
+        System.out.println(Arrays.toString(nums));
+    }
+
+    @Test
+    public void longestSubstringWithoutRepeatingCharactersTest() {
+
+        LongestSubstringWithoutRepeatingCharacters longest = new LongestSubstringWithoutRepeatingCharacters();
+        System.out.println(longest.lengthOfLongestSubstring("abcabcdbb"));
+    }
+
+    @Test
+    public void zigZagConversion() {
+        ZigZagConversion zigZagConversion = new ZigZagConversion();
+        System.out.println(zigZagConversion.convert("PAYPALISHIRING", 3));
+    }
 }

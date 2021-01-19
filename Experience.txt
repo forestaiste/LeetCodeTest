@@ -1,0 +1,13 @@
+1. 递归调用需要强化
+    a. 链表操作常用递归操作，递归参数通常为下一次操作的头指针，如RandomPointer
+    b. 生成所有可能组合，例子：GenerateParentheses，ConcatenateWords（生成所有的单词排列组合），LetterCombination
+2. 移动指针遍历
+    a. 两个链表同一个循环遍历，只要有一个链表没有遍历结束则继续，如AddTwoNumbers
+    b. 一次移动一步指针匹配相应字符，LongestPalindromicSubstring，ConcatenateWords（找匹配的组合字串），LongestSubstringWithoutRepeatingCharacters
+3. 双指针
+
+4. Hash表
+    a. 寻找匹配的数字，最好的办法是存到Hash表中，而不是一遍一遍的遍历，如TwoSum，ConcatenateWords（从Hash表中匹配是否是要查找的单词）
+5. 绝妙算法
+    a. NextPermutation：找到下一个稍大一点的数，注意寻找相对有序子列，需要把一眼能看出的东西转换成算法
+    b.
