@@ -84,4 +84,18 @@ public class AppTest {
         ZigZagConversion zigZagConversion = new ZigZagConversion();
         System.out.println(zigZagConversion.convert("PAYPALISHIRING", 3));
     }
+
+    @Test
+    public void rotatedSortedArrayTest() {
+        RotatedSortedArray rotatedSortedArray = new RotatedSortedArray();
+        int[] nums = {7, 8, 9, 0, 1, 2, 3, 4, 5, 6};
+        System.out.println(rotatedSortedArray.search(nums, 0));
+    }
+
+    @Test
+    public void firstLastElementPositionInSortedArrayTest() {
+        FirstLastElementPositionInSortedArray firstLastElementPositionInSortedArray = new FirstLastElementPositionInSortedArray();
+        int[] nums = {5,7,7,8,8,10};
+        System.out.println(Arrays.toString(firstLastElementPositionInSortedArray.searchRange(nums, 8)));
+    }
 }
