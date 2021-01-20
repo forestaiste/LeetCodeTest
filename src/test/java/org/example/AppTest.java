@@ -95,7 +95,16 @@ public class AppTest {
     @Test
     public void firstLastElementPositionInSortedArrayTest() {
         FirstLastElementPositionInSortedArray firstLastElementPositionInSortedArray = new FirstLastElementPositionInSortedArray();
-        int[] nums = {5,7,7,8,8,10};
+//        int[] nums = {5,7,7,8,8,10};
+        int[] nums = {5,7,7,8,8,8,8,8,8,10};
         System.out.println(Arrays.toString(firstLastElementPositionInSortedArray.searchRange(nums, 8)));
+    }
+
+    @Test
+    public void containerWithMostWaterTest() {
+        ContainerWithMostWater containerWithMostWater = new ContainerWithMostWater();
+        int[] nums = {1,8,6,2,5,4,8,3,7};
+
+        System.out.println(containerWithMostWater.maxArea(nums));
     }
 }
