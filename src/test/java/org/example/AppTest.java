@@ -221,4 +221,22 @@ public class AppTest {
         CountAndSay countAndSay = new CountAndSay();
         System.out.println(countAndSay.countAndSay(4));
     }
+
+    @Test
+    public void threeSumTest() {
+        ThreeSum threeSum = new ThreeSum();
+        int[] nums = {-1,0,1,2,-1,-4};
+        List<List<Integer>> results = threeSum.threeSum(nums);
+        results.forEach(r -> System.out.println(Arrays.toString(r.toArray())));
+    }
+
+    @Test
+    public void combinationSumTest() {
+        CombinationSum combinationSum = new CombinationSum();
+        //int[] nums = {2,3,6,7};
+        int[] nums = {1, 2};
+        List<List<Integer>> results = combinationSum.combinationSum(nums, 4);
+
+        results.forEach(r -> System.out.println(Arrays.toString(r.toArray())));
+    }
 }
