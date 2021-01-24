@@ -3,6 +3,7 @@ package org.example;
 import static org.junit.Assert.assertTrue;
 
 import org.example.leetcode.*;
+import org.example.models.ListNode;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -47,12 +48,22 @@ public class AppTest {
     @Test
     public void concatenateWordsTest() {
         ConcatenateWords concatenateWords = new ConcatenateWords();
-        String[] words = {"foo", "bar"};
+        //String[] words = {"foo", "bar"};
+        String[] words = {"word","good","best","word"};
         List<String> wordsCombination = concatenateWords.concatenate(words);
         System.out.println(wordsCombination);
         System.out.println(wordsCombination.size());
 
-        List<Integer> positions = concatenateWords.findSubstring("barfoothefoobarman", words);
+        System.out.println("----------------------------------");
+
+        wordsCombination = concatenateWords.concatenateEnhancement(words);
+        System.out.println(wordsCombination);
+        System.out.println(wordsCombination.size());
+
+        System.out.println("----------------------------------");
+
+        //List<Integer> positions = concatenateWords.findSubstring("barfoothefoobarman", words);
+        List<Integer> positions = concatenateWords.findSubstring("wordgoodgoodgoodbestword", words);
         System.out.println(positions);
     }
 
@@ -233,10 +244,60 @@ public class AppTest {
     @Test
     public void combinationSumTest() {
         CombinationSum combinationSum = new CombinationSum();
-        //int[] nums = {2,3,6,7};
-        int[] nums = {1, 2};
-        List<List<Integer>> results = combinationSum.combinationSum(nums, 4);
+        int[] nums = {2,3,6,7};
+        //int[] nums = {1, 2};
+        List<List<Integer>> results = combinationSum.combinationSum(nums, 7);
 
         results.forEach(r -> System.out.println(Arrays.toString(r.toArray())));
+        System.out.println("-----------------------");
+        results = combinationSum.combinationSum2(nums, 7);
+        results.forEach(r -> System.out.println(Arrays.toString(r.toArray())));
+    }
+
+    @Test
+    public void combinationSumIITest() {
+        CombinationSumII combinationSumII = new CombinationSumII();
+        int[] nums = {10,1,2,7,6,1,5};
+        List<List<Integer>> results = combinationSumII.combinationSumII(nums, 8);
+
+        results.forEach(r -> System.out.println(Arrays.toString(r.toArray())));
+    }
+
+    @Test
+    public void swapNodesInPairsTest() {
+        ListNode fifth = new ListNode(5, null);
+        ListNode fourth = new ListNode(4, fifth);
+        ListNode third = new ListNode(3, fourth);
+        ListNode second = new ListNode(2, third);
+        ListNode first = new ListNode(1, second);
+
+        SwapNodesInPairs swapNodesInPairs = new SwapNodesInPairs();
+        ListNode result = swapNodesInPairs.swapPairs(first);
+
+        do {
+            System.out.println(result.val);
+            result = result.next;
+        } while (result != null);
+    }
+
+    @Test
+    public void reverseNodesInKGroupTest() {
+        ListNode ninth = new ListNode(9, null);
+        ListNode eighth = new ListNode(8, ninth);
+        ListNode seventh = new ListNode(7, eighth);
+        ListNode sixth = new ListNode(6, seventh);
+        ListNode fifth = new ListNode(5, sixth);
+        ListNode fourth = new ListNode(4, fifth);
+        ListNode third = new ListNode(3, fourth);
+        ListNode second = new ListNode(2, third);
+        ListNode first = new ListNode(1, second);
+
+        ReverseNodesInKGroup reverseNodesInKGroup = new ReverseNodesInKGroup();
+        ListNode result = reverseNodesInKGroup.reverseKGroup(first, 3);
+
+        do {
+            System.out.println(result.val);
+            result = result.next;
+        } while (result != null);
     }
 }

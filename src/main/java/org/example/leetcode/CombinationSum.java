@@ -65,4 +65,25 @@ public class CombinationSum {
 
         //dfs(candidates, target, ans, combine, idx + 1);
     }
+
+    public List<List<Integer>> combinationSum2(int[] candidates, int target) {
+        List<List<Integer>> ans = new ArrayList<List<Integer>>();
+        List<Integer> combine = new ArrayList<Integer>();
+
+        backTrack(candidates, target, ans, combine, 0);
+        return ans;
+    }
+
+    public void backTrack(int[] candidates, int target, List<List<Integer>> ans, List<Integer> combine, int start) {
+        if (target == 0) {
+            ans.add(new ArrayList<Integer>(combine));
+        }
+
+        for (int i = start; i < candidates.length && (target - candidates[i] >= 0); i++) {
+            combine.add(candidates[i]);
+            backTrack(candidates, target - candidates[i], ans, combine, i);
+            combine.remove(combine.size() - 1);
+        }
+    }
+
 }

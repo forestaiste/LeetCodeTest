@@ -19,10 +19,7 @@ package org.example.leetcode;
 //        words = ["word","good","best","word"]
 //        输出：[]
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class ConcatenateWords {
 
@@ -55,13 +52,59 @@ public class ConcatenateWords {
             return;
         }
 
-        for (String w : words) {
-            if (wordsStatus.get(w) != 0) {
-                wordsStatus.put(w, wordsStatus.get(w) - 1);
-                builder.append(w);
+        for (int i = 0; i < words.length; i++) {
+            if (wordsStatus.get(words[i]) != 0) {
+                wordsStatus.put(words[i], wordsStatus.get(words[i]) - 1);
+                builder.append(words[i]);
                 doConcatenation(wordsStatus, words, builder, totalLength, combinations);
+                wordsStatus.put(words[i], wordsStatus.get(words[i]) + 1);
+                int start = builder.length() - words[i].length();
+                int end = builder.length();
+                builder.delete(start, end);
+            }
+        }
+    }
+
+    public List<String> concatenateEnhancement(String[] words) {
+        List<String> combinations = new ArrayList<String>();
+
+        StringBuilder builder = new StringBuilder();
+        Map<String, Integer> wordsStatus = new HashMap<String, Integer>();
+
+        int totalLength = 0;
+
+        for (String w : words) {
+            if (!wordsStatus.containsKey(w))
+                wordsStatus.put(w, 1);
+            else
                 wordsStatus.put(w, wordsStatus.get(w) + 1);
-                int start = builder.length() - w.length();
+
+            totalLength += w.length();
+        }
+
+        Arrays.sort(words);
+
+        doConcatenationEnhancement(wordsStatus, words, builder, totalLength, combinations);
+
+        return combinations;
+    }
+
+    private void doConcatenationEnhancement(Map<String, Integer> wordsStatus, String[] words, StringBuilder builder, int totalLength, List<String> combinations) {
+        if (builder.length() == totalLength) {
+            combinations.add(builder.toString());
+            return;
+        }
+
+        for (int i = 0; i < words.length; i++) {
+            if (i > 0 && words[i] == words[i - 1])
+                continue;
+
+            if (wordsStatus.get(words[i]) != 0) {
+                wordsStatus.put(words[i], wordsStatus.get(words[i]) - 1);
+                builder.append(words[i]);
+                doConcatenation(wordsStatus, words, builder, totalLength, combinations);
+                wordsStatus.put(words[i], wordsStatus.get(words[i]) + 1);
+                int start = builder.length() - words[i].length();
                 int end = builder.length();
                 builder.delete(start, end);
             }
