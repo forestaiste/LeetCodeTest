@@ -282,8 +282,8 @@ public class AppTest {
 
     @Test
     public void reverseNodesInKGroupTest() {
-        ListNode ninth = new ListNode(9, null);
-        ListNode eighth = new ListNode(8, ninth);
+        //ListNode ninth = new ListNode(9, null);
+        ListNode eighth = new ListNode(8, null);
         ListNode seventh = new ListNode(7, eighth);
         ListNode sixth = new ListNode(6, seventh);
         ListNode fifth = new ListNode(5, sixth);
@@ -299,5 +299,31 @@ public class AppTest {
             System.out.println(result.val);
             result = result.next;
         } while (result != null);
+    }
+
+    @Test
+    public void removeDuplicatesFromSortedArrayTest() {
+        RemoveDuplicatesFromSortedArray removeDuplicatesFromSortedArray = new RemoveDuplicatesFromSortedArray();
+
+        int[] nums = {0,0,1,1,1,2,2,3,3,4};
+
+        int length = removeDuplicatesFromSortedArray.removeDuplicates(nums);
+
+        for (int i = 0; i < length; i++) {
+            System.out.println(nums[i]);
+        }
+    }
+
+    @Test
+    public void removeElementTest() {
+        RemoveElement removeElement = new RemoveElement();
+
+        int[] nums = {0,1,2,2,3,0,4,2};
+
+        int length = removeElement.removeElement(nums, 2);
+
+        for (int i = 0; i < length; i++) {
+            System.out.println(nums[i]);
+        }
     }
 }
