@@ -326,4 +326,13 @@ public class AppTest {
             System.out.println(nums[i]);
         }
     }
+
+    @Test
+    public void firstMissingPositiveTest() {
+        FirstMissingPositive firstMissingPositive = new FirstMissingPositive();
+
+        int[] nums = {1,2,0};
+
+        System.out.println(firstMissingPositive.firstMissingPositive(nums));
+    }
 }
