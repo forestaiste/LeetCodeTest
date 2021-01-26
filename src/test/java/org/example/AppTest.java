@@ -331,8 +331,17 @@ public class AppTest {
     public void firstMissingPositiveTest() {
         FirstMissingPositive firstMissingPositive = new FirstMissingPositive();
 
-        int[] nums = {1,2,0};
+        int[] nums = {3, 4, -1, 1};
 
         System.out.println(firstMissingPositive.firstMissingPositive(nums));
+    }
+
+    @Test
+    public void searchInsertPositionTest() {
+        SearchInsertPosition searchInsertPosition = new SearchInsertPosition();
+
+        int[] nums = {1,3,5,6};
+
+        System.out.println(searchInsertPosition.searchInsert(nums, 0));
     }
 }
