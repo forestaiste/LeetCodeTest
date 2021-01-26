@@ -344,4 +344,12 @@ public class AppTest {
 
         System.out.println(searchInsertPosition.searchInsert(nums, 0));
     }
+
+    @Test
+    public void trappingRainWaterTest() {
+        TrappingRainWater trappingRainWater = new TrappingRainWater();
+
+        int[] nums = {0,1,0,2,1,0,1,4,2,1,2,1};
+        System.out.println(trappingRainWater.trap(nums));
+    }
 }
