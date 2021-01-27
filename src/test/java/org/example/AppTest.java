@@ -376,4 +376,10 @@ public class AppTest {
         int[] nums = {2,3,1,1,4};
         System.out.println(jumpGameII.jump(nums));
     }
+
+    @Test
+    public void wildcardMatchingTest() {
+        WildcardMatching wildcardMatching = new WildcardMatching();
+        System.out.println(wildcardMatching.isMatch("abcd", "abc"));
+    }
 }
