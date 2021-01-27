@@ -349,7 +349,31 @@ public class AppTest {
     public void trappingRainWaterTest() {
         TrappingRainWater trappingRainWater = new TrappingRainWater();
 
-        int[] nums = {0,1,0,2,1,0,1,4,2,1,2,1};
+        int[] nums = {0,1,0,2,1,0,1,3,2,1,2,1};
         System.out.println(trappingRainWater.trap(nums));
+
+        System.out.println(trappingRainWater.trap2(nums));
+
+        System.out.println(trappingRainWater.trap3(nums));
+    }
+
+    @Test
+    public void permutationsTest() {
+        Permutations permutations = new Permutations();
+
+        int[] nums = {1, 2, 3};
+
+        List<List<Integer>> results = permutations.permute(nums);
+
+        for (List<Integer> result : results) {
+            System.out.println(Arrays.toString(result.toArray()));
+        }
+    }
+
+    @Test
+    public void jumpGameIITest() {
+        JumpGameII jumpGameII = new JumpGameII();
+        int[] nums = {2,3,1,1,4};
+        System.out.println(jumpGameII.jump(nums));
     }
 }

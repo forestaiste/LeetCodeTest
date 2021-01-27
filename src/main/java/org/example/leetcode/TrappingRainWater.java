@@ -57,12 +57,12 @@ public class TrappingRainWater {
             max_right[i] = Math.max(max_right[i + 1], height[i + 1]);
         }
 
-        System.out.println(Arrays.toString(max_left));
+        System.out.println(Arrays.toString(max_right));
 
         for (int i = 1; i < height.length - 1; i++) {
             int min = Math.min(max_left[i], max_right[i]);
             if (min > height[i]) {
-                sum = sum + (min - height[i]);
+                sum += (min - height[i]);
             }
         }
         return sum;
@@ -81,15 +81,25 @@ public class TrappingRainWater {
                 int min = max_left;
                 if (min > height[left]) {
                     sum = sum + (min - height[left]);
+                    System.out.println("left min: " + min);
+                    System.out.println("left addup: " + (min - height[left]));
+                    System.out.println("left: height["+ left + "] = " + height[left]);
                 }
                 left++;
+
+
+
                 //从右到左更
             } else {
                 max_right = Math.max(max_right, height[right + 1]);
                 int min = max_right;
                 if (min > height[right]) {
                     sum = sum + (min - height[right]);
+                    System.out.println("right min: " + min);
+                    System.out.println("right addup: " + (min - height[right]));
+                    System.out.println("right: height["+ right + "] = " + height[right]);
                 }
+
                 right--;
             }
         }
