@@ -380,6 +380,22 @@ public class AppTest {
     @Test
     public void wildcardMatchingTest() {
         WildcardMatching wildcardMatching = new WildcardMatching();
-        System.out.println(wildcardMatching.isMatch("abcd", "abc"));
+
+        System.out.println(wildcardMatching.isMatch("aa", "a"));
+        System.out.println(wildcardMatching.isMatch("aa", "*"));
+        System.out.println(wildcardMatching.isMatch("cb", "?a"));
+        System.out.println(wildcardMatching.isMatch("acdcb", "*a*b"));
+        System.out.println(wildcardMatching.isMatch("acdcb", "a*c?b"));
+    }
+
+    @Test
+    public void groupAnagramsTest() {
+        GroupAnagrams groupAnagrams = new GroupAnagrams();
+        String[] strs = {"eat", "tea", "tan", "ate", "nat", "bat"};
+
+        List<List<String>> results = groupAnagrams.groupAnagrams(strs);
+        for (List<String> result : results) {
+            System.out.println(Arrays.toString(result.toArray()));
+        }
     }
 }

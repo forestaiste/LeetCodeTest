@@ -8,7 +8,7 @@ public class WildcardMatching {
         while (i < s.length() || j < p.length() ) {
             char pattern = p.charAt(j);
 
-            while ((pattern != '*' || pattern != '?') && (i < s.length() || j < p.length())) {
+            while ((pattern != '*' && pattern != '?') && (i < s.length() || j < p.length())) {
 
                 if (i < s.length() && j < p.length()) {
 
@@ -31,6 +31,32 @@ public class WildcardMatching {
 
             }
 
+            if (pattern == '?') {
+                if (s.length() > i) {
+                    i++;
+                    j++;
+                }
+                else {
+                    return false;
+                }
+            }
+
+            if (pattern == '*') {
+                j++;
+                if (j < p.length())
+                    pattern = p.charAt(j);
+                else
+                    pattern = '\0';
+                char source = s.charAt(i++);
+
+                while (i < s.length()) {
+                    if (pattern != '\0' && pattern == source)
+                        break;
+                    i++;
+                }
+
+                j++;
+            }
 
         }
         return true;
