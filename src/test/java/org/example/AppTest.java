@@ -398,4 +398,37 @@ public class AppTest {
             System.out.println(Arrays.toString(result.toArray()));
         }
     }
+
+    @Test
+    public void rotateImageTest() {
+        RotateImage rotateImage = new RotateImage();
+        int[][] matrix = {{5, 1, 9,11},
+                          {2, 4, 8,10},
+                          {13, 3, 6, 7},
+                          {15,14,12,16}};
+        rotateImage.rotate(matrix);
+
+        for (int[] result : matrix) {
+            System.out.println(Arrays.toString(result));
+        }
+    }
+
+    @Test
+    public void permutationsIITest() {
+        PermutationsII permutationsII = new PermutationsII();
+
+        int[] nums = {1, 2, 3};
+        List<List<Integer>> results = permutationsII.permuteUnique(nums);
+        for (List<Integer> result : results) {
+            System.out.println(Arrays.toString(result.toArray()));
+        }
+
+        System.out.println("------------------------------------");
+
+        nums = new int[] {3,3,0,3};
+        results = permutationsII.permuteUnique(nums);
+        for (List<Integer> result : results) {
+            System.out.println(Arrays.toString(result.toArray()));
+        }
+    }
 }
