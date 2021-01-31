@@ -15,6 +15,9 @@ public class WildcardMatching {
                     char source = s.charAt(i);
                     pattern = p.charAt(j);
 
+                    if (pattern == '*' || pattern == '?')
+                        break;
+
                     if (source != pattern)
                         return false;
 
@@ -28,7 +31,6 @@ public class WildcardMatching {
                 else if (j < p.length()) {
                     return false;
                 }
-
             }
 
             if (pattern == '?') {
@@ -47,8 +49,12 @@ public class WildcardMatching {
                     pattern = p.charAt(j);
                 else
                     pattern = '\0';
-                char source = s.charAt(i++);
 
+                char source = '\0';
+                if (i < s.length()) {
+                    source = s.charAt(i);
+                    i++;
+                }
                 while (i < s.length()) {
                     if (pattern != '\0' && pattern == source)
                         break;

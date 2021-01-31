@@ -381,6 +381,8 @@ public class AppTest {
     public void wildcardMatchingTest() {
         WildcardMatching wildcardMatching = new WildcardMatching();
 
+        System.out.println(wildcardMatching.isMatch("abcabczzzde", "*abc???de*"));
+        System.out.println(wildcardMatching.isMatch("aa", "a*"));
         System.out.println(wildcardMatching.isMatch("aa", "a"));
         System.out.println(wildcardMatching.isMatch("aa", "*"));
         System.out.println(wildcardMatching.isMatch("cb", "?a"));
@@ -430,5 +432,72 @@ public class AppTest {
         for (List<Integer> result : results) {
             System.out.println(Arrays.toString(result.toArray()));
         }
+    }
+
+    @Test
+    public void removeNthNodeFromEndOfList() {
+        ListNode fifth = new ListNode(5, null);
+        ListNode fourth = new ListNode(4, fifth);
+        ListNode third = new ListNode(3, fourth);
+        ListNode second = new ListNode(2, third);
+        ListNode first = new ListNode(1, second);
+
+        RemoveNthNodeFromEndOfList removeNthNodeFromEndOfList = new RemoveNthNodeFromEndOfList();
+        ListNode result = removeNthNodeFromEndOfList.removeNthFromEnd(first, 2);
+
+        do {
+            System.out.println(result.val);
+            result = result.next;
+        } while (result != null);
+
+        System.out.println("---------------------------");
+
+        ListNode firstI = new ListNode(1, null);
+
+        result = removeNthNodeFromEndOfList.removeNthFromEnd(firstI, 1);
+
+        while (result != null) {
+            System.out.println(result.val);
+            result = result.next;
+        }
+        System.out.println("---------------------------");
+
+        ListNode secondII = new ListNode(2, null);
+        ListNode firstII = new ListNode(1, secondII);
+
+        result = removeNthNodeFromEndOfList.removeNthFromEnd(firstII, 1);
+
+        while (result != null) {
+            System.out.println(result.val);
+            result = result.next;
+        }
+        System.out.println("---------------------------");
+
+    }
+
+    @Test
+    public void longestValidParenthesesTest() {
+        LongestValidParentheses longestValidParentheses = new LongestValidParentheses();
+        String s = "()))((())";
+        System.out.println(longestValidParentheses.longestValidParentheses(s));
+    }
+
+    @Test
+    public void powTest() {
+        Pow pow = new Pow();
+        System.out.println(pow.myPow(2.00000, 11));
+        System.out.println(pow.myPow(2.10000, 3));
+        System.out.println(pow.myPow(2.00000, -2));
+    }
+
+    @Test
+    public void maximumSubarrayTest() {
+        MaximumSubarray maximumSubarray = new MaximumSubarray();
+        int[] nums = {-2,1,-3,4,-1,2,1,-5,4};
+
+        System.out.println(maximumSubarray.maxSubArray(nums));
+
+        nums = new int[] {-2, -1};
+        System.out.println(maximumSubarray.maxSubArray(nums));
     }
 }
