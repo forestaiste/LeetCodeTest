@@ -500,4 +500,14 @@ public class AppTest {
         nums = new int[] {-2, -1};
         System.out.println(maximumSubarray.maxSubArray(nums));
     }
+
+    @Test
+    public void spiralMatrixTest() {
+        int[][] matrix = {{1,2,3,4},{5,6,7,8},{9,10,11,12}};
+
+        SpiralMatrix spiralMatrix = new SpiralMatrix();
+        List<Integer> results = spiralMatrix.spiralOrder(matrix);
+        System.out.println(Arrays.toString(results.toArray()));
+
+    }
 }
