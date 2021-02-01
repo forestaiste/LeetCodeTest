@@ -510,4 +510,13 @@ public class AppTest {
         System.out.println(Arrays.toString(results.toArray()));
 
     }
+
+    @Test
+    public void jumpGameTest() {
+        JumpGame jumpGame = new JumpGame();
+        int[] nums = {2, 3, 1, 1, 4};
+        System.out.println(jumpGame.canJump(nums));
+        nums = new int[] {3, 2, 1, 0, 4};
+        System.out.println(jumpGame.canJump(nums));
+    }
 }
