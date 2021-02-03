@@ -1,9 +1,6 @@
 package org.example;
 
-import org.example.leetcode.pagetwo.JumpGame;
-import org.example.leetcode.pagetwo.MaximumSubarray;
-import org.example.leetcode.pagetwo.Pow;
-import org.example.leetcode.pagetwo.SpiralMatrix;
+import org.example.leetcode.pagetwo.*;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -46,5 +43,38 @@ public class PageTwoTest {
         System.out.println(jumpGame.canJump(nums));
         nums = new int[] {3, 2, 1, 0, 4};
         System.out.println(jumpGame.canJump(nums));
+    }
+
+    @Test
+    public void lengthOfLastWordTest() {
+        LengthOfLastWord lengthOfLastWord = new LengthOfLastWord();
+        System.out.println(lengthOfLastWord.lengthOfLastWord("Hello World"));
+        System.out.println(lengthOfLastWord.lengthOfLastWord(" "));
+        System.out.println(lengthOfLastWord.lengthOfLastWord("World "));
+    }
+
+    @Test
+    public void spiralMatrixIITest() {
+        SpiralMatrixII spiralMatrixII = new SpiralMatrixII();
+
+        int[][] results = spiralMatrixII.generateMatrix(3);
+
+        for (int[] result : results) {
+            System.out.println(Arrays.toString(result));
+        }
+
+        System.out.println("-------------------");
+
+        results = spiralMatrixII.generateMatrix(4);
+        for (int[] result : results) {
+            System.out.println(Arrays.toString(result));
+        }
+
+        System.out.println("-------------------");
+
+        results = spiralMatrixII.generateMatrix(5);
+        for (int[] result : results) {
+            System.out.println(Arrays.toString(result));
+        }
     }
 }
