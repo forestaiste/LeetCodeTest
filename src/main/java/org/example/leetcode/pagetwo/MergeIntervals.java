@@ -3,8 +3,6 @@ package org.example.leetcode.pagetwo;
 //56. 合并区间
 //        以数组 intervals 表示若干个区间的集合，其中单个区间为 intervals[i] = [starti, endi] 。请你合并所有重叠的区间，并返回一个不重叠的区间数组，该数组需恰好覆盖输入中的所有区间。
 //
-//
-//
 //        示例 1：
 //
 //        输入：intervals = [[1,3],[2,6],[8,10],[15,18]]
@@ -23,8 +21,38 @@ package org.example.leetcode.pagetwo;
 //        intervals[i].length == 2
 //        0 <= starti <= endi <= 104
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+
 public class MergeIntervals {
     public int[][] merge(int[][] intervals) {
-        return intervals;
+        if (intervals.length == 0)
+            return new int[0][2];
+
+        Arrays.sort(intervals, new Comparator<int[]>() {
+            @Override
+            public int compare(int[] o1, int[] o2) {
+                return o1[0] - o2[0];
+            }
+        });
+
+        List<int[]> merged = new ArrayList<int[]>();
+        for (int i = 0; i < intervals.length; i++) {
+            if (i == 0) {
+                merged.add(intervals[i]);
+            }
+
+            if (intervals[i][0] > merged.get(merged.size() - 1)[1]) {
+                merged.add(intervals[i]);
+            }
+            else if (intervals[i][0] < merged.get(merged.size() - 1)[1]
+                    && intervals[i][1] > merged.get(merged.size() - 1)[1]) {
+                merged.get(merged.size() - 1)[1] = intervals[i][1];
+            }
+        }
+
+        return merged.toArray(new int[merged.size()][]);
     }
 }
