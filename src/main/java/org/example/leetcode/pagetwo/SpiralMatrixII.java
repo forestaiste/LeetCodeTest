@@ -9,31 +9,27 @@ public class SpiralMatrixII {
         int top = 0;
         int bottom = n - 1;
         int number = 1;
-        while (left < right) {
+        while (left <= right) {
             for (int i = left; i <= right; i++) {
               matrix[top][i] = number++;
             }
 
-            for (int i = top + 1; i <= bottom - 1; i++) {
+            top++;
+            for (int i = top; i <= bottom; i++) {
                 matrix[i][right] = number++;
             }
 
+            right--;
             for (int i = right; i >= left; i--) {
                 matrix[bottom][i] = number++;
             }
 
-            for (int i = bottom - 1; i >= top + 1; i--) {
+            bottom--;
+            for (int i = bottom; i >= top; i--) {
                 matrix[i][left] = number++;
             }
-
             left++;
-            right--;
-            top++;
-            bottom--;
         }
-
-        if (left == right)
-            matrix[top][left] = number;
 
         return matrix;
     }

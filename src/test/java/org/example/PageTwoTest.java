@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.leetcode.pagetwo.*;
+import org.example.models.ListNode;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -142,5 +143,38 @@ public class PageTwoTest {
         for (int[] interval : intervals) {
             System.out.println(Arrays.toString(interval));
         }
+    }
+
+    @Test
+    public void rotateListTest() {
+        ListNode fifth = new ListNode(5, null);
+        ListNode fourth = new ListNode(4, fifth);
+        ListNode third = new ListNode(3, fourth);
+        ListNode second = new ListNode(2, third);
+        ListNode first = new ListNode(1, second);
+
+        RotateList rotateList = new RotateList();
+        ListNode result = rotateList.rotateRight(first, 2);
+
+        do {
+            System.out.println(result.val);
+            result = result.next;
+        } while (result != null);
+
+        System.out.println("---------------------------");
+
+        ListNode thirdI = new ListNode(2, null);
+        ListNode secondI = new ListNode(1, thirdI);
+        ListNode firstI = new ListNode(0, secondI);
+
+        result = rotateList.rotateRight(firstI, 4);
+
+        do {
+            System.out.println(result.val);
+            result = result.next;
+        } while (result != null);
+
+        System.out.println("---------------------------");
+
     }
 }
