@@ -1,5 +1,5 @@
 package org.example.leetcode.pageone;
-
+//39. 组合总和
 //给定一个无重复元素的数组candidates和一个目标数target，找出candidates中所有可以使数字和为target的组合。
 //
 //        candidates中的数字可以无限制重复被选取。
@@ -55,7 +55,7 @@ public class CombinationSum {
             return;
         }
         // 直接跳过
-        dfs(candidates, target, ans, combine, idx + 1);
+        //dfs(candidates, target, ans, combine, idx + 1);
         // 选择当前数
         if (target - candidates[idx] >= 0) {
             combine.add(candidates[idx]);
@@ -63,7 +63,7 @@ public class CombinationSum {
             combine.remove(combine.size() - 1);
         }
 
-        //dfs(candidates, target, ans, combine, idx + 1);
+        dfs(candidates, target, ans, combine, idx + 1);
     }
 
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {

@@ -16,10 +16,7 @@ package org.example.leetcode.pageone;
 //            [3,2,1]
 //            ]
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Permutations {
 
@@ -28,7 +25,7 @@ public class Permutations {
         List<Integer> combination = new ArrayList<Integer>();
         Map<Integer, Boolean> usage = new HashMap<Integer, Boolean>();
 
-        for (int n: nums) {
+        for (int n : nums) {
             usage.put(n, false);
         }
 
@@ -52,6 +49,72 @@ public class Permutations {
                 combination.remove(combination.size() - 1);
                 usage.put(n, false);
             }
+        }
+    }
+
+    int[] nums;
+
+    public List<List<Integer>> permute2(int[] nums) {
+        this.nums = new int[nums.length];
+        for (int i = 0; i < nums.length; i++) {
+            this.nums[i] = nums[i];
+        }
+
+        List<List<Integer>> results = new ArrayList<List<Integer>>();
+
+        afs2(results, 0);
+
+        return results;
+    }
+
+    private void afs2(List<List<Integer>> results, int level) {
+        if (level == nums.length) {
+            List<Integer> combination = new ArrayList<Integer>();
+            for (int i = 0; i < nums.length; i++) {
+                combination.add(nums[i]);
+            }
+            List<Integer> result = new ArrayList<>(combination);
+            results.add(result);
+            return;
+        }
+
+        for (int i = level; i < nums.length; i++) {
+            int temp;
+            temp = nums[level];
+            nums[level] = nums[i];
+            nums[i] = temp;
+
+            afs2(results, level + 1);
+
+            temp = nums[level];
+            nums[level] = nums[i];
+            nums[i] = temp;
+        }
+    }
+
+    public List<List<Integer>> permute3(int[] nums) {
+        List<List<Integer>> results = new ArrayList<List<Integer>>();
+        List<Integer> output = new ArrayList<Integer>();
+        for (int num : nums) {
+            output.add(num);
+        }
+
+
+        int n = nums.length;
+        backtrack(n, output, results, 0);
+        return results;
+    }
+
+    public void backtrack(int n, List<Integer> output, List<List<Integer>> res, int level) {
+        // 所有数都填完了
+        if (level == n) {
+            res.add(new ArrayList<Integer>(output));
+        }
+
+        for (int i = level; i < n; i++) {
+            Collections.swap(output, level, i);
+            backtrack(n, output, res, level + 1);
+            Collections.swap(output, level, i);
         }
     }
 }

@@ -372,6 +372,22 @@ public class PageOneTest {
         for (List<Integer> result : results) {
             System.out.println(Arrays.toString(result.toArray()));
         }
+
+        System.out.println("------------------------------");
+
+        results = permutations.permute2(nums);
+
+        for (List<Integer> result : results) {
+            System.out.println(Arrays.toString(result.toArray()));
+        }
+
+        System.out.println("------------------------------");
+
+        results = permutations.permute3(nums);
+
+        for (List<Integer> result : results) {
+            System.out.println(Arrays.toString(result.toArray()));
+        }
     }
 
     @Test
