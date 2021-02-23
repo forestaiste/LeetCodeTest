@@ -181,10 +181,22 @@ public class PageTwoTest {
     @Test
     public void nQueensTest() {
         NQueens queens = new NQueens();
-        List<List<String>> results = queens.solveNQueens(1);
+        List<List<String>> results = queens.solveNQueens(4);
 
         for (List<String> result : results) {
             System.out.println(Arrays.toString(result.toArray()));
         }
+    }
+
+    @Test
+    public void nQueensIITest() {
+        NQueensII queens = new NQueensII();
+        System.out.println(queens.totalNQueens(4));
+    }
+
+    @Test
+    public void permutationSequence() {
+        PermutationSequence sequence = new PermutationSequence();
+        System.out.println(sequence.getPermutation(3, 3));
     }
 }
