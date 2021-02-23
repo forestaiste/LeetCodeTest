@@ -109,6 +109,8 @@ public class Permutations {
         // 所有数都填完了
         if (level == n) {
             res.add(new ArrayList<Integer>(output));
+
+            return;
         }
 
         for (int i = level; i < n; i++) {

@@ -177,4 +177,14 @@ public class PageTwoTest {
         System.out.println("---------------------------");
 
     }
+
+    @Test
+    public void nQueensTest() {
+        NQueens queens = new NQueens();
+        List<List<String>> results = queens.solveNQueens(1);
+
+        for (List<String> result : results) {
+            System.out.println(Arrays.toString(result.toArray()));
+        }
+    }
 }
