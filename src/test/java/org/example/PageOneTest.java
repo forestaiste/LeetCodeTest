@@ -346,6 +346,12 @@ public class PageOneTest {
 
         int[] nums = {1,3,5,6};
 
+        System.out.println(searchInsertPosition.searchInsert(nums, 5));
+
+        System.out.println(searchInsertPosition.searchInsert(nums, 2));
+
+        System.out.println(searchInsertPosition.searchInsert(nums, 7));
+
         System.out.println(searchInsertPosition.searchInsert(nums, 0));
     }
 

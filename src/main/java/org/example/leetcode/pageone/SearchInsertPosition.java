@@ -23,7 +23,7 @@ package org.example.leetcode.pageone;
 //        输出: 0
 
 public class SearchInsertPosition {
-    public int searchInsert(int[] nums, int target) {
+    public int searchInsert0(int[] nums, int target) {
         if (nums.length == 0)
             return 0;
 
@@ -33,5 +33,25 @@ public class SearchInsertPosition {
         }
 
         return nums.length;
+    }
+
+    public int searchInsert(int[] nums, int target) {
+        int left = 0;
+        int right = nums.length - 1;
+        int mid;
+        while (left <= right) {
+            mid = (left + right) / 2;
+            if (nums[mid] < target) {
+                left = mid + 1;
+            }
+            else if (nums[mid] > target) {
+                right = mid - 1;
+            }
+            else {
+                return mid;
+            }
+        }
+
+        return right + 1;
     }
 }
