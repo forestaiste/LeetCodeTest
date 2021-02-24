@@ -4,7 +4,9 @@ import org.example.leetcode.pagetwo.*;
 import org.example.models.ListNode;
 import org.junit.Test;
 
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 public class PageTwoTest {
@@ -195,8 +197,42 @@ public class PageTwoTest {
     }
 
     @Test
-    public void permutationSequence() {
+    public void permutationSequenceTest() {
         PermutationSequence sequence = new PermutationSequence();
         System.out.println(sequence.getPermutation(3, 3));
+    }
+
+    @Test
+    public  void uniquePathsTest() {
+        UniquePaths uniquePaths = new UniquePaths();
+
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        System.out.println(df.format(System.currentTimeMillis()));
+        System.out.println(uniquePaths.uniquePaths(23, 12));
+        System.out.println(df.format(System.currentTimeMillis()));
+        System.out.println("-----------------------------");
+        System.out.println(df.format(System.currentTimeMillis()));
+        System.out.println(uniquePaths.uniquePaths0(23, 12));
+        System.out.println(df.format(System.currentTimeMillis()));
+    }
+
+    @Test
+    public  void uniquePathsIITest() {
+        UniquePathsII uniquePaths = new UniquePathsII();
+
+        int[][] obstacleGrid = {{0, 0, 0}, {0, 1, 0}, {0, 0, 0}};
+//        int[][] obstacleGrid = {{1, 0}};
+
+        System.out.println(uniquePaths.uniquePathsWithObstacles(obstacleGrid));
+    }
+
+    @Test
+    public  void minimumPathSumTest() {
+        MinimumPathSum minimumPathSum = new MinimumPathSum();
+
+        int[][] grid = {{1, 3, 1}, {1, 5, 1}, {4, 2, 1}};
+//        int[][] obstacleGrid = {{1, 0}};
+
+        System.out.println(minimumPathSum.minPathSum(grid));
     }
 }
