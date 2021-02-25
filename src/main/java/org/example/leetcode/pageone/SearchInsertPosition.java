@@ -41,6 +41,10 @@ public class SearchInsertPosition {
         int mid;
         while (left <= right) {
             mid = (left + right) / 2;
+            System.out.println("left : " + left);
+            System.out.println("right : " + right);
+            System.out.println("mid : " + mid);
+            System.out.println("-----------------");
             if (nums[mid] < target) {
                 left = mid + 1;
             }
@@ -51,6 +55,12 @@ public class SearchInsertPosition {
                 return mid;
             }
         }
+
+        // 分别处理如下四种情况
+        // 目标值在数组所有元素之前  [0, -1]
+        // 目标值等于数组中某一个元素  return middle;
+        // 目标值插入数组中的位置 [left, right]，return  right + 1
+        // 目标值在数组所有元素之后的情况 [left, right]， return right + 1
 
         return right + 1;
     }

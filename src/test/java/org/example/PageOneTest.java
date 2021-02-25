@@ -344,13 +344,13 @@ public class PageOneTest {
     public void searchInsertPositionTest() {
         SearchInsertPosition searchInsertPosition = new SearchInsertPosition();
 
-        int[] nums = {1,3,5,6};
+        int[] nums = {1, 3, 5, 6, 10, 14, 19, 26};
 
         System.out.println(searchInsertPosition.searchInsert(nums, 5));
 
-        System.out.println(searchInsertPosition.searchInsert(nums, 2));
+        System.out.println(searchInsertPosition.searchInsert(nums, 4));
 
-        System.out.println(searchInsertPosition.searchInsert(nums, 7));
+        System.out.println(searchInsertPosition.searchInsert(nums, 27));
 
         System.out.println(searchInsertPosition.searchInsert(nums, 0));
     }
@@ -508,5 +508,10 @@ public class PageOneTest {
         System.out.println(longestValidParentheses.longestValidParentheses(s));
     }
 
-
+    @Test
+    public void fourSumTest() {
+        FourSum sum = new FourSum();
+        int[] nums = {1, 0, -1, 0, -2, 2};
+        sum.fourSum(nums, 0);
+    }
 }
