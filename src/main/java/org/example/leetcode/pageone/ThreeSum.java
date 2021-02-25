@@ -25,7 +25,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ThreeSum {
-    public List<List<Integer>> threeSum(int[] nums) {
+    public List<List<Integer>> threeSum0(int[] nums) {
         int n = nums.length;
         Arrays.sort(nums);
         List<List<Integer>> ans = new ArrayList<List<Integer>>();
@@ -59,6 +59,48 @@ public class ThreeSum {
                     list.add(nums[second]);
                     list.add(nums[third]);
                     ans.add(list);
+                }
+            }
+        }
+        return ans;
+    }
+
+    public List<List<Integer>> threeSum(int[] nums) {
+        int n = nums.length;
+        Arrays.sort(nums);
+        List<List<Integer>> ans = new ArrayList<List<Integer>>();
+        for (int first = 0; first < n; ++first) {
+            if (first > 0 && nums[first] == nums[first - 1]) {
+                continue;
+            }
+
+            int second = first + 1;
+            int third = n - 1;
+
+            while (second < third) {
+
+                int sum = nums[first] + nums[second] + nums[third];
+
+                if (sum == 0) {
+                    ans.add(Arrays.asList(nums[first], nums[second], nums[third]));
+
+                    while (second < third && nums[second] == nums[second + 1]) {
+                        second++;
+                    }
+
+                    second++;
+
+                    while (second < third && nums[third] == nums[third - 1]) {
+                        third--;
+                    }
+
+                    third--;
+                }
+                else if (sum > 0) {
+                    third--;
+                }
+                else {
+                    second++;
                 }
             }
         }

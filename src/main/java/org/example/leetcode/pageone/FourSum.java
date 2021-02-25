@@ -18,21 +18,57 @@ package org.example.leetcode.pageone;
 //        [-2,  0, 0, 2]
 //        ]
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class FourSum {
     public List<List<Integer>> fourSum(int[] nums, int target) {
-
+        List<List<Integer>> results = new ArrayList<List<Integer>>();
         Arrays.sort(nums);
 
-        for (int i = 0; i < nums.length; i++) {
+        for (int first = 0; first < nums.length; first++) {
 
-            if (i > 0 && (nums[i] == nums[i - 1])) {
+            if (first > 0 && (nums[first] == nums[first - 1])) {
                 continue;
+            }
+
+            for (int second = first + 1; second < nums.length; second++) {
+
+                if (second > first + 1 && nums[second] == nums[second - 1]) {
+                    continue;
+                }
+
+                int third = second + 1;
+                int forth = nums.length - 1;
+
+                while (third < forth) {
+                    int sum = nums[first] + nums[second] + nums[third] + nums[forth];
+                    if (sum == target) {
+                        results.add(Arrays.asList(nums[first], nums[second], nums[third], nums[forth]));
+
+                        while (third < forth && nums[third] == nums[third + 1]) {
+                            third++;
+                        }
+
+                        third++;
+
+                        while (third < forth && nums[forth] == nums[forth - 1]) {
+                            forth--;
+                        }
+
+                        forth--;
+                    }
+                    else if (sum > target) {
+                        forth--;
+                    }
+                    else {
+                        third++;
+                    }
+                }
             }
         }
         
-        return null;
+        return results;
     }
 }

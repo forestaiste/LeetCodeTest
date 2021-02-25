@@ -511,7 +511,13 @@ public class PageOneTest {
     @Test
     public void fourSumTest() {
         FourSum sum = new FourSum();
-        int[] nums = {1, 0, -1, 0, -2, 2};
-        sum.fourSum(nums, 0);
+//        int[] nums = {1, 0, -1, 0, -2, 2};
+//        int[] nums = {0, 0, 0, 0};
+        int[] nums = {-2, -1, -1, 1, 1, 2, 2};
+        List<List<Integer>> results = sum.fourSum(nums, 0);
+
+        for (List<Integer> result : results) {
+            System.out.println(Arrays.toString(result.toArray()));
+        }
     }
 }
