@@ -20,7 +20,7 @@ package org.example.leetcode.pageseven;
 
 import java.util.Arrays;
 
-public class ReverseString {
+public class ReverseString344 {
     public void reverseString(char[] s) {
         char temp;
 

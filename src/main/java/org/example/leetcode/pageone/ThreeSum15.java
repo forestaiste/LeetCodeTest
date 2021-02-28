@@ -24,11 +24,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class ThreeSum {
+public class ThreeSum15 {
     public List<List<Integer>> threeSum0(int[] nums) {
         int n = nums.length;
         Arrays.sort(nums);
-        List<List<Integer>> ans = new ArrayList<List<Integer>>();
+        List<List<Integer>> ans = new ArrayList<>();
         // 枚举 a
         for (int first = 0; first < n; ++first) {
             // 需要和上一次枚举的数不相同
@@ -54,7 +54,7 @@ public class ThreeSum {
                     break;
                 }
                 if (nums[second] + nums[third] == target) {
-                    List<Integer> list = new ArrayList<Integer>();
+                    List<Integer> list = new ArrayList<>();
                     list.add(nums[first]);
                     list.add(nums[second]);
                     list.add(nums[third]);
@@ -68,7 +68,7 @@ public class ThreeSum {
     public List<List<Integer>> threeSum(int[] nums) {
         int n = nums.length;
         Arrays.sort(nums);
-        List<List<Integer>> ans = new ArrayList<List<Integer>>();
+        List<List<Integer>> ans = new ArrayList<>();
         for (int first = 0; first < n; ++first) {
             if (first > 0 && nums[first] == nums[first - 1]) {
                 continue;
