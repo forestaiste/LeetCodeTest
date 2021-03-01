@@ -29,7 +29,7 @@ public class PageOneTest {
 
     @Test
     public void twoSumTest() {
-        TwoSum sum = new TwoSum();
+        TwoSum1 sum = new TwoSum1();
 
         int[] samples = {2, 7, 11, 15};
 

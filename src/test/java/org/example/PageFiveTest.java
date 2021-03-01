@@ -1,9 +1,6 @@
 package org.example;
 
-import org.example.leetcode.pagefive.MinimumSizeSubarraySum;
-import org.example.leetcode.pagefive.RemoveLinkedListElements203;
-import org.example.leetcode.pagefive.ReverseLinkedList206;
-import org.example.leetcode.pagefive.ValidAnagram242;
+import org.example.leetcode.pagefive.*;
 import org.example.models.ListNode;
 import org.junit.Test;
 
@@ -78,5 +75,13 @@ public class PageFiveTest {
         ValidAnagram242 validAnagram = new ValidAnagram242();
         System.out.println(validAnagram.isAnagram("anagram", "nagaram"));
         System.out.println(validAnagram.isAnagram("rat", "car"));
+    }
+
+    @Test
+    public void happyNumber202Test() {
+        HappyNumber202 happyNumber = new HappyNumber202();
+        System.out.println(happyNumber.isHappy(19));
+
+        System.out.println(happyNumber.isHappy(2));
     }
 }
