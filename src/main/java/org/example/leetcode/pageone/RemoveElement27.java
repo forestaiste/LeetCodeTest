@@ -46,7 +46,7 @@ package org.example.leetcode.pageone;
 //        }
 
 
-public class RemoveElement {
+public class RemoveElement27 {
     public int removeElement(int[] nums, int val) {
 
         int tail = 0;

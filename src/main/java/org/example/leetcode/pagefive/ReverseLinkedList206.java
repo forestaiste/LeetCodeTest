@@ -12,8 +12,19 @@ package org.example.leetcode.pagefive;
 
 import org.example.models.ListNode;
 
-public class ReverseLinkedList {
+public class ReverseLinkedList206 {
     public ListNode reverseList(ListNode head) {
-        return null;
+        ListNode pre = null;
+        ListNode cur = head;
+        ListNode temp;
+
+        while (cur != null) {
+            temp = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = temp;
+        }
+
+        return pre;
     }
 }

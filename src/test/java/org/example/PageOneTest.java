@@ -3,10 +3,6 @@ package org.example;
 import static org.junit.Assert.assertTrue;
 
 import org.example.leetcode.pageone.*;
-import org.example.leetcode.pagetwo.JumpGame;
-import org.example.leetcode.pagetwo.MaximumSubarray;
-import org.example.leetcode.pagetwo.Pow;
-import org.example.leetcode.pagetwo.SpiralMatrix;
 import org.example.models.ListNode;
 import org.junit.Test;
 
@@ -239,7 +235,7 @@ public class PageOneTest {
 
     @Test
     public void threeSumTest() {
-        ThreeSum threeSum = new ThreeSum();
+        ThreeSum15 threeSum = new ThreeSum15();
         int[] nums = {-1,0,1,2,-1,-4};
         List<List<Integer>> results = threeSum.threeSum(nums);
         results.forEach(r -> System.out.println(Arrays.toString(r.toArray())));
@@ -297,7 +293,7 @@ public class PageOneTest {
         ListNode first = new ListNode(1, second);
 
         ReverseNodesInKGroup reverseNodesInKGroup = new ReverseNodesInKGroup();
-        ListNode result = reverseNodesInKGroup.reverseKGroup(first, 3);
+        ListNode result = reverseNodesInKGroup.reverseKGroupOfMine(first, 3);
 
         do {
             System.out.println(result.val);
@@ -320,7 +316,7 @@ public class PageOneTest {
 
     @Test
     public void removeElementTest() {
-        RemoveElement removeElement = new RemoveElement();
+        RemoveElement27 removeElement = new RemoveElement27();
 
         int[] nums = {0,1,2,2,3,0,4,2};
 
@@ -510,7 +506,7 @@ public class PageOneTest {
 
     @Test
     public void fourSumTest() {
-        FourSum sum = new FourSum();
+        FourSum18 sum = new FourSum18();
 //        int[] nums = {1, 0, -1, 0, -2, 2};
 //        int[] nums = {0, 0, 0, 0};
         int[] nums = {-2, -1, -1, 1, 1, 2, 2};
