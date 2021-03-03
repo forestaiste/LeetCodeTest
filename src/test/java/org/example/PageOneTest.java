@@ -516,4 +516,13 @@ public class PageOneTest {
             System.out.println(Arrays.toString(result.toArray()));
         }
     }
+
+    @Test
+    public void strStrTest() {
+        ImplementstrStr28 implementstrStr = new ImplementstrStr28();
+        String haystack = "hello", needle = "aabaaf";
+
+        System.out.println(implementstrStr.strStr(haystack, needle));
+
+    }
 }
