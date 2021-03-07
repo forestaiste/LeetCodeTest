@@ -520,9 +520,17 @@ public class PageOneTest {
     @Test
     public void strStrTest() {
         ImplementstrStr28 implementstrStr = new ImplementstrStr28();
-        String haystack = "hello", needle = "aabaaf";
+        String haystack = "hello", needle = "ll";
+//
+//        System.out.println(implementstrStr.strStr(haystack, needle));
+//
+//        haystack = "";
+//        needle = "";
+//
+//        System.out.println(implementstrStr.strStr(haystack, needle));
+        haystack = "aabaabaac";
+        needle = "aabaac";
 
         System.out.println(implementstrStr.strStr(haystack, needle));
-
     }
 }

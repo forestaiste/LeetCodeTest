@@ -227,12 +227,43 @@ public class PageTwoTest {
     }
 
     @Test
-    public  void minimumPathSumTest() {
+    public void minimumPathSumTest() {
         MinimumPathSum minimumPathSum = new MinimumPathSum();
 
         int[][] grid = {{1, 3, 1}, {1, 5, 1}, {4, 2, 1}};
 //        int[][] obstacleGrid = {{1, 0}};
 
         System.out.println(minimumPathSum.minPathSum(grid));
+    }
+
+    @Test
+    public void sqrtX69Test() {
+        SqrtX69 sqrtX = new SqrtX69();
+
+        System.out.println(sqrtX.mySqrt(2147395599));
+    }
+
+    @Test
+    public void plusOne66Test() {
+        PlusOne66 plusOne = new PlusOne66();
+        int[] digits = {1, 2, 3};
+        int[] results = plusOne.plusOne(digits);
+        System.out.println(Arrays.toString(results));
+
+        digits = new int[]{9, 9, 9, 9};
+        results = plusOne.plusOne(digits);
+        System.out.println(Arrays.toString(results));
+    }
+
+    @Test
+    public void addBinary67Test() {
+        AddBinary67 addBinary = new AddBinary67();
+        String a = "1010";
+        String b = "1011";
+        System.out.println(addBinary.addBinary(a, b));
+
+        a = "11";
+        b = "1";
+        System.out.println(addBinary.addBinary(a, b));
     }
 }

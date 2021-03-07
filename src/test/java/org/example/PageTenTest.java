@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.leetcode.pageten.FourSumII454;
+import org.example.leetcode.pageten.RepeatedSubstringPattern459;
 import org.junit.Test;
 
 public class PageTenTest {
@@ -13,5 +14,12 @@ public class PageTenTest {
 
         FourSumII454 fourSumII = new FourSumII454();
         System.out.println(fourSumII.fourSumCount(A, B, C, D));
+    }
+
+    @Test
+    public void repeatedSubstringPattern459Test() {
+        RepeatedSubstringPattern459 repeatedSubstringPattern = new RepeatedSubstringPattern459();
+        System.out.println(repeatedSubstringPattern.repeatedSubstringPattern0("asdfasdfasdf"));
+        System.out.println(repeatedSubstringPattern.repeatedSubstringPattern("asdfasdfasdf"));
     }
 }

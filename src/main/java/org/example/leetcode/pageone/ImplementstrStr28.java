@@ -49,32 +49,42 @@ public class ImplementstrStr28 {
         return -1;
     }
 
-    int[] next;
-
     public int strStr(String haystack, String needle) {
-        next = new int[needle.length()];
+        if (needle.length() == 0) {
+            return 0;
+        }
 
-        getNext(needle.toCharArray());
-
-        return 0;
-
+        int[] next = new int[needle.length()];
+        getNext(next, needle.toCharArray());
+        int j = 0;
+        for (int i = 0; i < haystack.length(); i++) {
+            while(j > 0 && haystack.charAt(i) != needle.charAt(j)) {
+                j = next[j - 1];
+            }
+            if (haystack.charAt(i) == needle.charAt(j)) {
+                j++;
+            }
+            if (j == needle.length() ) {
+                return (i - needle.length() + 1);
+            }
+        }
+        return -1;
     }
 
-    private void getNext(char[] T) {
+    private void getNext(int[] next, char[] s) {
         int j = 0;
-        int k = -1;
-        next[j] = k;
+        next[0] = 0;
 
-        while(j < T.length) {
-            if (k == -1 || T[j] == T[k]) {
-                j++;
-                k++;
-                next[j] = k;
+        for (int i = 1; i < s.length; i++) {
+            while (j > 0 && s[i] != s[j]) {
+                j = next[j - 1];
             }
-            else {
-                k = next[k];
+
+            if (s[i] == s[j]) {
                 j++;
             }
+
+            next[i] = j;
         }
     }
 }
