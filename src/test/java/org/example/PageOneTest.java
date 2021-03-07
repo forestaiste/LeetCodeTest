@@ -520,17 +520,30 @@ public class PageOneTest {
     @Test
     public void strStrTest() {
         ImplementstrStr28 implementstrStr = new ImplementstrStr28();
-        String haystack = "hello", needle = "ll";
-//
-//        System.out.println(implementstrStr.strStr(haystack, needle));
-//
-//        haystack = "";
-//        needle = "";
-//
-//        System.out.println(implementstrStr.strStr(haystack, needle));
+        String haystack = "hello";
+        String needle = "ll";
+
+        System.out.println(implementstrStr.strStr(haystack, needle));
+
+        haystack = "";
+        needle = "";
+
+        System.out.println(implementstrStr.strStr(haystack, needle));
         haystack = "aabaabaac";
         needle = "aabaac";
 
         System.out.println(implementstrStr.strStr(haystack, needle));
+    }
+
+    @Test
+    public void validParentheses20Test() {
+        ValidParentheses20 validParentheses20 = new ValidParentheses20();
+
+
+        System.out.println(validParentheses20.isValid("]"));
+        System.out.println(validParentheses20.isValid("()[]{}"));
+        System.out.println(validParentheses20.isValid("([)]"));
+        System.out.println(validParentheses20.isValid("{[]}"));
+        System.out.println(validParentheses20.isValid("(]"));
     }
 }
