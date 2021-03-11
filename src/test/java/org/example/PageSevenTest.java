@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.leetcode.pageseven.IntersectionOfTwoArrays349;
 import org.example.leetcode.pageseven.ReverseString344;
+import org.example.leetcode.pageseven.TopKFrequentElements347;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -30,5 +31,13 @@ public class PageSevenTest {
         result = intersection.intersection(nums1, nums2);
 
         System.out.println(Arrays.toString(result));
+    }
+
+    @Test
+    public void topKFrequentElements347Test() {
+
+        TopKFrequentElements347 topKFrequentElements = new TopKFrequentElements347();
+        int[] nums = {1,1,1,2,2,3};
+        System.out.println(Arrays.toString(topKFrequentElements.topKFrequent(nums, 2)));
     }
 }

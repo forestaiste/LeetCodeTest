@@ -4,6 +4,8 @@ import org.example.leetcode.pagefive.*;
 import org.example.models.ListNode;
 import org.junit.Test;
 
+import java.util.Arrays;
+
 public class PageFiveTest {
     @Test
     public void reverseLinkedListTest() {
@@ -83,5 +85,14 @@ public class PageFiveTest {
         System.out.println(happyNumber.isHappy(19));
 
         System.out.println(happyNumber.isHappy(2));
+    }
+
+    @Test
+    public void slidingWindowMaximum239Test() {
+        int[] nums = {1,3,-1,-3,5,3,6,7};
+
+        SlidingWindowMaximum239 slidingWindowMaximum = new SlidingWindowMaximum239();
+
+        System.out.println(Arrays.toString(slidingWindowMaximum.maxSlidingWindow(nums, 3)));
     }
 }
