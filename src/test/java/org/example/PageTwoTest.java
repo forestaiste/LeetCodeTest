@@ -266,4 +266,14 @@ public class PageTwoTest {
         b = "1";
         System.out.println(addBinary.addBinary(a, b));
     }
+
+    @Test
+    public void combinationsTest() {
+        Combinations77 combinations = new Combinations77();
+        List<List<Integer>> results = combinations.combine(4, 2);
+
+        for (List<Integer> result : results) {
+            System.out.println(Arrays.toString(result.toArray()));
+        }
+    }
 }

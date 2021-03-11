@@ -28,7 +28,7 @@ import java.util.List;
 
 public class NQueens {
     public List<List<String>> solveNQueens(int n) {
-        List<List<String>> results = new ArrayList<List<String>>();
+        List<List<String>> results = new ArrayList<>();
         int[] positions = new int[n];
         for (int i = 0; i < n; i++) {
             positions[i] = -1;
@@ -41,7 +41,7 @@ public class NQueens {
 
     private void backTrack(List<List<String>> results, int n, int row, int[] positions) {
         if (row == n) {
-            List<String> result = new ArrayList<String>();
+            List<String> result = new ArrayList<>();
             for (int i = 0; i < n; i++) {
                 StringBuffer string = new StringBuffer();
                 for (int j = 0; j < n; j++) {
