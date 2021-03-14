@@ -276,4 +276,29 @@ public class PageTwoTest {
             System.out.println(Arrays.toString(result.toArray()));
         }
     }
+
+    @Test
+    public void restoreIPAddresses93() {
+        RestoreIPAddresses93 restoreIPAddresses = new RestoreIPAddresses93();
+        System.out.println(Arrays.toString(restoreIPAddresses.restoreIpAddresses("101023").toArray()));
+        System.out.println(Arrays.toString(restoreIPAddresses.restoreIpAddresses("25525511135").toArray()));
+        System.out.println(Arrays.toString(restoreIPAddresses.restoreIpAddresses("0000").toArray()));
+        System.out.println(Arrays.toString(restoreIPAddresses.restoreIpAddresses("1111").toArray()));
+        System.out.println(Arrays.toString(restoreIPAddresses.restoreIpAddresses("010010").toArray()));
+    }
+
+    @Test
+    public void subsets78Test() {
+        Subsets78 subsets = new Subsets78();
+        int[] nums = {1, 2, 3};
+
+        System.out.println(Arrays.toString(subsets.subsets(nums).toArray()));
+    }
+
+    @Test
+    public void SubsetsII90Test() {
+        SubsetsII90 subsetsII = new SubsetsII90();
+        int[] nums = {1, 2, 2};
+        System.out.println(Arrays.toString(subsetsII.subsetsWithDup(nums).toArray()));
+    }
 }

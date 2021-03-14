@@ -18,7 +18,7 @@ package org.example.leetcode.pageone;
 
 import java.util.*;
 
-public class Permutations {
+public class Permutations46 {
 
     public List<List<Integer>> permute(int[] nums) {
         List<List<Integer>> results = new ArrayList<List<Integer>>();

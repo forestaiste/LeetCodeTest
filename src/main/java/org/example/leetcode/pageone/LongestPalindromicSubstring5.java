@@ -22,7 +22,7 @@ package org.example.leetcode.pageone;
 //        输入：s = "ac"
 //        输出："a"
 
-public class LongestPalindromicSubstring {
+public class LongestPalindromicSubstring5 {
     public String longestPalindrome(String s) {
         if (s == null || s.length() < 1) {
             return "";

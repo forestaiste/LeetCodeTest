@@ -1,11 +1,14 @@
 package org.example;
 
 import org.example.leetcode.pageseven.IntersectionOfTwoArrays349;
+import org.example.leetcode.pageseven.ReconstructItinerary332;
 import org.example.leetcode.pageseven.ReverseString344;
 import org.example.leetcode.pageseven.TopKFrequentElements347;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class PageSevenTest {
     @Test
@@ -19,15 +22,15 @@ public class PageSevenTest {
     }
 
     @Test
-    public void intersectionOfTwoArrays349Test()  {
+    public void intersectionOfTwoArrays349Test() {
         IntersectionOfTwoArrays349 intersection = new IntersectionOfTwoArrays349();
-        int[] nums1 = {1,2,2,1};
+        int[] nums1 = {1, 2, 2, 1};
         int[] nums2 = {2, 2};
         int[] result = intersection.intersection0(nums1, nums2);
         System.out.println(Arrays.toString(result));
         System.out.println("----------------");
         nums1 = new int[]{4, 9, 5};
-        nums2 = new int[]{9,4,9,8,4};
+        nums2 = new int[]{9, 4, 9, 8, 4};
         result = intersection.intersection(nums1, nums2);
 
         System.out.println(Arrays.toString(result));
@@ -37,7 +40,82 @@ public class PageSevenTest {
     public void topKFrequentElements347Test() {
 
         TopKFrequentElements347 topKFrequentElements = new TopKFrequentElements347();
-        int[] nums = {1,1,1,2,2,3};
+        int[] nums = {1, 1, 1, 2, 2, 3};
         System.out.println(Arrays.toString(topKFrequentElements.topKFrequent(nums, 2)));
+    }
+
+    @Test
+    public void reconstructItinerary332Test() {
+        ReconstructItinerary332 reconstructItinerary = new ReconstructItinerary332();
+        List<List<String>> tickets = new ArrayList<>();
+//        List<String> t1 = new ArrayList<>() {
+//            {
+//                add("JFK");
+//                add("SFO");
+//            }
+//        };
+//        List<String> t2 = new ArrayList<>() {
+//            {
+//                add("JFK");
+//                add("ATL");
+//            }
+//        };
+//        List<String> t3 = new ArrayList<String>() {
+//            {
+//                add("SFO");
+//                add("ATL");
+//            }
+//        };
+//        List<String> t4 = new ArrayList<String>() {
+//            {
+//                add("ATL");
+//                add("JFK");
+//            }
+//        };
+//        List<String> t5 = new ArrayList<String>() {
+//            {
+//                add("ATL");
+//                add("SFO");
+//            }
+//        };
+//        tickets.add(t1);
+//        tickets.add(t2);
+//        tickets.add(t3);
+//        tickets.add(t4);
+//        tickets.add(t5);
+
+
+        List<String> t1 = new ArrayList<>() {
+            {
+                add("MUC");
+                add("LHR");
+            }
+        };
+        List<String> t2 = new ArrayList<>() {
+            {
+                add("JFK");
+                add("MUC");
+            }
+        };
+        List<String> t3 = new ArrayList<String>() {
+            {
+                add("SFO");
+                add("SJC");
+            }
+        };
+        List<String> t4 = new ArrayList<String>() {
+            {
+                add("LHR");
+                add("SFO");
+            }
+        };
+
+        tickets.add(t1);
+        tickets.add(t2);
+        tickets.add(t3);
+        tickets.add(t4);
+
+
+        System.out.println(Arrays.toString(reconstructItinerary.findItinerary(tickets).toArray()));
     }
 }

@@ -69,7 +69,7 @@ public class PageOneTest {
 
     @Test
     public void longestPalindromicSubstringTest() {
-        LongestPalindromicSubstring longestPalindromicSubstring = new LongestPalindromicSubstring();
+        LongestPalindromicSubstring5 longestPalindromicSubstring = new LongestPalindromicSubstring5();
 
         System.out.println(longestPalindromicSubstring.longestPalindrome("babbad"));
     }
@@ -243,7 +243,7 @@ public class PageOneTest {
 
     @Test
     public void combinationSumTest() {
-        CombinationSum combinationSum = new CombinationSum();
+        CombinationSum39 combinationSum = new CombinationSum39();
         int[] nums = {2,3,6,7};
         //int[] nums = {1, 2};
         List<List<Integer>> results = combinationSum.combinationSum(nums, 7);
@@ -365,7 +365,7 @@ public class PageOneTest {
 
     @Test
     public void permutationsTest() {
-        Permutations permutations = new Permutations();
+        Permutations46 permutations = new Permutations46();
 
         int[] nums = {1, 2, 3};
 
@@ -439,7 +439,7 @@ public class PageOneTest {
 
     @Test
     public void permutationsIITest() {
-        PermutationsII permutationsII = new PermutationsII();
+        PermutationsII47 permutationsII = new PermutationsII47();
 
         int[] nums = {1, 2, 3};
         List<List<Integer>> results = permutationsII.permuteUnique(nums);
