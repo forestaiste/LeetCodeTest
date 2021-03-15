@@ -20,7 +20,7 @@ import java.util.List;
 //        ]
 public class Combinations77 {
 
-    public List<List<Integer>> combine(int n, int k) {
+    public List<List<Integer>> combine0(int n, int k) {
         List<List<Integer>> results = new ArrayList<>();
         List<Integer> combination = new ArrayList<>();
 
@@ -41,5 +41,30 @@ public class Combinations77 {
             backTrack(results, combination, n, k, i + 1);
             combination.remove(combination.size() - 1);
         }
+    }
+
+    public List<List<Integer>> combine(int n, int k) {
+        List<List<Integer>> results = new ArrayList<>();
+        List<Integer> combination = new ArrayList<>();
+        afs(results, combination, n, k, 1);
+        return results;
+    }
+
+    private void afs(List<List<Integer>> results, List<Integer> combination, int n, int k, int level) {
+        if (combination.size() == k) {
+            List<Integer> result = new ArrayList<>(combination);
+            results.add(result);
+            return;
+        }
+
+        if (n - level + combination.size() + 1 < k) {
+            return;
+        }
+
+        afs(results, combination, n, k, level + 1);
+
+        combination.add(level);
+        afs(results, combination, n, k, level + 1);
+        combination.remove(combination.size() - 1);
     }
 }

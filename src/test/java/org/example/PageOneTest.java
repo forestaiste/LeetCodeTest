@@ -23,7 +23,7 @@ public class PageOneTest {
 
     @Test
     public void letterCombinationTest() {
-        LetterCombination combination = new LetterCombination();
+        LetterCombination17 combination = new LetterCombination17();
         List<String> results = combination.letterCombine("256");
     }
 
@@ -256,9 +256,13 @@ public class PageOneTest {
 
     @Test
     public void combinationSumIITest() {
-        CombinationSumII combinationSumII = new CombinationSumII();
+        CombinationSumII40 combinationSumII = new CombinationSumII40();
         int[] nums = {10,1,2,7,6,1,5};
         List<List<Integer>> results = combinationSumII.combinationSumII(nums, 8);
+
+        results.forEach(r -> System.out.println(Arrays.toString(r.toArray())));
+        System.out.println("----------------------------------");
+        results = combinationSumII.combinationSumII0(nums, 8);
 
         results.forEach(r -> System.out.println(Arrays.toString(r.toArray())));
     }

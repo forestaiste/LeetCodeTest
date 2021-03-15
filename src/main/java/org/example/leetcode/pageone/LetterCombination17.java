@@ -5,13 +5,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class LetterCombination {
+public class LetterCombination17 {
     public List<String> letterCombine(String digits) {
-        List<String> combinations = new ArrayList<String>();
+        List<String> combinations = new ArrayList<>();
         if (digits.length() == 0) {
             return combinations;
         }
-        Map<Character, String> phoneMap = new HashMap<Character, String>() {{
+        Map<Character, String> phoneMap = new HashMap<>() {{
             put('2', "abc");
             put('3', "def");
             put('4', "ghi");

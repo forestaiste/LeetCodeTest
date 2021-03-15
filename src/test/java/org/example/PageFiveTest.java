@@ -5,6 +5,7 @@ import org.example.models.ListNode;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class PageFiveTest {
     @Test
@@ -94,5 +95,16 @@ public class PageFiveTest {
         SlidingWindowMaximum239 slidingWindowMaximum = new SlidingWindowMaximum239();
 
         System.out.println(Arrays.toString(slidingWindowMaximum.maxSlidingWindow(nums, 3)));
+    }
+
+    @Test
+    public void combinationSumIII216Test() {
+        CombinationSumIII216 combinationSumIII = new CombinationSumIII216();
+        List<List<Integer>> results = combinationSumIII.combinationSum3(3, 9);
+
+        for (List<Integer> result : results) {
+            System.out.println(Arrays.toString(result.toArray()));
+        }
+
     }
 }
