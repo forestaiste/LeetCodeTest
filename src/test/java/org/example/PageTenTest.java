@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.leetcode.pageten.AssignCookies455;
 import org.example.leetcode.pageten.FourSumII454;
 import org.example.leetcode.pageten.IncreasingSubsequences491;
 import org.example.leetcode.pageten.RepeatedSubstringPattern459;
@@ -34,5 +35,17 @@ public class PageTenTest {
 
         int[] nums1 = new int[]{1,2,3,4,5,6,7,8,9,10,1,1,1,1,1};
         System.out.println(Arrays.toString(increasingSubsequences.findSubsequences1(nums1).toArray()));
+    }
+
+    @Test
+    public void assignCookies455Test() {
+        AssignCookies455 assignCookies = new AssignCookies455();
+        int[] g = {1, 2, 3};
+        int[] s = {3};
+        System.out.println(assignCookies.findContentChildren(g, s));
+
+        g = new int[] {1, 2};
+        s = new int[] {1, 2, 3};
+        System.out.println(assignCookies.findContentChildren(g, s));
     }
 }

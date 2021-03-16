@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.leetcode.pageeight.RansomNote383;
+import org.example.leetcode.pageeight.WiggleSubsequence376;
 import org.junit.Test;
 
 public class PageEightTest {
@@ -10,5 +11,14 @@ public class PageEightTest {
         System.out.println(ransomNote.canConstruct("a", "b"));
         System.out.println(ransomNote.canConstruct("aa", "ab"));
         System.out.println(ransomNote.canConstruct("aa", "aab"));
+    }
+
+    @Test
+    public void wiggleSubsequence376Test() {
+        WiggleSubsequence376 wiggleSubsequence = new WiggleSubsequence376();
+//        int[] nums = {3, 3, 3,2,5};
+//        int[] nums = {1,2,3,4,5,6,7,8,9};
+        int[] nums = {1,17,5,10,13,15,10,5,16,8};
+        System.out.println(wiggleSubsequence.wiggleMaxLength(nums));
     }
 }
