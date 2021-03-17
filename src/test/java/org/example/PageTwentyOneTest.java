@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.leetcode.pagefour.EvaluateReversePolishNotation150;
+import org.example.leetcode.pagetwentyone.MaximizeSumOfArrayAfterKNegations1005;
 import org.example.leetcode.pagetwentyone.RemoveAllAdjacentDuplicatesInString1047;
 import org.junit.Test;
 
@@ -24,5 +25,21 @@ public class PageTwentyOneTest {
         tokens = new String[]{"10", "6", "9", "3", "+", "-11", "*", "/", "*", "17", "+", "5", "+"};
         System.out.println(evaluateReversePolishNotation.evalRPN(tokens));
 
+    }
+
+    @Test
+    public void maximizeSumOfArrayAfterKNegations1005() {
+        MaximizeSumOfArrayAfterKNegations1005 maximizeSumOfArrayAfterKNegations = new MaximizeSumOfArrayAfterKNegations1005();
+        Integer[] A = {2,-3,-1,5,-4};
+        int K = 2;
+        System.out.println(maximizeSumOfArrayAfterKNegations.largestSumAfterKNegations(A, K));
+
+        A = new Integer[]{3,-1,0,2};
+        K = 3;
+        System.out.println(maximizeSumOfArrayAfterKNegations.largestSumAfterKNegations(A, K));
+
+        A = new Integer[]{4,2,3};
+        K = 3;
+        System.out.println(maximizeSumOfArrayAfterKNegations.largestSumAfterKNegations(A, K));
     }
 }

@@ -398,8 +398,9 @@ public class PageOneTest {
 
     @Test
     public void jumpGameIITest() {
-        JumpGameII jumpGameII = new JumpGameII();
-        int[] nums = {2,3,1,1,4};
+        JumpGameII45 jumpGameII = new JumpGameII45();
+        int[] nums = {1,2,2,0,4};
+//        int[] nums = {1, 2, 3};
         System.out.println(jumpGameII.jump(nums));
     }
 

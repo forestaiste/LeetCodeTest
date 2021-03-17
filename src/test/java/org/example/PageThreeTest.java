@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.leetcode.pagethree.BestTimeToBuyAndSellStockII122;
+import org.example.leetcode.pagethree.GasStation134;
 import org.example.leetcode.pagethree.LinkedListCycleII142;
 import org.example.leetcode.pagethree.PalindromePartitioning131;
 import org.example.models.ListNode;
@@ -45,5 +46,21 @@ public class PageThreeTest {
 //        System.out.println(bestTimeToBuyAndSellStockII.maxProfit(prices));
         prices = new int[]{2, 1, 2, 0, 1};
         System.out.println(bestTimeToBuyAndSellStockII.maxProfit(prices));
+    }
+
+    @Test
+    public void GasStation134Test() {
+        GasStation134 gasStation = new GasStation134();
+        int[] gas = {1, 2, 3, 4, 5};
+        int[] cost = {3, 4, 5, 1, 2};
+        System.out.println(gasStation.canCompleteCircuit(gas, cost));
+
+        gas = new int[]{5, 8, 2, 8};
+        cost = new int[]{6, 5, 6, 6};
+        System.out.println(gasStation.canCompleteCircuit(gas, cost));
+
+        gas = new int[]{2, 3, 4};
+        cost = new int[]{3, 4, 3};
+        System.out.println(gasStation.canCompleteCircuit(gas, cost));
     }
 }
