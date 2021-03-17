@@ -48,74 +48,74 @@ public class PageSevenTest {
     public void reconstructItinerary332Test() {
         ReconstructItinerary332 reconstructItinerary = new ReconstructItinerary332();
         List<List<String>> tickets = new ArrayList<>();
-//        List<String> t1 = new ArrayList<>() {
-//            {
-//                add("JFK");
-//                add("SFO");
-//            }
-//        };
-//        List<String> t2 = new ArrayList<>() {
-//            {
-//                add("JFK");
-//                add("ATL");
-//            }
-//        };
-//        List<String> t3 = new ArrayList<String>() {
-//            {
-//                add("SFO");
-//                add("ATL");
-//            }
-//        };
-//        List<String> t4 = new ArrayList<String>() {
-//            {
-//                add("ATL");
-//                add("JFK");
-//            }
-//        };
-//        List<String> t5 = new ArrayList<String>() {
-//            {
-//                add("ATL");
-//                add("SFO");
-//            }
-//        };
-//        tickets.add(t1);
-//        tickets.add(t2);
-//        tickets.add(t3);
-//        tickets.add(t4);
-//        tickets.add(t5);
-
-
         List<String> t1 = new ArrayList<>() {
             {
-                add("MUC");
-                add("LHR");
+                add("JFK");
+                add("SFO");
             }
         };
         List<String> t2 = new ArrayList<>() {
             {
                 add("JFK");
-                add("MUC");
+                add("ATL");
             }
         };
         List<String> t3 = new ArrayList<String>() {
             {
                 add("SFO");
-                add("SJC");
+                add("ATL");
             }
         };
         List<String> t4 = new ArrayList<String>() {
             {
-                add("LHR");
+                add("ATL");
+                add("JFK");
+            }
+        };
+        List<String> t5 = new ArrayList<String>() {
+            {
+                add("ATL");
                 add("SFO");
             }
         };
-
         tickets.add(t1);
         tickets.add(t2);
         tickets.add(t3);
         tickets.add(t4);
-
+        tickets.add(t5);
 
         System.out.println(Arrays.toString(reconstructItinerary.findItinerary(tickets).toArray()));
+
+//        List<String> t1 = new ArrayList<>() {
+//            {
+//                add("MUC");
+//                add("LHR");
+//            }
+//        };
+//        List<String> t2 = new ArrayList<>() {
+//            {
+//                add("JFK");
+//                add("MUC");
+//            }
+//        };
+//        List<String> t3 = new ArrayList<String>() {
+//            {
+//                add("SFO");
+//                add("SJC");
+//            }
+//        };
+//        List<String> t4 = new ArrayList<String>() {
+//            {
+//                add("LHR");
+//                add("SFO");
+//            }
+//        };
+//
+//        tickets.add(t1);
+//        tickets.add(t2);
+//        tickets.add(t3);
+//        tickets.add(t4);
+//
+//        System.out.println(Arrays.toString(reconstructItinerary.findItinerary(tickets).toArray()));
     }
 }

@@ -3,7 +3,7 @@ package org.example.leetcode.pagetwo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NQueensII {
+public class NQueensII52 {
     int count = 0;
     public int totalNQueens(int n) {
         List<List<String>> results = new ArrayList<List<String>>();

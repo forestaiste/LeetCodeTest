@@ -14,7 +14,7 @@ package org.example.leetcode.pagetwo;
 //        如果你已经实现复杂度为 O(n) 的解法，尝试使用更为精妙的分治法求解。
 
 
-public class MaximumSubarray {
+public class MaximumSubarray53 {
     public int maxSubArray(int[] nums) {
         int pre = 0, maxAns = nums[0];
         for (int x : nums) {

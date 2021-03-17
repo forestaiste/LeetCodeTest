@@ -26,7 +26,7 @@ package org.example.leetcode.pagetwo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NQueens {
+public class NQueens51 {
     public List<List<String>> solveNQueens(int n) {
         List<List<String>> results = new ArrayList<>();
         int[] positions = new int[n];

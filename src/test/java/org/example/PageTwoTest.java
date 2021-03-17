@@ -6,7 +6,6 @@ import org.junit.Test;
 
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
 
 public class PageTwoTest {
@@ -20,7 +19,7 @@ public class PageTwoTest {
 
     @Test
     public void maximumSubarrayTest() {
-        MaximumSubarray maximumSubarray = new MaximumSubarray();
+        MaximumSubarray53 maximumSubarray = new MaximumSubarray53();
         int[] nums = {-2,1,-3,4,-1,2,1,-5,4};
 
         System.out.println(maximumSubarray.maxSubArray(nums));
@@ -182,7 +181,7 @@ public class PageTwoTest {
 
     @Test
     public void nQueensTest() {
-        NQueens queens = new NQueens();
+        NQueens51 queens = new NQueens51();
         List<List<String>> results = queens.solveNQueens(4);
 
         for (List<String> result : results) {
@@ -192,7 +191,7 @@ public class PageTwoTest {
 
     @Test
     public void nQueensIITest() {
-        NQueensII queens = new NQueensII();
+        NQueensII52 queens = new NQueensII52();
         System.out.println(queens.totalNQueens(4));
     }
 
