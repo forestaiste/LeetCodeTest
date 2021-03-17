@@ -23,4 +23,21 @@ public class MaximumSubarray {
         }
         return maxAns;
     }
+
+    public int maxSubArray1(int[] nums) {
+        int result = Integer.MIN_VALUE;
+        int count = 0;
+
+        for (int num : nums) {
+            count += num;
+
+            result = Math.max(result, count);
+
+            if (count < 0) {
+                count = 0;
+            }
+        }
+
+        return result;
+    }
 }

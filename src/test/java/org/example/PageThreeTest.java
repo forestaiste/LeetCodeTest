@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.leetcode.pagethree.BestTimeToBuyAndSellStockII122;
 import org.example.leetcode.pagethree.LinkedListCycleII142;
 import org.example.leetcode.pagethree.PalindromePartitioning131;
 import org.example.models.ListNode;
@@ -31,5 +32,18 @@ public class PageThreeTest {
         for (List<String> result : results) {
             System.out.println(Arrays.toString(result.toArray()));
         }
+    }
+
+    @Test
+    public void BestTimeToBuyAndSellStockII122Test() {
+        BestTimeToBuyAndSellStockII122 bestTimeToBuyAndSellStockII = new BestTimeToBuyAndSellStockII122();
+        int[] prices = new int[]{7,1,5,3,6,4};
+//        System.out.println(bestTimeToBuyAndSellStockII.maxProfit(prices));
+//        prices = new int[]{1, 2, 3, 4, 5};
+//        System.out.println(bestTimeToBuyAndSellStockII.maxProfit(prices));
+//        prices = new int[]{7, 6, 4, 3, 1};
+//        System.out.println(bestTimeToBuyAndSellStockII.maxProfit(prices));
+        prices = new int[]{2, 1, 2, 0, 1};
+        System.out.println(bestTimeToBuyAndSellStockII.maxProfit(prices));
     }
 }
