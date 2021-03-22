@@ -45,48 +45,44 @@ package org.example.leetcode.pagethree;
 //        因此，无论怎样，你都不可能绕环路行驶一周。
 
 public class GasStation134 {
-    public int canCompleteCircuit(int[] gas, int[] cost) {
-        int length = gas.length;
-        int maxGap = Integer.MIN_VALUE;
-        int minGap = Integer.MAX_VALUE;
-        int maxIndex = 0, minIndex = 0;
-        for (int i = 0; i < length; i++) {
-            int gap = gas[i] - cost[i];
-           if (gap > maxGap) {
-                maxGap = gap;
-                maxIndex = i;
-           }
-           else if (gap < minGap) {
-               minGap = gap;
-               minIndex = i;
-           }
-        }
-
-        int left = 0;
-        int index = maxIndex;
-
-        for (int i = index; i < index + length; i++) {
-            left += gas[i % length] - cost[i % length];
-
-            if (left < 0) {
-                index = -1;
-                break;
-            }
-        }
-
-        left = 0;
-        if (index == -1 && ((minIndex + 1) % length) != maxIndex) {
-            index = (minIndex + 1) % length;
-            for (int i = index; i < index + length; i++) {
-                left += gas[i % length] - cost[i % length];
-
-                if (left < 0) {
-                    index = -1;
+    public int canCompleteCircuit0(int[] gas, int[] cost) {
+        int n = gas.length;
+        int i = 0;
+        while (i < n) {
+            int sumOfGas = 0, sumOfCost = 0;
+            int cnt = 0;
+            while (cnt < n) {
+                int j = (i + cnt) % n;
+                sumOfGas += gas[j];
+                sumOfCost += cost[j];
+                if (sumOfCost > sumOfGas) {
                     break;
                 }
+                cnt++;
+            }
+            if (cnt == n) {
+                return i;
+            } else {
+                i = i + cnt + 1;
+            }
+        }
+        return -1;
+    }
+
+    public int canCompleteCircuit(int[] gas, int[] cost) {
+        int len = gas.length;
+        int spare = 0;
+        int minSpare = Integer.MAX_VALUE;
+        int minIndex = 0;
+
+        for (int i = 0; i < len; i++) {
+            spare += gas[i] - cost[i];
+            if (spare < minSpare) {
+                minSpare = spare;
+                minIndex = i;
             }
         }
 
-        return index;
+        return spare < 0 ? -1 : (minIndex + 1) % len;
     }
 }

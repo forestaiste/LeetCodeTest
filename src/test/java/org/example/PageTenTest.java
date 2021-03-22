@@ -1,9 +1,6 @@
 package org.example;
 
-import org.example.leetcode.pageten.AssignCookies455;
-import org.example.leetcode.pageten.FourSumII454;
-import org.example.leetcode.pageten.IncreasingSubsequences491;
-import org.example.leetcode.pageten.RepeatedSubstringPattern459;
+import org.example.leetcode.pageten.*;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -47,5 +44,30 @@ public class PageTenTest {
         g = new int[] {1, 2};
         s = new int[] {1, 2, 3};
         System.out.println(assignCookies.findContentChildren(g, s));
+    }
+
+    @Test
+    public void minimumNumberOfArrowsToBurstBalloonsTest() {
+        MinimumNumberOfArrowsToBurstBalloons452 minimumNumberOfArrowsToBurstBalloons = new MinimumNumberOfArrowsToBurstBalloons452();
+        int[][] points = {{10,16},{2,8},{1,6},{7,12}};
+        System.out.println(minimumNumberOfArrowsToBurstBalloons.findMinArrowShots(points));
+
+        points = new int[][]{{1,2},{2,3},{3,4},{4,5}};
+        System.out.println(minimumNumberOfArrowsToBurstBalloons.findMinArrowShots(points));
+
+        points = new int[][]{{1,2},{3,4},{5,6},{7,8}};
+        System.out.println(minimumNumberOfArrowsToBurstBalloons.findMinArrowShots(points));
+
+        points = new int[][]{{-1,1},{0, 1},{2,3},{1,2}};
+        System.out.println(minimumNumberOfArrowsToBurstBalloons.findMinArrowShots(points));
+
+        points = new int[][]{{1,2}};
+        System.out.println(minimumNumberOfArrowsToBurstBalloons.findMinArrowShots(points));
+
+        points = new int[][]{{2,3}, {2, 3}};
+        System.out.println(minimumNumberOfArrowsToBurstBalloons.findMinArrowShots(points));
+
+        points = new int[][]{{-2147483646,-2147483645}, {2147483646, 2147483647}};
+        System.out.println(minimumNumberOfArrowsToBurstBalloons.findMinArrowShots(points));
     }
 }

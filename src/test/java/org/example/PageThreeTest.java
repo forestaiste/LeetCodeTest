@@ -1,9 +1,6 @@
 package org.example;
 
-import org.example.leetcode.pagethree.BestTimeToBuyAndSellStockII122;
-import org.example.leetcode.pagethree.GasStation134;
-import org.example.leetcode.pagethree.LinkedListCycleII142;
-import org.example.leetcode.pagethree.PalindromePartitioning131;
+import org.example.leetcode.pagethree.*;
 import org.example.models.ListNode;
 import org.junit.Test;
 
@@ -36,7 +33,7 @@ public class PageThreeTest {
     }
 
     @Test
-    public void BestTimeToBuyAndSellStockII122Test() {
+    public void bestTimeToBuyAndSellStockII122Test() {
         BestTimeToBuyAndSellStockII122 bestTimeToBuyAndSellStockII = new BestTimeToBuyAndSellStockII122();
         int[] prices = new int[]{7,1,5,3,6,4};
 //        System.out.println(bestTimeToBuyAndSellStockII.maxProfit(prices));
@@ -49,7 +46,7 @@ public class PageThreeTest {
     }
 
     @Test
-    public void GasStation134Test() {
+    public void gasStation134Test() {
         GasStation134 gasStation = new GasStation134();
         int[] gas = {1, 2, 3, 4, 5};
         int[] cost = {3, 4, 5, 1, 2};
@@ -62,5 +59,12 @@ public class PageThreeTest {
         gas = new int[]{2, 3, 4};
         cost = new int[]{3, 4, 3};
         System.out.println(gasStation.canCompleteCircuit(gas, cost));
+    }
+
+    @Test
+    public void candy135Test() {
+        Candy135 candy = new Candy135();
+        int[] ratings = {2, 1, 1, 0, 2, 0, 1, 2};
+        System.out.println(candy.candy(ratings));
     }
 }
