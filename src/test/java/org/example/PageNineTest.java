@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.leetcode.pagenine.NonOverlappingIntervals435;
 import org.example.leetcode.pagenine.QueueReconstructionByHeight406;
 import org.junit.Test;
 
@@ -22,5 +23,12 @@ public class PageNineTest {
         for (int[] p : people) {
             System.out.println(Arrays.toString(p));
         }
+    }
+
+    @Test
+    public void nonOverlappingIntervals435Test() {
+        NonOverlappingIntervals435 nonOverlappingIntervals = new NonOverlappingIntervals435();
+        int[][] intervals = { {1,2}, {2,3}, {3,4}, {1,3} };
+        System.out.println(nonOverlappingIntervals.eraseOverlapIntervals(intervals));
     }
 }
