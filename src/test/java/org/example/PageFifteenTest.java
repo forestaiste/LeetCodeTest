@@ -1,6 +1,8 @@
 package org.example;
 
+import org.example.leetcode.pagefifteen.BestTimeToBuyAndSellStockWithTransactionFee714;
 import org.example.leetcode.pagefifteen.DesignLinkedList707;
+import org.example.leetcode.pagefifteen.MinCostClimbingStairs746;
 import org.example.models.ListNode;
 import org.junit.Test;
 
@@ -69,5 +71,26 @@ public class PageFifteenTest {
             result = result.next;
         }
         System.out.println("--------------------------");
+    }
+
+    @Test
+    public void bestTimeToBuyAndSellStockWithTransactionFee714Test() {
+        BestTimeToBuyAndSellStockWithTransactionFee714 bestTimeToBuyAndSellStockWithTransactionFee = new BestTimeToBuyAndSellStockWithTransactionFee714();
+        int[] prices = {2,2,1,1,5,5,3,1,5,4};
+        System.out.println(bestTimeToBuyAndSellStockWithTransactionFee.maxProfit(prices, 2));
+
+        prices = new int[]{4,5,2,4,3,3,1,2,5,4};
+        System.out.println(bestTimeToBuyAndSellStockWithTransactionFee.maxProfit(prices, 1));
+
+        prices = new int[]{1, 3, 2, 8, 4, 9};
+        System.out.println(bestTimeToBuyAndSellStockWithTransactionFee.maxProfit(prices, 2));
+
+    }
+
+    @Test
+    public void minCostClimbingStairs746Test() {
+        MinCostClimbingStairs746 minCostClimbingStairs = new MinCostClimbingStairs746();
+        int[] cost = {1, 100, 1, 1, 1, 100, 1, 1, 100, 1};
+        System.out.println(minCostClimbingStairs.minCostClimbingStairs(cost));
     }
 }

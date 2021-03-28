@@ -1,9 +1,6 @@
 package org.example;
 
-import org.example.leetcode.pageseven.IntersectionOfTwoArrays349;
-import org.example.leetcode.pageseven.ReconstructItinerary332;
-import org.example.leetcode.pageseven.ReverseString344;
-import org.example.leetcode.pageseven.TopKFrequentElements347;
+import org.example.leetcode.pageseven.*;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -60,19 +57,19 @@ public class PageSevenTest {
                 add("ATL");
             }
         };
-        List<String> t3 = new ArrayList<String>() {
+        List<String> t3 = new ArrayList<>() {
             {
                 add("SFO");
                 add("ATL");
             }
         };
-        List<String> t4 = new ArrayList<String>() {
+        List<String> t4 = new ArrayList<>() {
             {
                 add("ATL");
                 add("JFK");
             }
         };
-        List<String> t5 = new ArrayList<String>() {
+        List<String> t5 = new ArrayList<>() {
             {
                 add("ATL");
                 add("SFO");
@@ -117,5 +114,12 @@ public class PageSevenTest {
 //        tickets.add(t4);
 //
 //        System.out.println(Arrays.toString(reconstructItinerary.findItinerary(tickets).toArray()));
+    }
+
+    @Test
+    public void integerBreak343Test() {
+        IntegerBreak343 integerBreak = new IntegerBreak343();
+
+        System.out.println(integerBreak.integerBreak(10));
     }
 }

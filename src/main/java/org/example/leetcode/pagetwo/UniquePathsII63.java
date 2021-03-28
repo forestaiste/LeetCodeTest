@@ -1,6 +1,6 @@
 package org.example.leetcode.pagetwo;
 
-public class UniquePathsII {
+public class UniquePathsII63 {
     int count = 0;
     int[] directionX = new int[2];
     int[] directionY = new int[2];
