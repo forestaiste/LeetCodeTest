@@ -22,7 +22,22 @@ package org.example.leetcode.pagefifteen;
 
 public class MonotoneIncreasingDigits738 {
     public int monotoneIncreasingDigits(int N) {
-        String number = "";
-        return 0;
+        char[] digits = Integer.toString(N).toCharArray();
+
+        int length = digits.length;
+        int start = length;
+        for (int i = length - 1; i > 0; i--) {
+
+            if (digits[i - 1] > digits[i]) {
+                digits[i - 1]--;
+                start = i;
+            }
+        }
+
+        for (int i = start; i < length; i++) {
+            digits[i] = '9';
+        }
+
+        return Integer.parseInt(new String(digits));
     }
 }
