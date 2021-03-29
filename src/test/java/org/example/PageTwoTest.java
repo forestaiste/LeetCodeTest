@@ -203,7 +203,7 @@ public class PageTwoTest {
 
     @Test
     public  void uniquePathsTest() {
-        UniquePaths uniquePaths = new UniquePaths();
+        UniquePaths62 uniquePaths = new UniquePaths62();
 
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         System.out.println(df.format(System.currentTimeMillis()));
@@ -217,7 +217,7 @@ public class PageTwoTest {
 
     @Test
     public  void uniquePathsIITest() {
-        UniquePathsII uniquePaths = new UniquePathsII();
+        UniquePathsII63 uniquePaths = new UniquePathsII63();
 
         int[][] obstacleGrid = {{0, 0, 0}, {0, 1, 0}, {0, 0, 0}};
 //        int[][] obstacleGrid = {{1, 0}};
@@ -295,9 +295,21 @@ public class PageTwoTest {
     }
 
     @Test
-    public void SubsetsII90Test() {
+    public void subsetsII90Test() {
         SubsetsII90 subsetsII = new SubsetsII90();
         int[] nums = {1, 2, 2};
         System.out.println(Arrays.toString(subsetsII.subsetsWithDup(nums).toArray()));
+    }
+
+    @Test
+    public void climbingStairs70Test() {
+        ClimbingStairs70 climbingStairs = new ClimbingStairs70();
+        System.out.println(climbingStairs.climbStairs(2));
+    }
+
+    @Test
+    public void uniqueBinarySearchTrees96Test() {
+        UniqueBinarySearchTrees96 uniqueBinarySearchTrees = new UniqueBinarySearchTrees96();
+        System.out.println(uniqueBinarySearchTrees.numTrees(5));
     }
 }

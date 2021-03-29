@@ -32,7 +32,7 @@ package org.example.leetcode.pagetwo;
 //        输入：m = 3, n = 3
 //        输出：6
 
-public class UniquePaths {
+public class UniquePaths62 {
     int count = 0;
     int[] directionX = new int[2];
     int[] directionY = new int[2];
