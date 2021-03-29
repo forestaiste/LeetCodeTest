@@ -24,9 +24,39 @@ package org.example.leetcode.pagenine;
 //
 //        解释: 数组不能分割成两个元素和相等的子集.
 
+import java.util.Arrays;
+
 public class PartitionEqualSubsetSum416 {
     public boolean canPartition(int[] nums) {
 
-        return true;
+        int sum = Arrays.stream(nums).sum();
+
+        if (sum % 2 != 0)
+            return false;
+        int length = nums.length;
+        int capacity = sum / 2;
+
+        int[][] f = new int[length + 1][capacity + 1];
+
+        for (int i = 0; i <= length; i++) {
+            f[i][0] = 0;
+        }
+
+        for (int i = 0; i <= capacity; i++) {
+            f[0][i] = 0;
+        }
+
+        for (int i = 1; i <= length; i++) {
+            for (int j = 1; j <= capacity; j++) {
+                if (j < nums[i - 1]) {
+                    f[i][j] = f[i - 1][j];
+                }
+                else {
+                    f[i][j] = Math.max(f[i - 1][j - nums[i - 1]] + nums[i - 1], f[i - 1][j]);
+                }
+            }
+        }
+
+        return f[length][capacity] == capacity;
     }
 }

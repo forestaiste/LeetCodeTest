@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.leetcode.pagenine.NonOverlappingIntervals435;
+import org.example.leetcode.pagenine.PartitionEqualSubsetSum416;
 import org.example.leetcode.pagenine.QueueReconstructionByHeight406;
 import org.junit.Test;
 
@@ -30,5 +31,13 @@ public class PageNineTest {
         NonOverlappingIntervals435 nonOverlappingIntervals = new NonOverlappingIntervals435();
         int[][] intervals = { {1,2}, {2,3}, {3,4}, {1,3} };
         System.out.println(nonOverlappingIntervals.eraseOverlapIntervals(intervals));
+    }
+
+    @Test
+    public void partitionEqualSubsetSum416Test() {
+        PartitionEqualSubsetSum416 partitionEqualSubsetSum = new PartitionEqualSubsetSum416();
+//        int[] nums = {1, 5, 11, 5};
+        int[] nums = {1, 2, 3, 4, 5, 6, 7};
+        System.out.println(partitionEqualSubsetSum.canPartition(nums));
     }
 }
