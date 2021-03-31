@@ -70,4 +70,11 @@ public class PageTenTest {
         points = new int[][]{{-2147483646,-2147483645}, {2147483646, 2147483647}};
         System.out.println(minimumNumberOfArrowsToBurstBalloons.findMinArrowShots(points));
     }
+
+    @Test
+    public void targetSum494Test() {
+        TargetSum494 targetSum = new TargetSum494();
+        int[] nums = {1, 1, 1, 1, 1};
+        System.out.println(targetSum.findTargetSumWays(nums, 3));
+    }
 }
