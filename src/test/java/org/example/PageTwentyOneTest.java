@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.leetcode.pagefour.EvaluateReversePolishNotation150;
+import org.example.leetcode.pagetwentyone.LastStoneWeightII1049;
 import org.example.leetcode.pagetwentyone.MaximizeSumOfArrayAfterKNegations1005;
 import org.example.leetcode.pagetwentyone.RemoveAllAdjacentDuplicatesInString1047;
 import org.junit.Test;
@@ -41,5 +42,13 @@ public class PageTwentyOneTest {
         A = new Integer[]{4,2,3};
         K = 3;
         System.out.println(maximizeSumOfArrayAfterKNegations.largestSumAfterKNegations(A, K));
+    }
+
+    @Test
+    public void lastStoneWeightII1049Test() {
+        LastStoneWeightII1049 lastStoneWeightII = new LastStoneWeightII1049();
+        int[] stones = {2,7,4,1,8,1};
+        System.out.println(lastStoneWeightII.lastStoneWeightII(stones));
+        System.out.println(lastStoneWeightII.lastStoneWeightII1(stones));
     }
 }

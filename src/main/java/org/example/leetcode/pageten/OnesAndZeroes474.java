@@ -39,11 +39,11 @@ public class OnesAndZeroes474 {
             f[0][0][i] = 0;
         }
 
-        for (int i = 1; i < length + 1; i++) {
+        for (int i = 1; i <= length; i++) {
             int zeros = strs[i - 1].replace("1", "").length();
             int ones = strs[i - 1].replace("0", "").length();
-            for (int j = 1; j < m + 1; j++) {
-                for (int k = 1; k < n + 1; k++) {
+            for (int j = 0; j <= m; j++) {
+                for (int k = 0; k <= n; k++) {
                     if (j < zeros || k < ones) {
                         f[i][j][k] = f[i - 1][j][k];
                     }

@@ -22,9 +22,54 @@ package org.example.leetcode.pagetwentyone;
 //        组合 1 和 1，得到 0，所以数组转化为 [1]，这就是最优值。
 
 
+import java.util.Arrays;
+
 public class LastStoneWeightII1049 {
     public int lastStoneWeightII(int[] stones) {
+        int length = stones.length;
 
-        return 0;
+        int total = Arrays.stream(stones).sum();
+        int weight = total / 2;
+
+        int[][] f = new int[length + 1][weight + 1];
+
+        for (int i = 0; i < length + 1; i++) {
+            f[i][0] = 0;
+        }
+
+        for (int i = 0; i < weight + 1; i++) {
+            f[0][i] = 0;
+        }
+
+        for (int i = 1; i < length + 1; i++) {
+            for (int j = 1; j < weight + 1; j++) {
+                if (j < stones[i - 1]) {
+                    f[i][j] = f[i - 1][j];
+                }
+                else {
+                    f[i][j] = Math.max(f[i - 1][j], f[i - 1][j - stones[i - 1]] + stones[i - 1]);
+                }
+            }
+        }
+
+        return total - f[length][weight] - f[length][weight];
+    }
+
+    public int lastStoneWeightII1(int[] stones) {
+        int length = stones.length;
+
+        int total = Arrays.stream(stones).sum();
+        int weight = total / 2;
+
+        int[] f = new int[weight + 1];
+
+
+        for (int i = 1; i < length + 1; i++) {
+            for (int j = weight; j >= stones[i - 1]; j--) {
+                f[j] = Math.max(f[j], f[j - stones[i - 1]] + stones[i - 1]);
+            }
+        }
+
+        return total - f[weight] - f[weight];
     }
 }

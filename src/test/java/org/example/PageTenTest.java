@@ -84,11 +84,11 @@ public class PageTenTest {
     public void onesaAndZeroes474Test() {
         OnesAndZeroes474 onesaAndZeroes = new OnesAndZeroes474();
         String[] strs = {"10", "0001", "111001", "1", "0"};
+
+        System.out.println(onesaAndZeroes.findMaxForm(strs, 5, 3));
+
         strs = new String[] {"10", "0", "1"};
+
         System.out.println(onesaAndZeroes.findMaxForm(strs, 1, 1));
-
-
-
-        System.out.println(onesaAndZeroes.findMaxForm1(strs, 1, 1));
     }
 }
