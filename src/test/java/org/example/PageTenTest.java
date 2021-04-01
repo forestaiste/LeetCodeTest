@@ -76,5 +76,19 @@ public class PageTenTest {
         TargetSum494 targetSum = new TargetSum494();
         int[] nums = {1, 1, 1, 1, 1};
         System.out.println(targetSum.findTargetSumWays(nums, 3));
+
+        System.out.println(targetSum.findTargetSumWays1(nums, 3));
+    }
+
+    @Test
+    public void onesaAndZeroes474Test() {
+        OnesAndZeroes474 onesaAndZeroes = new OnesAndZeroes474();
+        String[] strs = {"10", "0001", "111001", "1", "0"};
+        strs = new String[] {"10", "0", "1"};
+        System.out.println(onesaAndZeroes.findMaxForm(strs, 1, 1));
+
+
+
+        System.out.println(onesaAndZeroes.findMaxForm1(strs, 1, 1));
     }
 }
