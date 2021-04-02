@@ -122,4 +122,14 @@ public class PageSevenTest {
 
         System.out.println(integerBreak.integerBreak(10));
     }
+
+    @Test
+    public void coinChange322Test() {
+        CoinChange322 coinChange = new CoinChange322();
+        int[] coins = {1, 2, 5};
+        System.out.println(coinChange.coinChange(coins, 11));
+
+        coins = new int[]{2};
+        System.out.println(coinChange.coinChange(coins, 3));
+    }
 }
