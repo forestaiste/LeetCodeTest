@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.leetcode.pageeight.CombinationSumIV377;
 import org.example.leetcode.pageeight.RansomNote383;
 import org.example.leetcode.pageeight.WiggleSubsequence376;
 import org.junit.Test;
@@ -20,5 +21,13 @@ public class PageEightTest {
 //        int[] nums = {1,2,3,4,5,6,7,8,9};
         int[] nums = {1,17,5,10,13,15,10,5,16,8};
         System.out.println(wiggleSubsequence.wiggleMaxLength(nums));
+    }
+
+    @Test
+    public void combinationSumIV377Test() {
+        CombinationSumIV377 combinationSumIV = new CombinationSumIV377();
+
+        int[] nums = {1, 2, 3};
+        System.out.println(combinationSumIV.combinationSum4(nums, 4));
     }
 }

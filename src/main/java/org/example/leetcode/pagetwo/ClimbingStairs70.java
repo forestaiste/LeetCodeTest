@@ -38,4 +38,20 @@ public class ClimbingStairs70 {
 
         return f[n - 1];
     }
+
+    public int climbStairs1(int n) {
+        int[] f = new int[n + 1];
+        int[] steps = {1, 2};
+        f[0] = 1;
+
+        for (int j = 0; j <= n; j++) {
+            for (int i = 0; i < 2; i++) {
+                if (j >= steps[i]) {
+                    f[j] = f[j] + f[j - steps[i]];
+                }
+            }
+        }
+
+        return f[n];
+    }
 }

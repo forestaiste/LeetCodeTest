@@ -304,7 +304,9 @@ public class PageTwoTest {
     @Test
     public void climbingStairs70Test() {
         ClimbingStairs70 climbingStairs = new ClimbingStairs70();
-        System.out.println(climbingStairs.climbStairs(2));
+        System.out.println(climbingStairs.climbStairs(5));
+
+        System.out.println(climbingStairs.climbStairs1(5));
     }
 
     @Test
