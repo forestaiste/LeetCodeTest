@@ -36,11 +36,11 @@ public class PageThreeTest {
     public void bestTimeToBuyAndSellStockII122Test() {
         BestTimeToBuyAndSellStockII122 bestTimeToBuyAndSellStockII = new BestTimeToBuyAndSellStockII122();
         int[] prices = new int[]{7,1,5,3,6,4};
-//        System.out.println(bestTimeToBuyAndSellStockII.maxProfit(prices));
-//        prices = new int[]{1, 2, 3, 4, 5};
-//        System.out.println(bestTimeToBuyAndSellStockII.maxProfit(prices));
-//        prices = new int[]{7, 6, 4, 3, 1};
-//        System.out.println(bestTimeToBuyAndSellStockII.maxProfit(prices));
+        System.out.println(bestTimeToBuyAndSellStockII.maxProfit(prices));
+        prices = new int[]{1, 2, 3, 4, 5};
+        System.out.println(bestTimeToBuyAndSellStockII.maxProfit(prices));
+        prices = new int[]{7, 6, 4, 3, 1};
+        System.out.println(bestTimeToBuyAndSellStockII.maxProfit(prices));
         prices = new int[]{2, 1, 2, 0, 1};
         System.out.println(bestTimeToBuyAndSellStockII.maxProfit(prices));
     }
@@ -66,5 +66,19 @@ public class PageThreeTest {
         Candy135 candy = new Candy135();
         int[] ratings = {2, 1, 1, 0, 2, 0, 1, 2};
         System.out.println(candy.candy(ratings));
+    }
+
+    @Test
+    public void wordBreak139Test() {
+        WordBreak139 wordBreak = new WordBreak139();
+        List<String> wordDict = Arrays.asList("apple", "pen");
+        System.out.println(wordBreak.wordBreak("applepenapple", wordDict));
+
+        wordDict = Arrays.asList("cats", "dog", "sand", "and", "cat");
+        System.out.println(wordBreak.wordBreak("catsandog", wordDict));
+
+        wordDict = Arrays.asList("leet", "code");
+        System.out.println(wordBreak.wordBreak("leetcode", wordDict));
+
     }
 }
