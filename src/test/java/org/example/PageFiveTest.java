@@ -105,6 +105,20 @@ public class PageFiveTest {
         for (List<Integer> result : results) {
             System.out.println(Arrays.toString(result.toArray()));
         }
+    }
+
+    @Test
+    public void houseRobberII213Test() {
+        HouseRobberII213 houseRobberII = new HouseRobberII213();
+
+        int[] nums = {2, 7, 9, 3, 1, 5, 7, 8, 9};
+        System.out.println(houseRobberII.rob(nums));
+
+        nums = new int[]{1, 2};
+        System.out.println(houseRobberII.rob(nums));
+
+        nums = new int[]{2, 1, 1, 2};
+        System.out.println(houseRobberII.rob(nums));
 
     }
 }
