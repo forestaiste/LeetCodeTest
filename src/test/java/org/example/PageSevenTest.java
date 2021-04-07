@@ -1,6 +1,8 @@
 package org.example;
 
+import com.sun.source.tree.Tree;
 import org.example.leetcode.pageseven.*;
+import org.example.models.TreeNode;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -131,5 +133,19 @@ public class PageSevenTest {
 
         coins = new int[]{2};
         System.out.println(coinChange.coinChange(coins, 3));
+    }
+
+    @Test
+    public void houseRobberIII337Test() {
+        HouseRobberIII337 houseRobberIII = new HouseRobberIII337();
+        TreeNode leftLeaf = new TreeNode(1);
+        TreeNode rightLeaf = new TreeNode(3);
+        TreeNode left = new TreeNode(4, leftLeaf, rightLeaf);
+
+        TreeNode rightLeaf2 = new TreeNode(1);
+        TreeNode right = new TreeNode(5, null, rightLeaf2);
+
+        TreeNode root = new TreeNode(3, left, right);
+        System.out.println(houseRobberIII.rob(root));
     }
 }
