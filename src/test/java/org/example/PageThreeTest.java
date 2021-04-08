@@ -36,13 +36,13 @@ public class PageThreeTest {
     public void bestTimeToBuyAndSellStockII122Test() {
         BestTimeToBuyAndSellStockII122 bestTimeToBuyAndSellStockII = new BestTimeToBuyAndSellStockII122();
         int[] prices = new int[]{7,1,5,3,6,4};
-        System.out.println(bestTimeToBuyAndSellStockII.maxProfit(prices));
+        System.out.println(bestTimeToBuyAndSellStockII.maxProfit2(prices));
         prices = new int[]{1, 2, 3, 4, 5};
-        System.out.println(bestTimeToBuyAndSellStockII.maxProfit(prices));
+        System.out.println(bestTimeToBuyAndSellStockII.maxProfit1(prices));
         prices = new int[]{7, 6, 4, 3, 1};
-        System.out.println(bestTimeToBuyAndSellStockII.maxProfit(prices));
+        System.out.println(bestTimeToBuyAndSellStockII.maxProfit1(prices));
         prices = new int[]{2, 1, 2, 0, 1};
-        System.out.println(bestTimeToBuyAndSellStockII.maxProfit(prices));
+        System.out.println(bestTimeToBuyAndSellStockII.maxProfit1(prices));
     }
 
     @Test
@@ -79,6 +79,24 @@ public class PageThreeTest {
 
         wordDict = Arrays.asList("leet", "code");
         System.out.println(wordBreak.wordBreak("leetcode", wordDict));
+    }
 
+    @Test
+    public void bestTimeToBuyAndSellStock121Test() {
+        BestTimeToBuyAndSellStock121 bestTimeToBuyAndSellStock = new BestTimeToBuyAndSellStock121();
+        int[] prices = {2, 1, 2, 0, 1};
+        System.out.println(bestTimeToBuyAndSellStock.maxProfit3(prices));
+
+        prices = new int[]{7, 1, 5, 3, 6, 4};
+        System.out.println(bestTimeToBuyAndSellStock.maxProfit3(prices));
+
+        prices = new int[]{7, 6, 4, 3, 1};
+        System.out.println(bestTimeToBuyAndSellStock.maxProfit3(prices));
+    }
+
+    @Test
+    public void bestTimeToBuyAndSellStockIII123Test() {
+        BestTimeToBuyAndSellStockIII123 bestTimeToBuyAndSellStockIII = new BestTimeToBuyAndSellStockIII123();
+        int
     }
 }

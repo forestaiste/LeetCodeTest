@@ -56,4 +56,34 @@ public class BestTimeToBuyAndSellStockII122 {
 
         return max;
     }
+
+    public int maxProfit1(int[] prices) {
+        int length = prices.length;
+
+        int[] f = new int[length];
+
+        for (int i = 1; i < length; i++) {
+            f[i] = f[i - 1];
+            if (prices[i] > prices[i - 1]) {
+                f[i] += prices[i] - prices[i - 1];
+            }
+        }
+
+        return f[length - 1];
+    }
+
+    public int maxProfit2(int[] prices) {
+        int length = prices.length;
+
+        int[][] f = new int[length][2];
+        f[0][0] = -prices[0];
+        f[0][1] = 0;
+
+        for (int i = 1; i < length; i++) {
+            f[i][0] = Math.max(f[i - 1][0], f[i - 1][1] - prices[i]);
+            f[i][1] = Math.max(f[i - 1][1], f[i - 1][0] + prices[i]);
+        }
+
+        return f[length - 1][1];
+    }
 }
