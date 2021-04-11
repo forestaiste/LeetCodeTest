@@ -84,13 +84,13 @@ public class PageFifteenTest {
     public void bestTimeToBuyAndSellStockWithTransactionFee714Test() {
         BestTimeToBuyAndSellStockWithTransactionFee714 bestTimeToBuyAndSellStockWithTransactionFee = new BestTimeToBuyAndSellStockWithTransactionFee714();
         int[] prices = {2,2,1,1,5,5,3,1,5,4};
-        System.out.println(bestTimeToBuyAndSellStockWithTransactionFee.maxProfit(prices, 2));
+        System.out.println(bestTimeToBuyAndSellStockWithTransactionFee.maxProfit2(prices, 2));
 
         prices = new int[]{4,5,2,4,3,3,1,2,5,4};
-        System.out.println(bestTimeToBuyAndSellStockWithTransactionFee.maxProfit(prices, 1));
+        System.out.println(bestTimeToBuyAndSellStockWithTransactionFee.maxProfit2(prices, 1));
 
         prices = new int[]{1, 3, 2, 8, 4, 9};
-        System.out.println(bestTimeToBuyAndSellStockWithTransactionFee.maxProfit(prices, 2));
+        System.out.println(bestTimeToBuyAndSellStockWithTransactionFee.maxProfit2(prices, 2));
 
     }
 

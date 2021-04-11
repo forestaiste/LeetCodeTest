@@ -97,7 +97,7 @@ public class PageThreeTest {
     @Test
     public void bestTimeToBuyAndSellStockIII123Test() {
         BestTimeToBuyAndSellStockIII123 bestTimeToBuyAndSellStockIII = new BestTimeToBuyAndSellStockIII123();
-        int[] prices = {3, 3, 5, 0, 0, 3, 1, 4};
+        int[] prices = {3, 3, 5, 1, 0, 3, 4, 5, 2, 8};
 
         System.out.println(bestTimeToBuyAndSellStockIII.maxProfit(prices));
     }

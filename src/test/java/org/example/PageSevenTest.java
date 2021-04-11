@@ -148,4 +148,12 @@ public class PageSevenTest {
         TreeNode root = new TreeNode(3, left, right);
         System.out.println(houseRobberIII.rob(root));
     }
+
+    @Test
+    public void bestTimeToBuyAndSellStockWithCooldown309() {
+        BestTimeToBuyAndSellStockWithCooldown309 bestTimeToBuyAndSellStockWithCooldown = new BestTimeToBuyAndSellStockWithCooldown309();
+        int[] prices = {3, 3, 5, 1, 0, 3, 4, 5, 2, 8, 1};
+
+        System.out.println(bestTimeToBuyAndSellStockWithCooldown.maxProfit(prices));
+    }
 }
