@@ -37,14 +37,19 @@ public class LongestIncreasingSubsequence300 {
             return length;
 
         int[] f = new int[length];
-
         Arrays.fill(f, 1);
+
+        int result = 0;
 
         for (int i = 1; i < length; i++) {
             for (int j = 0; j < i; j++) {
                 if (nums[i] > nums[j]) {
                     f[i] = Math.max(f[i], f[j] + 1);
                 }
+            }
+
+            if (f[i] > result) {
+                result = f[i];
             }
         }
 

@@ -15,7 +15,7 @@ public class PageSixTest {
     @Test
     public void longestIncreasingSubsequence300Test() {
         LongestIncreasingSubsequence300 longestIncreasingSubsequence = new LongestIncreasingSubsequence300();
-        int[] nums = {4, 10, 4, 3, 8, 9};
+        int[] nums = {1,3,6,7,9,4,10,5,6};
         System.out.println(longestIncreasingSubsequence.lengthOfLIS(nums));
 
         nums = new int[]{7,7,7,7,7,7,7};
