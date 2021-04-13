@@ -1,9 +1,6 @@
 package org.example;
 
-import org.example.leetcode.pagefifteen.BestTimeToBuyAndSellStockWithTransactionFee714;
-import org.example.leetcode.pagefifteen.DesignLinkedList707;
-import org.example.leetcode.pagefifteen.MinCostClimbingStairs746;
-import org.example.leetcode.pagefifteen.MonotoneIncreasingDigits738;
+import org.example.leetcode.pagefifteen.*;
 import org.example.models.ListNode;
 import org.junit.Test;
 
@@ -99,5 +96,14 @@ public class PageFifteenTest {
         MinCostClimbingStairs746 minCostClimbingStairs = new MinCostClimbingStairs746();
         int[] cost = {1, 100, 1, 1, 1, 100, 1, 1, 100, 1};
         System.out.println(minCostClimbingStairs.minCostClimbingStairs(cost));
+    }
+
+    @Test
+    public void maximumLengthOfRepeatedSubarray718Test() {
+        MaximumLengthOfRepeatedSubarray718 maximumLengthOfRepeatedSubarray = new MaximumLengthOfRepeatedSubarray718();
+        int[] A = {1, 2, 3, 2, 1};
+        int[] B = {3, 2, 1, 4, 7};
+
+        System.out.println(maximumLengthOfRepeatedSubarray.findLength(A, B));
     }
 }
