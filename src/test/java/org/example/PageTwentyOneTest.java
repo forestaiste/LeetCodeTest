@@ -4,6 +4,7 @@ import org.example.leetcode.pagefour.EvaluateReversePolishNotation150;
 import org.example.leetcode.pagetwentyone.LastStoneWeightII1049;
 import org.example.leetcode.pagetwentyone.MaximizeSumOfArrayAfterKNegations1005;
 import org.example.leetcode.pagetwentyone.RemoveAllAdjacentDuplicatesInString1047;
+import org.example.leetcode.pagetwentyone.UncrossedLines1035;
 import org.junit.Test;
 
 public class PageTwentyOneTest {
@@ -50,5 +51,13 @@ public class PageTwentyOneTest {
         int[] stones = {2,7,4,1,8,1};
         System.out.println(lastStoneWeightII.lastStoneWeightII(stones));
         System.out.println(lastStoneWeightII.lastStoneWeightII1(stones));
+    }
+
+    @Test
+    public void uncrossedLines1035Test() {
+        UncrossedLines1035 uncrossedLines = new UncrossedLines1035();
+        int[] A = {2,5,1,2,5};
+        int[] B = {10,5,2,1,5,2};
+        System.out.println(uncrossedLines.maxUncrossedLines(A, B));
     }
 }
