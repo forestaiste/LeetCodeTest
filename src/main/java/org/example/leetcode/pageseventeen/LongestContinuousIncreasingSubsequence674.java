@@ -21,6 +21,24 @@ package org.example.leetcode.pageseventeen;
 
 public class LongestContinuousIncreasingSubsequence674 {
     public int findLengthOfLCIS(int[] nums) {
-        return 0;
+        int length = nums.length;
+
+        if (length <= 1) return length;
+
+        int max = 0;
+
+        int count = 1;
+        for (int i = 1; i < length; i++) {
+            if (nums[i] > nums[i - 1]) {
+                count++;
+            }
+            else {
+                count = 1;
+            }
+
+            max = Math.max(count, max);
+        }
+
+        return max;
     }
 }
