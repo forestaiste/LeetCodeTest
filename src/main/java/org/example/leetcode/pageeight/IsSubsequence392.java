@@ -26,6 +26,34 @@ package org.example.leetcode.pageeight;
 
 public class IsSubsequence392 {
     public boolean isSubsequence(String s, String t) {
-        return true;
+        int m = s.length();
+        int n = t.length();
+
+        int[][] f = new int[m + 1][n + 1];
+
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= n; j++) {
+                if (s.charAt(i - 1) == t.charAt(j - 1)) {
+                    f[i][j] = f[i - 1][j - 1] + 1;
+                }
+                else {
+                    f[i][j] = f[i][j - 1];
+                }
+            }
+        }
+
+        return f[m][n] == m;
+    }
+
+    public boolean isSubsequence2(String s, String t) {
+        int n = s.length(), m = t.length();
+        int i = 0, j = 0;
+        while (i < n && j < m) {
+            if (s.charAt(i) == t.charAt(j)) {
+                i++;
+            }
+            j++;
+        }
+        return i == n;
     }
 }

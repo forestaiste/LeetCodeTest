@@ -101,4 +101,10 @@ public class PageThreeTest {
 
         System.out.println(bestTimeToBuyAndSellStockIII.maxProfit(prices));
     }
+
+    @Test
+    public void distinctSubsequences115Test() {
+        DistinctSubsequences115 distinctSubsequences = new DistinctSubsequences115();
+        System.out.println(distinctSubsequences.numDistinct("babgbag", "bag"));
+    }
 }

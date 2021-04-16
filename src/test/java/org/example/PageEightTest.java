@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.leetcode.pageeight.CombinationSumIV377;
+import org.example.leetcode.pageeight.IsSubsequence392;
 import org.example.leetcode.pageeight.RansomNote383;
 import org.example.leetcode.pageeight.WiggleSubsequence376;
 import org.junit.Test;
@@ -29,5 +30,13 @@ public class PageEightTest {
 
         int[] nums = {1, 2, 3};
         System.out.println(combinationSumIV.combinationSum4(nums, 4));
+    }
+
+    @Test
+    public void isSubsequence392Test() {
+        IsSubsequence392 isSubsequence = new IsSubsequence392();
+
+        System.out.println(isSubsequence.isSubsequence("abc", "ahbgdc"));
+        System.out.println(isSubsequence.isSubsequence("axc", "ahbgdc"));
     }
 }
