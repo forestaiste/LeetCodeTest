@@ -314,4 +314,10 @@ public class PageTwoTest {
         UniqueBinarySearchTrees96 uniqueBinarySearchTrees = new UniqueBinarySearchTrees96();
         System.out.println(uniqueBinarySearchTrees.numTrees(5));
     }
+
+    @Test
+    public void editDistance72Test() {
+        EditDistance72 editDistance = new EditDistance72();
+        System.out.println(editDistance.minDistance("intention", "execution"));
+    }
 }

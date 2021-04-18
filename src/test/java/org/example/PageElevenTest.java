@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.leetcode.pageeleven.CoinChangeII518;
 import org.example.leetcode.pageeleven.FibonacciNumber509;
+import org.example.leetcode.pageeleven.LongestPalindromicSubsequence516;
 import org.example.leetcode.pageeleven.ReverseStringII541;
 import org.junit.Test;
 
@@ -29,5 +30,12 @@ public class PageElevenTest {
 
         System.out.println(coinChangeII.change2(5, coins));
         System.out.println(coinChangeII.change2(3, new int[]{2}));
+    }
+
+    @Test
+    public void longestPalindromicSubsequence516Test() {
+        LongestPalindromicSubsequence516 longestPalindromicSubsequence = new LongestPalindromicSubsequence516();
+        System.out.println(longestPalindromicSubsequence.longestPalindromeSubseq("bbbab"));
+        System.out.println(longestPalindromicSubsequence.longestPalindromeSubseq("cbbd"));
     }
 }

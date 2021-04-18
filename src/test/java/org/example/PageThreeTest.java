@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.leetcode.pagethree.*;
 import org.example.models.ListNode;
+import org.example.models.TreeNode;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -88,7 +89,7 @@ public class PageThreeTest {
         System.out.println(bestTimeToBuyAndSellStock.maxProfit3(prices));
 
         prices = new int[]{7, 1, 5, 3, 6, 4};
-        System.out.println(bestTimeToBuyAndSellStock.maxProfit3(prices));
+        System.out.println(bestTimeToBuyAndSellStock.maxProfit2(prices));
 
         prices = new int[]{7, 6, 4, 3, 1};
         System.out.println(bestTimeToBuyAndSellStock.maxProfit3(prices));
@@ -106,5 +107,41 @@ public class PageThreeTest {
     public void distinctSubsequences115Test() {
         DistinctSubsequences115 distinctSubsequences = new DistinctSubsequences115();
         System.out.println(distinctSubsequences.numDistinct("babgbag", "bag"));
+    }
+
+    @Test
+    public void binaryTreeLevelOrderTraversal102Test() {
+        TreeNode leftLeaf = new TreeNode(15);
+        TreeNode rightLeaf = new TreeNode(7);
+        TreeNode right = new TreeNode(20, leftLeaf, rightLeaf);
+
+        TreeNode left = new TreeNode(9);
+
+        TreeNode root = new TreeNode(3, left, right);
+
+        BinaryTreeLevelOrderTraversal102 binaryTreeLevelOrderTraversal = new BinaryTreeLevelOrderTraversal102();
+        List<List<Integer>> results = binaryTreeLevelOrderTraversal.levelOrder(root);
+
+        for (List<Integer> result : results) {
+            System.out.println(Arrays.toString(result.toArray()));
+        }
+    }
+
+    @Test
+    public void binaryTreeLevelOrderTraversalII107Test() {
+        TreeNode leftLeaf = new TreeNode(15);
+        TreeNode rightLeaf = new TreeNode(7);
+        TreeNode right = new TreeNode(20, leftLeaf, rightLeaf);
+
+        TreeNode left = new TreeNode(9);
+
+        TreeNode root = new TreeNode(3, left, right);
+
+        BinaryTreeLevelOrderTraversalII107 binaryTreeLevelOrderTraversalII = new BinaryTreeLevelOrderTraversalII107();
+        List<List<Integer>> results = binaryTreeLevelOrderTraversalII.levelOrderBottom(root);
+
+        for (List<Integer> result : results) {
+            System.out.println(Arrays.toString(result.toArray()));
+        }
     }
 }
