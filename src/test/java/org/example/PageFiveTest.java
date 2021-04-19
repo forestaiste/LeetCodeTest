@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.leetcode.pagefive.*;
 import org.example.models.ListNode;
+import org.example.models.TreeNode;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -119,6 +120,22 @@ public class PageFiveTest {
 
         nums = new int[]{2, 1, 1, 2};
         System.out.println(houseRobberII.rob(nums));
+    }
+    
+    @Test
+    public void invertBinaryTree226Test() {
+        TreeNode leftLeaf = new TreeNode(6);
+        TreeNode rightLeaf = new TreeNode(9);
+        TreeNode right = new TreeNode(7, leftLeaf, rightLeaf);
 
+        TreeNode leftLeftLeaf = new TreeNode(1);
+        TreeNode leftRightLeaf = new TreeNode(3);
+        TreeNode left = new TreeNode(2, leftLeftLeaf, leftRightLeaf);
+
+        TreeNode root = new TreeNode(4, left, right);
+
+        InvertBinaryTree226 invertBinaryTree = new InvertBinaryTree226();
+
+        invertBinaryTree.invertTree(root);
     }
 }
