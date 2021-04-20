@@ -180,4 +180,19 @@ public class PageThreeTest {
         System.out.println(maximumDepthOfBinaryTree.maxDepth1(root));
     }
 
+    @Test
+    public void minimumDepthOfBinaryTree111Test() {
+        TreeNode leftLeaf = new TreeNode(15);
+        TreeNode rightLeaf = new TreeNode(7);
+        TreeNode right = new TreeNode(20, leftLeaf, rightLeaf);
+
+        TreeNode left = new TreeNode(9);
+
+        TreeNode root = new TreeNode(3, null, right);
+
+        MinimumDepthOfBinaryTree111 minimumDepthOfBinaryTree = new MinimumDepthOfBinaryTree111();
+        System.out.println(minimumDepthOfBinaryTree.minDepth(root));
+        System.out.println(minimumDepthOfBinaryTree.minDepth1(root));
+    }
+
 }
