@@ -144,4 +144,40 @@ public class PageThreeTest {
             System.out.println(Arrays.toString(result.toArray()));
         }
     }
+
+    @Test
+    public void symmetricTree101Test() {
+        TreeNode rightLeftLeaf = new TreeNode(15);
+        TreeNode rightRightLeaf = new TreeNode(7);
+        TreeNode right = new TreeNode(5, rightLeftLeaf, rightRightLeaf);
+//        TreeNode right = new TreeNode(4);
+
+        TreeNode leftLeftLeaf = new TreeNode(7);
+        TreeNode leftRightLeaf = new TreeNode(15);
+        TreeNode left = new TreeNode(5, leftLeftLeaf, leftRightLeaf);
+//        TreeNode left = new TreeNode(5);
+
+        TreeNode root = new TreeNode(3, left, right);
+
+        SymmetricTree101 symmetricTree = new SymmetricTree101();
+        System.out.println(symmetricTree.isSymmetric(root));
+
+        System.out.println(symmetricTree.isSymmetric1(root));
+    }
+
+    @Test
+    public void maximumDepthOfBinaryTree104Test() {
+        TreeNode leftLeaf = new TreeNode(15);
+        TreeNode rightLeaf = new TreeNode(7);
+        TreeNode right = new TreeNode(20, leftLeaf, rightLeaf);
+
+        TreeNode left = new TreeNode(9);
+
+        TreeNode root = new TreeNode(3, left, right);
+
+        MaximumDepthOfBinaryTree104 maximumDepthOfBinaryTree = new MaximumDepthOfBinaryTree104();
+        System.out.println(maximumDepthOfBinaryTree.maxDepth(root));
+        System.out.println(maximumDepthOfBinaryTree.maxDepth1(root));
+    }
+
 }
