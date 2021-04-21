@@ -48,5 +48,11 @@ public class PageSixTest {
         BinaryTreePaths257 binaryTreePaths = new BinaryTreePaths257();
         List<String> result = binaryTreePaths.binaryTreePaths(root);
         result.forEach(System.out::println);
+
+        result = binaryTreePaths.binaryTreePaths1(root);
+        result.forEach(System.out::println);
+
+        result = binaryTreePaths.binaryTreePaths2(root);
+        result.forEach(System.out::println);
     }
 }

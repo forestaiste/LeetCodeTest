@@ -22,7 +22,9 @@ package org.example.leetcode.pagesix;
 import org.example.models.TreeNode;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 public class BinaryTreePaths257 {
     List<String> result;
@@ -54,5 +56,66 @@ public class BinaryTreePaths257 {
             result.add(string.substring(0, string.length() - 2).toString());
             return;
         }
+    }
+
+    public List<String> binaryTreePaths1(TreeNode root) {
+        result = new ArrayList<>();
+        List<String> paths = new ArrayList<>();
+
+        if (root == null)
+            return result;
+        paths.add(String.valueOf(root.val));
+        backTrack(root, paths);
+        return result;
+    }
+
+    private void backTrack(TreeNode node, List<String> paths) {
+        if (node.left != null) {
+            paths.add(String.valueOf(node.left.val));
+            backTrack(node.left, paths);
+            paths.remove(paths.size() - 1);
+        }
+
+        if (node.right != null) {
+            paths.add(String.valueOf(node.right.val));
+            backTrack(node.right, paths);
+            paths.remove(paths.size() - 1);
+        }
+
+        if (node.left == null && node.right == null) {
+            result.add(String.join("->", paths));
+            return;
+        }
+    }
+
+    public List<String> binaryTreePaths2(TreeNode root) {
+        result = new ArrayList<>();
+        List<String> paths = new ArrayList<>();
+
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        paths.add(String.valueOf(root.val));
+
+        while (!queue.isEmpty()) {
+            TreeNode node = queue.poll();
+
+            if (node.left == null && node.right == null) {
+                result.add(String.join("->", paths));
+            }
+
+            if (node.right != null) {
+                paths.add(String.valueOf(node.right.val));
+                queue.add(node.right);
+                paths.remove(paths.size() - 1);
+            }
+
+            if (node.left != null) {
+                paths.add(String.valueOf(node.left.val));
+                queue.add(node.left);
+                paths.remove(paths.size() - 1);
+            }
+        }
+
+        return result;
     }
 }
