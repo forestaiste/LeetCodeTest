@@ -138,4 +138,21 @@ public class PageFiveTest {
 
         invertBinaryTree.invertTree(root);
     }
+
+    @Test
+    public void CountCompleteTreeNodes222Test() {
+        TreeNode leftLeaf = new TreeNode(6);
+        TreeNode rightLeaf = new TreeNode(9);
+        TreeNode right = new TreeNode(7, leftLeaf, rightLeaf);
+
+        TreeNode leftLeftLeaf = new TreeNode(1);
+        TreeNode leftRightLeaf = new TreeNode(3);
+        TreeNode left = new TreeNode(2, leftLeftLeaf, leftRightLeaf);
+
+        TreeNode root = new TreeNode(4, left, right);
+
+        CountCompleteTreeNodes222 countCompleteTreeNodes = new CountCompleteTreeNodes222();
+        System.out.println(countCompleteTreeNodes.countNodes(root));
+        System.out.println(countCompleteTreeNodes.countNodes1(root));
+    }
 }

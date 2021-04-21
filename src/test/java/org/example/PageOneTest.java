@@ -139,7 +139,7 @@ public class PageOneTest {
 
     @Test
     public void SudokuSolver1Test() {
-        SudokuSolver1 sudokuSolver1 = new SudokuSolver1();
+        SudokuSolver37 sudokuSolver1 = new SudokuSolver37();
 
         char[][] board =
                 {

@@ -13,7 +13,7 @@ package org.example.leetcode.pageone;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SudokuSolver1 {
+public class SudokuSolver37 {
 
     private boolean[][] line = new boolean[9][9];
     private boolean[][] column = new boolean[9][9];

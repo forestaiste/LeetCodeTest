@@ -193,6 +193,24 @@ public class PageThreeTest {
         MinimumDepthOfBinaryTree111 minimumDepthOfBinaryTree = new MinimumDepthOfBinaryTree111();
         System.out.println(minimumDepthOfBinaryTree.minDepth(root));
         System.out.println(minimumDepthOfBinaryTree.minDepth1(root));
+        System.out.println(minimumDepthOfBinaryTree.minDepth2(root));
+    }
+
+    @Test
+    public void balancedBinaryTree110Test() {
+        TreeNode ten = new TreeNode(10);
+        TreeNode eight = new TreeNode(8, null, null);
+        TreeNode nine = new TreeNode(9);
+        TreeNode leftLeaf = new TreeNode(15);
+        TreeNode rightLeaf = new TreeNode(7, eight, nine);
+        TreeNode right = new TreeNode(20, leftLeaf, rightLeaf);
+
+        TreeNode left = new TreeNode(9);
+
+        TreeNode root = new TreeNode(3, null, right);
+
+        BalancedBinaryTree110 balancedBinaryTree = new BalancedBinaryTree110();
+        System.out.println(balancedBinaryTree.isBalanced(root));
     }
 
 }
