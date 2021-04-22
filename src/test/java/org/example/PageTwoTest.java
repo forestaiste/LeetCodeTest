@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.leetcode.pagetwo.*;
 import org.example.models.ListNode;
+import org.example.models.TreeNode;
 import org.junit.Test;
 
 import java.text.SimpleDateFormat;
@@ -319,5 +320,24 @@ public class PageTwoTest {
     public void editDistance72Test() {
         EditDistance72 editDistance = new EditDistance72();
         System.out.println(editDistance.minDistance("intention", "execution"));
+    }
+
+    @Test
+    public void sameTree100Test() {
+        TreeNode pRight = new TreeNode(20);
+
+        TreeNode pLeft = new TreeNode(9);
+
+        TreeNode p = new TreeNode(3, pLeft, pRight);
+
+        TreeNode qRight = new TreeNode(20);
+
+        TreeNode qLeft = new TreeNode(9);
+
+        TreeNode q = new TreeNode(3, qLeft, qRight);
+
+        SameTree100 sameTree = new SameTree100();
+
+        System.out.println(sameTree.isSameTree1(p, q));
     }
 }

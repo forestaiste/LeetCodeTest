@@ -212,5 +212,4 @@ public class PageThreeTest {
         BalancedBinaryTree110 balancedBinaryTree = new BalancedBinaryTree110();
         System.out.println(balancedBinaryTree.isBalanced(root));
     }
-
 }
