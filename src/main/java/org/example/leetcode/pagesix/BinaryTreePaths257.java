@@ -21,10 +21,7 @@ package org.example.leetcode.pagesix;
 
 import org.example.models.TreeNode;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 public class BinaryTreePaths257 {
     List<String> result;
@@ -53,8 +50,7 @@ public class BinaryTreePaths257 {
         }
 
         if (node.left == null && node.right == null) {
-            result.add(string.substring(0, string.length() - 2).toString());
-            return;
+            result.add(string.substring(0, string.length() - 2));
         }
     }
 
@@ -84,35 +80,31 @@ public class BinaryTreePaths257 {
 
         if (node.left == null && node.right == null) {
             result.add(String.join("->", paths));
-            return;
         }
     }
 
     public List<String> binaryTreePaths2(TreeNode root) {
         result = new ArrayList<>();
-        List<String> paths = new ArrayList<>();
-
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.add(root);
+        Stack<String> paths = new Stack<>();
+        Stack<TreeNode> stack = new Stack<>();
+        stack.add(root);
         paths.add(String.valueOf(root.val));
 
-        while (!queue.isEmpty()) {
-            TreeNode node = queue.poll();
-
+        while (!stack.isEmpty()) {
+            TreeNode node = stack.pop();
+            String path = paths.pop();
             if (node.left == null && node.right == null) {
-                result.add(String.join("->", paths));
+                result.add(String.join("->", path));
             }
 
             if (node.right != null) {
-                paths.add(String.valueOf(node.right.val));
-                queue.add(node.right);
-                paths.remove(paths.size() - 1);
+                stack.push(node.right);
+                paths.push(path + "->" + node.right.val);
             }
 
             if (node.left != null) {
-                paths.add(String.valueOf(node.left.val));
-                queue.add(node.left);
-                paths.remove(paths.size() - 1);
+                stack.push(node.left);
+                paths.push(path + "->" + node.left.val);
             }
         }
 
