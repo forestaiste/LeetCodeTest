@@ -212,4 +212,21 @@ public class PageThreeTest {
         BalancedBinaryTree110 balancedBinaryTree = new BalancedBinaryTree110();
         System.out.println(balancedBinaryTree.isBalanced(root));
     }
+
+    @Test
+    public void pathSum112Test() {
+        TreeNode ten = new TreeNode(10);
+        TreeNode eight = new TreeNode(8, ten, null);
+        TreeNode nine = new TreeNode(9);
+        TreeNode leftLeaf = new TreeNode(15);
+        TreeNode rightLeaf = new TreeNode(7, eight, nine);
+        TreeNode right = new TreeNode(20, leftLeaf, rightLeaf);
+
+        TreeNode left = new TreeNode(2);
+
+        TreeNode root = new TreeNode(1, left, null);
+
+        PathSum112 pathSum = new PathSum112();
+        System.out.println(pathSum.hasPathSum(root, 1));
+    }
 }

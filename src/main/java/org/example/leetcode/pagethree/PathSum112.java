@@ -24,8 +24,33 @@ package org.example.leetcode.pagethree;
 
 import org.example.models.TreeNode;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PathSum112 {
+    boolean found = false;
+
     public boolean hasPathSum(TreeNode root, int targetSum) {
-        return false;
+        if (root == null)
+            return false;
+
+        backTrack(root, targetSum);
+        return found;
+    }
+
+    private void backTrack(TreeNode node, int target) {
+        target -= node.val;
+
+        if (target == 0 && node.left == null && node.right == null) {
+            found = true;
+            return;
+        }
+
+        if (node.left != null)
+            backTrack(node.left, target);
+
+        if (node.right != null)
+            backTrack(node.right, target);
     }
 }
+
