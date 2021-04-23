@@ -22,12 +22,49 @@ package org.example.leetcode.pagethree;
 //        输入：root = [1,2], targetSum = 0
 //        输出：[]
 
+import com.sun.source.tree.Tree;
 import org.example.models.TreeNode;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PathSumII113 {
     public List<List<Integer>> pathSum(TreeNode root, int targetSum) {
-        return null;
+        List<List<Integer>> results = new ArrayList<>();
+
+        if (root == null)
+            return results;
+
+        List<Integer> paths = new ArrayList<>();
+
+        paths.add(root.val);
+        backTrack(root, results, paths, targetSum - root.val);
+
+        return results;
     }
+
+    public void backTrack(TreeNode node, List<List<Integer>> results, List<Integer> paths, int target) {
+        if (node.left == null && node.right == null) {
+            if (target == 0)
+                results.add(new ArrayList<>(paths));
+            return;
+        }
+
+        if (node.left != null) {
+            paths.add(node.left.val);
+            target -= node.left.val;
+            backTrack(node.left, results, paths, target);
+            target += node.left.val;
+            paths.remove(paths.size() - 1);
+        }
+
+        if (node.right != null) {
+            paths.add(node.right.val);
+            target -= node.right.val;
+            backTrack(node.right, results, paths, target);
+            target += node.right.val;
+            paths.remove(paths.size() - 1);
+        }
+    }
+
 }

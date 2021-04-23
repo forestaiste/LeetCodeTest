@@ -5,6 +5,7 @@ import org.example.models.ListNode;
 import org.example.models.TreeNode;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -228,5 +229,26 @@ public class PageThreeTest {
 
         PathSum112 pathSum = new PathSum112();
         System.out.println(pathSum.hasPathSum(root, 1));
+    }
+
+    @Test
+    public void pathSumII113Test() {
+        TreeNode ten = new TreeNode(10);
+        TreeNode eight = new TreeNode(8, ten, null);
+        TreeNode nine = new TreeNode(9);
+        TreeNode leftLeaf = new TreeNode(15);
+        TreeNode rightLeaf = new TreeNode(7, eight, nine);
+        TreeNode right = new TreeNode(20, leftLeaf, rightLeaf);
+
+        TreeNode left = new TreeNode(2);
+
+        TreeNode root = new TreeNode(1, left, right);
+
+        PathSumII113 pathSumII = new PathSumII113();
+        List<List<Integer>> results = pathSumII.pathSum(root, 46);
+
+        for (List<Integer> result : results) {
+            System.out.println(Arrays.toString(result.toArray()));
+        }
     }
 }
