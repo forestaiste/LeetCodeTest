@@ -1,9 +1,7 @@
 package org.example;
 
-import org.example.leetcode.pageeleven.CoinChangeII518;
-import org.example.leetcode.pageeleven.FibonacciNumber509;
-import org.example.leetcode.pageeleven.LongestPalindromicSubsequence516;
-import org.example.leetcode.pageeleven.ReverseStringII541;
+import org.example.leetcode.pageeleven.*;
+import org.example.models.TreeNode;
 import org.junit.Test;
 
 public class PageElevenTest {
@@ -37,5 +35,21 @@ public class PageElevenTest {
         LongestPalindromicSubsequence516 longestPalindromicSubsequence = new LongestPalindromicSubsequence516();
         System.out.println(longestPalindromicSubsequence.longestPalindromeSubseq("bbbab"));
         System.out.println(longestPalindromicSubsequence.longestPalindromeSubseq("cbbd"));
+    }
+
+    @Test
+    public void findBottomLeftTreeValue513Test() {
+        TreeNode rightLeft = new TreeNode(15);
+
+        TreeNode rightRight = new TreeNode(7);
+
+        TreeNode right = new TreeNode(20, rightLeft, rightRight);
+
+        TreeNode left = new TreeNode(9);
+
+        TreeNode root = new TreeNode(3, left, right);
+
+        FindBottomLeftTreeValue513 findBottomLeftTreeValue = new FindBottomLeftTreeValue513();
+        System.out.println(findBottomLeftTreeValue.findBottomLeftValue(root));
     }
 }

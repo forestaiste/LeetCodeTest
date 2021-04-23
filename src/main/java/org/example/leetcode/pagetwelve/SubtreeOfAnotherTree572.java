@@ -39,56 +39,15 @@ import org.example.models.TreeNode;
 
 public class SubtreeOfAnotherTree572 {
     public boolean isSubtree(TreeNode s, TreeNode t) {
-        if (s == null && t == null)
-            return true;
-
-        if (s == null)
-            return false;
-
-        if (t == null)
-            return true;
-
-        s = getStartNodeInS(s, t.val);
-
-        while (s != null) {
-            if (!isSameTree(s, t)) {
-                TreeNode left = getStartNodeInS(s.left, t.val);
-
-                if (left != null) {
-                    if (isSameTree(left, t)) {
-                        return true;
-                    }
-                    else {
-                        s = getStartNodeInS(s.right, t.val);
-                    }
-                }
-                else if (left == null) {
-                    s = getStartNodeInS(s.right, t.val);
-                }
-            }
-            else {
-                return true;
-            }
-        }
-
-        return false;
+        return dfs(s, t);
     }
 
-    private TreeNode getStartNodeInS(TreeNode s, int value) {
+    private boolean dfs(TreeNode s, TreeNode t) {
         if (s == null) {
-            return null;
+            return false;
         }
 
-        if (s.val == value)
-            return s;
-
-        TreeNode node;
-        node = getStartNodeInS(s.left, value);
-
-        if (node == null)
-            node = getStartNodeInS(s.right, value);
-
-        return node;
+        return isSameTree(s, t) || dfs(s.left, t) || dfs(s.right, t);
     }
 
     private boolean isSameTree(TreeNode left, TreeNode right) {

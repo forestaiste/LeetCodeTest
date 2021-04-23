@@ -1,10 +1,9 @@
 package org.example;
 
-import org.example.leetcode.pagenine.NaryTreeLevelOrderTraversal429;
-import org.example.leetcode.pagenine.NonOverlappingIntervals435;
-import org.example.leetcode.pagenine.PartitionEqualSubsetSum416;
-import org.example.leetcode.pagenine.QueueReconstructionByHeight406;
+import com.sun.source.tree.Tree;
+import org.example.leetcode.pagenine.*;
 import org.example.models.Node;
+import org.example.models.TreeNode;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -59,5 +58,21 @@ public class PageNineTest {
         for (List<Integer> result : results) {
             System.out.println(Arrays.toString(result.toArray()));
         }
+    }
+
+    @Test
+    public void sumOfLeftLeaves404Test() {
+        TreeNode rightLeft = new TreeNode(15);
+
+        TreeNode rightRight = new TreeNode(7);
+
+        TreeNode right = new TreeNode(20, rightLeft, rightRight);
+
+        TreeNode left = new TreeNode(9);
+
+        TreeNode root = new TreeNode(3, left, right);
+
+        SumOfLeftLeaves404 sumOfLeftLeaves = new SumOfLeftLeaves404();
+        System.out.println(sumOfLeftLeaves.sumOfLeftLeaves(root));
     }
 }
