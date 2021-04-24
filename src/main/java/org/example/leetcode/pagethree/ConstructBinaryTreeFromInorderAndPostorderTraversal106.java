@@ -21,7 +21,33 @@ package org.example.leetcode.pagethree;
 import org.example.models.TreeNode;
 
 public class ConstructBinaryTreeFromInorderAndPostorderTraversal106 {
+    int[] inorder;
+    int[] postorder;
+
     public TreeNode buildTree(int[] inorder, int[] postorder) {
-        return null;
+        this.inorder = inorder;
+        this.postorder = postorder;
+
+        if (inorder.length != postorder.length)
+            return null;
+
+        return build(0, inorder.length - 1, 0, inorder.length - 1, inorder.length);
+    }
+
+    private TreeNode build(int inStart, int inEnd, int postStart, int postEnd, int length) {
+        if (length == 0)
+            return null;
+
+        int rootVal = postorder[postEnd];
+
+        int i = 0;
+        while (inorder[inStart + i] != rootVal) i++;
+
+        TreeNode node = new TreeNode(rootVal);
+
+        node.left = build(inStart, inStart + i - 1, postStart, postStart + i - 1, i);
+        node.right = build(inStart + i + 1, inEnd, postStart + i, postEnd - 1, length - i - 1);
+
+        return node;
     }
 }

@@ -251,4 +251,23 @@ public class PageThreeTest {
             System.out.println(Arrays.toString(result.toArray()));
         }
     }
+
+    @Test
+    public void constructBinaryTreeFromInorderAndPostorderTraversal106Test() {
+        ConstructBinaryTreeFromInorderAndPostorderTraversal106 constructBinaryTreeFromInorderAndPostorderTraversal
+                = new ConstructBinaryTreeFromInorderAndPostorderTraversal106();
+        int[] inorder = {9,3,15,20,7};
+        int[] postorder = {9,15,7,20,3};
+        constructBinaryTreeFromInorderAndPostorderTraversal.buildTree(inorder, postorder);
+    }
+
+    @Test
+    public void constructBinaryTreeFromPreorderAndInorderTraversal105Test() {
+        ConstructBinaryTreeFromPreorderAndInorderTraversal105 constructBinaryTreeFromPreorderAndInorderTraversal
+                = new ConstructBinaryTreeFromPreorderAndInorderTraversal105();
+
+        int[] preorder = {3,9,20,15,7};
+        int[] inorder = {9,3,15,20,7};
+        constructBinaryTreeFromPreorderAndInorderTraversal.buildTree(preorder, inorder);
+    }
 }
