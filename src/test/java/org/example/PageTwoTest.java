@@ -340,4 +340,18 @@ public class PageTwoTest {
 
         System.out.println(sameTree.isSameTree1(p, q));
     }
+
+    @Test
+    public void ValidateBinarySearchTree98Test() {
+
+        TreeNode rightLeftLeaf1 = new TreeNode(3);
+        TreeNode rightRightLeaf1 = new TreeNode(7);
+        TreeNode right1 = new TreeNode(6, rightLeftLeaf1, rightRightLeaf1);
+        TreeNode left1 = new TreeNode(4);
+
+        TreeNode root1 = new TreeNode(5, left1, right1);
+
+        ValidateBinarySearchTree98 validateBinarySearchTree = new ValidateBinarySearchTree98();
+        System.out.println(validateBinarySearchTree.isValidBST(root1));
+    }
 }
