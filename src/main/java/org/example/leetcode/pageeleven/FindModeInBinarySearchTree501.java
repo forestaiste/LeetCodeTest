@@ -64,6 +64,10 @@ public class FindModeInBinarySearchTree501 {
                 queue.add(node.val);
             }
         }
+        else if (pre == null) {
+            queue.add(node.val);
+            count++;
+        }
 
         pre = node;
 
