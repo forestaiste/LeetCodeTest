@@ -30,13 +30,40 @@ package org.example.leetcode.pagetwo;
 import org.example.models.TreeNode;
 
 public class ValidateBinarySearchTree98 {
+    long max = Long.MIN_VALUE;
+
     public boolean isValidBST(TreeNode root) {
         if (root == null)
             return true;
 
-        if ((root.left != null && root.val <= root.left.val) || (root.right != null && root.val >= root.right.val))
-            return false;
+        boolean left = isValidBST(root.left);
 
-        return isValidBST(root.left) && isValidBST(root.right);
+        if (max < root.val) {
+            max = root.val;
+        }
+        else {
+            return false;
+        }
+
+        boolean right = isValidBST(root.right);
+
+        return left && right;
+    }
+
+    TreeNode pre = null;
+    public boolean isValidBST1(TreeNode root) {
+        if (root == null)
+            return true;
+
+        boolean left = isValidBST1(root.left);
+
+        if (pre != null && pre.val >= root.val) {
+            return false;
+        }
+        pre = root;
+
+        boolean right = isValidBST1(root.right);
+
+        return left && right;
     }
 }

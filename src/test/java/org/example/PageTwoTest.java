@@ -353,5 +353,6 @@ public class PageTwoTest {
 
         ValidateBinarySearchTree98 validateBinarySearchTree = new ValidateBinarySearchTree98();
         System.out.println(validateBinarySearchTree.isValidBST(root1));
+        System.out.println(validateBinarySearchTree.isValidBST1(root1));
     }
 }

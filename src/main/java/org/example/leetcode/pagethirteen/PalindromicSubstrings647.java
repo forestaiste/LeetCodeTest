@@ -18,8 +18,6 @@ package org.example.leetcode.pagethirteen;
 //        输出：6
 //        解释：6个回文子串: "a", "a", "a", "aa", "aa", "aaa"
 
-import java.util.Arrays;
-
 public class PalindromicSubstrings647 {
     public int countSubstrings(String s) {
         int length = s.length();

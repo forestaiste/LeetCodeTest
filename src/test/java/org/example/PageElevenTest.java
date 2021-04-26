@@ -4,6 +4,8 @@ import org.example.leetcode.pageeleven.*;
 import org.example.models.TreeNode;
 import org.junit.Test;
 
+import java.util.Arrays;
+
 public class PageElevenTest {
     @Test
     public void reverseStringIITest() {
@@ -51,5 +53,30 @@ public class PageElevenTest {
 
         FindBottomLeftTreeValue513 findBottomLeftTreeValue = new FindBottomLeftTreeValue513();
         System.out.println(findBottomLeftTreeValue.findBottomLeftValue(root));
+    }
+
+    @Test
+    public void minimumAbsoluteDifferenceInBST530Test() {
+        TreeNode rightLeftLeaf1 = new TreeNode(49);
+        TreeNode rightRightLeaf1 = new TreeNode(12);
+        TreeNode right1 = new TreeNode(48, rightLeftLeaf1, rightRightLeaf1);
+        TreeNode left1 = new TreeNode(0);
+
+        TreeNode root1 = new TreeNode(1, left1, right1);
+
+        MinimumAbsoluteDifferenceInBST530 minimumAbsoluteDifferenceInBST = new MinimumAbsoluteDifferenceInBST530();
+        System.out.println(minimumAbsoluteDifferenceInBST.getMinimumDifference(root1));
+        System.out.println(minimumAbsoluteDifferenceInBST.getMinimumDifference1(root1));
+    }
+
+    @Test
+    public void findModeInBinarySearchTree501Test() {
+        TreeNode rightLeftLeaf1 = new TreeNode(2);
+        TreeNode right1 = new TreeNode(2, rightLeftLeaf1, null);
+
+        TreeNode root = new TreeNode(1, null, right1);
+
+        FindModeInBinarySearchTree501 findModeInBinarySearchTree = new FindModeInBinarySearchTree501();
+        System.out.println(Arrays.toString(findModeInBinarySearchTree.findMode(root)));
     }
 }
