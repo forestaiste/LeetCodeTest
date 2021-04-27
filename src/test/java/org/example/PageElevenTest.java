@@ -71,10 +71,13 @@ public class PageElevenTest {
 
     @Test
     public void findModeInBinarySearchTree501Test() {
-        TreeNode rightLeftLeaf1 = new TreeNode(2);
-        TreeNode right1 = new TreeNode(2, rightLeftLeaf1, null);
+        TreeNode right1 = new TreeNode(2, null, null);
 
         TreeNode root = new TreeNode(1, null, right1);
+//        TreeNode left = new TreeNode(1);
+//        TreeNode right = new TreeNode(2);
+//
+//        TreeNode root = new TreeNode(1, left, right);
 
         FindModeInBinarySearchTree501 findModeInBinarySearchTree = new FindModeInBinarySearchTree501();
         System.out.println(Arrays.toString(findModeInBinarySearchTree.findMode(root)));

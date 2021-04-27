@@ -155,4 +155,24 @@ public class PageFiveTest {
         System.out.println(countCompleteTreeNodes.countNodes(root));
         System.out.println(countCompleteTreeNodes.countNodes1(root));
     }
+
+    @Test
+    public void lowestCommonAncestorOfABinaryTree236Test() {
+        TreeNode zero = new TreeNode(0);
+        TreeNode eight = new TreeNode(8);
+        TreeNode one = new TreeNode(1, zero, eight);
+
+        TreeNode severn = new TreeNode(7);
+        TreeNode four = new TreeNode(4);
+
+        TreeNode six = new TreeNode(6);
+        TreeNode two = new TreeNode(2, severn, four);
+        TreeNode five = new TreeNode(5, six, two);
+
+        TreeNode root = new TreeNode(3, five, one);
+
+        LowestCommonAncestorOfABinaryTree236 lowestCommonAncestorOfABinaryTree = new LowestCommonAncestorOfABinaryTree236();
+        lowestCommonAncestorOfABinaryTree.lowestCommonAncestor(root, five, four);
+        TreeNode parent = lowestCommonAncestorOfABinaryTree.lowestCommonAncestor1(root, five, four);
+    }
 }

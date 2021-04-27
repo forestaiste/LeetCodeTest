@@ -24,26 +24,22 @@ package org.example.leetcode.pageeleven;
 
 import org.example.models.TreeNode;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class FindModeInBinarySearchTree501 {
     int max = 0;
     int count = 0;
     TreeNode pre = null;
-    Queue<Integer> queue = new LinkedList<>();
+    List<Integer> queue = new ArrayList<>();
     public int[] findMode(TreeNode root) {
         if (root == null)
             return null;
 
         travel(root);
-        int[] results = new int[queue.size()];
 
-        int i = 0;
-        while (!queue.isEmpty()) {
-            results[i++] = queue.poll();
-        }
-        return results;
+        return queue.stream().mapToInt(i -> i).toArray();
     }
 
     private void travel(TreeNode node) {
@@ -52,21 +48,23 @@ public class FindModeInBinarySearchTree501 {
 
         travel(node.left);
 
-        if (pre != null && node.val == pre.val) {
-            count++;
-
-            if (count > max) {
-                max = count;
-                queue.clear();
-                queue.add(node.val);
-            }
-            else if (count == max) {
-                queue.add(node.val);
-            }
+        if (pre == null) {
+            count = 1;
         }
-        else if (pre == null) {
-            queue.add(node.val);
+        else if (node.val == pre.val) {
             count++;
+        }
+        else {
+            count = 1;
+        }
+
+        if (count > max) {
+            max = count;
+            queue.clear();
+            queue.add(node.val);
+        }
+        else if (count == max) {
+            queue.add(node.val);
         }
 
         pre = node;
