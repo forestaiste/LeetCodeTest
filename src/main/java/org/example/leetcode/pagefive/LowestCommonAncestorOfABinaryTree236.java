@@ -59,9 +59,7 @@ public class LowestCommonAncestorOfABinaryTree236 {
         for (int i = 0; i < size; i++) {
             if (pPath.get(i).val == qPath.get(i).val) {
                 same = pPath.get(i);
-            }
-            else
-            {
+            } else {
                 break;
             }
         }
@@ -78,22 +76,21 @@ public class LowestCommonAncestorOfABinaryTree236 {
             return;
         }
 
+        path.add(root.left);
+        searchTreeNode(root.left, target, path);
+        path.remove(path.size() - 1);
 
-            path.add(root.left);
-            searchTreeNode(root.left, target, path);
-            path.remove(path.size() - 1);
-
-            path.add(root.right);
-            searchTreeNode(root.right, target, path);
-            path.remove(path.size() - 1);
+        path.add(root.right);
+        searchTreeNode(root.right, target, path);
+        path.remove(path.size() - 1);
     }
 
     public TreeNode lowestCommonAncestor1(TreeNode root, TreeNode p, TreeNode q) {
         if (root == null || root == p || root == q)
             return root;
 
-        TreeNode left = lowestCommonAncestor1(root, p, q);
-        TreeNode right = lowestCommonAncestor1(root, p, q);
+        TreeNode left = lowestCommonAncestor1(root.left, p, q);
+        TreeNode right = lowestCommonAncestor1(root.right, p, q);
 
         if (left != null && right != null)
             return root;
