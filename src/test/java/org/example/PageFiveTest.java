@@ -175,4 +175,19 @@ public class PageFiveTest {
         lowestCommonAncestorOfABinaryTree.lowestCommonAncestor(root, five, four);
         TreeNode parent = lowestCommonAncestorOfABinaryTree.lowestCommonAncestor1(root, five, four);
     }
+
+    @Test
+    public void lowestCommonAncestorOfABinarySearchTree235Test() {
+        TreeNode rightLeftLeaf1 = new TreeNode(49);
+        TreeNode rightRightLeaf1 = new TreeNode(12);
+        TreeNode right1 = new TreeNode(48, rightLeftLeaf1, rightRightLeaf1);
+        TreeNode left1 = new TreeNode(0);
+
+        TreeNode root1 = new TreeNode(1, left1, right1);
+
+        LowestCommonAncestorOfABinarySearchTree235 lowestCommonAncestorOfABinarySearchTree
+                = new LowestCommonAncestorOfABinarySearchTree235();
+
+        lowestCommonAncestorOfABinarySearchTree.lowestCommonAncestor(root1, rightLeftLeaf1, right1);
+    }
 }

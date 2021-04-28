@@ -29,10 +29,14 @@ public class LowestCommonAncestorOfABinarySearchTree235 {
         if (root == null || (root.val > p.val && root.val < q.val)
             || (root.val < p.val && root.val > q.val))
             return root;
+        else if (root.val == p.val || root.val == q.val)
+            return root;
 
-        if (root.val > p.val && root.val > q.val)
-            return nulll;
 
-        return null;
+        else if (root.val > p.val && root.val > q.val)
+            return lowestCommonAncestor(root.left, p, q);
+
+        else  //if (root.val < p.val && root.val < q.val)
+            return lowestCommonAncestor(root.right, p, q);
     }
 }
