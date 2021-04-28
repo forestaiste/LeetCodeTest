@@ -23,8 +23,35 @@ package org.example.leetcode.pagefifteen;
 //        输入：root = [4,2,7,1,3,null,null,null,null,null,null], val = 5
 //        输出：[4,2,7,1,3,5]
 
+
+import org.example.models.TreeNode;
+
 public class InsertIntoABinarySearchTree701 {
+    TreeNode pre;
+
     public TreeNode insertIntoBST(TreeNode root, int val) {
-        return null;
+        if (root == null)
+            return new TreeNode(val);
+
+        travel(root, val);
+
+        return root;
+    }
+
+    public void travel(TreeNode node, int val) {
+        if (node.val > val) {
+            if (node.left != null)
+                travel(node.left, val);
+            else
+                node.left = new TreeNode(val);
+        }
+
+        if (node.val < val) {
+            if (node.right != null)
+                travel(node.right, val);
+            else
+                node.right = new TreeNode(val);
+        }
+
     }
 }

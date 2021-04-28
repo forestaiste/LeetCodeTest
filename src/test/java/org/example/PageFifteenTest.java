@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.leetcode.pagefifteen.*;
 import org.example.models.ListNode;
+import org.example.models.TreeNode;
 import org.junit.Test;
 
 public class PageFifteenTest {
@@ -105,5 +106,20 @@ public class PageFifteenTest {
         int[] B = {3, 2, 1, 4, 7};
 
         System.out.println(maximumLengthOfRepeatedSubarray.findLength(A, B));
+    }
+
+    @Test
+    public void insertIntoABinarySearchTree701Test() {
+        TreeNode five = new TreeNode(5);
+        TreeNode right1 = new TreeNode(7, five, null);
+
+        TreeNode leftLeaf1 = new TreeNode(1);
+        TreeNode rightLeaf1 = new TreeNode(3);
+        TreeNode left1 = new TreeNode(2, leftLeaf1, rightLeaf1);
+
+        TreeNode root1 = new TreeNode(4, left1, right1);
+
+        InsertIntoABinarySearchTree701 insertIntoABinarySearchTree = new InsertIntoABinarySearchTree701();
+        insertIntoABinarySearchTree.insertIntoBST(root1, 6);
     }
 }
