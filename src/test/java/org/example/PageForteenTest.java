@@ -3,6 +3,7 @@ package org.example;
 import org.example.leetcode.pageforteen.LongestContinuousIncreasingSubsequence674;
 import org.example.leetcode.pageforteen.MaximumBinaryTree654;
 import org.example.leetcode.pageforteen.SearchInABinarySearchTree700;
+import org.example.leetcode.pageforteen.TrimABinarySearchTree669;
 import org.example.models.TreeNode;
 import org.junit.Test;
 
@@ -32,5 +33,28 @@ public class PageForteenTest {
         TreeNode root1 = new TreeNode(4, left1, right1);
         SearchInABinarySearchTree700 searchInABinarySearchTree = new SearchInABinarySearchTree700();
         searchInABinarySearchTree.searchBST(root1, 5);
+    }
+
+    @Test
+    public void trimABinarySearchTree669Test() {
+//        TreeNode rightLeft = new TreeNode(1);
+//
+//        TreeNode rightRight = new TreeNode(2, rightLeft, null);
+//
+//        TreeNode right = new TreeNode(4);
+//
+//        TreeNode left = new TreeNode(0, null, rightRight);
+//
+//        TreeNode root = new TreeNode(3, left, right);
+
+        TreeNode right = new TreeNode(2);
+
+        TreeNode left = new TreeNode(0);
+
+        TreeNode root = new TreeNode(1, left, right);
+
+        TrimABinarySearchTree669 trimABinarySearchTree = new TrimABinarySearchTree669();
+//        trimABinarySearchTree.trimBST(root, 3, 4);
+        trimABinarySearchTree.trimBST1(root, 1, 2);
     }
 }

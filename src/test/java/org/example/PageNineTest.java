@@ -75,4 +75,21 @@ public class PageNineTest {
         SumOfLeftLeaves404 sumOfLeftLeaves = new SumOfLeftLeaves404();
         System.out.println(sumOfLeftLeaves.sumOfLeftLeaves(root));
     }
+
+    @Test
+    public void deleteNodeInABST450Test() {
+        TreeNode rightLeft = new TreeNode(1);
+
+        TreeNode rightRight = new TreeNode(2, rightLeft, null);
+
+        TreeNode right = new TreeNode(4);
+
+        TreeNode left = new TreeNode(0, null, rightRight);
+
+        TreeNode root = new TreeNode(3, left, right);
+
+
+        DeleteNodeInABST450 deleteNodeInABST = new DeleteNodeInABST450();
+        deleteNodeInABST.deleteNode(root, 0);
+    }
 }
