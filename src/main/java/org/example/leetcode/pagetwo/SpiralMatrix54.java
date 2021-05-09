@@ -17,7 +17,7 @@ package org.example.leetcode.pagetwo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SpiralMatrix {
+public class SpiralMatrix54 {
 
     public List<Integer> spiralOrder(int[][] matrix) {
         List<Integer> order = new ArrayList<Integer>();

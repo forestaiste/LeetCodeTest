@@ -41,7 +41,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class InsertInterval {
+public class InsertInterval57 {
     public int[][] insert(int[][] intervals, int[] newInterval) {
         List<int[]> merged = new ArrayList<int[]>();
 

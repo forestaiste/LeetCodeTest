@@ -270,4 +270,11 @@ public class PageThreeTest {
         int[] inorder = {9,3,15,20,7};
         constructBinaryTreeFromPreorderAndInorderTraversal.buildTree(preorder, inorder);
     }
+
+    @Test
+    public void convertSortedArrayToBinarySearchTree108Test() {
+        ConvertSortedArrayToBinarySearchTree108 convertSortedArrayToBinarySearchTree = new ConvertSortedArrayToBinarySearchTree108();
+        int[] nums = {-10, -3, 0, 5, 9};
+        TreeNode root = convertSortedArrayToBinarySearchTree.sortedArrayToBST(nums);
+    }
 }

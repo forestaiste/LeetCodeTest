@@ -1,5 +1,6 @@
 package org.example;
 
+import com.sun.source.tree.Tree;
 import org.example.leetcode.pageeleven.*;
 import org.example.models.TreeNode;
 import org.junit.Test;
@@ -81,5 +82,21 @@ public class PageElevenTest {
 
         FindModeInBinarySearchTree501 findModeInBinarySearchTree = new FindModeInBinarySearchTree501();
         System.out.println(Arrays.toString(findModeInBinarySearchTree.findMode(root)));
+    }
+
+    @Test
+    public void convertBSTToGreaterTree538Test() {
+        TreeNode three = new TreeNode(3);
+        TreeNode two = new TreeNode(2, null, three);
+        TreeNode zero = new TreeNode(0);
+        TreeNode one = new TreeNode(1, zero, two);
+
+        TreeNode five = new TreeNode(5);
+        TreeNode eight = new TreeNode(8);
+        TreeNode seven = new TreeNode(7, null, eight);
+        TreeNode six = new TreeNode(6, five, seven);
+        TreeNode four = new TreeNode(4, one, six);
+        ConvertBSTToGreaterTree538 convertBSTToGreaterTree = new ConvertBSTToGreaterTree538();
+        convertBSTToGreaterTree.convertBST(four);
     }
 }

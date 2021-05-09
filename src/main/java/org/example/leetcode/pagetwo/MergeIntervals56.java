@@ -26,7 +26,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
-public class MergeIntervals {
+public class MergeIntervals56 {
     public int[][] merge(int[][] intervals) {
         if (intervals.length == 0)
             return new int[0][2];
@@ -47,7 +47,7 @@ public class MergeIntervals {
             if (intervals[i][0] > merged.get(merged.size() - 1)[1]) {
                 merged.add(intervals[i]);
             }
-            else if (intervals[i][0] < merged.get(merged.size() - 1)[1]
+            else if (intervals[i][0] <= merged.get(merged.size() - 1)[1]
                     && intervals[i][1] > merged.get(merged.size() - 1)[1]) {
                 merged.get(merged.size() - 1)[1] = intervals[i][1];
             }

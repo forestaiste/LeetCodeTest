@@ -33,7 +33,7 @@ public class PageTwoTest {
     public void spiralMatrixTest() {
         int[][] matrix = {{1,2,3,4},{5,6,7,8},{9,10,11,12}};
 
-        SpiralMatrix spiralMatrix = new SpiralMatrix();
+        SpiralMatrix54 spiralMatrix = new SpiralMatrix54();
         List<Integer> results = spiralMatrix.spiralOrder(matrix);
         System.out.println(Arrays.toString(results.toArray()));
 
@@ -83,9 +83,10 @@ public class PageTwoTest {
 
     @Test
     public void mergeIntervalsTest() {
-        MergeIntervals mergeIntervals = new MergeIntervals();
+        MergeIntervals56 mergeIntervals = new MergeIntervals56();
 
-        int[][] intervals = new int[][] {{1, 9}, {2, 5}, {19, 20}, {10, 11}, {12, 20}, {0, 3}, {0, 1}, {0, 2}};
+//        int[][] intervals = new int[][] {{1, 9}, {2, 5}, {19, 20}, {10, 11}, {12, 20}, {0, 3}, {0, 1}, {0, 2}};
+        int[][] intervals = new int[][] {{1, 4}, {4, 5}};
         intervals = mergeIntervals.merge(intervals);
 
         for (int[] interval : intervals) {
@@ -95,7 +96,7 @@ public class PageTwoTest {
 
     @Test
     public void InsertIntervalTest() {
-        InsertInterval insertInterval = new InsertInterval();
+        InsertInterval57 insertInterval = new InsertInterval57();
         int[][] intervals = new int[][] {{1, 3}, {6, 9}};
         int[] newInterval = {2, 5};
 
