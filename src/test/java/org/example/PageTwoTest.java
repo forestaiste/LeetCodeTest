@@ -343,7 +343,7 @@ public class PageTwoTest {
     }
 
     @Test
-    public void ValidateBinarySearchTree98Test() {
+    public void validateBinarySearchTree98Test() {
 
         TreeNode rightLeftLeaf1 = new TreeNode(3);
         TreeNode rightRightLeaf1 = new TreeNode(7);
@@ -355,5 +355,21 @@ public class PageTwoTest {
         ValidateBinarySearchTree98 validateBinarySearchTree = new ValidateBinarySearchTree98();
         System.out.println(validateBinarySearchTree.isValidBST(root1));
         System.out.println(validateBinarySearchTree.isValidBST1(root1));
+    }
+
+    @Test
+    public void textJustification68Test() {
+        String[] words = {"This", "is", "an", "example", "of", "text", "justification."};
+        TextJustification68 textJustification = new TextJustification68();
+        List<String> result = textJustification.fullJustify(words, 16);
+        result.forEach(System.out::println);
+
+        String[] words1 = {"What","must","be","acknowledgment","shall","be"};
+        List<String> result1 = textJustification.fullJustify(words1, 16);
+        result1.forEach(System.out::println);
+
+        String[] words2 = {"Science","is","what","we","understand","well","enough","to","explain","to","a","computer.","Art","is","everything","else","we","do"};
+        List<String> result2 = textJustification.fullJustify(words2, 20);
+        result1.forEach(System.out::println);
     }
 }
