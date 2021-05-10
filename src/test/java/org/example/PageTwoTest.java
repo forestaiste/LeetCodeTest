@@ -359,10 +359,10 @@ public class PageTwoTest {
 
     @Test
     public void textJustification68Test() {
-        String[] words = {"This", "is", "an", "example", "of", "text", "justification."};
+        String[] words = {"The","important","thing","is","not","to","stop","questioning.","Curiosity","has","its","own","reason","for","existing."};
         TextJustification68 textJustification = new TextJustification68();
-        List<String> result = textJustification.fullJustify(words, 16);
-        result.forEach(System.out::println);
+//        List<String> result = textJustification.fullJustify(words, 17);
+//        result.forEach(System.out::println);
 
         String[] words1 = {"What","must","be","acknowledgment","shall","be"};
         List<String> result1 = textJustification.fullJustify(words1, 16);
@@ -370,6 +370,15 @@ public class PageTwoTest {
 
         String[] words2 = {"Science","is","what","we","understand","well","enough","to","explain","to","a","computer.","Art","is","everything","else","we","do"};
         List<String> result2 = textJustification.fullJustify(words2, 20);
-        result1.forEach(System.out::println);
+        result2.forEach(System.out::println);
+    }
+
+    @Test
+    public void simplifyPath71() {
+        SimplifyPath71 simplifyPath = new SimplifyPath71();
+        System.out.println(simplifyPath.simplifyPath("/a//b////c/d//././/.."));
+        System.out.println(simplifyPath.simplifyPath("/../"));
+        System.out.println(simplifyPath.simplifyPath("/home//foo/"));
+        System.out.println(simplifyPath.simplifyPath("/a/./b/../../c/"));
     }
 }

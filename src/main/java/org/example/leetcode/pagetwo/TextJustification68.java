@@ -72,8 +72,10 @@ public class TextJustification68 {
             } else {
                 int extraSpaceCount = maxWidth - count + 1;
                 int extraPerWord = extraSpaceCount;
+                int remainder = 0;
                 if (wordsInLine.size() > 1) {
-                    extraPerWord = (extraSpaceCount / (wordsInLine.size() - 1)) + ((extraSpaceCount % (wordsInLine.size() - 1)) > 0 ? 1 : 0);
+                    extraPerWord = (extraSpaceCount / (wordsInLine.size() - 1));
+                    remainder = extraSpaceCount % (wordsInLine.size() - 1);
                 }
                 StringBuilder builder = new StringBuilder();
 
@@ -82,9 +84,15 @@ public class TextJustification68 {
                     if (i != wordsInLine.size() - 1)
                         builder.append(" ");
 
-                    for (int j = 0; j < extraPerWord; j++) {
-                        if (extraSpaceCount > 0) {
+                    if (extraSpaceCount > 0 ) {
+                        for (int j = 0; j < extraPerWord; j++) {
                             builder.append(" ");
+                            extraSpaceCount--;
+                        }
+
+                        if (remainder > 0) {
+                            builder.append(" ");
+                            remainder--;
                             extraSpaceCount--;
                         }
                     }
