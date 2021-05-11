@@ -361,8 +361,8 @@ public class PageTwoTest {
     public void textJustification68Test() {
         String[] words = {"The","important","thing","is","not","to","stop","questioning.","Curiosity","has","its","own","reason","for","existing."};
         TextJustification68 textJustification = new TextJustification68();
-//        List<String> result = textJustification.fullJustify(words, 17);
-//        result.forEach(System.out::println);
+        List<String> result = textJustification.fullJustify(words, 17);
+        result.forEach(System.out::println);
 
         String[] words1 = {"What","must","be","acknowledgment","shall","be"};
         List<String> result1 = textJustification.fullJustify(words1, 16);

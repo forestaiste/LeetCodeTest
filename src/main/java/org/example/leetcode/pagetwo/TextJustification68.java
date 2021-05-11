@@ -112,7 +112,6 @@ public class TextJustification68 {
                 builder.append(" ");
         }
         int length = builder.length();
-        //Warning:(115, 9) Can be replaced with 'String.repeat()'
         for (int i = 0; i < maxWidth - length; i++) {
             builder.append(" ");
         }
