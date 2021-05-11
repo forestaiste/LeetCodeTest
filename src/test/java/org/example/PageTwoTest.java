@@ -381,4 +381,23 @@ public class PageTwoTest {
         System.out.println(simplifyPath.simplifyPath("/home//foo/"));
         System.out.println(simplifyPath.simplifyPath("/a/./b/../../c/"));
     }
+
+    @Test
+    public void setMatrixZeroes73() {
+        int[][] matrix = {{0,1,2,0},{3,4,5,2},{1,3,1,5}};
+
+        SetMatrixZeroes73 setMatrixZeroes = new SetMatrixZeroes73();
+        setMatrixZeroes.setZeroes(matrix);
+
+        for (int i = 0; i < matrix.length; i++) {
+            System.out.println(Arrays.toString(matrix[i]));
+        }
+
+        int[][] matrix1 = {{1,1,2,4},{0,4,5,2},{1,3,1,5}};
+        setMatrixZeroes.setZeroes1(matrix1);
+
+        for (int i = 0; i < matrix.length; i++) {
+            System.out.println(Arrays.toString(matrix1[i]));
+        }
+    }
 }
