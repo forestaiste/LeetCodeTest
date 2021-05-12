@@ -400,4 +400,19 @@ public class PageTwoTest {
             System.out.println(Arrays.toString(matrix1[i]));
         }
     }
+
+    @Test
+    public void searchA2DMatrix74Test() {
+        int[][] matrix = {{1,3,5,7}, {10,11,16,20},{23,30,34,60}};
+        SearchA2DMatrix74 searchA2DMatrix = new SearchA2DMatrix74();
+
+        System.out.println(searchA2DMatrix.searchMatrix1(matrix, 13));
+
+        int[][] matrix1 = {{1,3,5,7},{10,11,16,20},{23,30,34,60}};
+        System.out.println(searchA2DMatrix.searchMatrix1(matrix1, 3));
+
+
+        int[][] matrix2 = {{1}};
+        System.out.println(searchA2DMatrix.searchMatrix1(matrix2, 1));
+    }
 }
