@@ -415,4 +415,25 @@ public class PageTwoTest {
         int[][] matrix2 = {{1}};
         System.out.println(searchA2DMatrix.searchMatrix1(matrix2, 1));
     }
+
+    @Test
+    public void wordSearch79Test() {
+        WordSearch79 wordSearch = new WordSearch79();
+
+        char[][] board = {{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}};
+        System.out.println(wordSearch.exist(board, "ABCCED"));
+    }
+
+    @Test
+    public void sortColors75Test() {
+        SortColors75 sortColors = new SortColors75();
+
+        int[] nums = {1, 2, 0};
+        sortColors.sortColors1(nums);
+        System.out.println(Arrays.toString(nums));
+
+        int[] nums1 = {2, 1, 2};
+        sortColors.sortColors1(nums1);
+        System.out.println(Arrays.toString(nums1));
+    }
 }
