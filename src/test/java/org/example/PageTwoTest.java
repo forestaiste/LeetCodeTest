@@ -442,7 +442,7 @@ public class PageTwoTest {
         RemoveDuplicatesFromSortedArrayII80 removeDuplicatesFromSortedArrayII = new RemoveDuplicatesFromSortedArrayII80();
 
         int[] nums = {1,1,1, 2, 2, 3};
-        int count = removeDuplicatesFromSortedArrayII.removeDuplicates(nums);
+        int count = removeDuplicatesFromSortedArrayII.removeDuplicates1(nums);
 
         System.out.println(count);
         for (int i = 0; i < count; i++) {
@@ -450,19 +450,29 @@ public class PageTwoTest {
         }
 
         int[] nums2 = {1,1,1, 2};
-        int count2 = removeDuplicatesFromSortedArrayII.removeDuplicates(nums2);
+        int count2 = removeDuplicatesFromSortedArrayII.removeDuplicates1(nums2);
 
         System.out.println(count2);
-        for (int i = 0; i < count; i++) {
+        for (int i = 0; i < count2; i++) {
             System.out.println(nums2[i]);
         }
 
         int[] nums1 = {0,0,1,1,1,1,2,3,3, 3, 3};
-        int count1 = removeDuplicatesFromSortedArrayII.removeDuplicates(nums1);
+        int count1 = removeDuplicatesFromSortedArrayII.removeDuplicates1(nums1);
 
         System.out.println(count1);
         for (int i = 0; i < count1; i++) {
             System.out.println(nums1[i]);
         }
+    }
+
+    @Test
+    public void searchInRotatedSortedArrayII81Test() {
+        SearchInRotatedSortedArrayII81 searchInRotatedSortedArrayII = new SearchInRotatedSortedArrayII81();
+        int[] nums = {1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1};
+        System.out.println(searchInRotatedSortedArrayII.search(nums, 2));
+        System.out.println(searchInRotatedSortedArrayII.search(nums, 3));
+
+
     }
 }

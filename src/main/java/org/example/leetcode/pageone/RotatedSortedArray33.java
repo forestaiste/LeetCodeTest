@@ -18,7 +18,7 @@ package org.example.leetcode.pageone;
 //        输出：-1
 //
 
-public class RotatedSortedArray {
+public class RotatedSortedArray33 {
     public int search(int[] nums, int target) {
         int n = nums.length;
         if (n == 0) {

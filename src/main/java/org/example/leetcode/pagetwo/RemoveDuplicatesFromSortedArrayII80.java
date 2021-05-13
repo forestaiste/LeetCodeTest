@@ -72,32 +72,19 @@ public class RemoveDuplicatesFromSortedArrayII80 {
     public int removeDuplicates1(int[] nums) {
         int length = nums.length;
 
-        int value = nums[0];
-        int totalCount = 1;
-        int count = 1;
-        for (int i = 1; i < length; i++) {
-            if (value != nums[i]) {
-                value = nums[i];
-                count = 0;
-            } else {
-                count++;
-            }
+        if (length <= 2)
+            return length;
 
-            if (count > 2) {
-                int j = i;
-                while (j < length - 1) {
-                    if (nums[i] != nums[j + 1]) {
-                        nums[i] = nums[j + 1];
-                    }
-                    j++;
-                }
+        int slow = 2;
+        int fast = 2;
 
-                count--;
-            } else {
-                totalCount++;
-            }
+        while (fast < length) {
+            if (nums[fast] != nums[slow - 2])
+                nums[slow++] = nums[fast];
+
+            fast++;
         }
 
-        return totalCount;
+        return slow;
     }
 }
