@@ -436,4 +436,33 @@ public class PageTwoTest {
         sortColors.sortColors1(nums1);
         System.out.println(Arrays.toString(nums1));
     }
+
+    @Test
+    public void removeDuplicatesFromSortedArrayII80Test() {
+        RemoveDuplicatesFromSortedArrayII80 removeDuplicatesFromSortedArrayII = new RemoveDuplicatesFromSortedArrayII80();
+
+        int[] nums = {1,1,1, 2, 2, 3};
+        int count = removeDuplicatesFromSortedArrayII.removeDuplicates(nums);
+
+        System.out.println(count);
+        for (int i = 0; i < count; i++) {
+            System.out.println(nums[i]);
+        }
+
+        int[] nums2 = {1,1,1, 2};
+        int count2 = removeDuplicatesFromSortedArrayII.removeDuplicates(nums2);
+
+        System.out.println(count2);
+        for (int i = 0; i < count; i++) {
+            System.out.println(nums2[i]);
+        }
+
+        int[] nums1 = {0,0,1,1,1,1,2,3,3, 3, 3};
+        int count1 = removeDuplicatesFromSortedArrayII.removeDuplicates(nums1);
+
+        System.out.println(count1);
+        for (int i = 0; i < count1; i++) {
+            System.out.println(nums1[i]);
+        }
+    }
 }

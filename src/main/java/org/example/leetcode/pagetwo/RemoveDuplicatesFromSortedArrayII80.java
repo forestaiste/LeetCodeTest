@@ -38,6 +38,66 @@ package org.example.leetcode.pagetwo;
 
 public class RemoveDuplicatesFromSortedArrayII80 {
     public int removeDuplicates(int[] nums) {
-        return 0;
+        int length = nums.length;
+
+        if (length <= 2)
+            return length;
+
+        int count = 0;
+        for (int i = 2; i < length - count; i++) {
+            if (nums[i] == nums[i - 2]) {
+                int j = 1;
+
+                while (j < length - count - i) {
+                    nums[i] = nums[i + j];
+                    if (nums[i] == nums[i - 2])
+                        j++;
+                    else
+                        break;
+                }
+
+                count += j;
+
+                int k = 0;
+                while (k < length - i - j - 1) {
+                    nums[i + 1 + k] = nums[i + j + k + 1];
+                    k++;
+                }
+            }
+        }
+
+        return length - count;
+    }
+
+    public int removeDuplicates1(int[] nums) {
+        int length = nums.length;
+
+        int value = nums[0];
+        int totalCount = 1;
+        int count = 1;
+        for (int i = 1; i < length; i++) {
+            if (value != nums[i]) {
+                value = nums[i];
+                count = 0;
+            } else {
+                count++;
+            }
+
+            if (count > 2) {
+                int j = i;
+                while (j < length - 1) {
+                    if (nums[i] != nums[j + 1]) {
+                        nums[i] = nums[j + 1];
+                    }
+                    j++;
+                }
+
+                count--;
+            } else {
+                totalCount++;
+            }
+        }
+
+        return totalCount;
     }
 }
