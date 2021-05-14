@@ -472,7 +472,39 @@ public class PageTwoTest {
         int[] nums = {1,1,1,1,1,1,1,1,1,1,1,1,1,2,1,1,1,1,1};
         System.out.println(searchInRotatedSortedArrayII.search(nums, 2));
         System.out.println(searchInRotatedSortedArrayII.search(nums, 3));
+    }
+
+    @Test
+    public void removeDuplicatesFromSortedListII82() {
+//        ListNode third11 = new ListNode(3);
+//        third11.next = null;
+//        ListNode second11 = new ListNode(2);
+//        second11.next = third11;
+//        ListNode first13 = new ListNode(1);
+//        first13.next = second11;
+        ListNode first12 = new ListNode(1);
+        first12.next = null;
+        ListNode first11 = new ListNode(1);
+        first11.next = first12;
 
 
+        RemoveDuplicatesFromSortedListII82 removeDuplicatesFromSortedListII = new RemoveDuplicatesFromSortedListII82();
+        //removeDuplicatesFromSortedListII.deleteDuplicates(first11);
+        ListNode fifth21 = new ListNode(5);
+        fifth21.next = null;
+        ListNode fourth22 = new ListNode(4);
+        fourth22.next = fifth21;
+        ListNode fourth21 = new ListNode(4);
+        fourth21.next = fourth22;
+        ListNode third22 = new ListNode(3);
+        third22.next = fourth21;
+        ListNode third21 = new ListNode(3);
+        third21.next = third22;
+        ListNode second21 = new ListNode(2);
+        second21.next = third21;
+        ListNode first21 = new ListNode(1);
+        first21.next = second21;
+
+        removeDuplicatesFromSortedListII.deleteDuplicates(first21);
     }
 }
