@@ -476,12 +476,12 @@ public class PageTwoTest {
 
     @Test
     public void removeDuplicatesFromSortedListII82() {
-//        ListNode third11 = new ListNode(3);
-//        third11.next = null;
-//        ListNode second11 = new ListNode(2);
-//        second11.next = third11;
-//        ListNode first13 = new ListNode(1);
-//        first13.next = second11;
+        ListNode third11 = new ListNode(3);
+        third11.next = null;
+        ListNode second11 = new ListNode(2);
+        second11.next = third11;
+        ListNode first13 = new ListNode(1);
+        first13.next = second11;
         ListNode first12 = new ListNode(1);
         first12.next = null;
         ListNode first11 = new ListNode(1);
@@ -506,5 +506,22 @@ public class PageTwoTest {
         first21.next = second21;
 
         removeDuplicatesFromSortedListII.deleteDuplicates(first21);
+    }
+
+    @Test
+    public void removeDuplicatesFromSortedList83Test() {
+        ListNode third2 = new ListNode(3);
+        third2.next = null;
+        ListNode third1 = new ListNode(3);
+        third1.next = third2;
+        ListNode second = new ListNode(2);
+        second.next = third1;
+        ListNode first2 = new ListNode(1);
+        first2.next = second;
+        ListNode first1 = new ListNode(1);
+        first1.next = first2;
+        RemoveDuplicatesFromSortedList83 removeDuplicatesFromSortedList = new RemoveDuplicatesFromSortedList83();
+        removeDuplicatesFromSortedList.deleteDuplicates(first1);
+
     }
 }

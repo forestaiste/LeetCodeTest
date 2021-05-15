@@ -22,6 +22,38 @@ import org.example.models.ListNode;
 
 public class RemoveDuplicatesFromSortedList83 {
     public ListNode deleteDuplicates(ListNode head) {
-        return null;
+        if (head == null)
+            return null;
+
+        ListNode cur = head;
+
+        while (cur != null) {
+
+            while (cur.next != null && cur.val == cur.next.val) {
+                cur.next = cur.next.next;
+            }
+
+            cur = cur.next;
+        }
+
+        return head;
+    }
+
+    public ListNode deleteDuplicates1(ListNode head) {
+        if (head == null)
+            return null;
+
+        ListNode cur = head;
+
+        while (cur.next != null) {
+            if (cur.val == cur.next.val) {
+                cur.next = cur.next.next;
+            }
+            else {
+                cur = cur.next;
+            }
+        }
+
+        return head;
     }
 }
