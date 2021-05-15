@@ -28,7 +28,7 @@ public class PageFiveTest {
     @Test
     public void minimumSizSubarraySumTest() {
         int[] nums = {2, 3, 1, 2, 4, 3};
-        MinimumSizeSubarraySum sum = new MinimumSizeSubarraySum();
+        MinimumSizeSubarraySum209 sum = new MinimumSizeSubarraySum209();
         System.out.println(sum.minSubArrayLen(7, nums));
 
         System.out.println("-----------------------------");

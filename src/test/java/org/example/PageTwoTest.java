@@ -58,9 +58,9 @@ public class PageTwoTest {
 
     @Test
     public void spiralMatrixIITest() {
-        SpiralMatrixII spiralMatrixII = new SpiralMatrixII();
+        SpiralMatrixII59 spiralMatrixII59 = new SpiralMatrixII59();
 
-        int[][] results = spiralMatrixII.generateMatrix(3);
+        int[][] results = spiralMatrixII59.generateMatrix(3);
 
         for (int[] result : results) {
             System.out.println(Arrays.toString(result));
@@ -68,14 +68,14 @@ public class PageTwoTest {
 
         System.out.println("-------------------");
 
-        results = spiralMatrixII.generateMatrix(4);
+        results = spiralMatrixII59.generateMatrix(4);
         for (int[] result : results) {
             System.out.println(Arrays.toString(result));
         }
 
         System.out.println("-------------------");
 
-        results = spiralMatrixII.generateMatrix(5);
+        results = spiralMatrixII59.generateMatrix(5);
         for (int[] result : results) {
             System.out.println(Arrays.toString(result));
         }
@@ -522,6 +522,91 @@ public class PageTwoTest {
         first1.next = first2;
         RemoveDuplicatesFromSortedList83 removeDuplicatesFromSortedList = new RemoveDuplicatesFromSortedList83();
         removeDuplicatesFromSortedList.deleteDuplicates(first1);
+    }
+
+    @Test
+    public void partitionList86Test() {
+        PartitionList86 partitionList = new PartitionList86();
+//        ListNode two2 = new ListNode(2);
+//        ListNode five = new ListNode(5, two2);
+//        ListNode two1 = new ListNode(2, five);
+//        ListNode three = new ListNode(3, two1);
+//        ListNode four = new ListNode(4, three);
+//        ListNode one = new ListNode(1, four);
+//
+//        ListNode node = partitionList.partition(one, 3);
+
+//        ListNode one = new ListNode(1);
+//        ListNode two = new ListNode(2, one);
+//
+//        ListNode node = partitionList.partition(two, 2);
+
+        ListNode two2 = new ListNode(2);
+        ListNode five = new ListNode(5, two2);
+        ListNode two1 = new ListNode(2, five);
+        ListNode zero = new ListNode(0, two1);
+        ListNode three = new ListNode(3, zero);
+        ListNode four = new ListNode(4, three);
+        ListNode one = new ListNode(1, four);
+        ListNode node = partitionList.partition(one, 3);
+        while (node != null) {
+            System.out.println(node.val);
+            node = node.next;
+        }
+
+        node = partitionList.partition1(one, 3);
+        while (node != null) {
+            System.out.println(node.val);
+            node = node.next;
+        }
+    }
+
+    @Test
+    public void mergeSortedArray88Test() {
+        int[] nums1 = {1,2,3,0,0,0};
+        int[] nums2 = {2, 5, 6};
+        MergeSortedArray88 mergeSortedArray = new MergeSortedArray88();
+        mergeSortedArray.merge(nums1, 3, nums2, 3);
+        System.out.println(Arrays.toString(nums1));
+
+        nums1 = new int[] {1};
+        nums2 = null;
+
+        mergeSortedArray.merge(nums1, 1, nums2, 0);
+        System.out.println(Arrays.toString(nums1));
+
+        nums1 = new int[] {0};
+        nums2 = new int[] {1};
+
+        mergeSortedArray.merge(nums1, 0, nums2, 1);
+        System.out.println(Arrays.toString(nums1));
+
+        nums1 = new int[] {2, 0};
+        nums2 = new int[] {1};
+
+        mergeSortedArray.merge(nums1, 1, nums2, 1);
+        System.out.println(Arrays.toString(nums1));
+    }
+
+    @Test
+    public void grayCode89Test() {
+        GrayCode89 grayCode = new GrayCode89();
+        List<Integer> result = grayCode.grayCode(3);
+        System.out.println(Arrays.toString(result.toArray()));
+    }
+
+    @Test
+    public void reverseLinkedListII92Test() {
+        ReverseLinkedListII92 reverseLinkedListII = new ReverseLinkedListII92();
+
+        ListNode two1 = new ListNode(5, null);
+        ListNode zero = new ListNode(4, two1);
+        ListNode three = new ListNode(3, zero);
+        ListNode four = new ListNode(2, three);
+        ListNode one = new ListNode(1, four);
+
+        ListNode result = reverseLinkedListII.reverseBetween(one, 2, 4);
 
     }
+
 }

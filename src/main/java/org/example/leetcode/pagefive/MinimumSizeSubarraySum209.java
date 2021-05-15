@@ -22,7 +22,7 @@ package org.example.leetcode.pagefive;
 //        输出：0
 
 
-public class MinimumSizeSubarraySum {
+public class MinimumSizeSubarraySum209 {
 
     public int minSubArrayLen0(int target, int[] nums) {
         int sum;

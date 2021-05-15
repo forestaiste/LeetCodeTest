@@ -1,6 +1,6 @@
 package org.example.leetcode.pagetwo;
 
-public class SpiralMatrixII {
+public class SpiralMatrixII59 {
     public int[][] generateMatrix(int n) {
         int[][] matrix = new int[n][n];
 
