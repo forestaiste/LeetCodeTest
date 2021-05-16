@@ -27,7 +27,7 @@ package org.example.leetcode.pageone;
 
 import org.example.models.ListNode;
 
-public class SwapNodesInPairs {
+public class SwapNodesInPairs24 {
     public ListNode swapPairs(ListNode head) {
         if ((head == null) || (head.next == null)) {
             return head;
@@ -38,5 +38,22 @@ public class SwapNodesInPairs {
         newHead.next = head;
 
         return newHead;
+    }
+
+    public ListNode swapPairs1(ListNode head) {
+        ListNode dummy = new ListNode(0, head);
+        ListNode cur = head;
+        ListNode pre = dummy;
+        while (cur != null && cur.next != null) {
+            ListNode successor = cur.next.next;
+            pre.next = cur.next;
+            pre.next.next = cur;
+            cur.next = successor;
+
+            pre = cur;
+            cur = successor;
+        }
+
+        return dummy.next;
     }
 }

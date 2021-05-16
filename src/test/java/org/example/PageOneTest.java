@@ -275,8 +275,8 @@ public class PageOneTest {
         ListNode second = new ListNode(2, third);
         ListNode first = new ListNode(1, second);
 
-        SwapNodesInPairs swapNodesInPairs = new SwapNodesInPairs();
-        ListNode result = swapNodesInPairs.swapPairs(first);
+        SwapNodesInPairs24 swapNodesInPairs = new SwapNodesInPairs24();
+        ListNode result = swapNodesInPairs.swapPairs1(first);
 
         do {
             System.out.println(result.val);

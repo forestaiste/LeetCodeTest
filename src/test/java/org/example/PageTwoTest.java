@@ -605,8 +605,31 @@ public class PageTwoTest {
         ListNode four = new ListNode(2, three);
         ListNode one = new ListNode(1, four);
 
-        ListNode result = reverseLinkedListII.reverseBetween(one, 2, 4);
+        ListNode result = reverseLinkedListII.reverseBetween1(one, 2, 4);
 
     }
+
+    @Test
+    public void decodeWays91Test() {
+        DecodeWays91 decodeWays = new DecodeWays91();
+        System.out.println(decodeWays.numDecodings("0226"));
+    }
+
+    @Test
+    public void binaryTreeInorderTraversal94Test() {
+        TreeNode three = new TreeNode(3);
+        TreeNode two = new TreeNode(2, three, null);
+        TreeNode one = new TreeNode(1, null, two);
+
+        BinaryTreeInorderTraversal94 binaryTreeInorderTraversal = new BinaryTreeInorderTraversal94();
+        System.out.println(Arrays.toString(binaryTreeInorderTraversal.inorderTraversal(one).toArray()));
+    }
+
+    @Test
+    public void uniqueBinarySearchTreesII95Test() {
+        UniqueBinarySearchTreesII95 uniqueBinarySearchTreesII = new UniqueBinarySearchTreesII95();
+        List<TreeNode> results = uniqueBinarySearchTreesII.generateTrees(3);
+    }
+
 
 }
