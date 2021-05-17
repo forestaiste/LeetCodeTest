@@ -631,5 +631,16 @@ public class PageTwoTest {
         List<TreeNode> results = uniqueBinarySearchTreesII.generateTrees(3);
     }
 
+    @Test
+    public void interleavingString97Test() {
+        InterleavingString97 interleavingString = new InterleavingString97();
+//        System.out.println(interleavingString.isInterleave("a", "", "c"));
+//        System.out.println(interleavingString.isInterleave("aabcc", "dbbca", "aadbbcbcace"));
+//        System.out.println(interleavingString.isInterleave("aabcc", "dbbca", "aadbbcbcac"));
+//        System.out.println(interleavingString.isInterleave("aabcc", "dbbca", "aadbbbaccc"));
+        System.out.println(interleavingString.isInterleave("aabcc", "", "aabcc"));
+        System.out.println(interleavingString.isInterleave("", "b", "b"));
+    }
+
 
 }

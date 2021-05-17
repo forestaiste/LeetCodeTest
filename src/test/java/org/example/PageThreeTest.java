@@ -1,5 +1,6 @@
 package org.example;
 
+import com.sun.source.tree.Tree;
 import org.example.leetcode.pagethree.*;
 import org.example.models.ListNode;
 import org.example.models.TreeNode;
@@ -276,5 +277,22 @@ public class PageThreeTest {
         ConvertSortedArrayToBinarySearchTree108 convertSortedArrayToBinarySearchTree = new ConvertSortedArrayToBinarySearchTree108();
         int[] nums = {-10, -3, 0, 5, 9};
         TreeNode root = convertSortedArrayToBinarySearchTree.sortedArrayToBST(nums);
+    }
+
+    @Test
+    public void binaryTreeZigzagLevelOrderTraversal103Test() {
+        BinaryTreeZigzagLevelOrderTraversal103 binaryTreeZigzagLevelOrderTraversal = new BinaryTreeZigzagLevelOrderTraversal103();
+
+        TreeNode fifteen = new TreeNode(15);
+        TreeNode seven = new TreeNode(7);
+        TreeNode twenty = new TreeNode(20, fifteen, seven);
+        TreeNode nine = new TreeNode(9);
+        TreeNode root = new TreeNode(3, nine, twenty);
+
+        List<List<Integer>> results = binaryTreeZigzagLevelOrderTraversal.zigzagLevelOrder(root);
+
+        for (List<Integer> r : results) {
+            System.out.println(Arrays.toString(r.toArray()));
+        }
     }
 }
