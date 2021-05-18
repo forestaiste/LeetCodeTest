@@ -469,7 +469,7 @@ public class PageOneTest {
         ListNode second = new ListNode(2, third);
         ListNode first = new ListNode(1, second);
 
-        RemoveNthNodeFromEndOfList removeNthNodeFromEndOfList = new RemoveNthNodeFromEndOfList();
+        RemoveNthNodeFromEndOfList19 removeNthNodeFromEndOfList = new RemoveNthNodeFromEndOfList19();
         ListNode result = removeNthNodeFromEndOfList.removeNthFromEnd(first, 2);
 
         do {

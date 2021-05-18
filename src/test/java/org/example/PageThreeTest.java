@@ -295,4 +295,32 @@ public class PageThreeTest {
             System.out.println(Arrays.toString(r.toArray()));
         }
     }
+
+    @Test
+    public void convertSortedListToBinarySearchTree109Test() {
+        ConvertSortedListToBinarySearchTree109 convertSortedListToBinarySearchTree = new ConvertSortedListToBinarySearchTree109();
+
+        ListNode nine = new ListNode(9);
+        ListNode five = new ListNode(5, nine);
+        ListNode zero = new ListNode(0, five);
+        ListNode negThree = new ListNode(-3, zero);
+        ListNode negTen = new ListNode(-10, negThree);
+
+        convertSortedListToBinarySearchTree.sortedListToBST1(negTen);
+    }
+
+    @Test
+    public void flattenBinaryTreeToLinkedList114Test() {
+        TreeNode three = new TreeNode(3);
+        TreeNode four = new TreeNode(4);
+        TreeNode two = new TreeNode(2, three, four);
+
+        TreeNode six = new TreeNode(6);
+        TreeNode five = new TreeNode(5, null, six);
+
+        TreeNode one = new TreeNode(1, two, five);
+
+        FlattenBinaryTreeToLinkedList114 flattenBinaryTreeToLinkedList = new FlattenBinaryTreeToLinkedList114();
+        flattenBinaryTreeToLinkedList.flatten(one);
+    }
 }

@@ -31,7 +31,7 @@ package org.example.leetcode.pageone;
 
 import org.example.models.ListNode;
 
-public class RemoveNthNodeFromEndOfList {
+public class RemoveNthNodeFromEndOfList19 {
     public ListNode removeNthFromEnd(ListNode head, int n) {
         ListNode virtualHead = new ListNode(0, head);
         ListNode front = head;
