@@ -3,6 +3,8 @@ package org.example;
 import com.sun.source.tree.Tree;
 import org.example.leetcode.pagethree.*;
 import org.example.models.ListNode;
+import org.example.models.Node;
+import org.example.models.NodeWithNext;
 import org.example.models.TreeNode;
 import org.junit.Test;
 
@@ -322,5 +324,33 @@ public class PageThreeTest {
 
         FlattenBinaryTreeToLinkedList114 flattenBinaryTreeToLinkedList = new FlattenBinaryTreeToLinkedList114();
         flattenBinaryTreeToLinkedList.flatten(one);
+    }
+
+    @Test
+    public void populatingNextRightPointersInEachNode116Test() {
+        NodeWithNext four = new NodeWithNext(4);
+        NodeWithNext five = new NodeWithNext(5);
+        NodeWithNext two = new NodeWithNext(2, four, five, null);
+
+        NodeWithNext six = new NodeWithNext(6);
+        NodeWithNext seven = new NodeWithNext(7);
+        NodeWithNext three = new NodeWithNext(3, six, seven, null);
+
+        NodeWithNext one = new NodeWithNext(1, two, three, null);
+
+        PopulatingNextRightPointersInEachNode116 populatingNextRightPointersInEachNode = new PopulatingNextRightPointersInEachNode116();
+
+        populatingNextRightPointersInEachNode.connect(one);
+    }
+
+    @Test
+    public void pascalsTriangle118Test() {
+        PascalsTriangle118 pascalsTriangle = new PascalsTriangle118();
+
+        List<List<Integer>> results = pascalsTriangle.generate(5);
+
+        for (List<Integer> result : results) {
+            System.out.println(Arrays.toString(result.toArray()));
+        }
     }
 }

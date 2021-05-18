@@ -22,7 +22,6 @@ package org.example.leetcode.pagethree;
 //        输入：root = [1,2], targetSum = 0
 //        输出：[]
 
-import com.sun.source.tree.Tree;
 import org.example.models.TreeNode;
 
 import java.util.ArrayList;
