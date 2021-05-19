@@ -323,7 +323,7 @@ public class PageThreeTest {
         TreeNode one = new TreeNode(1, two, five);
 
         FlattenBinaryTreeToLinkedList114 flattenBinaryTreeToLinkedList = new FlattenBinaryTreeToLinkedList114();
-        flattenBinaryTreeToLinkedList.flatten(one);
+        flattenBinaryTreeToLinkedList.flatten1(one);
     }
 
     @Test
@@ -352,5 +352,45 @@ public class PageThreeTest {
         for (List<Integer> result : results) {
             System.out.println(Arrays.toString(result.toArray()));
         }
+    }
+
+    @Test
+    public void pascalsTriangleII119Test() {
+        PascalsTriangleII119 pascalsTriangleII = new PascalsTriangleII119();
+        List<Integer> result = pascalsTriangleII.getRow(0);
+
+        System.out.println(Arrays.toString(result.toArray()));
+    }
+
+    @Test
+    public void triangle120Test() {
+        Triangle120 triangle = new Triangle120();
+
+        List<Integer> row0 = Arrays.asList(-1);
+        List<Integer> row1 = Arrays.asList(2, 3);
+        List<Integer> row2 = Arrays.asList(1, -1, -3);
+        List<List<Integer>> triangleData = new ArrayList<>(){
+                {
+                    add(row0);
+                    add(row1);
+                    add(row2);
+                }
+        };
+
+//        List<Integer> row0 = Arrays.asList(2);
+//        List<Integer> row1 = Arrays.asList(3, 4);
+//        List<Integer> row2 = Arrays.asList(6, 5, 7);
+//        List<Integer> row3 = Arrays.asList(4, 1, 8, 3);
+//        List<List<Integer>> triangleData = new ArrayList<>(){
+//            {
+//                add(row0);
+//                add(row1);
+//                add(row2);
+//                add(row3);
+//            }
+//        };
+
+
+        System.out.println(triangle.minimumTotal(triangleData));
     }
 }

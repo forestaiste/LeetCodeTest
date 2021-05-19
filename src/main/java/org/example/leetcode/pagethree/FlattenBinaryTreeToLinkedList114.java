@@ -43,4 +43,18 @@ public class FlattenBinaryTreeToLinkedList114 {
             root.left = null;
         }
     }
+
+    TreeNode pre;
+    public void flatten1(TreeNode root) {
+        if (root == null)
+            return;
+
+        flatten1(root.right);
+        flatten1(root.left);
+
+        System.out.println(root.val);
+        root.right = pre;
+        root.left = null;
+        pre = root;
+    }
 }
