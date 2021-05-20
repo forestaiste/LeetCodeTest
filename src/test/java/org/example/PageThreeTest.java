@@ -393,4 +393,35 @@ public class PageThreeTest {
 
         System.out.println(triangle.minimumTotal(triangleData));
     }
+
+    @Test
+    public void validPalindrome125Test() {
+        ValidPalindrome125 validPalindrome = new ValidPalindrome125();
+        System.out.println(validPalindrome.isPalindrome1("A man, a plan, a canal: Panama"));
+        System.out.println(validPalindrome.isPalindrome1("race a car"));
+        System.out.println(validPalindrome.isPalindrome1(" "));
+        System.out.println(validPalindrome.isPalindrome1(".,"));
+    }
+
+    @Test
+    public void sumRootToLeafNumbers129Test() {
+        SumRootToLeafNumbers129 sumRootToLeafNumbers = new SumRootToLeafNumbers129();
+        TreeNode five = new TreeNode(5);
+        TreeNode one = new TreeNode(1);
+        TreeNode nine = new TreeNode(9, five, one);
+        TreeNode zero = new TreeNode(0);
+        TreeNode root = new TreeNode(4, nine, zero);
+        System.out.println(sumRootToLeafNumbers.sumNumbers(root));
+    }
+
+    @Test
+    public void surroundedRegions130Test() {
+        SurroundedRegions130 surroundedRegions = new SurroundedRegions130();
+        char[][] board = {{'X','X','X','X'},{'X','O','O','X'},{'X','X','O','X'},{'X','O','X','X'}};
+        surroundedRegions.solve(board);
+
+        for (char[] row : board) {
+            System.out.println(Arrays.toString(row));
+        }
+    }
 }

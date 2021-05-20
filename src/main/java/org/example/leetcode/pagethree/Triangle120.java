@@ -28,9 +28,25 @@ public class Triangle120 {
     public int minimumTotal(List<List<Integer>> triangle) {
         int length = triangle.size();
 
-        int k = 0;
-        int sum = triangle.get(0).get(0);
+        int[][] f = new int[length][length];
 
-        return sum;
+        f[0][0] = triangle.get(0).get(0);
+
+        for (int i = 1; i < length; i++) {
+            f[i][0] = f[i - 1][0] + triangle.get(i).get(0);
+            for (int j = 1; j <= i; j++) {
+                f[i][j] = f[i - 1][j -1] + triangle.get(i).get(j);
+                if (j < triangle.get(i - 1).size())
+                    f[i][j] = Math.min(f[i][j], f[i - 1][j] + triangle.get(i).get(j));
+            }
+        }
+
+        int min = Integer.MAX_VALUE;
+        for (int i = 0; i < length; i++) {
+            if (min > f[length -1][i])
+                min = f[length - 1][i];
+        }
+
+        return min;
     }
 }
