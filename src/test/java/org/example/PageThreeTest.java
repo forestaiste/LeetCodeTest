@@ -424,4 +424,75 @@ public class PageThreeTest {
             System.out.println(Arrays.toString(row));
         }
     }
+
+    @Test
+    public void SingleNumber136Test() {
+        SingleNumber136 singleNumber = new SingleNumber136();
+
+        System.out.println(singleNumber.singleNumber(new int[]{2, 2, 1}));
+        System.out.println(singleNumber.singleNumber(new int[]{4,1,2,1,2}));
+    }
+
+    @Test
+    public void linkedListCycleTest() {
+        LinkedListCycle141 linkedListCycle = new LinkedListCycle141();
+
+        ListNode fourth = new ListNode(-4);
+        ListNode third = new ListNode(0, fourth);
+        ListNode second = new ListNode(2, third);
+        ListNode first = new ListNode(3, second);
+        fourth.next = second;
+
+        System.out.println(linkedListCycle.hasCycle(first));
+
+        ListNode two = new ListNode(2);
+        ListNode one = new ListNode(1, two);
+        two.next = one;
+
+        System.out.println(linkedListCycle.hasCycle(two));
+    }
+
+    @Test
+    public void reorderList143Test() {
+        ReorderList143 reorderList = new ReorderList143();
+
+//        ListNode fifth = new ListNode(5);
+//        ListNode fourth = new ListNode(4, fifth);
+        ListNode fourth = new ListNode(4);
+        ListNode third = new ListNode(3, fourth);
+        ListNode second = new ListNode(2, third);
+        ListNode first = new ListNode(1, second);
+
+        reorderList.reorderList(first);
+
+        ListNode node = first;
+        while (node != null) {
+            System.out.println(node.val);
+            node = node.next;
+        }
+    }
+
+    @Test
+    public void binaryTreePreorderTraversal144Test() {
+        BinaryTreePreorderTraversal144 binaryTreePreorderTraversal = new BinaryTreePreorderTraversal144();
+
+        TreeNode three = new TreeNode(3);
+        TreeNode two = new TreeNode(2, three, null);
+        TreeNode one = new TreeNode(1, null, two);
+        List<Integer> result = binaryTreePreorderTraversal.preorderTraversal(one);
+
+        System.out.println(Arrays.toString(result.toArray()));
+    }
+
+    @Test
+    public void LRUCache146Test() {
+        LRUCache146 lruCache = new LRUCache146(2);
+        System.out.println(lruCache.get(2));
+        lruCache.put(2, 6);
+        System.out.println(lruCache.get(1));
+        lruCache.put(1, 5);
+        lruCache.put(1, 2);
+        System.out.println(lruCache.get(1));
+        System.out.println(lruCache.get(2));
+    }
 }

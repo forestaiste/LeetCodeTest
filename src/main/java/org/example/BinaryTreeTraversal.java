@@ -22,7 +22,7 @@ public class BinaryTreeTraversal {
 
             if (node.right != null)
                 stack.push(node.right);
-            if (node.right != null)
+            if (node.left != null)
                 stack.push(node.left);
         }
 
