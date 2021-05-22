@@ -1,9 +1,6 @@
 package org.example;
 
-import org.example.leetcode.pagefour.BestTimeToBuyAndSellStockIV188;
-import org.example.leetcode.pagefour.BinaryTreeRightSideView199;
-import org.example.leetcode.pagefour.HouseRobber198;
-import org.example.leetcode.pagefour.ReverseWordsInAString151;
+import org.example.leetcode.pagefour.*;
 import org.example.models.TreeNode;
 import org.junit.Test;
 
@@ -48,5 +45,25 @@ public class PageFourTest {
         List<Integer> result = binaryTreeRightSideView.rightSideView(root);
 
         System.out.println(Arrays.toString(result.toArray()));
+    }
+
+    @Test
+    public void maximumProductSubarray152Test() {
+        MaximumProductSubarray152 maximumProductSubarray = new MaximumProductSubarray152();
+        int[] nums = {2,3,-2,4, -5};
+
+        System.out.println(maximumProductSubarray.maxProduct(nums));
+    }
+
+    @Test
+    public void findMinimumInRotatedSortedArray153Test() {
+        FindMinimumInRotatedSortedArray153 findMinimumInRotatedSortedArray = new FindMinimumInRotatedSortedArray153();
+        int[] nums = {4,5,6,7,8, 9, 10, -5, -4, -3, -2, - 1, 0,1,2,3};
+//        System.out.println(findMinimumInRotatedSortedArray.findMin(nums));
+        nums = new int[]{3,4,5,1,2};
+//        System.out.println(findMinimumInRotatedSortedArray.findMin(nums));
+        nums = new int[]{11,13,15,17};
+
+        System.out.println(findMinimumInRotatedSortedArray.findMin(nums));
     }
 }

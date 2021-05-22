@@ -495,4 +495,44 @@ public class PageThreeTest {
         System.out.println(lruCache.get(1));
         System.out.println(lruCache.get(2));
     }
+
+    @Test
+    public void insertionSortList147Test() {
+        InsertionSortList147 insertionSortList = new InsertionSortList147();
+
+        ListNode eighth = new ListNode(4);
+        ListNode seventh = new ListNode(2, eighth);
+        ListNode sixth = new ListNode(7, seventh);
+        ListNode fifth = new ListNode(8, sixth);
+        ListNode fourth = new ListNode(1, fifth);
+        ListNode third = new ListNode(3, fourth);
+        ListNode second = new ListNode(5, third);
+        ListNode first = new ListNode(6, second);
+
+        ListNode result = insertionSortList.insertionSortList(first);
+        while (result != null) {
+            System.out.println(result.val);
+            result = result.next;
+        }
+    }
+
+    @Test
+    public void sortList148Test() {
+        SortList148 sortList = new SortList148();
+
+        ListNode eighth = new ListNode(4);
+        ListNode seventh = new ListNode(2, eighth);
+        ListNode sixth = new ListNode(7, seventh);
+        ListNode fifth = new ListNode(8, sixth);
+        ListNode fourth = new ListNode(1, fifth);
+        ListNode third = new ListNode(3, fourth);
+        ListNode second = new ListNode(5, third);
+        ListNode first = new ListNode(6, second);
+
+        ListNode result = sortList.sortList(first);
+        while (result != null) {
+            System.out.println(result.val);
+            result = result.next;
+        }
+    }
 }
