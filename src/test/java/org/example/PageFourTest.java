@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.leetcode.pagefour.*;
+import org.example.models.ListNode;
 import org.example.models.TreeNode;
 import org.junit.Test;
 
@@ -65,5 +66,40 @@ public class PageFourTest {
         nums = new int[]{11,13,15,17};
 
         System.out.println(findMinimumInRotatedSortedArray.findMin(nums));
+    }
+
+    @Test
+    public void intersectionOfTwoLinkedLists160Test() {
+        ListNode four = new ListNode(4);
+        ListNode two = new ListNode(2, four);
+        ListNode one = new ListNode(1, two);
+        ListNode nine = new ListNode(9, one);
+        ListNode zero = new ListNode(0, nine);
+
+        ListNode three = new ListNode(3, two);
+
+
+        IntersectionOfTwoLinkedLists160 intersectionOfTwoLinkedLists = new IntersectionOfTwoLinkedLists160();
+        ListNode node = intersectionOfTwoLinkedLists.getIntersectionNode(zero, three);
+        System.out.println(node.val);
+    }
+
+    @Test
+    public void findPeakElement162Test() {
+        FindPeakElement162 findPeakElement = new FindPeakElement162();
+//        int[] nums = {1, 2, 3, 1};
+        int[] nums = {1, 2, 1, 3, 5, 6, 4};
+        System.out.println(findPeakElement.findPeakElement(nums));
+    }
+
+    @Test
+    public void compareVersionNumbers165Test() {
+        CompareVersionNumbers165 compareVersionNumbers = new CompareVersionNumbers165();
+
+        System.out.println(compareVersionNumbers.compareVersion("1.01", "1.001"));
+        System.out.println(compareVersionNumbers.compareVersion("1.0", "1.0.0"));
+        System.out.println(compareVersionNumbers.compareVersion("0.1", "1.1"));
+        System.out.println(compareVersionNumbers.compareVersion("1.0.1", "1"));
+        System.out.println(compareVersionNumbers.compareVersion("7.5.2.4", "7.5.3"));
     }
 }
