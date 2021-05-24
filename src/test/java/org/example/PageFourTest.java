@@ -119,5 +119,10 @@ public class PageFourTest {
         System.out.println(excelSheetColumnTitle168.convertToTitle(28));
     }
 
-
+    @Test
+    public void majorityElement169Test() {
+        MajorityElement169 majorityElement = new MajorityElement169();
+        int[] nums = {2,2,1,1,1,2,2};
+        System.out.println(majorityElement.majorityElement0(nums));
+    }
 }
