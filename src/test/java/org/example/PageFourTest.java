@@ -102,4 +102,22 @@ public class PageFourTest {
         System.out.println(compareVersionNumbers.compareVersion("1.0.1", "1"));
         System.out.println(compareVersionNumbers.compareVersion("7.5.2.4", "7.5.3"));
     }
+
+    @Test
+    public void twoSumIIInputArrayIsSorted167() {
+        TwoSumIIInputArrayIsSorted167 twoSumIIInputArrayIsSorted = new TwoSumIIInputArrayIsSorted167();
+        int[] numbers = {12,83,104,129,140,184,199,300,306,312,321,325,341,344,349,356,370,405,423,444,446,465,471,491,500,506,508,530,539,543,569,591,606,607,612,614,623,627,645,662,670,685,689,726,731,737,744,747,764,773,778,787,802,805,811,819,829,841,879,905,918,918,929,955,997};
+        int[] result = twoSumIIInputArrayIsSorted.twoSum(numbers, 789);
+        System.out.println(Arrays.toString(result));
+    }
+
+    @Test
+    public void excelSheetColumnTitle168Test() {
+        ExcelSheetColumnTitle168 excelSheetColumnTitle168 = new ExcelSheetColumnTitle168();
+        System.out.println(excelSheetColumnTitle168.convertToTitle(52));
+        System.out.println(excelSheetColumnTitle168.convertToTitle(701));
+        System.out.println(excelSheetColumnTitle168.convertToTitle(28));
+    }
+
+
 }
