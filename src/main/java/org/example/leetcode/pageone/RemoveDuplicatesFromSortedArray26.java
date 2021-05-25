@@ -40,7 +40,7 @@ package org.example.leetcode.pageone;
 //        print(nums[i]);
 //        }
 
-public class RemoveDuplicatesFromSortedArray {
+public class RemoveDuplicatesFromSortedArray26 {
 
     public int removeDuplicates(int[] nums) {
         int tail = 0;

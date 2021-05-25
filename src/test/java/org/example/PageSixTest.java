@@ -2,10 +2,12 @@ package org.example;
 
 import org.example.leetcode.pagesix.BinaryTreePaths257;
 import org.example.leetcode.pagesix.LongestIncreasingSubsequence300;
+import org.example.leetcode.pagesix.MoveZeroes283;
 import org.example.leetcode.pagesix.PerfectSquares279;
 import org.example.models.TreeNode;
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class PageSixTest {
@@ -54,5 +56,13 @@ public class PageSixTest {
 
         result = binaryTreePaths.binaryTreePaths2(root);
         result.forEach(System.out::println);
+    }
+
+    @Test
+    public void moveZeroes283Test() {
+        MoveZeroes283 moveZeroes = new MoveZeroes283();
+        int[] nums = {0, 1, 0, 3, 12};
+        moveZeroes.moveZeroes(nums);
+        System.out.println(Arrays.toString(nums));
     }
 }

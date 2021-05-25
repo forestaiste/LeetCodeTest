@@ -307,7 +307,7 @@ public class PageOneTest {
 
     @Test
     public void removeDuplicatesFromSortedArrayTest() {
-        RemoveDuplicatesFromSortedArray removeDuplicatesFromSortedArray = new RemoveDuplicatesFromSortedArray();
+        RemoveDuplicatesFromSortedArray26 removeDuplicatesFromSortedArray = new RemoveDuplicatesFromSortedArray26();
 
         int[] nums = {0,0,1,1,1,2,2,3,3,4};
 
