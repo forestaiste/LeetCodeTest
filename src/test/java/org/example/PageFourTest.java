@@ -125,4 +125,26 @@ public class PageFourTest {
         int[] nums = {2,2,1,1,1,2,2};
         System.out.println(majorityElement.majorityElement0(nums));
     }
+
+    @Test
+    public void fractionToRecurringDecimal166Test() {
+        FractionToRecurringDecimal166 fractionToRecurringDecimal = new FractionToRecurringDecimal166();
+        System.out.println(fractionToRecurringDecimal.fractionToDecimal(4, 333));
+    }
+
+    @Test
+    public void excelSheetColumnNumber171Test() {
+        ExcelSheetColumnNumber171 excelSheetColumnNumber = new ExcelSheetColumnNumber171();
+        System.out.println(excelSheetColumnNumber.titleToNumber("ZY"));
+    }
+
+    @Test
+    public void FactorialTrailingZeroes172Test() {
+        FactorialTrailingZeroes172 factorialTrailingZeroes = new FactorialTrailingZeroes172();
+
+        System.out.println(factorialTrailingZeroes.trailingZeroes(625));
+        System.out.println(factorialTrailingZeroes.trailingZeroes(10));
+        System.out.println(factorialTrailingZeroes.trailingZeroes(20));
+        System.out.println(factorialTrailingZeroes.trailingZeroes(30));
+    }
 }
