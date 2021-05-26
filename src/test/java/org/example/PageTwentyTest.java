@@ -27,13 +27,17 @@ public class PageTwentyTest {
     @Test
     public void squaresOfASortedArray977Test() {
         SquaresOfASortedArray977 squaresOfASortedArray977 = new SquaresOfASortedArray977();
-//        int[] nums = {-5, -3, -2, -1};
-        int[] nums = {1};
+        int[] nums0 = {1};
+        nums0 = squaresOfASortedArray977.sortedSquares(nums0);
+
+        System.out.println(Arrays.toString(nums0));
+
+        int[] nums = {-5, -3, -2, -1};
         nums = squaresOfASortedArray977.sortedSquares(nums);
 
         System.out.println(Arrays.toString(nums));
 
-        int[] nums1 = {-7,-3,2,3,11};
+        int[] nums1 = {-7, -3, 2, 3, 11};
         nums1 = squaresOfASortedArray977.sortedSquares(nums1);
 
         System.out.println(Arrays.toString(nums1));

@@ -19,6 +19,26 @@ package org.example.leetcode.pagetwenty;
 public class SquaresOfASortedArray977 {
     public int[] sortedSquares(int[] nums) {
         int length = nums.length;
+        int[] result = new int[length];
+        int i = 0;
+        int j = length - 1;
+        int pos = length - 1;
+
+        while (i <= j) {
+            if (nums[i] * nums[i] <= nums[j] * nums[j]) {
+                result[pos--] = nums[j] * nums[j];
+                j--;
+            }
+            else {
+                result[pos--] = nums[i] * nums[i];
+                i++;
+            }
+        }
+
+        return result;
+    }
+    public int[] sortedSquares1(int[] nums) {
+        int length = nums.length;
 
         int[] result = new int[length];
         int border = length;
