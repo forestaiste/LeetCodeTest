@@ -39,7 +39,8 @@ public class PageSevenTest {
     public void topKFrequentElements347Test() {
 
         TopKFrequentElements347 topKFrequentElements = new TopKFrequentElements347();
-        int[] nums = {1, 1, 1, 2, 2, 3};
+//        int[] nums = {1, 1, 1, 2, 2, 3};
+        int[] nums = {4,1,-1,2,-1,2,3};
         System.out.println(Arrays.toString(topKFrequentElements.topKFrequent(nums, 2)));
     }
 
