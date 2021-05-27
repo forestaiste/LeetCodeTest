@@ -147,4 +147,33 @@ public class PageFourTest {
         System.out.println(factorialTrailingZeroes.trailingZeroes(20));
         System.out.println(factorialTrailingZeroes.trailingZeroes(30));
     }
+
+    @Test
+    public void largestNumber179Test() {
+        LargestNumber179 largestNumber = new LargestNumber179();
+        int[] nums = {3,30,34,5,9};
+        System.out.println(largestNumber.largestNumber(nums));
+    }
+
+    @Test
+    public void rotateArray189Test() {
+        RotateArray189 rotateArray = new RotateArray189();
+//        int[] nums = {1, 2, 3, 4, 5, 6, 7};
+        int[] nums = {1, 2};
+
+        rotateArray.rotate(nums, 3);
+        System.out.println(Arrays.toString(nums));
+    }
+
+    @Test
+    public void reverseBits190Test() {
+        ReverseBits190 reverseBits = new ReverseBits190();
+        System.out.println(reverseBits.reverseBits(43261596 ));
+    }
+
+    @Test
+    public void numberOf1Bits191Test() {
+        NumberOf1Bits191 numberOf1Bits = new NumberOf1Bits191();
+        System.out.println(numberOf1Bits.hammingWeight(19));
+    }
 }
