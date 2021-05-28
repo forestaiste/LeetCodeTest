@@ -4,8 +4,12 @@ import org.example.leetcode.pageforteen.LongestContinuousIncreasingSubsequence67
 import org.example.leetcode.pageforteen.MaximumBinaryTree654;
 import org.example.leetcode.pageforteen.SearchInABinarySearchTree700;
 import org.example.leetcode.pageforteen.TrimABinarySearchTree669;
+import org.example.leetcode.pagefour.RepeatedDNASequences187;
 import org.example.models.TreeNode;
 import org.junit.Test;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class PageForteenTest {
     @Test
@@ -56,5 +60,12 @@ public class PageForteenTest {
         TrimABinarySearchTree669 trimABinarySearchTree = new TrimABinarySearchTree669();
 //        trimABinarySearchTree.trimBST(root, 3, 4);
         trimABinarySearchTree.trimBST1(root, 1, 2);
+    }
+
+    @Test
+    public void RepeatedDNASequences187Test() {
+        RepeatedDNASequences187 repeatedDNASequences = new RepeatedDNASequences187();
+        List<String> result = repeatedDNASequences.findRepeatedDnaSequences("AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT");
+        System.out.println(Arrays.toString(result.toArray()));
     }
 }
