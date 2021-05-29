@@ -190,4 +190,42 @@ public class PageFiveTest {
 
         lowestCommonAncestorOfABinarySearchTree.lowestCommonAncestor(root1, rightLeftLeaf1, right1);
     }
+
+    @Test
+    public void BitwiseANDOfNumbersRange201Test() {
+        BitwiseANDOfNumbersRange201 bitwiseANDOfNumbersRange = new BitwiseANDOfNumbersRange201();
+        System.out.println(bitwiseANDOfNumbersRange.rangeBitwiseAnd(5, 5));
+        System.out.println(bitwiseANDOfNumbersRange.rangeBitwiseAnd(6, 7));
+        System.out.println(bitwiseANDOfNumbersRange.rangeBitwiseAnd(1, 2147483647));
+    }
+
+    @Test
+    public void IsomorphicStrings205Test() {
+        IsomorphicStrings205 isomorphicStrings = new IsomorphicStrings205();
+        System.out.println(isomorphicStrings.isIsomorphic("badc", "baba"));
+        System.out.println(isomorphicStrings.isIsomorphic("egg", "add"));
+        System.out.println(isomorphicStrings.isIsomorphic("foo", "bar"));
+        System.out.println(isomorphicStrings.isIsomorphic("paper", "title"));
+    }
+
+    @Test
+    public void ContainsDuplicate217Test() {
+        ContainsDuplicate217 containsDuplicate = new ContainsDuplicate217();
+        int[] nums = {1, 2, 3, 1};
+        System.out.println(containsDuplicate.containsDuplicate(nums));
+    }
+
+    @Test
+    public void ContainsDuplicateII219Test() {
+        ContainsDuplicateII219 containsDuplicateII = new ContainsDuplicateII219();
+        int[] nums = {1,2,3,1,2,3};
+//        int[] nums = {99,99};
+        System.out.println(containsDuplicateII.containsNearbyDuplicate(nums, 2));
+
+        int[] nums2 = {1,0,1,1};
+        System.out.println(containsDuplicateII.containsNearbyDuplicate(nums2, 1));
+
+        int[] nums1 = {1,2,3,1};
+        System.out.println(containsDuplicateII.containsNearbyDuplicate(nums1, 3));
+    }
 }

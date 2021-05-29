@@ -176,4 +176,26 @@ public class PageFourTest {
         NumberOf1Bits191 numberOf1Bits = new NumberOf1Bits191();
         System.out.println(numberOf1Bits.hammingWeight(19));
     }
+
+    @Test
+    public void numberOfIslands200Test() {
+        NumberOfIslands200 numberOfIslands = new NumberOfIslands200();
+        char[][] grid = {
+                {'1','1','1','1','0'},
+                {'1','1','0','1','0'},
+                {'1','1','0','0','0'},
+                {'0','0','0','0','0'}
+        };
+
+        System.out.println(numberOfIslands.numIslands(grid));
+
+        char[][] grid1 = {
+                {'1','1','0','0','0'},
+                {'1','1','0','0','0'},
+                {'0','0','1','0','0'},
+                {'0','0','0','1','1'}
+        };
+
+        System.out.println(numberOfIslands.numIslands(grid1));
+    }
 }
