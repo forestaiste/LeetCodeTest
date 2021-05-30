@@ -190,4 +190,14 @@ public class PageFiveTest {
 
         lowestCommonAncestorOfABinarySearchTree.lowestCommonAncestor(root1, rightLeftLeaf1, right1);
     }
+
+    @Test
+    public void kthLargestElementInAnArray215Test() {
+        KthLargestElementInAnArray215 kthLargestElementInAnArray = new KthLargestElementInAnArray215();
+//        int[] nums = {3,2,1,5,6,4};
+//        System.out.println(kthLargestElementInAnArray.findKthLargest(nums, 2));
+
+        int[] nums1 = {3,5,3,1,2,4,2,5,6};
+        System.out.println(kthLargestElementInAnArray.findKthLargest(nums1, 4));
+    }
 }
