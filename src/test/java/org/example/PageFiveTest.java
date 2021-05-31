@@ -238,4 +238,12 @@ public class PageFiveTest {
         int[] nums1 = {1,2,3,1};
         System.out.println(containsDuplicateII.containsNearbyDuplicate(nums1, 3));
     }
+
+    @Test
+    public void containsDuplicateIII220Test() {
+        ContainsDuplicateIII220 containsDuplicateIII = new ContainsDuplicateIII220();
+        int[] nums = {1,5,9,1,5,9};
+
+        System.out.println(containsDuplicateIII.containsNearbyAlmostDuplicate(nums, 2, 3));
+    }
 }
