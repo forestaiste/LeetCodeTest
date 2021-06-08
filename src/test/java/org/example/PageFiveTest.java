@@ -192,6 +192,16 @@ public class PageFiveTest {
     }
 
     @Test
+    public void kthLargestElementInAnArray215Test() {
+        KthLargestElementInAnArray215 kthLargestElementInAnArray = new KthLargestElementInAnArray215();
+//        int[] nums = {3,2,1,5,6,4};
+//        System.out.println(kthLargestElementInAnArray.findKthLargest(nums, 2));
+
+        int[] nums1 = {3,5,3,1,2,4,2,5,6};
+        System.out.println(kthLargestElementInAnArray.findKthLargest(nums1, 4));
+    }
+
+    @Test
     public void bitwiseANDOfNumbersRange201Test() {
         BitwiseANDOfNumbersRange201 bitwiseANDOfNumbersRange = new BitwiseANDOfNumbersRange201();
         System.out.println(bitwiseANDOfNumbersRange.rangeBitwiseAnd(5, 5));
@@ -227,6 +237,14 @@ public class PageFiveTest {
 
         int[] nums1 = {1,2,3,1};
         System.out.println(containsDuplicateII.containsNearbyDuplicate(nums1, 3));
+    }
+
+    @Test
+    public void containsDuplicateIII220Test() {
+        ContainsDuplicateIII220 containsDuplicateIII = new ContainsDuplicateIII220();
+        int[] nums = {1,5,9,1,5,9};
+
+        System.out.println(containsDuplicateIII.containsNearbyAlmostDuplicate(nums, 2, 3));
     }
 
     @Test
