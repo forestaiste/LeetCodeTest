@@ -23,7 +23,7 @@ package org.example.leetcode.pagefive;
 import org.example.models.TreeNode;
 
 public class InvertBinaryTree226 {
-    public TreeNode invertTree(TreeNode root) {
+    public TreeNode invertTree1(TreeNode root) {
 
         if (root == null)
             return null;
@@ -42,5 +42,16 @@ public class InvertBinaryTree226 {
             invert(node.left);
         if (node.right != null)
             invert(node.right);
+    }
+
+    public TreeNode invertTree(TreeNode root) {
+        if (root == null) {
+            return null;
+        }
+        TreeNode left = invertTree(root.left);
+        TreeNode right = invertTree(root.right);
+        root.left = right;
+        root.right = left;
+        return root;
     }
 }
