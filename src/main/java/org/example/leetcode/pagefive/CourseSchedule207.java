@@ -24,7 +24,78 @@ package org.example.leetcode.pagefive;
 import java.util.*;
 
 public class CourseSchedule207 {
+    List<List<Integer>> edges;
+    int[] visited;
+    boolean valid = true;
+
     public boolean canFinish(int numCourses, int[][] prerequisites) {
-        return true;
+        edges = new ArrayList<List<Integer>>();
+        for (int i = 0; i < numCourses; ++i) {
+            edges.add(new ArrayList<Integer>());
+        }
+        visited = new int[numCourses];
+        for (int[] info : prerequisites) {
+            edges.get(info[1]).add(info[0]);
+        }
+        for (int i = 0; i < numCourses && valid; ++i) {
+            if (visited[i] == 0) {
+                dfs(i);
+            }
+        }
+        return valid;
+    }
+
+    public void dfs(int u) {
+        visited[u] = 1;
+        for (int v: edges.get(u)) {
+            if (visited[v] == 0) {
+                dfs(v);
+                if (!valid) {
+                    return;
+                }
+            } else if (visited[v] == 1) {
+                valid = false;
+                return;
+            }
+        }
+        visited[u] = 2;
+    }
+
+    public boolean canFinish1(int numCourses, int[][] prerequisites) {
+        int[] depends = new int[numCourses];
+        int count = 0;
+
+        Queue<Integer> queue = new LinkedList<>();
+
+        for (int i = 0; i < prerequisites.length; i++) {
+            depends[prerequisites[i][0]]++;
+        }
+
+        for (int i = 0; i < numCourses; i++) {
+            if (depends[i] == 0) {
+                queue.add(i);
+                count++;
+            }
+        }
+
+        while (!queue.isEmpty()) {
+            int course = queue.poll();
+
+            for (int i = 0; i < prerequisites.length; i++) {
+                if (prerequisites[i][1] == course) {
+                    depends[prerequisites[i][0]]--;
+
+                    if (depends[prerequisites[i][0]] == 0) {
+                        queue.add(prerequisites[i][0]);
+                        count++;
+                    }
+                }
+
+            }
+        }
+
+        if (count == numCourses)
+            return true;
+        return false;
     }
 }

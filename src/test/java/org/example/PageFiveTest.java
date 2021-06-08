@@ -192,7 +192,7 @@ public class PageFiveTest {
     }
 
     @Test
-    public void BitwiseANDOfNumbersRange201Test() {
+    public void bitwiseANDOfNumbersRange201Test() {
         BitwiseANDOfNumbersRange201 bitwiseANDOfNumbersRange = new BitwiseANDOfNumbersRange201();
         System.out.println(bitwiseANDOfNumbersRange.rangeBitwiseAnd(5, 5));
         System.out.println(bitwiseANDOfNumbersRange.rangeBitwiseAnd(6, 7));
@@ -200,7 +200,7 @@ public class PageFiveTest {
     }
 
     @Test
-    public void IsomorphicStrings205Test() {
+    public void isomorphicStrings205Test() {
         IsomorphicStrings205 isomorphicStrings = new IsomorphicStrings205();
         System.out.println(isomorphicStrings.isIsomorphic("badc", "baba"));
         System.out.println(isomorphicStrings.isIsomorphic("egg", "add"));
@@ -209,14 +209,14 @@ public class PageFiveTest {
     }
 
     @Test
-    public void ContainsDuplicate217Test() {
+    public void containsDuplicate217Test() {
         ContainsDuplicate217 containsDuplicate = new ContainsDuplicate217();
         int[] nums = {1, 2, 3, 1};
         System.out.println(containsDuplicate.containsDuplicate(nums));
     }
 
     @Test
-    public void ContainsDuplicateII219Test() {
+    public void containsDuplicateII219Test() {
         ContainsDuplicateII219 containsDuplicateII = new ContainsDuplicateII219();
         int[] nums = {1,2,3,1,2,3};
 //        int[] nums = {99,99};
@@ -227,5 +227,44 @@ public class PageFiveTest {
 
         int[] nums1 = {1,2,3,1};
         System.out.println(containsDuplicateII.containsNearbyDuplicate(nums1, 3));
+    }
+
+    @Test
+    public void courseSchedule207Test() {
+        CourseSchedule207 courseSchedule207 = new CourseSchedule207();
+
+        int[][] prerequisites = new int[][] { {1, 0}, {2, 0}, {3, 1}, {3, 2}};
+
+        System.out.println(courseSchedule207.canFinish(4, prerequisites));
+    }
+
+    @Test
+    public void courseScheduleII210Test() {
+        CourseScheduleII210 courseScheduleII = new CourseScheduleII210();
+        int[][] prerequisites = new int[][] { {1, 0}, {2, 0}, {3, 1}, {3, 2}};
+        int[] order = courseScheduleII.findOrder(4, prerequisites);
+
+        System.out.println(Arrays.toString(order));
+    }
+
+    @Test
+    public void implementTrie208Test() {
+        ImplementTrie208 implementTrie = new ImplementTrie208();
+        ImplementTrie208 trie = new ImplementTrie208();
+        trie.insert("apple");
+        System.out.println(trie.search("apple"));   // 返回 True
+        System.out.println(trie.search("app"));     // 返回 False
+        System.out.println(trie.startsWith("app")); // 返回 True
+        trie.insert("app");
+        System.out.println(trie.search("app"));     // 返回 True
+        trie.insert("tunnel");
+    }
+
+    @Test
+    public void maximalSquare221Test() {
+        MaximalSquare221 maximalSquare = new MaximalSquare221();
+        char[][] matrix = {{'1','0','1','0','0'},{'1','0','1','1','1'},{'1','1','1','1','1'},{'1','0','0','1','0'}};
+
+        System.out.println(maximalSquare.maximalSquare(matrix));
     }
 }
