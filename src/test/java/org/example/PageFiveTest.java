@@ -285,4 +285,11 @@ public class PageFiveTest {
 
         System.out.println(maximalSquare.maximalSquare(matrix));
     }
+
+    @Test
+    public void rectangleArea223Test() {
+        RectangleArea223 rectangleArea = new RectangleArea223();
+
+        System.out.println(rectangleArea.computeArea(-3, 0, 3, 4, 0, -1, 9, 2));
+    }
 }
