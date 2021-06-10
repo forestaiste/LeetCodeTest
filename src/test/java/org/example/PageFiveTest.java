@@ -292,4 +292,15 @@ public class PageFiveTest {
 
         System.out.println(rectangleArea.computeArea(-3, 0, 3, 4, 0, -1, 9, 2));
     }
+
+    @Test
+    public void BasicCalculatorII227Test() {
+        BasicCalculatorII227 basicCalculatorII = new BasicCalculatorII227();
+        System.out.println(basicCalculatorII.calculate("2*3*4"));
+        System.out.println(basicCalculatorII.calculate("1 + 1"));
+        System.out.println(basicCalculatorII.calculate("2*3+4"));
+        System.out.println(basicCalculatorII.calculate("3+2*2"));
+        System.out.println(basicCalculatorII.calculate(" 3/2 "));
+        System.out.println(basicCalculatorII.calculate(" 3+5 / 2 "));
+    }
 }
