@@ -294,7 +294,7 @@ public class PageFiveTest {
     }
 
     @Test
-    public void BasicCalculatorII227Test() {
+    public void basicCalculatorII227Test() {
         BasicCalculatorII227 basicCalculatorII = new BasicCalculatorII227();
         System.out.println(basicCalculatorII.calculate("2*3*4"));
         System.out.println(basicCalculatorII.calculate("1 + 1"));
@@ -302,5 +302,25 @@ public class PageFiveTest {
         System.out.println(basicCalculatorII.calculate("3+2*2"));
         System.out.println(basicCalculatorII.calculate(" 3/2 "));
         System.out.println(basicCalculatorII.calculate(" 3+5 / 2 "));
+    }
+
+    @Test
+    public void summaryRanges228Test() {
+        SummaryRanges228 summaryRanges = new SummaryRanges228();
+        int[] nums = {0,2,3,4,6,8,9};
+        List<String> result = summaryRanges.summaryRanges(nums);
+        System.out.println(Arrays.toString(result.toArray()));
+
+        int[] nums0 = {0,1,2,4,5,7};
+        List<String> result0 = summaryRanges.summaryRanges(nums0);
+        System.out.println(Arrays.toString(result0.toArray()));
+
+        int[] nums1 = new int[0];
+        List<String> result1 = summaryRanges.summaryRanges(nums1);
+        System.out.println(Arrays.toString(result1.toArray()));
+
+        int[] nums2 = {0};
+        List<String> result2 = summaryRanges.summaryRanges(nums2);
+        System.out.println(Arrays.toString(result2.toArray()));
     }
 }
