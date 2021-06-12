@@ -3,6 +3,7 @@ package org.example;
 import org.example.models.TreeNode;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Stack;
 
@@ -74,6 +75,7 @@ public class BinaryTreeTraversal {
             }
         }
 
+        Collections.reverse(result);
         return result;
     }
 }

@@ -1,12 +1,12 @@
 package org.example;
 
+import com.sun.source.tree.Tree;
 import org.example.leetcode.pagefive.*;
 import org.example.models.ListNode;
 import org.example.models.TreeNode;
 import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class PageFiveTest {
     @Test
@@ -322,5 +322,190 @@ public class PageFiveTest {
         int[] nums2 = {0};
         List<String> result2 = summaryRanges.summaryRanges(nums2);
         System.out.println(Arrays.toString(result2.toArray()));
+    }
+
+    @Test
+    public void majorityElementII229Test() {
+        MajorityElementII229 majorityElementII = new MajorityElementII229();
+        int[] nums = {1,1,1,3,3,2,2,2};
+        List<Integer> result = majorityElementII.majorityElement(nums);
+        System.out.println(Arrays.toString(result.toArray()));
+    }
+
+    @Test
+    public void kthSmallestElementInABST230Test() {
+        KthSmallestElementInABST230 kthSmallestElementInABST = new KthSmallestElementInABST230();
+
+        TreeNode one = new TreeNode(1);
+        TreeNode two = new TreeNode(2, one, null);
+        TreeNode four = new TreeNode(4);
+        TreeNode three = new TreeNode(3, two, four);
+        TreeNode six = new TreeNode(6);
+        TreeNode five = new TreeNode(5, three, six);
+
+        System.out.println(kthSmallestElementInABST.kthSmallest(five, 3));
+    }
+
+    @Test
+    public void powerOfTwo231Test() {
+        PowerOfTwo231 powerOfTwo = new PowerOfTwo231();
+
+        System.out.println(powerOfTwo.isPowerOfTwo(1));
+        System.out.println(powerOfTwo.isPowerOfTwo(-16));
+        System.out.println(powerOfTwo.isPowerOfTwo(3));
+        System.out.println(powerOfTwo.isPowerOfTwo(5));
+    }
+
+    public void preOrder(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+        if (root == null)
+            return;
+
+        Stack<TreeNode> stack = new Stack<>();
+
+        stack.push(root);
+
+        while (!stack.isEmpty()) {
+            TreeNode node = stack.pop();
+
+            result.add(node.val);
+            if (node.right != null) {
+                stack.push(node.right);
+            }
+
+            if (node.left != null) {
+                stack.push(node.left);
+            }
+        }
+
+        System.out.println(Arrays.toString(result.toArray()));
+    }
+
+    @Test
+    public void preOrderTest() {
+        TreeNode one = new TreeNode(1);
+        TreeNode two = new TreeNode(2, one, null);
+        TreeNode four = new TreeNode(4);
+        TreeNode three = new TreeNode(3, two, four);
+        TreeNode six = new TreeNode(6);
+        TreeNode five = new TreeNode(5, three, six);
+
+        preOrder(five);
+    }
+
+    public void postOrder(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+
+        if (root == null)
+            return;
+
+        Stack<TreeNode> stack = new Stack<>();
+
+        stack.push(root);
+
+        while (!stack.isEmpty()) {
+            TreeNode node = stack.pop();
+
+            result.add(node.val);
+
+            if (node.left != null) {
+                stack.push(node.left);
+            }
+
+            if (node.right != null) {
+                stack.push(node.right);
+            }
+        }
+
+        Collections.reverse(result);
+
+        System.out.println(Arrays.toString(result.toArray()));
+    }
+
+    @Test
+    public void postOrderTest() {
+        TreeNode one = new TreeNode(1);
+        TreeNode two = new TreeNode(2, one, null);
+        TreeNode four = new TreeNode(4);
+        TreeNode three = new TreeNode(3, two, four);
+        TreeNode six = new TreeNode(6);
+        TreeNode five = new TreeNode(5, three, six);
+
+        postOrder(five);
+    }
+
+    public void midOrder(TreeNode root) {
+        List<Integer> result = new ArrayList<>();
+
+        if (root == null)
+            return;
+
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode current = root;
+        while (current != null || !stack.isEmpty()) {
+            if (current != null) {
+                stack.push(current);
+                current = current.left;
+            }
+            else {
+                TreeNode node = stack.pop();
+                result.add(node.val);
+                current = node.right;
+            }
+        }
+
+        System.out.println(Arrays.toString(result.toArray()));
+    }
+
+    @Test
+    public void midOrderTest() {
+        TreeNode one = new TreeNode(1);
+        TreeNode two = new TreeNode(2, one, null);
+        TreeNode four = new TreeNode(4);
+        TreeNode three = new TreeNode(3, two, four);
+        TreeNode six = new TreeNode(6);
+        TreeNode five = new TreeNode(5, three, six);
+
+        midOrder(five);
+    }
+
+    @Test
+    public void palindromeLinkedList234Test() {
+        PalindromeLinkedList234 palindromeLinkedList = new PalindromeLinkedList234();
+        ListNode four = new ListNode(1);
+        ListNode three = new ListNode(2, four);
+        ListNode twoHalf = new ListNode(3, three);
+        ListNode two = new ListNode(2, twoHalf);
+        ListNode one = new ListNode(1, two);
+
+
+        System.out.println(palindromeLinkedList.isPalindrome(one));
+    }
+
+    @Test
+    public void deleteNodeInALinkedList237() {
+        DeleteNodeInALinkedList237 deleteNodeInALinkedList = new DeleteNodeInALinkedList237();
+        ListNode four = new ListNode(5);
+        ListNode three = new ListNode(4, four);
+        ListNode twoHalf = new ListNode(3, three);
+        ListNode two = new ListNode(2, twoHalf);
+        ListNode one = new ListNode(1, two);
+
+        ListNode delete = new ListNode(3);
+        deleteNodeInALinkedList.deleteNode(one, delete);
+    }
+
+    @Test
+    public void productOfArrayExceptSelf238Test() {
+        ProductOfArrayExceptSelf238 productOfArrayExceptSelf = new ProductOfArrayExceptSelf238();
+
+        int[] nums0 = {0, 0};
+        System.out.println(Arrays.toString(productOfArrayExceptSelf.productExceptSelf(nums0)));
+
+        int[] nums = {1, 2, 3, 4};
+        System.out.println(Arrays.toString(productOfArrayExceptSelf.productExceptSelf(nums)));
+
+        int[] nums1 = {-1,1,0,-3,3};
+        System.out.println(Arrays.toString(productOfArrayExceptSelf.productExceptSelf(nums1)));
     }
 }

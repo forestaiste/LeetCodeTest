@@ -18,10 +18,65 @@ package org.example.leetcode.pagefive;
 //        输入：[1,1,1,3,3,2,2,2]
 //        输出：[1,2]
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MajorityElementII229 {
     public List<Integer> majorityElement(int[] nums) {
-        return null;
+        List<Integer> result = new ArrayList<>();
+
+        if (nums == null || nums.length == 0)
+            return result;
+
+        int number1 = nums[0];
+        int count1 = 0;
+        int number2 = nums[0];
+        int count2 = 0;
+
+        for (int num : nums) {
+            if (number1 == num) {
+                count1++;
+                continue;
+            }
+
+            if (number2 == num) {
+                count2++;
+                continue;
+            }
+
+            if (count1 == 0) {
+                number1 = num;
+                count1++;
+                continue;
+            }
+
+            if (count2 == 0) {
+                number2 = num;
+                count2++;
+                continue;
+            }
+
+            count1--;
+            count2--;
+        }
+
+        count1 = 0;
+        count2 = 0;
+        for (int num : nums) {
+            if (num == number1)
+                count1++;
+            else if (num == number2)
+                count2++;
+        }
+
+        if (count1 > nums.length / 3) {
+            result.add(number1);
+        }
+
+        if (count2 > nums.length / 3) {
+            result.add(number2);
+        }
+
+        return result;
     }
 }
