@@ -508,4 +508,31 @@ public class PageFiveTest {
         int[] nums1 = {-1,1,0,-3,3};
         System.out.println(Arrays.toString(productOfArrayExceptSelf.productExceptSelf(nums1)));
     }
+
+    @Test
+    public void searchA2DMatrixII240Test() {
+        SearchA2DMatrixII240 searchA2DMatrixII240 = new SearchA2DMatrixII240();
+
+        int[][] matrix = {{1,4,7,11,15},{2,5,8,12,19},{3,6,9,16,22},{10,13,14,17,24},{18,21,23,26,30}};
+
+        System.out.println(searchA2DMatrixII240.searchMatrix(matrix, 5));
+        System.out.println(searchA2DMatrixII240.searchMatrix(matrix, 20));
+        System.out.println(searchA2DMatrixII240.searchMatrix(matrix, 17));
+        System.out.println(searchA2DMatrixII240.searchMatrix(matrix, 6));
+        System.out.println(searchA2DMatrixII240.searchMatrix(matrix, 19));
+        System.out.println(searchA2DMatrixII240.searchMatrix(matrix, 18));
+        System.out.println(searchA2DMatrixII240.searchMatrix(matrix, 23));
+        System.out.println(searchA2DMatrixII240.searchMatrix(matrix, 20));
+        System.out.println(searchA2DMatrixII240.searchMatrix(matrix, 11));
+
+        int[][] matrix1 = {{1,3,5,7,9},{2,4,6,8,10},{11,13,15,17,19},{12,14,16,18,20},{21,22,23,24,25}};
+        System.out.println(searchA2DMatrixII240.searchMatrix(matrix1, 13));
+    }
+
+    @Test
+    public void differentWaysToAddParentheses241Test() {
+        DifferentWaysToAddParentheses241 differentWaysToAddParentheses = new DifferentWaysToAddParentheses241();
+        List<Integer> result = differentWaysToAddParentheses.diffWaysToCompute("2*3-4*5");
+        System.out.println(Arrays.toString(result.toArray()));
+    }
 }

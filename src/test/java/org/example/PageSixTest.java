@@ -1,9 +1,6 @@
 package org.example;
 
-import org.example.leetcode.pagesix.BinaryTreePaths257;
-import org.example.leetcode.pagesix.LongestIncreasingSubsequence300;
-import org.example.leetcode.pagesix.MoveZeroes283;
-import org.example.leetcode.pagesix.PerfectSquares279;
+import org.example.leetcode.pagesix.*;
 import org.example.models.TreeNode;
 import org.junit.Test;
 
@@ -64,5 +61,42 @@ public class PageSixTest {
         int[] nums = {0, 1, 0, 3, 12};
         moveZeroes.moveZeroes(nums);
         System.out.println(Arrays.toString(nums));
+    }
+
+    @Test
+    public void addDigits258Test() {
+        AddDigits258 addDigits258 = new AddDigits258();
+        System.out.println(addDigits258.addDigits(38));
+    }
+
+    @Test
+    public void singleNumberIII260Test() {
+        SingleNumberIII260 singleNumberIII260 = new SingleNumberIII260();
+        int[] nums = {1,2,1,3,2,5};
+        System.out.println(Arrays.toString(singleNumberIII260.singleNumber(nums)));
+    }
+
+    @Test
+    public void UglyNumber263Test() {
+        UglyNumber263 uglyNumber = new UglyNumber263();
+        System.out.println(uglyNumber.isUgly(14));
+        System.out.println(uglyNumber.isUgly(6));
+        System.out.println(uglyNumber.isUgly(8));
+        System.out.println(uglyNumber.isUgly(1));
+        System.out.println(uglyNumber.isUgly(15));
+        System.out.println(uglyNumber.isUgly(19));
+    }
+
+    @Test
+    public void uglyNumberII264Test() {
+        UglyNumberII264 uglyNumberII264 = new UglyNumberII264();
+        System.out.println(uglyNumberII264.nthUglyNumber(3));
+        System.out.println(uglyNumberII264.nthUglyNumber(4));
+        System.out.println(uglyNumberII264.nthUglyNumber(5));
+        System.out.println(uglyNumberII264.nthUglyNumber(6));
+        System.out.println(uglyNumberII264.nthUglyNumber(7));
+        System.out.println(uglyNumberII264.nthUglyNumber(8));
+        System.out.println(uglyNumberII264.nthUglyNumber(9));
+        System.out.println(uglyNumberII264.nthUglyNumber(10));
     }
 }

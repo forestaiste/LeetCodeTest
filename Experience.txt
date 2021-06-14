@@ -47,6 +47,7 @@
     dp[i][3]:第二次卖出股票手上所剩最大现金；
     dp[i][2]:第二次卖出股票手上所剩最大现金；
 
+一. 类型
 1. 数组
    a. 二分法：闭区间[left, right]和半开区间[left, right)的区别。闭区间使用left <= right，left = mid + 1或right = mid - 1。 半开区间是 left < right，left = mid + 1和right = mid。
        i. 关于二分法第二种情况(闭开区间)的详细解释参考，https://leetcode-cn.com/problems/find-minimum-in-rotated-sorted-array/solution/er-fen-cha-zhao-wei-shi-yao-zuo-you-bu-dui-cheng-z/
@@ -93,10 +94,15 @@
    b. 动态规划的结果可能直接在f[length]中获取，也可能需要遍历f[0]-f[length],需要根据f[i]的定义来决定。需要遍历f[i]的如题152， 题120。
 6. 矩阵(二维数组)圈围图形
    a. 找到入口点，从入口点出发把关联点设置成有助于判断的值，题200，题130
-7. 桶
+
+
+二. 算法
+1. 桶
    a. 关于桶的概念和怎么分桶，参考https://leetcode-cn.com/problems/contains-duplicate-iii/solution/c-li-yong-tong-fen-zu-xiang-xi-jie-shi-b-ofj6/
    b. 题220。
-        
+2. 分治算法
+   a. 大问题可以分解为同类型若干小问题，然后再合并。典型例题，合并排序
+   b. 题242。这道题除了使用分治算法，还有列举所有组合的思想。
 
 
 
