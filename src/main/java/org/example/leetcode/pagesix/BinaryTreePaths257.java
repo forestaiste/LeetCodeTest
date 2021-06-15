@@ -94,7 +94,7 @@ public class BinaryTreePaths257 {
             TreeNode node = stack.pop();
             String path = paths.pop();
             if (node.left == null && node.right == null) {
-                result.add(String.join("->", path));
+                result.add(path);
             }
 
             if (node.right != null) {
