@@ -90,13 +90,42 @@ public class PageSixTest {
     @Test
     public void uglyNumberII264Test() {
         UglyNumberII264 uglyNumberII264 = new UglyNumberII264();
-        System.out.println(uglyNumberII264.nthUglyNumber(3));
-        System.out.println(uglyNumberII264.nthUglyNumber(4));
-        System.out.println(uglyNumberII264.nthUglyNumber(5));
-        System.out.println(uglyNumberII264.nthUglyNumber(6));
-        System.out.println(uglyNumberII264.nthUglyNumber(7));
-        System.out.println(uglyNumberII264.nthUglyNumber(8));
-        System.out.println(uglyNumberII264.nthUglyNumber(9));
+//        System.out.println(uglyNumberII264.nthUglyNumber(3));
+//        System.out.println(uglyNumberII264.nthUglyNumber(4));
+//        System.out.println(uglyNumberII264.nthUglyNumber(5));
+//        System.out.println(uglyNumberII264.nthUglyNumber(6));
+//        System.out.println(uglyNumberII264.nthUglyNumber(7));
+//        System.out.println(uglyNumberII264.nthUglyNumber(8));
+//        System.out.println(uglyNumberII264.nthUglyNumber(9));
         System.out.println(uglyNumberII264.nthUglyNumber(10));
+    }
+
+    @Test
+    public void MissingNumber268Test() {
+        MissingNumber268 missingNumber = new MissingNumber268();
+        int[] nums = {9,6,4,2,3,5,7,0,1};
+        System.out.println(missingNumber.missingNumber(nums));
+    }
+
+    @Test
+    public void HIndex274Test() {
+        HIndex274 hIndex = new HIndex274();
+        int[] citations = {1,3,2,3,100};
+        System.out.println(hIndex.hIndex(citations));
+
+        int[] citations2 = {4,0,6,1,5};
+        System.out.println(hIndex.hIndex(citations2));
+
+        int[] citations1 = {1};
+        System.out.println(hIndex.hIndex(citations1));
+        int[] citations3 = {100};
+        System.out.println(hIndex.hIndex(citations3));
+    }
+
+    @Test
+    public void HIndexII275Test() {
+        HIndexII275 hIndexII = new HIndexII275();
+        int[] citations = {0,1,4,5,6};
+        System.out.println(hIndexII.hIndex(citations));
     }
 }

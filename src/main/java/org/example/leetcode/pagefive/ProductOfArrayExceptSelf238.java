@@ -34,7 +34,7 @@ public class ProductOfArrayExceptSelf238 {
 
         return answer;
     }
-    
+
     public int[] productExceptSelf1(int[] nums) {
         int length = nums.length;
 
