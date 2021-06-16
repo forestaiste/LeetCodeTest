@@ -138,7 +138,7 @@ public class PageSixTest {
     @Test
     public void FindTheDuplicateNumber287Test() {
         FindTheDuplicateNumber287 findTheDuplicateNumber = new FindTheDuplicateNumber287();
-        int[] nums = {3,1,3,4,2};
+        int[] nums = {1,4,6,6,6,2,3};
 
         System.out.println(findTheDuplicateNumber.findDuplicate(nums));
     }
