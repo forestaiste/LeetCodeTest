@@ -101,14 +101,14 @@ public class PageSixTest {
     }
 
     @Test
-    public void MissingNumber268Test() {
+    public void missingNumber268Test() {
         MissingNumber268 missingNumber = new MissingNumber268();
         int[] nums = {9,6,4,2,3,5,7,0,1};
         System.out.println(missingNumber.missingNumber(nums));
     }
 
     @Test
-    public void HIndex274Test() {
+    public void hIndex274Test() {
         HIndex274 hIndex = new HIndex274();
         int[] citations = {1,3,2,3,100};
         System.out.println(hIndex.hIndex(citations));
@@ -123,9 +123,23 @@ public class PageSixTest {
     }
 
     @Test
-    public void HIndexII275Test() {
+    public void hIndexII275Test() {
         HIndexII275 hIndexII = new HIndexII275();
         int[] citations = {0,1,4,5,6};
         System.out.println(hIndexII.hIndex(citations));
+    }
+
+    @Test
+    public void firstBadVersion278Test() {
+        FirstBadVersion278 firstBadVersion = new FirstBadVersion278();
+        System.out.println(firstBadVersion.firstBadVersion(5));
+    }
+
+    @Test
+    public void FindTheDuplicateNumber287Test() {
+        FindTheDuplicateNumber287 findTheDuplicateNumber = new FindTheDuplicateNumber287();
+        int[] nums = {3,1,3,4,2};
+
+        System.out.println(findTheDuplicateNumber.findDuplicate(nums));
     }
 }
