@@ -122,4 +122,13 @@ public class PageFifteenTest {
         InsertIntoABinarySearchTree701 insertIntoABinarySearchTree = new InsertIntoABinarySearchTree701();
         insertIntoABinarySearchTree.insertIntoBST(root1, 6);
     }
+
+    @Test
+    public void binarySearch704Test() {
+        BinarySearch704 binarySearch = new BinarySearch704();
+        int[] nums = {-1,0,3,5,9,12};
+
+        System.out.println(binarySearch.search(nums, 9));
+        System.out.println(binarySearch.search(nums, 6));
+    }
 }

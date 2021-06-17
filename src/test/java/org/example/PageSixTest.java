@@ -142,4 +142,27 @@ public class PageSixTest {
 
         System.out.println(findTheDuplicateNumber.findDuplicate(nums));
     }
+
+    @Test
+    public void gameOfLife289Test() {
+        GameOfLife289 gameOfLife = new GameOfLife289();
+
+        int[][] board = {{0,1,0},{0,0,1},{1,1,1},{0,0,0}};
+        gameOfLife.gameOfLife(board);
+    }
+
+    @Test
+    public void wordPattern290Test() {
+        WordPattern290 wordPattern = new WordPattern290();
+        System.out.println(wordPattern.wordPattern("abba", "dog cat cat dog"));
+        System.out.println(wordPattern.wordPattern("abba", "dog cat cat fish"));
+        System.out.println(wordPattern.wordPattern("aaaa", "dog cat cat dog"));
+        System.out.println(wordPattern.wordPattern("abba", "dog dog dog dog"));
+    }
+
+    @Test
+    public void nimGame292Test() {
+        NimGame292 nimGame = new NimGame292();
+        System.out.println(nimGame.canWinNim(4));
+    }
 }
