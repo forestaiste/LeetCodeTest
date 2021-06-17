@@ -99,8 +99,9 @@ public class PageOneTest {
     @Test
     public void rotatedSortedArrayTest() {
         RotatedSortedArray33 rotatedSortedArray = new RotatedSortedArray33();
-        int[] nums = {4,5,6,7,0,1,2};
-        System.out.println(rotatedSortedArray.search(nums, 0));
+//        int[] nums = {4,5,6,7,0,1,2};
+        int[] nums = {11, 13, 15, 17};
+        System.out.println(rotatedSortedArray.search(nums, 11));
     }
 
     @Test

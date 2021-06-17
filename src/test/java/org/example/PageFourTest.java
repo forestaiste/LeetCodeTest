@@ -59,10 +59,13 @@ public class PageFourTest {
     @Test
     public void findMinimumInRotatedSortedArray153Test() {
         FindMinimumInRotatedSortedArray153 findMinimumInRotatedSortedArray = new FindMinimumInRotatedSortedArray153();
+
+        int[] nums0 = new int[]{3,4,5,1,2};
+        System.out.println(findMinimumInRotatedSortedArray.findMin(nums0));
+
         int[] nums = {4,5,6,7,8, 9, 10, -5, -4, -3, -2, - 1, 0,1,2,3};
-//        System.out.println(findMinimumInRotatedSortedArray.findMin(nums));
-        nums = new int[]{3,4,5,1,2};
-//        System.out.println(findMinimumInRotatedSortedArray.findMin(nums));
+        System.out.println(findMinimumInRotatedSortedArray.findMin(nums));
+
         nums = new int[]{11,13,15,17};
 
         System.out.println(findMinimumInRotatedSortedArray.findMin(nums));
