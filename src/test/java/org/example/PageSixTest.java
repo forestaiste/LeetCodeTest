@@ -183,4 +183,17 @@ public class PageSixTest {
 
         System.out.println(rangeSumQueryImmutable.sumRange(2, 5));
     }
+
+    @Test
+    public void RangeSumQuery2DImmutable304Test() {
+
+        int[][] matrix = {
+                {3, 0, 1, 4, 2},
+                {5, 6, 3, 2, 1},
+                {1, 2, 0, 1, 5},
+                {4, 1, 0, 1, 7},
+                {1, 0, 3, 0, 5}};
+        RangeSumQuery2DImmutable304 rangeSumQuery2DImmutable = new RangeSumQuery2DImmutable304(matrix);
+        System.out.println(rangeSumQuery2DImmutable.sumRegion(2, 1, 4, 3));
+    }
 }
