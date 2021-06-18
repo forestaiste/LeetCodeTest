@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.leetcode.pageseven.RangeSumQueryImmutable303;
 import org.example.leetcode.pagesix.*;
 import org.example.models.TreeNode;
 import org.junit.Test;
@@ -164,5 +165,22 @@ public class PageSixTest {
     public void nimGame292Test() {
         NimGame292 nimGame = new NimGame292();
         System.out.println(nimGame.canWinNim(4));
+    }
+
+    @Test
+    public void bullsAndCows299Test() {
+        BullsAndCows299 bullsAndCows = new BullsAndCows299();
+        System.out.println(bullsAndCows.getHint("1122", "2211"));
+        System.out.println(bullsAndCows.getHint("11", "10"));
+        System.out.println(bullsAndCows.getHint("1807", "7810"));
+        System.out.println(bullsAndCows.getHint("1123", "0111"));
+    }
+
+    @Test
+    public void rangeSumQueryImmutable303() {
+        int[] nums = {-2, 0, 3, -5, 2, -1};
+        RangeSumQueryImmutable303 rangeSumQueryImmutable = new RangeSumQueryImmutable303(nums);
+
+        System.out.println(rangeSumQueryImmutable.sumRange(2, 5));
     }
 }
