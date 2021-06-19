@@ -157,4 +157,40 @@ public class PageSevenTest {
 
         System.out.println(bestTimeToBuyAndSellStockWithCooldown.maxProfit(prices));
     }
+
+    @Test
+    public void additiveNumber306Test() {
+        AdditiveNumber306 additiveNumber = new AdditiveNumber306();
+
+        System.out.println(additiveNumber.isAdditiveNumber("121474836472147483648"));
+        System.out.println(additiveNumber.isAdditiveNumber("211738"));
+        System.out.println(additiveNumber.isAdditiveNumber("1203"));
+        System.out.println(additiveNumber.isAdditiveNumber("199100199"));
+        System.out.println(additiveNumber.isAdditiveNumber("1112358"));
+    }
+
+    @Test
+    public void rangeSumQueryMutable307Test() {
+        int[] nums = {1, 3, 5};
+        RangeSumQueryMutable307 rangeSumQueryMutable = new RangeSumQueryMutable307(nums);
+
+        System.out.println(rangeSumQueryMutable.sumRange(0, 2));
+        rangeSumQueryMutable.update(1, 2);
+        System.out.println(rangeSumQueryMutable.sumRange(0, 2));
+    }
+
+    @Test
+    public void SuperUglyNumber313Test() {
+        SuperUglyNumber313 superUglyNumber = new SuperUglyNumber313();
+        int[] primes = {2,7,13,19};
+        System.out.println(superUglyNumber.nthSuperUglyNumber(12, primes));
+    }
+
+    @Test
+    public void RemoveDuplicateLetters316Test() {
+        RemoveDuplicateLetters316 removeDuplicateLetters = new RemoveDuplicateLetters316();
+        System.out.println(removeDuplicateLetters.removeDuplicateLetters("bcabc"));
+        System.out.println(removeDuplicateLetters.removeDuplicateLetters("cbacdcbc"));
+
+    }
 }
