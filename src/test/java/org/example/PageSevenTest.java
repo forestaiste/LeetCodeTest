@@ -180,17 +180,31 @@ public class PageSevenTest {
     }
 
     @Test
-    public void SuperUglyNumber313Test() {
+    public void superUglyNumber313Test() {
         SuperUglyNumber313 superUglyNumber = new SuperUglyNumber313();
         int[] primes = {2,7,13,19};
         System.out.println(superUglyNumber.nthSuperUglyNumber(12, primes));
     }
 
     @Test
-    public void RemoveDuplicateLetters316Test() {
+    public void removeDuplicateLetters316Test() {
         RemoveDuplicateLetters316 removeDuplicateLetters = new RemoveDuplicateLetters316();
         System.out.println(removeDuplicateLetters.removeDuplicateLetters("bcabc"));
         System.out.println(removeDuplicateLetters.removeDuplicateLetters("cbacdcbc"));
 
+    }
+
+    @Test
+    public void maximumProductOfWordLengths318Test() {
+        MaximumProductOfWordLengths318 maximumProductOfWordLengths = new MaximumProductOfWordLengths318();
+        String[] words = {"abcw","baz","foo","bar","xtfn","abcdef"};
+
+        System.out.println(maximumProductOfWordLengths.maxProduct(words));
+    }
+
+    @Test
+    public void bulbSwitcher319Test() {
+        BulbSwitcher319 bulbSwitcher = new BulbSwitcher319();
+        System.out.println(bulbSwitcher.bulbSwitch(12));
     }
 }
