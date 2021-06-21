@@ -207,4 +207,12 @@ public class PageSevenTest {
         BulbSwitcher319 bulbSwitcher = new BulbSwitcher319();
         System.out.println(bulbSwitcher.bulbSwitch(12));
     }
+
+    @Test
+    public void wiggleSortII324Test() {
+        WiggleSortII324 wiggleSortII = new WiggleSortII324();
+        int[] nums = {1,3,2,2,3,1};
+        wiggleSortII.wiggleSort(nums);
+        System.out.println(Arrays.toString(nums));
+    }
 }

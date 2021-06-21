@@ -23,7 +23,52 @@ package org.example.leetcode.pageseven;
 //        题目数据保证，对于给定的输入 nums ，总能产生满足题目要求的结果
 
 public class WiggleSortII324 {
-    public void wiggleSort(int[] nums) {
-
+    void swap(int[] nums, int p, int q) {
+        int tmp = nums[p];
+        nums[p] = nums[q];
+        nums[q] = tmp;
     }
+
+    //virtual mapping to new index
+    //e.g. n = 8, [a, b, c, d, e, f, g, h] -> [a, e, b, f, c, g, d, h]
+    //e.g. n = 9, [a, b, c, d, e, f, g, h, i] -> [a, f, b, g, c, h, d, i, e]
+    int ni(int n, int i) {
+        return i <= (n - 1) / 2 ? i * 2 : (i - (n + 1) / 2) * 2 + 1;
+    }
+
+    //three-way partition, O(n)-average time, O(1)-space, k starts from index 0
+    int getKth(int[] nums, int k) {
+        int n = nums.length, start = 0, end = n - 1;
+        while (true) {
+            //[start, p) < pivot, [p, q) == pivot, [q, i) > pivot
+            int pivot = nums[ni(n, end)], p = start, q = p;
+            for (int i = start; i < end; i++)
+                if (nums[ni(n, i)] <= pivot) {
+                    swap(nums, ni(n, q++), ni(n, i));
+                    if (nums[ni(n, q - 1)] < pivot)
+                        swap(nums, ni(n, p++), ni(n, q - 1));
+                }
+            swap(nums, ni(n, q++), ni(n, end));
+            if (k < p - start)
+                end = p - 1;
+            else if (k < q - start)
+                return pivot;
+            else {
+                k -= q - start;
+                start = q;
+            }
+        }
+    }
+
+    public void wiggleSort(int[] nums) {
+        int n = nums.length, mid = (n - 1) / 2;
+        getKth(nums, mid);
+        //reverse index [0, 2, 4, 6, ...]
+        for (int p = 0, q = mid; p < q; p++, q--)
+            swap(nums, ni(n, p), ni(n, q));
+        //reverse index [1, 3, 5, 7, ...]
+        for (int p = mid + 1, q = n - 1; p < q; p++, q--)
+            swap(nums, ni(n, p), ni(n, q));
+    }
+
 }
