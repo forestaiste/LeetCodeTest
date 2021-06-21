@@ -59,27 +59,26 @@ public class BullsAndCows299 {
                 aCount++;
             }
             else {
-//                if ()
                 map.put(c, map.getOrDefault(c, 0) + 1);
                 builder.append(guess.charAt(i));
             }
         }
 
         int bCount = 0;
-//        guess = builder.toString();
-//        for (int i = 0; i < guess.length(); i++) {
-//            char c = guess.charAt(i);
-//            if (map.containsKey(c)) {
-//                int count = map.get(c);
-//
-//                if (count > 1)
-//                map.put(c, count - 1);
-//                else
-//                    map.remove(c);
-//
-//                bCount++;
-//            }
-//        }
+        guess = builder.toString();
+        for (int i = 0; i < guess.length(); i++) {
+            char c = guess.charAt(i);
+            if (map.containsKey(c)) {
+                int count = map.get(c);
+
+                if (count > 1)
+                map.put(c, count - 1);
+                else
+                    map.remove(c);
+
+                bCount++;
+            }
+        }
 
         return aCount + "A" + bCount + "B";
     }

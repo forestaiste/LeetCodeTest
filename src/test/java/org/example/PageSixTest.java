@@ -170,7 +170,7 @@ public class PageSixTest {
     @Test
     public void bullsAndCows299Test() {
         BullsAndCows299 bullsAndCows = new BullsAndCows299();
-        System.out.println(bullsAndCows.getHint("1122", "2211"));
+        System.out.println(bullsAndCows.getHint1("1122", "2211"));
         System.out.println(bullsAndCows.getHint("11", "10"));
         System.out.println(bullsAndCows.getHint("1807", "7810"));
         System.out.println(bullsAndCows.getHint("1123", "0111"));

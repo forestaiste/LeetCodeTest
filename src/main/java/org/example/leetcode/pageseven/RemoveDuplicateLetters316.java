@@ -18,33 +18,29 @@ import java.util.TreeSet;
 
 public class RemoveDuplicateLetters316 {
     public String removeDuplicateLetters(String s) {
-        int n = s.length();
-        int[] positions = new int[27];
-        List<Character> characters = new ArrayList<>();
+        boolean[] vis = new boolean[26];
+        int[] num = new int[26];
+        for (int i = 0; i < s.length(); i++) {
+            num[s.charAt(i) - 'a']++;
+        }
 
-        for (int i = 1; i <= n; i++) {
-            char letter = s.charAt(i - 1);
-            int c = letter - 'a';
-
-            if (positions[c] == 0) {
-                positions[c] = i;
-                characters.add(letter);
-            }
-            else {
-                if (s.charAt(positions[c]) < letter) {
-                    positions[c] = i;
-                    characters.remove(characters.indexOf(letter));
-                    characters.add(letter);
+        StringBuffer sb = new StringBuffer();
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            if (!vis[ch - 'a']) {
+                while (sb.length() > 0 && sb.charAt(sb.length() - 1) > ch) {
+                    if (num[sb.charAt(sb.length() - 1) - 'a'] > 0) {
+                        vis[sb.charAt(sb.length() - 1) - 'a'] = false;
+                        sb.deleteCharAt(sb.length() - 1);
+                    } else {
+                        break;
+                    }
                 }
+                vis[ch - 'a'] = true;
+                sb.append(ch);
             }
+            num[ch - 'a'] -= 1;
         }
-
-
-        StringBuilder builder = new StringBuilder();
-
-        for (char letter : characters) {
-            builder.append(letter);
-        }
-        return builder.toString();
+        return sb.toString();
     }
 }
