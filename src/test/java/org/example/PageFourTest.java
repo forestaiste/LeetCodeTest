@@ -126,7 +126,7 @@ public class PageFourTest {
     public void majorityElement169Test() {
         MajorityElement169 majorityElement = new MajorityElement169();
         int[] nums = {2,2,1,1,1,2,2};
-        System.out.println(majorityElement.majorityElement0(nums));
+        System.out.println(majorityElement.majorityElement(nums));
     }
 
     @Test
