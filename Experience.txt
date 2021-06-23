@@ -111,7 +111,7 @@
 4. 摩尔投票法
    a. 关于摩尔投票法，参考https://leetcode-cn.com/problems/majority-element-ii/solution/liang-fu-dong-hua-yan-shi-mo-er-tou-piao-fa-zui-zh/
    b. 题169，题229。
-5. 快速排序
+5. 快速排序/选择
    a. 题215。
 
 
