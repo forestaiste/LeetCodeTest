@@ -2,6 +2,7 @@ package org.example;
 
 import com.sun.source.tree.Tree;
 import org.example.leetcode.pageseven.*;
+import org.example.models.ListNode;
 import org.example.models.TreeNode;
 import org.junit.Test;
 
@@ -214,5 +215,32 @@ public class PageSevenTest {
         int[] nums = {1,3,1,2,3,2};
         wiggleSortII.wiggleSort(nums);
         System.out.println(Arrays.toString(nums));
+    }
+
+    @Test
+    public void powerOfThree326Test() {
+        PowerOfThree326 powerOfThree = new PowerOfThree326();
+
+        System.out.println(powerOfThree.isPowerOfThree(27));
+        System.out.println(powerOfThree.isPowerOfThree(0));
+        System.out.println(powerOfThree.isPowerOfThree(9));
+        System.out.println(powerOfThree.isPowerOfThree(45));
+    }
+
+    @Test
+    public void oddEvenLinkedList328Test() {
+        OddEvenLinkedList328 oddEvenLinkedList = new OddEvenLinkedList328();
+        ListNode fifth = new ListNode(5, null);
+        ListNode fourth = new ListNode(4, fifth);
+        ListNode third = new ListNode(3, fourth);
+        ListNode second = new ListNode(2, third);
+        ListNode first = new ListNode(1, second);
+
+        ListNode result = oddEvenLinkedList.oddEvenList(first);
+        do {
+            System.out.println(result.val);
+            result = result.next;
+        } while (result != null);
+
     }
 }

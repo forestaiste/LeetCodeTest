@@ -24,29 +24,41 @@ package org.example.leetcode.pageseven;
 
 public class WiggleSortII324 {
     public void wiggleSort(int[] nums) {
-            int len = nums.length;
-            quickSelect(nums, 0, len, len / 2);
+        int len = nums.length;
+
+        int left = 0;
+        int right = len - 1;
+        while (true) {
+            int index = quickSelect(nums, left, right);
+
+            if (index == len / 2) {
+                break;
+            } else if (index > len / 2) {
+                right = index - 1;
+            } else {
+                left = index + 1;
+            }
+        }
     }
 
-    private void quickSelect(int[] nums, int begin, int end, int n) {
-        int t = nums[end - 1];
-        int i = begin, j = begin;
-        while (j < end) {
-            if (nums[j] <= t) {
-                swap(nums, i, j);
+    private int quickSelect(int[] nums, int left, int right) {
+        int pivot = nums[left];
+        int i = left, j = left + 1;
+
+        while (j <= right) {
+            if (nums[j] <= pivot) {
                 i++;
+                swap(nums, i, j);
             }
 
             j++;
         }
 
-        if (i - 1 > n) {
-            quickSelect(nums, begin, i - 1, n);
-        }
-        else if (i <= n) {
-            quickSelect(nums, i, end, n);
-        }
+        swap(nums, left, i);
+
+        return i;
     }
+
     void swap(int[] nums, int p, int q) {
         int tmp = nums[p];
         nums[p] = nums[q];
