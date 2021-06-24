@@ -212,7 +212,8 @@ public class PageSevenTest {
     @Test
     public void wiggleSortII324Test() {
         WiggleSortII324 wiggleSortII = new WiggleSortII324();
-        int[] nums = {1,3,1,2,3,2};
+//        int[] nums = {1,3,1,2,3,2};
+        int[] nums = {5,3,1,2,6,7,8,5,5};
         wiggleSortII.wiggleSort(nums);
         System.out.println(Arrays.toString(nums));
     }

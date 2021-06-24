@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Arrays;
+
 public class QuickSort {
     public void sort(int[] nums) {
         quickSort(nums, 0, nums.length - 1);
@@ -89,5 +91,13 @@ public class QuickSort {
         // i的索引处为上面已确定好的基准值的位置，无需再处理
         sort(array, left, i - 1);
         sort(array, i + 1, right);
+    }
+
+    public static void main(String [] args) {
+        QuickSort quickSort = new QuickSort();
+        int[] nums = {5, 9, 2, 8, 10, 3, 4};
+        quickSort.sort(nums);
+//        quickSort.sort(nums, 0, nums.length - 1);
+        System.out.println(Arrays.toString(nums));
     }
 }

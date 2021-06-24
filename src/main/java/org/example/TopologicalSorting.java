@@ -33,7 +33,7 @@ public class TopologicalSorting {
             if (inDegree[i] == 0)
                 q.add(i);
 
-        while( !q.isEmpty() ) {
+        while (!q.isEmpty()) {
             int v = q.poll();
             sort[counter] = v;
             num[v] = counter++;

@@ -39,6 +39,21 @@ public class WiggleSortII324 {
                 left = index + 1;
             }
         }
+
+        int[] small = new int[len / 2 + len % 2];
+        int[] big = new int[len / 2];
+
+        System.arraycopy(nums, 0, small, 0, small.length);
+        System.arraycopy(nums, small.length, big, 0, big.length);
+
+        int i = 0;
+        for (; i < len / 2; i++) {
+            nums[2 * i] = small[small.length - 1 - i];
+            nums[2 * i + 1] = big[len / 2 - 1 - i];
+        }
+
+        if (len % 2 != 0)
+            nums[2 * i] = small[small.length - 1 - i];
     }
 
     private int quickSelect(int[] nums, int left, int right) {
