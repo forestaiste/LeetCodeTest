@@ -1,6 +1,5 @@
 package org.example;
 
-import com.sun.source.tree.Tree;
 import org.example.leetcode.pageseven.*;
 import org.example.models.ListNode;
 import org.example.models.TreeNode;
@@ -243,5 +242,16 @@ public class PageSevenTest {
             result = result.next;
         } while (result != null);
 
+    }
+
+    @Test
+    public void verifyPreorderSerializationOfABinaryTreeTest() {
+        VerifyPreorderSerializationOfABinaryTree331 verifyPreorderSerializationOfABinaryTree = new VerifyPreorderSerializationOfABinaryTree331();
+        System.out.println(verifyPreorderSerializationOfABinaryTree.isValidSerialization("7,2,#,2,#,#,#,6,#"));
+        System.out.println(verifyPreorderSerializationOfABinaryTree.isValidSerialization("9,3,4,#,#,1,#,#,2,#,6,#,#"));
+        System.out.println(verifyPreorderSerializationOfABinaryTree.isValidSerialization("1,#"));
+        System.out.println(verifyPreorderSerializationOfABinaryTree.isValidSerialization("9,#,#,1"));
+        System.out.println(verifyPreorderSerializationOfABinaryTree.isValidSerialization("#,#,3,5,#"));
+        System.out.println(verifyPreorderSerializationOfABinaryTree.isValidSerialization("#,#,#"));
     }
 }

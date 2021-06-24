@@ -35,8 +35,28 @@ import java.util.Deque;
 import java.util.LinkedList;
 import java.util.Stack;
 
-public class VerifyPreorderSerializationOfABinaryTree {
+public class VerifyPreorderSerializationOfABinaryTree331 {
     public boolean isValidSerialization(String preorder) {
+        String[] nodes = preorder.split("\\,");
+
+        int inDegrees = -1;
+        int outDegrees = 0;
+
+        for (int i = 0; i < nodes.length; i++) {
+            inDegrees += 1;
+
+            if (outDegrees < inDegrees)
+                return false;
+
+            if (!nodes[i].equals("#")) {
+                outDegrees += 2;
+            }
+        }
+
+        return inDegrees == outDegrees;
+    }
+
+    public boolean isValidSerialization1(String preorder) {
         int n = preorder.length();
         int i = 0;
 
@@ -50,16 +70,14 @@ public class VerifyPreorderSerializationOfABinaryTree {
 
             if (preorder.charAt(i) == ',') {
                 i++;
-            }
-            else if (preorder.charAt(i) == '#') {
+            } else if (preorder.charAt(i) == '#') {
                 int top = stack.pop() - 1;
 
                 if (top > 0) {
                     stack.push(top);
                 }
                 i++;
-            }
-            else {
+            } else {
                 while (i < n && preorder.charAt(i) != ',') {
                     i++;
                 }
