@@ -242,6 +242,34 @@ public class PageSevenTest {
             System.out.println(result.val);
             result = result.next;
         } while (result != null);
+    }
 
+    @Test
+    public void increasingTripletSubsequence334Test() {
+        IncreasingTripletSubsequence334 increasingTripletSubsequence = new IncreasingTripletSubsequence334();
+//        int[] nums = {1, 2, 3, 4, 5};
+//        System.out.println(increasingTripletSubsequence.increasingTriplet(nums));
+
+//        int[] nums = {2,1,6,4,5};
+        int[] nums = {1,1,-2,6};
+        System.out.println(increasingTripletSubsequence.increasingTriplet(nums));
+    }
+
+
+    @Test
+    public void countingBits338Test() {
+        CountingBits338 countingBits = new CountingBits338();
+
+        System.out.println(Arrays.toString(countingBits.countBits(2)));
+        System.out.println(Arrays.toString(countingBits.countBits(5)));
+        System.out.println(Arrays.toString(countingBits.countBits(32)));
+        System.out.println(Arrays.toString(countingBits.countBits(33)));
+    }
+
+    @Test
+    public void PowerOfFour342Test() {
+        PowerOfFour342 powerOfFour = new PowerOfFour342();
+        System.out.println(powerOfFour.isPowerOfFour(16));
+        System.out.println(powerOfFour.isPowerOfFour(11));
     }
 }
