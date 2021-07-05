@@ -18,21 +18,44 @@ package org.example.leetcode.pageseven;
 //        输出: [1,4,6]
 //        解释: 通过重复调用 next 直到 hasNext 返回 false，next 返回的元素的顺序应该是: [1,4,6]。
 
+import org.example.models.NestedInteger;
+
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 public class FlattenNestedListIterator341 implements Iterator<Integer> {
-    public FlattenNestedListIterator341(List<FlattenNestedListIterator341> nestedList) {
-
+    private Iterator<Integer> cur;
+    List<Integer> list;
+    public FlattenNestedListIterator341(List<NestedInteger> nestedList) {
+        list = new ArrayList<>();
+        for (NestedInteger ni : nestedList) {
+            afs(ni);
+        }
+        cur = list.iterator();
     }
 
     @Override
     public Integer next() {
+        return cur.next();
 
     }
 
     @Override
     public boolean hasNext() {
+        return cur.hasNext();
+    }
 
+    private void afs(NestedInteger ni) {
+        if (ni.isInteger()) {
+            list.add(ni.getInteger());
+        }
+        else {
+            List<NestedInteger> l = ni.getList();
+
+            for (NestedInteger nni : l) {
+                afs(nni);
+            }
+        }
     }
 }

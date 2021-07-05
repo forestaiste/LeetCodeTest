@@ -282,4 +282,17 @@ public class PageSevenTest {
         System.out.println(verifyPreorderSerializationOfABinaryTree.isValidSerialization("#,#,3,5,#"));
         System.out.println(verifyPreorderSerializationOfABinaryTree.isValidSerialization("#,#,#"));
     }
+
+    @Test
+    public void intersectionOfTwoArraysII350Test() {
+        IntersectionOfTwoArraysII350 intersectionOfTwoArraysII = new IntersectionOfTwoArraysII350();
+//        int[] nums1 = {4,9,5};
+//        int[] nums2 = {9,4,9,8,4};
+
+        int[] nums1 = {1, 2, 2, 1};
+        int[] nums2 = {2, 2};
+
+        System.out.println(Arrays.toString(intersectionOfTwoArraysII.intersect(nums1, nums2)));
+    }
+
 }
