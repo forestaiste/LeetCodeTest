@@ -23,38 +23,33 @@ package org.example.leetcode.pageeight;
 //        给定 n ≥ 1，计算你至少需要拥有多少现金才能确保你能赢得这个游戏。
 
 public class GuessNumberHigherOrLowerII375 {
-    public int getMoneyAmount(int n) {
-        int amount = 0;
-        int left = 0;
-        int right = n;
-
-        while (left <= right) {
-            int mid = left + (right - left) / 2;
-            int result = guess(mid);
-            if (result == -1) {
-                right = mid - 1;
-
-            }
-            else if (result == 1) {
-                left = mid + 1;
-            }
-            else {
-                return amount;
-            }
-
-            amount += mid;
+    public int calculate1(int low, int high) {
+        if (low >= high)
+            return 0;
+        int minres = Integer.MAX_VALUE;
+        for (int i = low; i <= high; i++) {
+            int res = i + Math.max(calculate(i + 1, high), calculate(low, i - 1));
+            minres = Math.min(res, minres);
         }
 
-        return amount;
+        return minres;
+    }
+    public int getMoneyAmount1(int n) {
+        return calculate(1, n);
     }
 
-    int guess(int num) {
-        if (num >= 0 && num <= 5)
-            return 1;
-        else if (num == 6)
+    public int calculate(int low, int high) {
+        if (low >= high)
             return 0;
-        else
-            return -1;
+        int minres = Integer.MAX_VALUE;
+        for (int i = (low + high) / 2; i <= high; i++) {
+            int res = i + Math.max(calculate(i + 1, high), calculate(low, i - 1));
+            minres = Math.min(res, minres);
+        }
+        return minres;
+    }
+    public int getMoneyAmount(int n) {
+        return calculate(1, n);
     }
 
     public static void main(String[] args) {
