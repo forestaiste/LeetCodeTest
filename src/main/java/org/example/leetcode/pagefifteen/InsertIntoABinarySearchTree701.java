@@ -27,7 +27,6 @@ package org.example.leetcode.pagefifteen;
 import org.example.models.TreeNode;
 
 public class InsertIntoABinarySearchTree701 {
-    TreeNode pre;
 
     public TreeNode insertIntoBST(TreeNode root, int val) {
         if (root == null)
