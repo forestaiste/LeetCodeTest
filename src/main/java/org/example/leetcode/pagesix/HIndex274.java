@@ -51,7 +51,7 @@ public class HIndex274 {
         int[] papers = new int[n + 1];
         // 计数
         for (int c: citations)
-            papers[Math.min(n, c)]++;
+           papers[Math.min(n, c)]++;
         // 找出最大的 k
         int k = n;
         for (int s = papers[n]; k > s; s += papers[k])
