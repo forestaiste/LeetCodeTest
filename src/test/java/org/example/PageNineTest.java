@@ -90,6 +90,6 @@ public class PageNineTest {
 
 
         DeleteNodeInABST450 deleteNodeInABST = new DeleteNodeInABST450();
-        deleteNodeInABST.deleteNode1(root, 0);
+        deleteNodeInABST.deleteNode(root, 0);
     }
 }
