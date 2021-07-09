@@ -18,20 +18,30 @@ public class LexicographicalNumbers386 {
         List<Integer> results = new ArrayList<>();
 
         for (int i = 1; i <= 9; i++) {
-//            start = i;
-//            end = i + 1;
-            int number = 1;
+            if (i > n)
+                break;
 
-            while (number < n) {
-                for (int j = 0; j <= 9; j++) {
-                    results.add(number + j);
-                }
-
-                number *= 10;
-            }
+            results.add(i);
+            addNumber(results, i, n);
         }
 
         return results;
+    }
+
+    private void addNumber(List<Integer> results, int number, int n) {
+        number *= 10;
+
+        if (number > n)
+            return;
+
+        for (int i = 0; i <= 9; i++) {
+            int m = number + i;
+            if (m > n)
+                break;
+
+            results.add(m);
+            addNumber(results, m, n);
+        }
     }
 
     public static void main(String[] args) {
