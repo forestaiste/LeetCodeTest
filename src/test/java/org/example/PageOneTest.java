@@ -170,7 +170,7 @@ public class PageOneTest {
 
     @Test
     public void sudokuSolver2Test() {
-        SudokuSolver2 sudokuSolver2 = new SudokuSolver2();
+        SudokuSolver37 sudokuSolver2 = new SudokuSolver37();
 
         char[][] board =
                 {
@@ -185,7 +185,7 @@ public class PageOneTest {
                         {'.','.','.','.','8','.','.','7','9'},
                 };
 
-        sudokuSolver2.solveSudoku(board);
+        sudokuSolver2.solveSudoku2(board);
 
         System.out.println(Arrays.toString(board[0]));
         System.out.println(Arrays.toString(board[1]));
@@ -200,7 +200,7 @@ public class PageOneTest {
 
     @Test
     public void sudokuSolver3Test() {
-        SudokuSolver3 sudokuSolver3 = new SudokuSolver3();
+        SudokuSolver37 sudokuSolver3 = new SudokuSolver37();
 
         char[][] board =
                 {
@@ -215,7 +215,7 @@ public class PageOneTest {
                         {'.','.','.','.','8','.','.','7','9'},
                 };
 
-        sudokuSolver3.solveSudoku(board);
+        sudokuSolver3.solveSudoku3(board);
 
         System.out.println(Arrays.toString(board[0]));
         System.out.println(Arrays.toString(board[1]));

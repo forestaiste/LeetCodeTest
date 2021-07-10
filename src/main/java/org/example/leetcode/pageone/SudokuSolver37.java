@@ -53,4 +53,126 @@ public class SudokuSolver37 {
             }
         }
     }
+
+//////////////////////////////////////////////////////////
+    private int[] line2 = new int[9];
+    private int[] column2 = new int[9];
+    private int[][] block2 = new int[3][3];
+    private boolean valid2 = false;
+    private List<int[]> spaces2 = new ArrayList<int[]>();
+
+    public void solveSudoku2(char[][] board) {
+        for (int i = 0; i < 9; ++i) {
+            for (int j = 0; j < 9; ++j) {
+                if (board[i][j] == '.') {
+                    spaces2.add(new int[]{i, j});
+                } else {
+                    int digit = board[i][j] - '0' - 1;
+                    flip2(i, j, digit);
+                }
+            }
+        }
+
+        dfs2(board, 0);
+    }
+
+    public void dfs2(char[][] board, int pos) {
+        if (pos == spaces2.size()) {
+            valid2 = true;
+            return;
+        }
+
+        int[] space = spaces2.get(pos);
+        int i = space[0], j = space[1];
+        int mask = ~(line2[i] | column2[j] | block2[i / 3][j / 3]) & 0x1ff;
+        for (; mask != 0 && !valid2; mask &= (mask - 1)) {
+            int digitMask = mask & (-mask);
+            int digit = Integer.bitCount(digitMask - 1);
+            flip2(i, j, digit);
+            board[i][j] = (char) (digit + '0' + 1);
+            dfs2(board, pos + 1);
+            flip2(i, j, digit);
+        }
+    }
+
+    public void flip2(int i, int j, int digit) {
+        line2[i] ^= (1 << digit);
+        column2[j] ^= (1 << digit);
+        block2[i / 3][j / 3] ^= (1 << digit);
+    }
+
+////////////////////////////////////////////////////////////////////////
+
+    private int[] line3 = new int[9];
+    private int[] column3 = new int[9];
+    private int[][] block3 = new int[3][3];
+    private boolean valid3 = false;
+    private List<int[]> spaces3 = new ArrayList<int[]>();
+
+    public void solveSudoku3(char[][] board) {
+        for (int i = 0; i < 9; ++i) {
+            for (int j = 0; j < 9; ++j) {
+                if (board[i][j] != '.') {
+                    int digit = board[i][j] - '0' - 1;
+                    flip3(i, j, digit);
+                }
+            }
+        }
+
+        while (true) {
+            boolean modified = false;
+            for (int i = 0; i < 9; ++i) {
+                for (int j = 0; j < 9; ++j) {
+                    if (board[i][j] == '.') {
+                        int mask = ~(line3[i] | column3[j] | block3[i / 3][j / 3]) & 0x1ff;
+                        if ((mask & (mask - 1)) == 0) {
+                            int digit = Integer.bitCount(mask - 1);
+                            flip3(i, j, digit);
+                            board[i][j] = (char) (digit + '0' + 1);
+                            modified = true;
+                        }
+                    }
+                }
+            }
+            if (!modified) {
+                break;
+            }
+        }
+
+        for (int i = 0; i < 9; ++i) {
+            for (int j = 0; j < 9; ++j) {
+                if (board[i][j] == '.') {
+                    spaces3.add(new int[]{i, j});
+                }
+            }
+        }
+
+        dfs3(board, 0);
+    }
+
+    public void dfs3(char[][] board, int pos) {
+        if (pos == spaces3.size()) {
+            valid3 = true;
+            return;
+        }
+
+        int[] space = spaces3.get(pos);
+        int i = space[0], j = space[1];
+        int mask = ~(line3[i] | column3[j] | block3[i / 3][j / 3]) & 0x1ff;
+        for (; mask != 0 && !valid3; mask &= (mask - 1)) {
+            int digitMask = mask & (-mask);
+            int digit = Integer.bitCount(digitMask - 1);
+            flip3(i, j, digit);
+            board[i][j] = (char) (digit + '0' + 1);
+            dfs3(board, pos + 1);
+            flip3(i, j, digit);
+        }
+    }
+
+    public void flip3(int i, int j, int digit) {
+        line3[i] ^= (1 << digit);
+        column3[j] ^= (1 << digit);
+        block3[i / 3][j / 3] ^= (1 << digit);
+    }
+
 }
