@@ -27,10 +27,10 @@ import java.util.*;
 
 public class PermutationsII47 {
     public List<List<Integer>> permuteUnique(int[] nums) {
-        List<List<Integer>> results = new ArrayList<List<Integer>>();
+        List<List<Integer>> results = new ArrayList<>();
         List<Integer> combination = new ArrayList<>();
 
-        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        Map<Integer, Integer> map = new HashMap<>();
 
         Arrays.sort(nums);
 

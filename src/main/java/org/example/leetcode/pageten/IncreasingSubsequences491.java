@@ -19,6 +19,7 @@ package org.example.leetcode.pageten;
 
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class IncreasingSubsequences491 {
@@ -27,7 +28,7 @@ public class IncreasingSubsequences491 {
     public List<List<Integer>> findSubsequences(int[] nums) {
         results = new ArrayList<>();
         combination = new ArrayList<>();
-
+        Arrays.sort(nums);
         backTrack(nums, 0);
         return results;
     }
@@ -49,8 +50,8 @@ public class IncreasingSubsequences491 {
         }
     }
 
-    List<Integer> temp = new ArrayList<Integer>();
-    List<List<Integer>> ans = new ArrayList<List<Integer>>();
+    List<Integer> temp = new ArrayList<>();
+    List<List<Integer>> ans = new ArrayList<>();
 
     public List<List<Integer>> findSubsequences1(int[] nums) {
         dfs(0, Integer.MIN_VALUE, nums);
@@ -60,7 +61,7 @@ public class IncreasingSubsequences491 {
     public void dfs(int cur, int last, int[] nums) {
         if (cur == nums.length) {
             if (temp.size() >= 2) {
-                ans.add(new ArrayList<Integer>(temp));
+                ans.add(new ArrayList<>(temp));
             }
             return;
         }

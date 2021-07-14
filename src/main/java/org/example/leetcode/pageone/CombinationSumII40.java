@@ -69,11 +69,11 @@ public class CombinationSumII40 {
 
         Arrays.sort(candidates);
 
-        backTrack(candidates, target, ans, combine, 0);
+        backTrack(candidates, target, ans, combine, 0, Integer.MIN_VALUE);
         return ans;
     }
 
-    private void backTrack(int[] candidates, int target, List<List<Integer>> ans, List<Integer> combine, int index) {
+    private void backTrack(int[] candidates, int target, List<List<Integer>> ans, List<Integer> combine, int index, int last) {
         if (index == candidates.length) {
             return;
         }
@@ -84,7 +84,8 @@ public class CombinationSumII40 {
             return;
         }
 
-        backTrack(candidates, target, ans, combine, index + 1);
+        if (last != candidates[index])
+            backTrack(candidates, target, ans, combine, index + 1, last);
 
         if (//(index > 0 && candidates[index] == candidates[index - 1]) ||
                 (target < candidates[index])) {
@@ -92,7 +93,7 @@ public class CombinationSumII40 {
         }
 
         combine.add(candidates[index]);
-        backTrack(candidates, target - candidates[index], ans, combine, index + 1);
+        backTrack(candidates, target - candidates[index], ans, combine, index + 1, candidates[index]);
         combine.remove(combine.size() - 1);
     }
 }

@@ -21,9 +21,9 @@ import java.util.*;
 public class Permutations46 {
 
     public List<List<Integer>> permute(int[] nums) {
-        List<List<Integer>> results = new ArrayList<List<Integer>>();
-        List<Integer> combination = new ArrayList<Integer>();
-        Map<Integer, Boolean> usage = new HashMap<Integer, Boolean>();
+        List<List<Integer>> results = new ArrayList<>();
+        List<Integer> combination = new ArrayList<>();
+        Map<Integer, Boolean> usage = new HashMap<>();
 
         for (int n : nums) {
             usage.put(n, false);
@@ -60,7 +60,7 @@ public class Permutations46 {
             this.nums[i] = nums[i];
         }
 
-        List<List<Integer>> results = new ArrayList<List<Integer>>();
+        List<List<Integer>> results = new ArrayList<>();
 
         afs2(results, 0);
 
@@ -69,7 +69,7 @@ public class Permutations46 {
 
     private void afs2(List<List<Integer>> results, int level) {
         if (level == nums.length) {
-            List<Integer> combination = new ArrayList<Integer>();
+            List<Integer> combination = new ArrayList<>();
             for (int i = 0; i < nums.length; i++) {
                 combination.add(nums[i]);
             }
@@ -93,8 +93,8 @@ public class Permutations46 {
     }
 
     public List<List<Integer>> permute3(int[] nums) {
-        List<List<Integer>> results = new ArrayList<List<Integer>>();
-        List<Integer> output = new ArrayList<Integer>();
+        List<List<Integer>> results = new ArrayList<>();
+        List<Integer> output = new ArrayList<>();
         for (int num : nums) {
             output.add(num);
         }
@@ -108,7 +108,7 @@ public class Permutations46 {
     public void backtrack(int n, List<Integer> output, List<List<Integer>> res, int level) {
         // 所有数都填完了
         if (level == n) {
-            res.add(new ArrayList<Integer>(output));
+            res.add(new ArrayList<>(output));
 
             return;
         }
