@@ -84,9 +84,6 @@ public class CombinationSumII40 {
             return;
         }
 
-        if (last != candidates[index])
-            backTrack(candidates, target, ans, combine, index + 1, last);
-
         if (//(index > 0 && candidates[index] == candidates[index - 1]) ||
                 (target < candidates[index])) {
             return;
@@ -95,5 +92,22 @@ public class CombinationSumII40 {
         combine.add(candidates[index]);
         backTrack(candidates, target - candidates[index], ans, combine, index + 1, candidates[index]);
         combine.remove(combine.size() - 1);
+
+        if (last != candidates[index])
+            backTrack(candidates, target, ans, combine, index + 1, last);
+
+    }
+
+    public static void main(String[] args) {
+        CombinationSumII40 combinationSumII = new CombinationSumII40();
+        int[] nums = {2,5,2,1,2};
+//        int[] nums = {10,1,2,7,6,1,5};
+        List<List<Integer>> results = combinationSumII.combinationSumII(nums, 5);
+
+        results.forEach(r -> System.out.println(Arrays.toString(r.toArray())));
+        System.out.println("----------------------------------");
+        results = combinationSumII.combinationSumII0(nums, 5);
+
+        results.forEach(r -> System.out.println(Arrays.toString(r.toArray())));
     }
 }

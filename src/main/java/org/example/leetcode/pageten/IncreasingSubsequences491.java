@@ -28,7 +28,6 @@ public class IncreasingSubsequences491 {
     public List<List<Integer>> findSubsequences(int[] nums) {
         results = new ArrayList<>();
         combination = new ArrayList<>();
-        Arrays.sort(nums);
         backTrack(nums, 0);
         return results;
     }
