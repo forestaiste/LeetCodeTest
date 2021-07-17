@@ -23,16 +23,14 @@ package org.example.leetcode.pageseven;
 //        输出：["JFK","ATL","JFK","SFO","ATL","SFO"]
 //        解释：另一种有效的行程是 ["JFK","SFO","ATL","JFK","ATL","SFO"]。但是它自然排序更大更靠后。
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class ReconstructItinerary332 {
     List<String> result;
     List<String> best;
     boolean[] used;
 
-    public List<String> findItinerary(List<List<String>> tickets) {
+    public List<String> findItinerary0(List<List<String>> tickets) {
         result = new ArrayList<>();
         result.add("JFK");
 
@@ -75,5 +73,97 @@ public class ReconstructItinerary332 {
                 used[i] = false;
             }
         }
+    }
+
+    Map<String, PriorityQueue<String>> map = new HashMap<String, PriorityQueue<String>>();
+    List<String> itinerary = new LinkedList<String>();
+
+    public List<String> findItinerary(List<List<String>> tickets) {
+        for (List<String> ticket : tickets) {
+            String src = ticket.get(0), dst = ticket.get(1);
+            if (!map.containsKey(src)) {
+                map.put(src, new PriorityQueue<String>());
+            }
+            map.get(src).offer(dst);
+        }
+        dfs("JFK");
+        Collections.reverse(itinerary);
+        return itinerary;
+    }
+
+    public void dfs(String curr) {
+        while (map.containsKey(curr) && map.get(curr).size() > 0) {
+            String tmp = map.get(curr).poll();
+            dfs(tmp);
+        }
+        itinerary.add(curr);
+    }
+
+    public static void main(String[] args) {
+        ReconstructItinerary332 reconstructItinerary = new ReconstructItinerary332();
+        List<List<String>> tickets = new ArrayList<>();
+//        List<String> t1 = new ArrayList<>() {
+//            {
+//                add("JFK");
+//                add("SFO");
+//            }
+//        };
+//        List<String> t2 = new ArrayList<>() {
+//            {
+//                add("JFK");
+//                add("ATL");
+//            }
+//        };
+//        List<String> t3 = new ArrayList<>() {
+//            {
+//                add("SFO");
+//                add("ATL");
+//            }
+//        };
+//        List<String> t4 = new ArrayList<>() {
+//            {
+//                add("ATL");
+//                add("JFK");
+//            }
+//        };
+//        List<String> t5 = new ArrayList<>() {
+//            {
+//                add("ATL");
+//                add("SFO");
+//            }
+//        };
+//        tickets.add(t1);
+//        tickets.add(t2);
+//        tickets.add(t3);
+//        tickets.add(t4);
+//        tickets.add(t5);
+//
+//        System.out.println(Arrays.toString(reconstructItinerary.findItinerary(tickets).toArray()));
+
+        List<String> t1 = new ArrayList<>() {
+            {
+                add("JFK");
+                add("KUL");
+            }
+        };
+        List<String> t2 = new ArrayList<>() {
+            {
+                add("JFK");
+                add("NRT");
+            }
+        };
+        List<String> t3 = new ArrayList<String>() {
+            {
+                add("KUL");
+                add("JFK");
+            }
+        };
+
+
+        tickets.add(t1);
+        tickets.add(t2);
+        tickets.add(t3);
+
+        System.out.println(Arrays.toString(reconstructItinerary.findItinerary(tickets).toArray()));
     }
 }
