@@ -79,7 +79,7 @@ public class MaximizeSumOfArrayAfterKNegations1005 {
         }
 
         if (K % 2 == 1) {
-            A[A.length - 1] = -A[A.length - 1];
+            A[0] = -A[0];
         }
 
         int sum = 0;
@@ -88,5 +88,20 @@ public class MaximizeSumOfArrayAfterKNegations1005 {
         }
 
         return sum;
+    }
+
+    public static void main(String[] args) {
+        MaximizeSumOfArrayAfterKNegations1005 maximizeSumOfArrayAfterKNegations = new MaximizeSumOfArrayAfterKNegations1005();
+        Integer[] A = {2,-3,-1,5,-4};
+        int K = 4;
+        System.out.println(maximizeSumOfArrayAfterKNegations.largestSumAfterKNegations(A, K));
+
+        A = new Integer[]{3,-1,0,2};
+        K = 3;
+        System.out.println(maximizeSumOfArrayAfterKNegations.largestSumAfterKNegations(A, K));
+
+        A = new Integer[]{4,2,3};
+        K = 3;
+        System.out.println(maximizeSumOfArrayAfterKNegations.largestSumAfterKNegations(A, K));
     }
 }
