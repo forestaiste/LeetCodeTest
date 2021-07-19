@@ -25,6 +25,7 @@ public class PageOneTest {
     public void letterCombinationTest() {
         LetterCombination17 combination = new LetterCombination17();
         List<String> results = combination.letterCombine("256");
+        System.out.println(Arrays.toString(results.toArray()));
     }
 
     @Test
