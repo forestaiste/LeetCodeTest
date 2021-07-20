@@ -88,17 +88,18 @@ public class MinimumNumberOfArrowsToBurstBalloons452 {
         if (points.length == 0) {
             return 0;
         }
-        Arrays.sort(points, new Comparator<int[]>() {
-            public int compare(int[] point1, int[] point2) {
-                if (point1[1] > point2[1]) {
-                    return 1;
-                } else if (point1[1] < point2[1]) {
-                    return -1;
-                } else {
-                    return 0;
-                }
-            }
-        });
+//        Arrays.sort(points, new Comparator<int[]>() {
+//            public int compare(int[] point1, int[] point2) {
+//                if (point1[1] > point2[1]) {
+//                    return 1;
+//                } else if (point1[1] < point2[1]) {
+//                    return -1;
+//                } else {
+//                    return 0;
+//                }
+//            }
+//        });
+        Arrays.sort(points, (point1, point2) -> Integer.compare(point1[1], point2[1]));
         int pos = points[0][1];
         int ans = 1;
         for (int[] balloon: points) {
@@ -108,5 +109,29 @@ public class MinimumNumberOfArrowsToBurstBalloons452 {
             }
         }
         return ans;
+    }
+
+    public static void main(String[] args) {
+        MinimumNumberOfArrowsToBurstBalloons452 minimumNumberOfArrowsToBurstBalloons = new MinimumNumberOfArrowsToBurstBalloons452();
+        int[][] points = {{10,16},{2,8},{1,6},{7,12}};
+        System.out.println(minimumNumberOfArrowsToBurstBalloons.findMinArrowShots(points));
+
+        points = new int[][]{{1,2},{2,3},{3,4},{4,5}};
+        System.out.println(minimumNumberOfArrowsToBurstBalloons.findMinArrowShots(points));
+
+        points = new int[][]{{1,2},{3,4},{5,6},{7,8}};
+        System.out.println(minimumNumberOfArrowsToBurstBalloons.findMinArrowShots(points));
+
+        points = new int[][]{{-1,1},{0, 1},{2,3},{1,2}};
+        System.out.println(minimumNumberOfArrowsToBurstBalloons.findMinArrowShots(points));
+
+        points = new int[][]{{1,2}};
+        System.out.println(minimumNumberOfArrowsToBurstBalloons.findMinArrowShots(points));
+
+        points = new int[][]{{2,3}, {2, 3}};
+        System.out.println(minimumNumberOfArrowsToBurstBalloons.findMinArrowShots(points));
+
+        points = new int[][]{{-2147483646,-2147483645}, {2147483646, 2147483647}};
+        System.out.println(minimumNumberOfArrowsToBurstBalloons.findMinArrowShots(points));
     }
 }

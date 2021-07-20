@@ -38,13 +38,14 @@ public class NonOverlappingIntervals435 {
             return 0;
         }
 
-        Arrays.sort(intervals, new Comparator<int[]>() {
-            @Override
-            public int compare(int[] o1, int[] o2) {
-                return o1[1] - o2[1];
-            }
-        });
+//        Arrays.sort(intervals, new Comparator<int[]>() {
+//            @Override
+//            public int compare(int[] o1, int[] o2) {
+//                return o1[1] - o2[1];
+//            }
+//        });
 
+        Arrays.sort(intervals, (o1, o2) -> Integer.compare(o1[1], o2[1]));
         int right = intervals[0][1];
         int count = 1;
 
@@ -56,5 +57,11 @@ public class NonOverlappingIntervals435 {
         }
 
         return intervals.length - count;
+    }
+
+    public static void main(String[] args) {
+        NonOverlappingIntervals435 nonOverlappingIntervals = new NonOverlappingIntervals435();
+        int[][] intervals = { {1,2}, {2,3}, {3,4}, {1,3} };
+        System.out.println(nonOverlappingIntervals.eraseOverlapIntervals(intervals));
     }
 }

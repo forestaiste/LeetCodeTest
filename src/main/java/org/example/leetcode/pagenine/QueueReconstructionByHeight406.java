@@ -47,13 +47,30 @@ public class QueueReconstructionByHeight406 {
             reordered.add(pos, people[i]);
         }
 
-        int[][] ans = new int[reordered.size()][2];
-        for (int i = 0; i < reordered.size(); i++) {
-            ans[i][0] = reordered.get(i)[0];
-            ans[i][1] = reordered.get(i)[1];
-        }
-
+//        int[][] ans = new int[reordered.size()][2];
+//        for (int i = 0; i < reordered.size(); i++) {
+//            ans[i][0] = reordered.get(i)[0];
+//            ans[i][1] = reordered.get(i)[1];
+//        }
+        int[][] ans = reordered.toArray(new int[people.length][]);
 
         return ans;
+    }
+
+    public static void main(String[] args) {
+        QueueReconstructionByHeight406 queueReconstructionByHeight = new QueueReconstructionByHeight406();
+        int[][] people = {{6,0},{5,0},{4,0},{3,2},{2,2},{1,4}};
+        people = queueReconstructionByHeight.reconstructQueue(people);
+
+        for (int[] p : people) {
+            System.out.println(Arrays.toString(p));
+        }
+
+        people = new int[][]{{7,0},{4,4},{7,1},{5,0},{6,1},{5,2}};
+        people = queueReconstructionByHeight.reconstructQueue(people);
+
+        for (int[] p : people) {
+            System.out.println(Arrays.toString(p));
+        }
     }
 }
