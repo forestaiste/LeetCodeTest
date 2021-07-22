@@ -75,7 +75,7 @@ public class PageFifteenTest {
     @Test
     public void monotoneIncreasingDigits738Test() {
         MonotoneIncreasingDigits738 monotoneIncreasingDigits = new MonotoneIncreasingDigits738();
-        System.out.println(monotoneIncreasingDigits.monotoneIncreasingDigits(1234));
+        System.out.println(monotoneIncreasingDigits.monotoneIncreasingDigits(2032));
     }
 
     @Test

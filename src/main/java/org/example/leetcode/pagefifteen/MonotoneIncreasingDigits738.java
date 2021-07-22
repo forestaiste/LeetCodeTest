@@ -40,4 +40,9 @@ public class MonotoneIncreasingDigits738 {
 
         return Integer.parseInt(new String(digits));
     }
+
+    public static void main(String[] args) {
+        MonotoneIncreasingDigits738 monotoneIncreasingDigits = new MonotoneIncreasingDigits738();
+        System.out.println(monotoneIncreasingDigits.monotoneIncreasingDigits(2032));
+    }
 }

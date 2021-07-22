@@ -65,4 +65,16 @@ public class BestTimeToBuyAndSellStockWithTransactionFee714 {
 
         return f[length - 1][1];
     }
+
+    public static void main(String[] args) {
+        BestTimeToBuyAndSellStockWithTransactionFee714 bestTimeToBuyAndSellStockWithTransactionFee = new BestTimeToBuyAndSellStockWithTransactionFee714();
+        int[] prices = {1, 3, 7, 5, 10, 3};
+        System.out.println(bestTimeToBuyAndSellStockWithTransactionFee.maxProfit2(prices, 3));
+
+        prices = new int[]{4,5,2,4,3,3,1,2,5,4};
+        System.out.println(bestTimeToBuyAndSellStockWithTransactionFee.maxProfit2(prices, 1));
+
+        prices = new int[]{1, 3, 2, 8, 4, 9};
+        System.out.println(bestTimeToBuyAndSellStockWithTransactionFee.maxProfit2(prices, 2));
+    }
 }

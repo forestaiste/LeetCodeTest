@@ -33,4 +33,10 @@ public class MinCostClimbingStairs746 {
 
         return f[length];
     }
+
+    public static void main(String[] args) {
+        MinCostClimbingStairs746 minCostClimbingStairs = new MinCostClimbingStairs746();
+        int[] cost = {1, 100, 1, 1, 1, 100, 1, 1, 100, 1};
+        System.out.println(minCostClimbingStairs.minCostClimbingStairs(cost));
+    }
 }
