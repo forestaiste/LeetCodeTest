@@ -131,6 +131,7 @@
 2. 分治算法
    a. 大问题可以分解为同类型若干小问题，然后再合并。典型例题，合并排序
    b. 题242。这道题除了使用分治算法，还有列举所有组合的思想。
+   c. 题395。分段找出符合的解。
 3. 线段树
    a. 关于线段树的概念，参考https://leetcode-cn.com/problems/range-sum-query-mutable/solution/qu-yu-he-jian-suo-shu-zu-ke-xiu-gai-by-leetcode/
    b. 题307。
