@@ -32,6 +32,8 @@ package org.example.leetcode.pagetwo;
 //        输入：m = 3, n = 3
 //        输出：6
 
+import java.text.SimpleDateFormat;
+
 public class UniquePaths62 {
     int count = 0;
     int[] directionX = new int[2];
@@ -87,5 +89,18 @@ public class UniquePaths62 {
             }
         }
         return f[m - 1][n - 1];
+    }
+
+    public static void main(String[] args) {
+        UniquePaths62 uniquePaths = new UniquePaths62();
+
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        System.out.println(df.format(System.currentTimeMillis()));
+        System.out.println(uniquePaths.uniquePaths(23, 12));
+        System.out.println(df.format(System.currentTimeMillis()));
+        System.out.println("-----------------------------");
+        System.out.println(df.format(System.currentTimeMillis()));
+        System.out.println(uniquePaths.uniquePaths0(23, 12));
+        System.out.println(df.format(System.currentTimeMillis()));
     }
 }

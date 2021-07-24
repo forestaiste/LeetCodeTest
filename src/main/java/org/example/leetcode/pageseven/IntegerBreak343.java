@@ -21,11 +21,17 @@ public class IntegerBreak343 {
         f[2] = 1;
 
         for (int i = 3; i <= n; i++) {
-            for (int j = 1; j < i - 1; j++) {
+            for (int j = 1; j < (i - 1); j++) {
                 f[i] = Math.max(Math.max(j * f[i - j], j * (i - j)), f[i]);
             }
         }
 
         return f[n];
+    }
+
+    public static void main(String[] args) {
+        IntegerBreak343 integerBreak = new IntegerBreak343();
+
+        System.out.println(integerBreak.integerBreak(10));
     }
 }

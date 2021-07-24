@@ -64,4 +64,13 @@ public class UniquePathsII63 {
         }
         return f[m - 1][n - 1];
     }
+
+    public static void main(String[] args) {
+        UniquePathsII63 uniquePaths = new UniquePathsII63();
+
+        int[][] obstacleGrid = {{0, 0, 0}, {0, 1, 0}, {0, 0, 0}};
+//        int[][] obstacleGrid = {{1, 0}};
+
+        System.out.println(uniquePaths.uniquePathsWithObstacles(obstacleGrid));
+    }
 }

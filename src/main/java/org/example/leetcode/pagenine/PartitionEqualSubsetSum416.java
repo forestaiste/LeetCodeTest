@@ -27,7 +27,7 @@ package org.example.leetcode.pagenine;
 import java.util.Arrays;
 
 public class PartitionEqualSubsetSum416 {
-    public boolean canPartition(int[] nums) {
+    public boolean canPartition0(int[] nums) {
 
         int sum = Arrays.stream(nums).sum();
 
@@ -58,5 +58,32 @@ public class PartitionEqualSubsetSum416 {
         }
 
         return f[length][capacity] == capacity;
+    }
+
+    public boolean canPartition(int[] nums) {
+        int sum = Arrays.stream(nums).sum();
+
+        if (sum % 2 != 0)
+            return false;
+        int length = nums.length;
+        int capacity = sum / 2;
+
+        int[] f = new int[capacity + 1];
+
+        for (int i = 0; i < length; i++) {
+            for (int j = capacity; j >= nums[i]; j--) {
+                f[j] = Math.max(f[j], f[j - nums[i]] + nums[i]);
+            }
+        }
+
+        return f[capacity] == capacity;
+    }
+
+    public static void main(String[] args) {
+        PartitionEqualSubsetSum416 partitionEqualSubsetSum = new PartitionEqualSubsetSum416();
+//        int[] nums = {1, 5, 11, 5};
+        int[] nums = {1, 2, 3, 4, 5, 6, 7};
+        System.out.println(partitionEqualSubsetSum.canPartition0(nums));
+        System.out.println(partitionEqualSubsetSum.canPartition(nums));
     }
 }
