@@ -96,4 +96,15 @@ public class CoinChangeII518 {
         }
         return dp[len - 1][amount];
     }
+
+    public static void main(String[] args) {
+        CoinChangeII518 coinChangeII = new CoinChangeII518();
+        int[] coins = {1, 2, 5};
+
+        System.out.println(coinChangeII.change(5, coins));
+        System.out.println(coinChangeII.change(3, new int[]{2}));
+
+        System.out.println(coinChangeII.change2(5, coins));
+        System.out.println(coinChangeII.change2(3, new int[]{2}));
+    }
 }

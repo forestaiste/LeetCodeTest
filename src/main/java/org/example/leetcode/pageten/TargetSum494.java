@@ -87,4 +87,12 @@ public class TargetSum494 {
 
         return f[capacity];
     }
+
+    public static void main(String[] args) {
+        TargetSum494 targetSum = new TargetSum494();
+        int[] nums = {1, 1, 1, 1, 1};
+        System.out.println(targetSum.findTargetSumWays(nums, 3));
+
+        System.out.println(targetSum.findTargetSumWays1(nums, 3));
+    }
 }
