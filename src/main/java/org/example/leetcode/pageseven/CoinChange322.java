@@ -50,4 +50,13 @@ public class CoinChange322 {
 
         return (f[amount] == Integer.MAX_VALUE) ? (-1): f[amount];
     }
+
+    public static void main(String[] args) {
+        CoinChange322 coinChange = new CoinChange322();
+        int[] coins = {1, 2, 5};
+        System.out.println(coinChange.coinChange(coins, 11));
+
+        coins = new int[]{2};
+        System.out.println(coinChange.coinChange(coins, 3));
+    }
 }

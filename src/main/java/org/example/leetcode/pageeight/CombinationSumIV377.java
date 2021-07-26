@@ -28,7 +28,7 @@ package org.example.leetcode.pageeight;
 
 
 public class CombinationSumIV377 {
-    public int combinationSum4(int[] nums, int target) {
+    public int combinationSum40(int[] nums, int target) {
         int length = nums.length;
 
         int[] f = new int[target + 1];
@@ -45,5 +45,30 @@ public class CombinationSumIV377 {
         }
 
         return f[target];
+    }
+
+    public int combinationSum4(int[] nums, int target) {
+        int length = nums.length;
+
+        int[] f = new int[target + 1];
+
+        f[0] = 1;
+
+
+        for (int i = 0; i < length; i++) {
+            for (int j = nums[i]; j <= target; j++) {
+                f[j] = f[j] + f[j - nums[i]];
+            }
+        }
+
+        return f[target];
+    }
+
+    public static void main(String[] args) {
+        CombinationSumIV377 combinationSumIV = new CombinationSumIV377();
+
+        int[] nums = {1, 2, 3};
+        System.out.println(combinationSumIV.combinationSum40(nums, 4));
+        System.out.println(combinationSumIV.combinationSum4(nums, 4));
     }
 }

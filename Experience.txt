@@ -120,6 +120,33 @@
             iv. 两个维度的0-1背包，题474。
 
    f. 完全背包，注意完全背包和0-1背包在概念上的差别，以及其循环和0-1背包的滚动数组的循环差别。for(int j = weight[i]; j < bagWeight; j++)
+            i. 使用安全平方数组合求规定和，题279。难点是要自己算可能使用的数。
+            ii. 使用完全排列背包解决单词拆分，注意两点，一是怎么取词，二是设置f[i]的意义。
+            iii. 完全背包的排列组合注意两重遍历的顺序。分别把0-1背包的组合，完全背包的组合和排列的循环列在下面
+            0-1
+            dp[0] = 1;
+            for (int i = 0; i < nums.length; i++) {
+                for (int j = size; j >= nums[i]; j--) { //从后往前遍历
+                    dp[j] += dp[j - nums[i]];
+                }
+            }
+            完全背包组合
+            dp[0] = 1;
+            for (int i = 0; i < coins.length; i++) {
+                for (int j = coins[i]; j <= amount; j++) { //从前往后遍历
+                    dp[j] += dp[j - coins[i]];
+                }
+            }
+            完全背包排列
+            dp[0] = 1;
+            for (int i = 0; i <= target; i++) {
+                for (int j = 0; j < nums.length; j++) {
+                    if (i >= nums[j]) {
+                        dp[i] += dp[i - nums[j]];
+                    }
+                }
+            }
+
 9. 矩阵(二维数组)圈围图形
    a. 找到入口点，从入口点出发把关联点设置成有助于判断的值，题200，题130
 10. 图
