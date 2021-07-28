@@ -54,4 +54,11 @@ public class BestTimeToBuyAndSellStockIII123 {
 
         return f[length - 1][4];
     }
+
+    public static void main(String[] args) {
+        BestTimeToBuyAndSellStockIII123 bestTimeToBuyAndSellStockIII = new BestTimeToBuyAndSellStockIII123();
+        int[] prices = {3, 3, 5, 1, 0, 3, 4, 5, 2, 8};
+
+        System.out.println(bestTimeToBuyAndSellStockIII.maxProfit(prices));
+    }
 }

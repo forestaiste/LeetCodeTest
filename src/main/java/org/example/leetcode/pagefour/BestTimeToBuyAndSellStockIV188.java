@@ -44,4 +44,10 @@ public class BestTimeToBuyAndSellStockIV188 {
 
         return f[2 * k];
     }
+
+    public static void main(String[] args) {
+        BestTimeToBuyAndSellStockIV188 bestTimeToBuyAndSellStockIV = new BestTimeToBuyAndSellStockIV188();
+        int[] prices = {3, 3, 5, 1, 0, 3, 4, 5, 2, 8};
+        System.out.println(bestTimeToBuyAndSellStockIV.maxProfit(3, prices));
+    }
 }
