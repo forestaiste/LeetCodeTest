@@ -30,10 +30,46 @@ package org.example.leetcode.pageseven;
 //        输出: 9
 //        解释: 小偷一晚能够盗取的最高金额 = 4 + 5 = 9.
 
+import com.sun.source.tree.Tree;
 import org.example.models.TreeNode;
+
+import java.util.List;
 
 public class HouseRobberIII337 {
     public int rob(TreeNode root) {
-        return 0;
+        int[] val = robTree(root);
+
+        return Math.max(val[0], val[1]);
+    }
+
+    private int[] robTree(TreeNode node) {
+        if (node == null) return new int[2];
+
+        int[] left = robTree(node.left);
+        int[] right = robTree(node.right);
+
+        int[] val = new int[2];
+
+        val[1] = node.val + left[0] + right[0];
+        val[0] = Math.max(left[0], left[1]) + Math.max(right[0], right[1]);
+
+        return val;
+    }
+
+    public static void main(String[] args) {
+        HouseRobberIII337 houseRobberIII = new HouseRobberIII337();
+
+        TreeNode leaf1 = new TreeNode(1);
+        TreeNode leaf2 = new TreeNode(3);
+        TreeNode left = new TreeNode(4, leaf1, leaf2);
+
+        TreeNode leaf3 = new TreeNode(1);
+        TreeNode right = new TreeNode(5);
+
+        TreeNode root = new TreeNode(3, left, right);
+
+        int val = houseRobberIII.rob(root);
+
+        System.out.println(val);
     }
 }
