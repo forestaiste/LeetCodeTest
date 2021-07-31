@@ -55,4 +55,14 @@ public class MaximumSubarray53 {
 
         return max;
     }
+
+    public static void main(String[] args) {
+        MaximumSubarray53 maximumSubarray = new MaximumSubarray53();
+        int[] nums = {-2,1,-3,4,-1,2,1,-5,4};
+
+        System.out.println(maximumSubarray.maxSubArray2(nums));
+
+        nums = new int[] {-2, -1};
+        System.out.println(maximumSubarray.maxSubArray2(nums));
+    }
 }

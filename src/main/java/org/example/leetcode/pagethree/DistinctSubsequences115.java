@@ -69,4 +69,9 @@ public class DistinctSubsequences115 {
 
         return f[m][n];
     }
+
+    public static void main(String[] args) {
+        DistinctSubsequences115 distinctSubsequences = new DistinctSubsequences115();
+        System.out.println(distinctSubsequences.numDistinct("babgbag", "bag"));
+    }
 }

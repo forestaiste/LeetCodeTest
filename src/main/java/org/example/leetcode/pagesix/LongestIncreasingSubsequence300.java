@@ -53,6 +53,21 @@ public class LongestIncreasingSubsequence300 {
             }
         }
 
-        return f[length - 1];
+        return result;
+    }
+
+    public static void main(String[] args) {
+        LongestIncreasingSubsequence300 longestIncreasingSubsequence = new LongestIncreasingSubsequence300();
+        int[] nums = {1,3,6,7,9,4,10,5,6};
+        System.out.println(longestIncreasingSubsequence.lengthOfLIS(nums));
+
+        nums = new int[]{7,7,7,7,7,7,7};
+        System.out.println(longestIncreasingSubsequence.lengthOfLIS(nums));
+
+        nums = new int[]{0,1,0,3,2,3};
+        System.out.println(longestIncreasingSubsequence.lengthOfLIS(nums));
+
+        nums = new int[]{10,9,2,5,3,7,101,18};
+        System.out.println(longestIncreasingSubsequence.lengthOfLIS(nums));
     }
 }
