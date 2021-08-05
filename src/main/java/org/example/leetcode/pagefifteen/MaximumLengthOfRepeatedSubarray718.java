@@ -27,11 +27,21 @@ public class MaximumLengthOfRepeatedSubarray718 {
                 if (A[i - 1] == B[j - 1]) {
                     f[i][j] = f[i - 1][j - 1] + 1;
                 }
-
+//                else {
+//                    f[i][j] = Math.max(f[i - 1][j], f[i][j - 1]);
+//                }
                 max = Math.max(f[i][j], max);
             }
         }
 
         return max;
+    }
+
+    public static void main(String[] args) {
+        MaximumLengthOfRepeatedSubarray718 maximumLengthOfRepeatedSubarray = new MaximumLengthOfRepeatedSubarray718();
+        int[] A = {1, 2, 3, 2, 1};
+        int[] B = {3, 2, 1, 4, 7};
+
+        System.out.println(maximumLengthOfRepeatedSubarray.findLength(A, B));
     }
 }

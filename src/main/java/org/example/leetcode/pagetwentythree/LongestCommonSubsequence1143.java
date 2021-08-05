@@ -26,6 +26,8 @@ package org.example.leetcode.pagetwentythree;
 //        输出：0
 //        解释：两个字符串没有公共子序列，返回 0 。
 
+import org.example.leetcode.pagefifteen.MaximumLengthOfRepeatedSubarray718;
+
 public class LongestCommonSubsequence1143 {
     public int longestCommonSubsequence(String text1, String text2) {
         int m = text1.length();
@@ -45,5 +47,11 @@ public class LongestCommonSubsequence1143 {
         }
 
         return f[m][n];
+    }
+
+    public static void main(String[] args) {
+        LongestCommonSubsequence1143 longestCommonSubsequence = new LongestCommonSubsequence1143();
+
+        System.out.println(longestCommonSubsequence.longestCommonSubsequence("abcde", "ace"));
     }
 }

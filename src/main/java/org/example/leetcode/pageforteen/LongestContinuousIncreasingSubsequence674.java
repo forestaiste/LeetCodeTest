@@ -19,8 +19,10 @@ package org.example.leetcode.pageforteen;
 //        输出：1
 //        解释：最长连续递增序列是 [2], 长度为1。
 
+import java.util.Arrays;
+
 public class LongestContinuousIncreasingSubsequence674 {
-    public int findLengthOfLCIS(int[] nums) {
+    public int findLengthOfLCIS0(int[] nums) {
         int length = nums.length;
 
         if (length <= 1) return length;
@@ -40,5 +42,27 @@ public class LongestContinuousIncreasingSubsequence674 {
         }
 
         return max;
+    }
+
+    public static int findLengthOfLCIS(int[] nums) {
+        int[] dp = new int[nums.length];
+
+        Arrays.fill(dp, 1);
+
+        int res = 1;
+        for (int i = 0; i < nums.length - 1; i++) {
+            if (nums[i + 1] > nums[i]) {
+                dp[i + 1] = dp[i] + 1;
+            }
+
+            res = Math.max(res, dp[i + 1]);
+        }
+        return res;
+    }
+
+    public static void main(String[] args) {
+        LongestContinuousIncreasingSubsequence674 longestContinuousIncreasingSubsequence = new LongestContinuousIncreasingSubsequence674();
+        int[] nums = {1,3,5,4,7};
+        System.out.println(longestContinuousIncreasingSubsequence.findLengthOfLCIS(nums));
     }
 }
