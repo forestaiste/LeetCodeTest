@@ -23,7 +23,7 @@ package org.example.leetcode.pageone;
 
 import org.example.models.ListNode;
 
-public class AddTwoNumbers {
+public class AddTwoNumbers2 {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode head = null, tail = null;
         int carry = 0;

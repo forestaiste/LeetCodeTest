@@ -28,10 +28,10 @@ package org.example.leetcode.pageone;
 import java.util.HashSet;
 import java.util.Set;
 
-public class LongestSubstringWithoutRepeatingCharacters {
+public class LongestSubstringWithoutRepeatingCharacters3 {
     public int lengthOfLongestSubstring(String s) {
         // 哈希集合，记录每个字符是否出现过
-        Set<Character> occ = new HashSet<Character>();
+        Set<Character> occ = new HashSet<>();
         int n = s.length();
         // 右指针，初始值为 -1，相当于我们在字符串的左边界的左侧，还没有开始移动
         int rk = -1, ans = 0;
@@ -49,5 +49,10 @@ public class LongestSubstringWithoutRepeatingCharacters {
             ans = Math.max(ans, rk - i + 1);
         }
         return ans;
+    }
+
+    public static void main(String[] args) {
+        LongestSubstringWithoutRepeatingCharacters3 longest = new LongestSubstringWithoutRepeatingCharacters3();
+        System.out.println(longest.lengthOfLongestSubstring("abcabcdbb"));
     }
 }

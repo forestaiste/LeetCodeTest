@@ -87,13 +87,13 @@ public class PageOneTest {
     @Test
     public void longestSubstringWithoutRepeatingCharactersTest() {
 
-        LongestSubstringWithoutRepeatingCharacters longest = new LongestSubstringWithoutRepeatingCharacters();
+        LongestSubstringWithoutRepeatingCharacters3 longest = new LongestSubstringWithoutRepeatingCharacters3();
         System.out.println(longest.lengthOfLongestSubstring("abcabcdbb"));
     }
 
     @Test
     public void zigZagConversion() {
-        ZigZagConversion zigZagConversion = new ZigZagConversion();
+        ZigZagConversion6 zigZagConversion = new ZigZagConversion6();
         System.out.println(zigZagConversion.convert("PAYPALISHIRING", 3));
     }
 

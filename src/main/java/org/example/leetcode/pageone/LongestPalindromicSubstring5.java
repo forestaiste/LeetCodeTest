@@ -47,4 +47,10 @@ public class LongestPalindromicSubstring5 {
         }
         return right - left - 1;
     }
+
+    public static void main(String[] args) {
+        LongestPalindromicSubstring5 longestPalindromicSubstring = new LongestPalindromicSubstring5();
+
+        System.out.println(longestPalindromicSubstring.longestPalindrome("babbad"));
+    }
 }

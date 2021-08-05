@@ -34,7 +34,7 @@ package org.example.leetcode.pageone;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ZigZagConversion {
+public class ZigZagConversion6 {
     public String convert(String s, int numRows) {
 
         if (numRows == 1) return s;
@@ -55,5 +55,10 @@ public class ZigZagConversion {
         StringBuilder ret = new StringBuilder();
         for (StringBuilder row : rows) ret.append(row);
         return ret.toString();
+    }
+
+    public static void main(String[] args) {
+        ZigZagConversion6 zigZagConversion = new ZigZagConversion6();
+        System.out.println(zigZagConversion.convert("PAYPALISHIRING", 3));
     }
 }
