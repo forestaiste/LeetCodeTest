@@ -28,7 +28,9 @@ package org.example.leetcode.pageone;
 //        {4,5,2,6,3,1}
 //
 
-public class NextPermutation {
+import java.util.Arrays;
+
+public class NextPermutation31 {
     public void nextPermutation(int[] nums) {
         int i = nums.length - 2;
         while (i >= 0 && nums[i] >= nums[i + 1]) {
@@ -57,5 +59,13 @@ public class NextPermutation {
             left++;
             right--;
         }
+    }
+
+    public static void main(String[] args) {
+        NextPermutation31 nextPermutation = new NextPermutation31();
+        int[] nums = {4,5,2,6,3,1};
+        nextPermutation.nextPermutation(nums);
+
+        System.out.println(Arrays.toString(nums));
     }
 }

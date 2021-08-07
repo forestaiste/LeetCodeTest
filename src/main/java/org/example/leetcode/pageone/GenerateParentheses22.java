@@ -17,9 +17,9 @@ package org.example.leetcode.pageone;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GenerateParentheses {
+public class GenerateParentheses22 {
     public List<String> generateParenthesis(int n) {
-        List<String> ans = new ArrayList<String>();
+        List<String> ans = new ArrayList<>();
         backtrack(ans, new StringBuilder(), 0, 0, n);
         return ans;
     }
@@ -39,5 +39,12 @@ public class GenerateParentheses {
             backtrack(ans, cur, open, close + 1, max);
             cur.deleteCharAt(cur.length() - 1);
         }
+    }
+
+    public static void main(String[] args) {
+        GenerateParentheses22 generateParentheses22 = new GenerateParentheses22();
+        List<String> parentheses = generateParentheses22.generateParenthesis(3);
+
+        System.out.println(parentheses);
     }
 }

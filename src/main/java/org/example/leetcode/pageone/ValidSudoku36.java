@@ -54,7 +54,7 @@ package org.example.leetcode.pageone;
 
 import java.util.HashMap;
 
-public class ValidSudoku {
+public class ValidSudoku36 {
     public boolean isValidSudoku(char[][] board) {
         // init data
         HashMap<Integer, Integer>[] rows = new HashMap[9];

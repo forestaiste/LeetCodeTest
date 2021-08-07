@@ -40,8 +40,8 @@ public class PageOneTest {
 
     @Test
     public void generateParenthesesTest() {
-        GenerateParentheses generateParentheses = new GenerateParentheses();
-        List<String> parentheses = generateParentheses.generateParenthesis(3);
+        GenerateParentheses22 generateParentheses22 = new GenerateParentheses22();
+        List<String> parentheses = generateParentheses22.generateParenthesis(3);
 
         System.out.println(parentheses);
     }
@@ -77,7 +77,7 @@ public class PageOneTest {
 
     @Test
     public  void nextPermutationTest() {
-        NextPermutation nextPermutation = new NextPermutation();
+        NextPermutation31 nextPermutation = new NextPermutation31();
         int[] nums = {4,5,2,6,3,1};
         nextPermutation.nextPermutation(nums);
 
@@ -123,7 +123,7 @@ public class PageOneTest {
 
     @Test
     public void validSudokuTest() {
-        ValidSudoku validSudoku = new ValidSudoku();
+        ValidSudoku36 validSudoku = new ValidSudoku36();
         char[][] board =
                 {
                         {'5','3','.','.','7','.','.','.','.'},
@@ -231,7 +231,7 @@ public class PageOneTest {
 
     @Test
     public void countAndSayTest() {
-        CountAndSay countAndSay = new CountAndSay();
+        CountAndSay38 countAndSay = new CountAndSay38();
         System.out.println(countAndSay.countAndSay(4));
     }
 

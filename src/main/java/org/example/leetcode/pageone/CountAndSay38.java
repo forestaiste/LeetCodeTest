@@ -25,7 +25,7 @@ package org.example.leetcode.pageone;
 
 import java.nio.charset.StandardCharsets;
 
-public class CountAndSay {
+public class CountAndSay38 {
 //    public String countAndSay(int n) {
 //        if (n == 1)
 //            return "1";
