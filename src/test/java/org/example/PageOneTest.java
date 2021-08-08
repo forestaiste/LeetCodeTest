@@ -421,7 +421,7 @@ public class PageOneTest {
 
     @Test
     public void groupAnagramsTest() {
-        GroupAnagrams groupAnagrams = new GroupAnagrams();
+        GroupAnagrams49 groupAnagrams = new GroupAnagrams49();
         String[] strs = {"eat", "tea", "tan", "ate", "nat", "bat"};
 
         List<List<String>> results = groupAnagrams.groupAnagrams(strs);
@@ -432,7 +432,7 @@ public class PageOneTest {
 
     @Test
     public void rotateImageTest() {
-        RotateImage rotateImage = new RotateImage();
+        RotateImage48 rotateImage = new RotateImage48();
         int[][] matrix = {{5, 1, 9,11},
                           {2, 4, 8,10},
                           {13, 3, 6, 7},

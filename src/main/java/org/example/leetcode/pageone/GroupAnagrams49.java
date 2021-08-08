@@ -21,9 +21,9 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 
-public class GroupAnagrams {
+public class GroupAnagrams49 {
     public List<List<String>> groupAnagrams(String[] strs) {
-        Map<String, List<String>> maps = new HashMap<String, List<String>>();
+        Map<String, List<String>> maps = new HashMap<>();
 
         for (String str : strs) {
             char[] chars = str.toCharArray();

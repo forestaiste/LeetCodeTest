@@ -97,7 +97,7 @@ public class JumpGameII45 {
 
     public static void main(String[] args) {
         JumpGameII45 jumpGameII = new JumpGameII45();
-        int[] nums = {1,2,2,0,4};
+        int[] nums = {2, 3, 1, 1, 4};
 //        int[] nums = {1, 2, 3};
         System.out.println(jumpGameII.jump(nums));
     }
