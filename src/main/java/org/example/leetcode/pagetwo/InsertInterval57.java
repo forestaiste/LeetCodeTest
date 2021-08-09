@@ -62,4 +62,57 @@ public class InsertInterval57 {
 
         return merged.toArray(new int[merged.size()][]);
     }
+
+    public static void main(String[] args) {
+        InsertInterval57 insertInterval = new InsertInterval57();
+        int[][] intervals = new int[][] {{1, 3}, {6, 9}};
+        int[] newInterval = {2, 5};
+
+//        intervals = insertInterval.insert(intervals, newInterval);
+//
+//        for (int[] interval : intervals) {
+//            System.out.println(Arrays.toString(interval));
+//        }
+
+        System.out.println("---------------");
+
+        intervals = new int[][] {{1,2},{3,5},{6,7},{8,10},{12,16}};
+        newInterval = new int[]{4, 8};
+
+        intervals = insertInterval.insert(intervals, newInterval);
+
+        for (int[] interval : intervals) {
+            System.out.println(Arrays.toString(interval));
+        }
+
+        System.out.println("---------------");
+        intervals = new int[][] {};
+        newInterval = new int[]{4, 8};
+
+        intervals = insertInterval.insert(intervals, newInterval);
+
+        for (int[] interval : intervals) {
+            System.out.println(Arrays.toString(interval));
+        }
+
+        System.out.println("---------------");
+        intervals = new int[][] {{2, 3}};
+        newInterval = new int[]{1, 5};
+
+        intervals = insertInterval.insert(intervals, newInterval);
+
+        for (int[] interval : intervals) {
+            System.out.println(Arrays.toString(interval));
+        }
+
+        System.out.println("---------------");
+        intervals = new int[][] {{1, 5}};
+        newInterval = new int[]{2, 7};
+
+        intervals = insertInterval.insert(intervals, newInterval);
+
+        for (int[] interval : intervals) {
+            System.out.println(Arrays.toString(interval));
+        }
+    }
 }

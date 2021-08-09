@@ -22,7 +22,7 @@ package org.example.leetcode.pagetwo;
 //        1 <= s.length <= 104
 //        s 仅有英文字母和空格 ' ' 组成
 
-public class LengthOfLastWord {
+public class LengthOfLastWord58 {
     public int lengthOfLastWord(String s) {
         int pos = s.length() - 1;
         char c;

@@ -11,14 +11,6 @@ import java.util.List;
 
 public class PageTwoTest {
     @Test
-    public void powTest() {
-        Pow pow = new Pow();
-        System.out.println(pow.myPow(2.00000, 11));
-        System.out.println(pow.myPow(2.10000, 3));
-        System.out.println(pow.myPow(2.00000, -2));
-    }
-
-    @Test
     public void maximumSubarrayTest() {
         MaximumSubarray53 maximumSubarray = new MaximumSubarray53();
         int[] nums = {-2,1,-3,4,-1,2,1,-5,4};
@@ -50,7 +42,7 @@ public class PageTwoTest {
 
     @Test
     public void lengthOfLastWordTest() {
-        LengthOfLastWord lengthOfLastWord = new LengthOfLastWord();
+        LengthOfLastWord58 lengthOfLastWord = new LengthOfLastWord58();
         System.out.println(lengthOfLastWord.lengthOfLastWord("Hello World"));
         System.out.println(lengthOfLastWord.lengthOfLastWord(" "));
         System.out.println(lengthOfLastWord.lengthOfLastWord("World "));
