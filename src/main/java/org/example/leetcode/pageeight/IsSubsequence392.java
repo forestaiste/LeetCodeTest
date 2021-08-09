@@ -38,6 +38,7 @@ public class IsSubsequence392 {
                 }
                 else {
                     f[i][j] = f[i][j - 1];
+//                    f[i][j] = Math.max(f[i][j - 1], f[i - 1][j]);
                 }
             }
         }
@@ -55,5 +56,12 @@ public class IsSubsequence392 {
             j++;
         }
         return i == n;
+    }
+
+    public static void main(String[] args) {
+        IsSubsequence392 isSubsequence = new IsSubsequence392();
+
+        System.out.println(isSubsequence.isSubsequence("abc", "ahbgdc"));
+        System.out.println(isSubsequence.isSubsequence("axc", "ahbgdc"));
     }
 }
