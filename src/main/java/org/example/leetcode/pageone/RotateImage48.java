@@ -42,7 +42,7 @@ package org.example.leetcode.pageone;
 //        [16, 7,10,11]
 //        ]
 
-public class RotateImage {
+public class RotateImage48 {
     public void rotate(int[][] matrix) {
 
         int n = matrix.length;
