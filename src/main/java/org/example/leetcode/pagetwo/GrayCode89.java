@@ -35,6 +35,7 @@ package org.example.leetcode.pagetwo;
 //        因此，当 n = 0 时，其格雷编码序列为 [0]。
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class GrayCode89 {
@@ -48,5 +49,11 @@ public class GrayCode89 {
         }
         return res;
 
+    }
+
+    public static void main(String[] args) {
+        GrayCode89 grayCode = new GrayCode89();
+        List<Integer> result = grayCode.grayCode(3);
+        System.out.println(Arrays.toString(result.toArray()));
     }
 }
