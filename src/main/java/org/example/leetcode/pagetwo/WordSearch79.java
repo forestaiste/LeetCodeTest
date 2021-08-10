@@ -73,4 +73,11 @@ public class WordSearch79 {
         visited[i][j] = false;
         return result;
     }
+
+    public static void main(String[] args) {
+        WordSearch79 wordSearch = new WordSearch79();
+
+        char[][] board = {{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}};
+        System.out.println(wordSearch.exist(board, "ABCCED"));
+    }
 }

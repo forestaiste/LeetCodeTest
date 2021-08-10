@@ -21,8 +21,10 @@ package org.example.leetcode.pagetwo;
 //        输入：matrix = [[0,1,2,0],[3,4,5,2],[1,3,1,5]]
 //        输出：[[0,0,0,0],[0,4,5,0],[0,3,1,0]]
 
+import java.util.Arrays;
+
 public class SetMatrixZeroes73 {
-    public void setZeroes(int[][] matrix) {
+    public void setZeroes0(int[][] matrix) {
         int m = matrix.length;
         int n = matrix[0].length;
 
@@ -82,6 +84,52 @@ public class SetMatrixZeroes73 {
             for (int j = 0; j < n; j++) {
                 matrix[0][j] = 0;
             }
+        }
+    }
+
+    public void setZeroes(int[][] matrix) {
+        int m = matrix.length;
+        int n = matrix[0].length;
+
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (matrix[i][j] == 0) {
+                    for (int k = 0; k < m; k++) {
+                        if (matrix[k][j] != 0)
+                            matrix[k][j] = -1;
+                    }
+
+                    for (int l = 0; l < n; l++) {
+                        if (matrix[i][l] != 0)
+                            matrix[i][l] = -1;
+                    }
+                }
+            }
+        }
+
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (matrix[i][j] == -1)
+                    matrix[i][j] = 0;
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        int[][] matrix = {{0, 1, 2, 0}, {3, 4, 5, 2}, {1, 3, 1, 5}};
+
+        SetMatrixZeroes73 setMatrixZeroes = new SetMatrixZeroes73();
+        setMatrixZeroes.setZeroes(matrix);
+
+        for (int i = 0; i < matrix.length; i++) {
+            System.out.println(Arrays.toString(matrix[i]));
+        }
+
+        int[][] matrix1 = {{1, 1, 2, 4}, {0, 4, 5, 2}, {1, 3, 1, 5}};
+        setMatrixZeroes.setZeroes1(matrix1);
+
+        for (int i = 0; i < matrix.length; i++) {
+            System.out.println(Arrays.toString(matrix1[i]));
         }
     }
 }

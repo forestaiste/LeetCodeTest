@@ -24,6 +24,8 @@ package org.example.leetcode.pagetwo;
 //        输入：nums = [1]
 //        输出：[1]
 
+import java.util.Arrays;
+
 public class SortColors75 {
     public void sortColors(int[] nums) {
         int length = nums.length;
@@ -55,7 +57,7 @@ public class SortColors75 {
         int pos2 = length - 1;
 
         for (int i = 0; i < length; i++) {
-            while (nums[i] == 2 && pos2 > i) {
+            if (nums[i] == 2 && pos2 > i) {
                 int temp = nums[i];
                 nums[i] = nums[pos2];
                 nums[pos2] = temp;
@@ -69,5 +71,17 @@ public class SortColors75 {
                 pos1++;
             }
         }
+    }
+
+    public static void main(String[] args) {
+        SortColors75 sortColors = new SortColors75();
+
+        int[] nums = {2,0,2,1,1,0};
+        sortColors.sortColors1(nums);
+        System.out.println(Arrays.toString(nums));
+
+        int[] nums1 = {2, 1, 2};
+        sortColors.sortColors1(nums1);
+        System.out.println(Arrays.toString(nums1));
     }
 }

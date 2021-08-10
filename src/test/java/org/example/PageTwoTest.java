@@ -148,7 +148,7 @@ public class PageTwoTest {
         ListNode second = new ListNode(2, third);
         ListNode first = new ListNode(1, second);
 
-        RotateList rotateList = new RotateList();
+        RotateList61 rotateList = new RotateList61();
         ListNode result = rotateList.rotateRight(first, 2);
 
         do {
@@ -221,7 +221,7 @@ public class PageTwoTest {
 
     @Test
     public void minimumPathSumTest() {
-        MinimumPathSum minimumPathSum = new MinimumPathSum();
+        MinimumPathSum64 minimumPathSum = new MinimumPathSum64();
 
         int[][] grid = {{1, 3, 1}, {1, 5, 1}, {4, 2, 1}};
 //        int[][] obstacleGrid = {{1, 0}};

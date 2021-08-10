@@ -25,6 +25,8 @@ package org.example.leetcode.pagetwo;
 //        输出：[1]
 
 
+import java.util.Arrays;
+
 public class PlusOne66 {
     public int[] plusOne0(int[] digits) {
         int i = digits.length - 1;
@@ -64,5 +66,16 @@ public class PlusOne66 {
         digits = new int[digits.length + 1];
         digits[0] = 1;
         return digits;
+    }
+
+    public static void main(String[] args) {
+        PlusOne66 plusOne = new PlusOne66();
+        int[] digits = {1, 2, 3};
+        int[] results = plusOne.plusOne(digits);
+        System.out.println(Arrays.toString(results));
+
+        digits = new int[]{9, 9, 9, 9};
+        results = plusOne.plusOne(digits);
+        System.out.println(Arrays.toString(results));
     }
 }

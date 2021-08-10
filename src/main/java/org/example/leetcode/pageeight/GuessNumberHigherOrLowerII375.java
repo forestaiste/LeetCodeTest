@@ -45,7 +45,7 @@ public class GuessNumberHigherOrLowerII375 {
                     f[i][j] = Math.min(k + Math.max(f[i][k - 1], f[k + 1][j]), f[i][j]);
                 }
 
-                f[i][j] = Math.min(f[i][j], i + f[i + 1][j]);
+               f[i][j] = Math.min(f[i][j], i + f[i + 1][j]);
                 f[i][j] = Math.min(f[i][j], j + f[i][j - 1]);
             }
         }

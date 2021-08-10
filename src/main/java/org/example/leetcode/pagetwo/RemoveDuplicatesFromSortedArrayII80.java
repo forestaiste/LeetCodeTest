@@ -37,7 +37,7 @@ package org.example.leetcode.pagetwo;
 //        解释：函数应返回新长度 length = 7, 并且原数组的前五个元素被修改为 0, 0, 1, 1, 2, 3, 3 。 不需要考虑数组中超出新长度后面的元素。
 
 public class RemoveDuplicatesFromSortedArrayII80 {
-    public int removeDuplicates(int[] nums) {
+    public int removeDuplicates0(int[] nums) {
         int length = nums.length;
 
         if (length <= 2)
@@ -86,5 +86,33 @@ public class RemoveDuplicatesFromSortedArrayII80 {
         }
 
         return slow;
+    }
+
+    public static void main(String[] args) {
+        RemoveDuplicatesFromSortedArrayII80 removeDuplicatesFromSortedArrayII = new RemoveDuplicatesFromSortedArrayII80();
+
+        int[] nums = {1, 2, 2, 3};
+        int count = removeDuplicatesFromSortedArrayII.removeDuplicates1(nums);
+
+        System.out.println(count);
+        for (int i = 0; i < count; i++) {
+            System.out.println(nums[i]);
+        }
+
+        int[] nums2 = {1,1,1, 2};
+        int count2 = removeDuplicatesFromSortedArrayII.removeDuplicates1(nums2);
+
+        System.out.println(count2);
+        for (int i = 0; i < count2; i++) {
+            System.out.println(nums2[i]);
+        }
+
+        int[] nums1 = {0,0,1,1,1,1,2,3,3, 3, 3};
+        int count1 = removeDuplicatesFromSortedArrayII.removeDuplicates1(nums1);
+
+        System.out.println(count1);
+        for (int i = 0; i < count1; i++) {
+            System.out.println(nums1[i]);
+        }
     }
 }

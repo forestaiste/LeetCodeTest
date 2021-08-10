@@ -26,7 +26,7 @@ package org.example.leetcode.pagetwo;
 //        1 <= m, n <= 200
 //        0 <= grid[i][j] <= 100
 
-public class MinimumPathSum {
+public class MinimumPathSum64 {
     int[] directionX = new int[2];
     int[] directionY = new int[2];
 
