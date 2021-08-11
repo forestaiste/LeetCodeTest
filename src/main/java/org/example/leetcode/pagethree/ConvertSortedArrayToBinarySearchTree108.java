@@ -42,4 +42,10 @@ public class ConvertSortedArrayToBinarySearchTree108 {
         node.right = build(nums, mid + 1, right);
         return node;
     }
+
+    public static void main(String[] args) {
+        ConvertSortedArrayToBinarySearchTree108 convertSortedArrayToBinarySearchTree = new ConvertSortedArrayToBinarySearchTree108();
+        int[] nums = {-10, -3, 0, 5, 9};
+        TreeNode root = convertSortedArrayToBinarySearchTree.sortedArrayToBST(nums);
+    }
 }
