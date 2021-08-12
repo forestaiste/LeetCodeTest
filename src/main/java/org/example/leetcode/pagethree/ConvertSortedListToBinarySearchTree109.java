@@ -83,4 +83,16 @@ public class ConvertSortedListToBinarySearchTree109 {
         root.right = buildTree(mid + 1, right);
         return root;
     }
+
+    public static void main(String[] args) {
+        ConvertSortedListToBinarySearchTree109 convertSortedListToBinarySearchTree = new ConvertSortedListToBinarySearchTree109();
+
+        ListNode nine = new ListNode(9);
+        ListNode five = new ListNode(5, nine);
+        ListNode zero = new ListNode(0, five);
+        ListNode negThree = new ListNode(-3, zero);
+        ListNode negTen = new ListNode(-10, negThree);
+
+        convertSortedListToBinarySearchTree.sortedListToBST1(negTen);
+    }
 }
