@@ -57,4 +57,9 @@ public class DecodeWays91 {
         }
         return f[n];
     }
+
+    public static void main(String[] args) {
+        DecodeWays91 decodeWays = new DecodeWays91();
+        System.out.println(decodeWays.numDecodings("0226"));
+    }
 }
