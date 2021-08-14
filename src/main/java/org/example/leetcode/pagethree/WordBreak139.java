@@ -23,6 +23,7 @@ package org.example.leetcode.pagethree;
 //        输入: s = "catsandog", wordDict = ["cats", "dog", "sand", "and", "cat"]
 //        输出: false
 
+import java.util.Arrays;
 import java.util.List;
 
 public class WordBreak139 {
@@ -44,5 +45,17 @@ public class WordBreak139 {
         }
 
         return f[s.length()];
+    }
+
+    public static void main(String[] args) {
+        WordBreak139 wordBreak = new WordBreak139();
+        List<String> wordDict = Arrays.asList("apple", "pen");
+        System.out.println(wordBreak.wordBreak("applepenapple", wordDict));
+
+        wordDict = Arrays.asList("cats", "dog", "sand", "and", "cat");
+        System.out.println(wordBreak.wordBreak("catsandog", wordDict));
+
+        wordDict = Arrays.asList("leet", "code");
+        System.out.println(wordBreak.wordBreak("leetcode", wordDict));
     }
 }

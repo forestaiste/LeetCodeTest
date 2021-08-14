@@ -13,10 +13,11 @@ package org.example.leetcode.pagethree;
 //        输出: [1,3,3,1]
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class PascalsTriangleII119 {
-    public List<Integer> getRow(int rowIndex) {
+    public List<Integer> getRow1(int rowIndex) {
         List<Integer> result = new ArrayList<>();
 
         if (rowIndex == 0) {
@@ -40,5 +41,25 @@ public class PascalsTriangleII119 {
         }
 
         return result;
+    }
+
+    public List<Integer> getRow(int rowIndex) {
+        List<Integer> row = new ArrayList<Integer>();
+        row.add(1);
+        for (int i = 1; i <= rowIndex; ++i) {
+            row.add(0);
+            for (int j = i; j > 0; --j) {
+                row.set(j, row.get(j) + row.get(j - 1));
+            }
+        }
+        return row;
+    }
+
+
+    public static void main(String[] args) {
+        PascalsTriangleII119 pascalsTriangleII = new PascalsTriangleII119();
+        List<Integer> result = pascalsTriangleII.getRow(4);
+
+        System.out.println(Arrays.toString(result.toArray()));
     }
 }

@@ -45,19 +45,22 @@ public class PopulatingNextRightPointersInEachNode116 {
         while (!queue.isEmpty()) {
             int size = queue.size();
 
-            NodeWithNext pre = null;
+//            NodeWithNext pre = null;
 
             for (int i = 0; i < size; i++) {
                 NodeWithNext node = queue.poll();
-                if (i == size - 1) {
-                    node.next = null;
+//                if (i == size - 1) {
+//                    node.next = null;
+//                }
+//
+//                if (pre != null) {
+//                    pre.next = node;
+//                }
+//
+//                pre = node;
+                if (i < size - 1) {
+                    node.next = queue.peek();
                 }
-
-                if (pre != null) {
-                    pre.next = node;
-                }
-
-                pre = node;
 
                 if (node.left != null) {
                     queue.add(node.left);

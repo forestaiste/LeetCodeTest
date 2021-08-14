@@ -24,8 +24,11 @@ package org.example.leetcode.pagethree;
 //
 //        进阶：你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class SingleNumberII137 {
-    public int singleNumber(int[] nums) {
+    public int singleNumber1(int[] nums) {
         int a = 0, b = 0;
         for (int num : nums) {
             int aNext = (~a & b & num) | (a & ~b & ~num), bNext = ~a & (b ^ num);
@@ -34,4 +37,21 @@ public class SingleNumberII137 {
         }
         return b;
     }
+
+    public int singleNumber(int[] nums) {
+        Map<Integer, Integer> freq = new HashMap<Integer, Integer>();
+        for (int num : nums) {
+            freq.put(num, freq.getOrDefault(num, 0) + 1);
+        }
+        int ans = 0;
+        for (Map.Entry<Integer, Integer> entry : freq.entrySet()) {
+            int num = entry.getKey(), occ = entry.getValue();
+            if (occ == 1) {
+                ans = num;
+                break;
+            }
+        }
+        return ans;
+    }
+
 }

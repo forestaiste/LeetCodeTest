@@ -23,8 +23,10 @@ package org.example.leetcode.pagethree;
 //        解释：你可以分别给这三个孩子分发 1、2、1 颗糖果。
 //        第三个孩子只得到 1 颗糖果，这已满足上述两个条件。
 
+import java.util.Arrays;
+
 public class Candy135 {
-    public int candy(int[] ratings) {
+    public int candy1(int[] ratings) {
         int n = ratings.length;
         int[] left = new int[n];
         for (int i = 0; i < n; i++) {
@@ -44,5 +46,36 @@ public class Candy135 {
             ret += Math.max(left[i], right);
         }
         return ret;
+    }
+
+    public int candy(int[] ratings) {
+        int[] candy = new int[ratings.length];
+
+        Arrays.fill(candy, 1);
+
+        for (int i = 1; i < ratings.length; i++) {
+            if (ratings[i] > ratings[i - 1]) {
+                candy[i] = candy[i - 1] + 1;
+            }
+        }
+
+        for (int i = ratings.length - 2; i >= 0; i--) {
+            if (ratings[i] > ratings[i + 1]) {
+                candy[i] = Math.max(candy[i],candy[i + 1] + 1);
+            }
+        }
+
+        int count = 0;
+        for (int i = 0; i < candy.length; i++) {
+            count += candy[i];
+        }
+
+        return count;
+    }
+
+    public static void main(String[] args) {
+        Candy135 candy = new Candy135();
+        int[] ratings = {2, 1, 1, 0, 2, 0, 1, 2};
+        System.out.println(candy.candy(ratings));
     }
 }

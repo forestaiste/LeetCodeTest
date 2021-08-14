@@ -50,10 +50,66 @@ package org.example.leetcode.pagethree;
 //        由于图是无向的，如果节点 p 是节点 q 的邻居，那么节点 q 也必须是节点 p 的邻居。
 //        图是连通图，你可以从给定节点访问到所有节点。
 
-import org.example.models.Node;
+import org.example.models.NeighborNode;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 public class CloneGraph133 {
-    public Node cloneGraph(Node node) {
-        return null;
+    Map<Integer, NeighborNode> map = new HashMap<>();
+
+    public NeighborNode cloneGraph(NeighborNode node) {
+        if (node == null)
+            return null;
+
+        if (map.containsKey(node.val)) {
+            return map.get(node.val);
+        }
+
+        NeighborNode cloneNode = new NeighborNode(node.val);
+        map.put(node.val, cloneNode);
+
+        for (NeighborNode n : node.neighbors) {
+            cloneNode.neighbors.add(cloneGraph(n));
+        }
+
+        return cloneNode;
+    }
+
+    private NeighborNode clone(NeighborNode node) {
+        if (map.containsKey(node.val)) {
+            return map.get(node.val);
+        }
+
+        NeighborNode cloneNode = new NeighborNode(node.val);
+        map.put(node.val, cloneNode);
+
+        for (NeighborNode n : node.neighbors) {
+            cloneNode.neighbors.add(clone(n));
+        }
+
+        return cloneNode;
+    }
+
+    public static void main(String[] args) {
+        NeighborNode first = new NeighborNode(1);
+        NeighborNode second = new NeighborNode(2);
+        NeighborNode third = new NeighborNode(3);
+        NeighborNode forth = new NeighborNode(4);
+
+        first.neighbors.add(second);
+        first.neighbors.add(forth);
+
+        second.neighbors.add(first);
+        second.neighbors.add(third);
+        third.neighbors.add(second);
+        third.neighbors.add(forth);
+        forth.neighbors.add(first);
+        forth.neighbors.add(third);
+
+        CloneGraph133 cloneGraph = new CloneGraph133();
+        NeighborNode clone = cloneGraph.cloneGraph(first);
     }
 }
