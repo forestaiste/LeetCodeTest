@@ -59,4 +59,17 @@ public class MinStack155 {
     public int getMin() {
         return minStack.peek();
     }
+
+    public static void main(String[] args) {
+        MinStack155 minStack = new MinStack155();
+
+        minStack.push(-2);
+        minStack.push(0);
+        minStack.push(-3);
+
+        System.out.println(minStack.getMin());
+        minStack.pop();
+        System.out.println(minStack.top());
+        System.out.println(minStack.getMin());
+    }
 }

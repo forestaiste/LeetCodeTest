@@ -1,4 +1,4 @@
-package org.example.leetcode.pagesix;
+package org.example.leetcode.pageseven;
 
 //304. 二维区域和检索 - 矩阵不可变
 //        给定一个二维矩阵，计算其子矩形范围内元素的总和，该子矩阵的左上角为 (row1, col1) ，右下角为 (row2, col2) 。

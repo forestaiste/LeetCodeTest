@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.leetcode.pageseven.RangeSumQuery2DImmutable304;
 import org.example.leetcode.pageseven.RangeSumQueryImmutable303;
 import org.example.leetcode.pagesix.*;
 import org.example.models.TreeNode;
