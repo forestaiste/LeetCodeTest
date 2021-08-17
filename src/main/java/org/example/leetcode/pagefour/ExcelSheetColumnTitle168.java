@@ -27,7 +27,7 @@ package org.example.leetcode.pagefour;
 //        输出: "ZY"
 
 public class ExcelSheetColumnTitle168 {
-    public String convertToTitle(int columnNumber) {
+    public String convertToTitle1(int columnNumber) {
         int quotient = columnNumber;
         int leftover = 0;
         StringBuilder builder = new StringBuilder();
@@ -50,5 +50,22 @@ public class ExcelSheetColumnTitle168 {
         builder.insert(0, letter);
 
         return builder.toString();
+    }
+
+    public String convertToTitle(int columnNumber) {
+        StringBuffer sb = new StringBuffer();
+        while (columnNumber != 0) {
+            columnNumber--;
+            sb.append((char)(columnNumber % 26 + 'A'));
+            columnNumber /= 26;
+        }
+        return sb.reverse().toString();
+    }
+
+    public static void main(String[] args) {
+        ExcelSheetColumnTitle168 excelSheetColumnTitle168 = new ExcelSheetColumnTitle168();
+        System.out.println(excelSheetColumnTitle168.convertToTitle(52));
+        System.out.println(excelSheetColumnTitle168.convertToTitle(701));
+        System.out.println(excelSheetColumnTitle168.convertToTitle(28));
     }
 }

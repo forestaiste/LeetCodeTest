@@ -34,4 +34,13 @@ public class FactorialTrailingZeroes172 {
         }
         return zeroCount;
     }
+
+    public static void main(String[] args) {
+        FactorialTrailingZeroes172 factorialTrailingZeroes = new FactorialTrailingZeroes172();
+
+        System.out.println(factorialTrailingZeroes.trailingZeroes(625));
+        System.out.println(factorialTrailingZeroes.trailingZeroes(10));
+        System.out.println(factorialTrailingZeroes.trailingZeroes(20));
+        System.out.println(factorialTrailingZeroes.trailingZeroes(30));
+    }
 }

@@ -35,30 +35,59 @@ package org.example.leetcode.pagefour;
 import com.sun.source.tree.Tree;
 import org.example.models.TreeNode;
 
+import java.util.ArrayList;
 import java.util.Deque;
 import java.util.LinkedList;
+import java.util.List;
 
 public class BinarySearchTreeIterator173 {
-    private TreeNode cur;
-    private Deque<TreeNode> stack;
+//    private TreeNode cur;
+//    private Deque<TreeNode> stack;
+//
+//    public BinarySearchTreeIterator173(TreeNode root) {
+//        cur = root;
+//        stack = new LinkedList<TreeNode>();
+//    }
+//
+//    public int next() {
+//        while (cur != null) {
+//            stack.push(cur);
+//            cur = cur.left;
+//        }
+//        cur = stack.pop();
+//        int ret = cur.val;
+//        cur = cur.right;
+//        return ret;
+//    }
+//
+//    public boolean hasNext() {
+//        return cur != null || !stack.isEmpty();
+//    }
+/////////////////////////////////////////////////////////
+    private int idx;
+    private List<Integer> arr;
 
     public BinarySearchTreeIterator173(TreeNode root) {
-        cur = root;
-        stack = new LinkedList<TreeNode>();
+        idx = 0;
+        arr = new ArrayList<Integer>();
+        inorderTraversal(root, arr);
     }
 
     public int next() {
-        while (cur != null) {
-            stack.push(cur);
-            cur = cur.left;
-        }
-        cur = stack.pop();
-        int ret = cur.val;
-        cur = cur.right;
-        return ret;
+        return arr.get(idx++);
     }
 
     public boolean hasNext() {
-        return cur != null || !stack.isEmpty();
+        return idx < arr.size();
     }
+
+    private void inorderTraversal(TreeNode root, List<Integer> arr) {
+        if (root == null) {
+            return;
+        }
+        inorderTraversal(root.left, arr);
+        arr.add(root.val);
+        inorderTraversal(root.right, arr);
+    }
+
 }
