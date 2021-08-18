@@ -25,8 +25,8 @@ import java.util.Map;
 
 public class IsomorphicStrings205 {
     public boolean isIsomorphic(String s, String t) {
-        Map<Character, Character> s2t = new HashMap<Character, Character>();
-        Map<Character, Character> t2s = new HashMap<Character, Character>();
+        Map<Character, Character> s2t = new HashMap<>();
+        Map<Character, Character> t2s = new HashMap<>();
         int len = s.length();
         for (int i = 0; i < len; ++i) {
             char x = s.charAt(i), y = t.charAt(i);
