@@ -92,4 +92,14 @@ public class DesignAddAndSearchWordsDataStructure211 {
         }
     }
 
+    public static void main(String[] args) {
+        DesignAddAndSearchWordsDataStructure211 designAddAndSearchWordsDataStructure = new DesignAddAndSearchWordsDataStructure211();
+
+        designAddAndSearchWordsDataStructure.addWord("bad");
+        designAddAndSearchWordsDataStructure.addWord("dad");
+        designAddAndSearchWordsDataStructure.addWord("mad");
+        designAddAndSearchWordsDataStructure.addWord("pad");
+        designAddAndSearchWordsDataStructure.search(".ad");
+    }
+
 }
