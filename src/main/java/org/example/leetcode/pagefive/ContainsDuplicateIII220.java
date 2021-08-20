@@ -25,7 +25,7 @@ import java.util.TreeSet;
 public class ContainsDuplicateIII220 {
     public boolean containsNearbyAlmostDuplicate(int[] nums, int k, int t) {
         int n = nums.length;
-        Map<Long, Long> map = new HashMap<Long, Long>();
+        Map<Long, Long> map = new HashMap<>();
         long w = (long) t + 1;
         for (int i = 0; i < n; i++) {
             long id = getID(nums[i], w);
@@ -80,5 +80,12 @@ public class ContainsDuplicateIII220 {
         }
         return false;
 
+    }
+
+    public static void main(String[] args) {
+        ContainsDuplicateIII220 containsDuplicateIII = new ContainsDuplicateIII220();
+        int[] nums = {1,5,9,1,5,10,8};
+
+        System.out.println(containsDuplicateIII.containsNearbyAlmostDuplicate1(nums, 2, 3));
     }
 }

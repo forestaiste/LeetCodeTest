@@ -33,7 +33,7 @@ import java.util.Queue;
 
 public class BasicCalculatorII227 {
     public int calculate(String s) {
-        Deque<Integer> stack = new LinkedList<Integer>();
+        Deque<Integer> stack = new LinkedList<>();
         char preSign = '+';
         int num = 0;
         int n = s.length();
@@ -188,5 +188,16 @@ public class BasicCalculatorII227 {
         }
 
         return result;
+    }
+
+    public static void main(String[] args) {
+        BasicCalculatorII227 basicCalculatorII = new BasicCalculatorII227();
+
+        System.out.println(basicCalculatorII.calculate("3+2*2"));
+        System.out.println(basicCalculatorII.calculate(" 3/2 "));
+        System.out.println(basicCalculatorII.calculate(" 3+5 / 2 "));
+        System.out.println(basicCalculatorII.calculate("2*3*4"));
+        System.out.println(basicCalculatorII.calculate("1 + 1"));
+        System.out.println(basicCalculatorII.calculate("2*3+4"));
     }
 }

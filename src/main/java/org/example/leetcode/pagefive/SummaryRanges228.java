@@ -45,7 +45,7 @@ import java.util.List;
 
 public class SummaryRanges228 {
     public List<String> summaryRanges(int[] nums) {
-        List<String> ret = new ArrayList<String>();
+        List<String> ret = new ArrayList<>();
         int i = 0;
         int n = nums.length;
         while (i < n) {
