@@ -37,15 +37,6 @@ public class HIndex274 {
         return i;
     }
 
-    public int hIndex0(int[] citations) {
-        int idx = 0, n = citations.length;
-        for(int c : citations) {
-            if (c >= n - idx) return n - idx;
-            else idx++;
-        }
-        return 0;
-    }
-
     public int hIndex(int[] citations) {
         int n = citations.length;
         int[] papers = new int[n + 1];
@@ -57,5 +48,41 @@ public class HIndex274 {
         for (int s = papers[n]; k > s; s += papers[k])
             k--;
         return k;
+    }
+
+    public int hIndex3(int[] citations) {
+        int n = citations.length, tot = 0;
+        int[] counter = new int[n + 1];
+        for (int i = 0; i < n; i++) {
+            if (citations[i] >= n) {
+                counter[n]++;
+            } else {
+                counter[citations[i]]++;
+            }
+        }
+        for (int i = n; i >= 0; i--) {
+            tot += counter[i];
+            if (tot >= i) {
+                return i;
+            }
+        }
+        return 0;
+    }
+
+
+    public static void main(String[] args) {
+        HIndex274 hIndex = new HIndex274();
+
+        int[] citations2 = {4,0,6,1,5};
+        System.out.println(hIndex.hIndex3(citations2));
+
+        int[] citations1 = {1, 3, 1};
+        System.out.println(hIndex.hIndex3(citations1));
+
+        int[] citations = {1,3,2,3,100};
+        System.out.println(hIndex.hIndex3(citations));
+
+        int[] citations3 = {100};
+        System.out.println(hIndex.hIndex3(citations3));
     }
 }

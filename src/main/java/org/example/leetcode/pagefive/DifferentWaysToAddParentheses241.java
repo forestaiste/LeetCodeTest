@@ -22,6 +22,7 @@ package org.example.leetcode.pagefive;
 //        (((2*3)-4)*5) = 10
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class DifferentWaysToAddParentheses241 {
@@ -35,7 +36,7 @@ public class DifferentWaysToAddParentheses241 {
     }
     private List<Integer> dfsHelper(int l, int r) {
         int idx = l, num = cArr[idx] - '0';
-        List<Integer> nArr = new ArrayList<Integer>();
+        List<Integer> nArr = new ArrayList<>();
 
         while ((idx + 1 <= r) && Character.isDigit(cArr[idx + 1])) {
             idx++;
@@ -68,5 +69,11 @@ public class DifferentWaysToAddParentheses241 {
             }
         }
         return nArr;
+    }
+
+    public static void main(String[] args) {
+        DifferentWaysToAddParentheses241 differentWaysToAddParentheses = new DifferentWaysToAddParentheses241();
+        List<Integer> result = differentWaysToAddParentheses.diffWaysToCompute("2*3-4*5");
+        System.out.println(Arrays.toString(result.toArray()));
     }
 }

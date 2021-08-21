@@ -24,7 +24,8 @@ import java.util.Arrays;
 
 public class PerfectSquares279 {
 
-    public int numSquares(int n) {
+    // 理解困难
+    public int numSquares1(int n) {
         int num = (int)Math.sqrt(n);
 
         int[] f = new int[n + 1];
@@ -39,5 +40,26 @@ public class PerfectSquares279 {
         }
 
         return f[n];
+    }
+
+    public int numSquares(int n) {
+        int[] f = new int[n + 1];
+
+        Arrays.fill(f, Integer.MAX_VALUE);
+        f[0] = 0;
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j * j <= i; j++) {
+                f[i] = Math.min(f[i], f[i - j * j] + 1);
+            }
+        }
+        return f[n];
+    }
+
+
+    public static void main(String[] args) {
+        PerfectSquares279 perfectSquares = new PerfectSquares279();
+        System.out.println(perfectSquares.numSquares(12));
+        System.out.println(perfectSquares.numSquares(13));
     }
 }

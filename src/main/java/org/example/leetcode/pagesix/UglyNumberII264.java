@@ -96,4 +96,9 @@ public class UglyNumberII264 {
 
         return number;
     }
+
+    public static void main(String[] args) {
+        UglyNumberII264 uglyNumberII264 = new UglyNumberII264();
+        System.out.println(uglyNumberII264.nthUglyNumber(10));
+    }
 }

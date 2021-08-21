@@ -39,4 +39,13 @@ public class LowestCommonAncestorOfABinarySearchTree235 {
         else  //if (root.val < p.val && root.val < q.val)
             return lowestCommonAncestor(root.right, p, q);
     }
+
+    public TreeNode lowestCommonAncestor1(TreeNode root, TreeNode p, TreeNode q) {
+        if (root.val > p.val && root.val > q.val)
+            return lowestCommonAncestor(root.left, p, q);
+        else  if (root.val < p.val && root.val < q.val)
+            return lowestCommonAncestor(root.right, p, q);
+        else
+            return root;
+    }
 }
