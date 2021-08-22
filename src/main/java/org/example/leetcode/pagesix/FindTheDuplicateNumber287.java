@@ -45,7 +45,6 @@ public class FindTheDuplicateNumber287 {
         return l;
     }
 
-
     public int findDuplicate1(int[] nums) {
         int slow = 0;
         int fast = 0;
@@ -64,5 +63,10 @@ public class FindTheDuplicateNumber287 {
         return pre1;
     }
 
+    public static void main(String[] args) {
+        FindTheDuplicateNumber287 findTheDuplicateNumber = new FindTheDuplicateNumber287();
+        int[] nums = {1,4,6,6,6,2,3};
 
+        System.out.println(findTheDuplicateNumber.findDuplicate1(nums));
+    }
 }

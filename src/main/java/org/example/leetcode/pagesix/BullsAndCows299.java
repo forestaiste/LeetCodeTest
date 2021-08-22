@@ -83,4 +83,13 @@ public class BullsAndCows299 {
         return aCount + "A" + bCount + "B";
     }
 
+
+    public static void main(String[] args) {
+        BullsAndCows299 bullsAndCows = new BullsAndCows299();
+
+        System.out.println(bullsAndCows.getHint("1807", "7810"));
+        System.out.println(bullsAndCows.getHint("1123", "0111"));
+        System.out.println(bullsAndCows.getHint1("1122", "2211"));
+        System.out.println(bullsAndCows.getHint("11", "10"));
+    }
 }
