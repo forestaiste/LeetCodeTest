@@ -71,4 +71,14 @@ public class AdditiveNumber306 {
 
         return false;
     }
+
+    public static void main(String[] args) {
+        AdditiveNumber306 additiveNumber = new AdditiveNumber306();
+
+//        System.out.println(additiveNumber.isAdditiveNumber("121474836472147483648"));
+//        System.out.println(additiveNumber.isAdditiveNumber("211738"));
+//        System.out.println(additiveNumber.isAdditiveNumber("1203"));
+        System.out.println(additiveNumber.isAdditiveNumber("199100199"));
+//        System.out.println(additiveNumber.isAdditiveNumber("1112358"));
+    }
 }

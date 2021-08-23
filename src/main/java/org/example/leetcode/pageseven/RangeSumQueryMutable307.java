@@ -106,4 +106,12 @@ public class RangeSumQueryMutable307 {
 //    public int sumRangeA(int left, int right) {
 //        return sum[right + 1] - sum[left];
 //    }
+
+    public static void main(String[] args) {
+        int[] nums = {2, 4, 5, 7, 8, 9};
+        RangeSumQueryMutable307 rangeSumQueryMutable = new RangeSumQueryMutable307(nums);
+
+        rangeSumQueryMutable.update(1, 3);
+        System.out.println(rangeSumQueryMutable.sumRange(0, 2));
+    }
 }
