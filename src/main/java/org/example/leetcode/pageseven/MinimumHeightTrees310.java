@@ -32,10 +32,7 @@ package org.example.leetcode.pageseven;
 //        输入：n = 2, edges = [[0,1]]
 //        输出：[0,1]
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 public class MinimumHeightTrees310 {
     public List<Integer> findMinHeightTrees(int n, int[][] edges) {
@@ -91,5 +88,15 @@ public class MinimumHeightTrees310 {
         }
 
         return res;
+    }
+
+    public static void main(String[] args) {
+        int[][] edges = {{3, 0}, {3, 1}, {3, 2}, {3, 4}, {5, 4}};
+
+        MinimumHeightTrees310 minimumHeightTrees = new MinimumHeightTrees310();
+
+        List<Integer> results = minimumHeightTrees.findMinHeightTrees(6, edges);
+
+        System.out.println(Arrays.toString(results.toArray()));
     }
 }
