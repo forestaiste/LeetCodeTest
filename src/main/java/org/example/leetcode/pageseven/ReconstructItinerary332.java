@@ -75,8 +75,8 @@ public class ReconstructItinerary332 {
         }
     }
 
-    Map<String, PriorityQueue<String>> map = new HashMap<String, PriorityQueue<String>>();
-    List<String> itinerary = new LinkedList<String>();
+    Map<String, PriorityQueue<String>> map = new HashMap<>();
+    List<String> itinerary = new LinkedList<>();
 
     public List<String> findItinerary(List<List<String>> tickets) {
         for (List<String> ticket : tickets) {
@@ -154,7 +154,7 @@ public class ReconstructItinerary332 {
         };
         List<String> t3 = new ArrayList<String>() {
             {
-                add("KUL");
+                add("NRT");
                 add("JFK");
             }
         };

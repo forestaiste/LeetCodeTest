@@ -32,7 +32,7 @@ public class IncreasingTripletSubsequence334 {
         int mid = Integer.MAX_VALUE;
 
         for (int num : nums) {
-            if (small >= num) {
+            if (num <= small) {
                 small = num;
             }
             else if (num <= mid) {
