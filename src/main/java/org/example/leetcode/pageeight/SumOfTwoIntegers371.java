@@ -18,6 +18,7 @@ public class SumOfTwoIntegers371 {
     public static void main(String[] args) {
         SumOfTwoIntegers371 sumOfTwoIntegers = new SumOfTwoIntegers371();
 
+        System.out.println(sumOfTwoIntegers.getSum(7, -6));
         System.out.println(sumOfTwoIntegers.getSum(7, 6));
     }
 }
