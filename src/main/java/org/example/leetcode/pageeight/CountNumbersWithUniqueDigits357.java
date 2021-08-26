@@ -31,7 +31,9 @@ public class CountNumbersWithUniqueDigits357 {
 
     public static void main(String[] args) {
         CountNumbersWithUniqueDigits357 countNumbersWithUniqueDigits = new CountNumbersWithUniqueDigits357();
-        System.out.println(countNumbersWithUniqueDigits.countNumbersWithUniqueDigits(0));
+//        System.out.println(countNumbersWithUniqueDigits.countNumbersWithUniqueDigits(0));
+//        System.out.println(countNumbersWithUniqueDigits.countNumbersWithUniqueDigits(1));
+        System.out.println(countNumbersWithUniqueDigits.countNumbersWithUniqueDigits(2));
         System.out.println(countNumbersWithUniqueDigits.countNumbersWithUniqueDigits(3));
         System.out.println(countNumbersWithUniqueDigits.countNumbersWithUniqueDigits(4));
         System.out.println(countNumbersWithUniqueDigits.countNumbersWithUniqueDigits(5));
