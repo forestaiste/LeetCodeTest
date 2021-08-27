@@ -51,7 +51,7 @@ public class KthSmallestElementInASortedMatrix378 {
         int num = 0;
         while (i >= 0 && j < n) {
             if (matrix[i][j] <= mid) {
-                num += i + 1;
+                num += i + 1; // 是按列计算个数的。
                 j++;
             }
             else {

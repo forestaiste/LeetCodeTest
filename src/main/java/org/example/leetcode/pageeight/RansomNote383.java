@@ -38,4 +38,11 @@ public class RansomNote383 {
 
         return map.isEmpty();
     }
+
+    public static void main(String[] args) {
+        RansomNote383 ransomNote = new RansomNote383();
+        System.out.println(ransomNote.canConstruct("a", "b"));
+        System.out.println(ransomNote.canConstruct("aa", "ab"));
+        System.out.println(ransomNote.canConstruct("aa", "aab"));
+    }
 }
