@@ -46,6 +46,6 @@ public class LongestSubstringWithAtLeastKRepeatingCharacters395 {
     public static void main(String[] args) {
         LongestSubstringWithAtLeastKRepeatingCharacters395 longestSubstringWithAtLeastKRepeatingCharacters
                 = new LongestSubstringWithAtLeastKRepeatingCharacters395();
-        System.out.println(longestSubstringWithAtLeastKRepeatingCharacters.longestSubstring("ababacb", 3));
+        System.out.println(longestSubstringWithAtLeastKRepeatingCharacters.longestSubstring("ababacb", 2));
     }
 }

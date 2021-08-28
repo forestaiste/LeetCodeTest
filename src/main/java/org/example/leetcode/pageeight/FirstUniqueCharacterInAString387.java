@@ -18,7 +18,7 @@ import java.util.Set;
 //        s = "loveleetcode"
 //        返回 2
 public class FirstUniqueCharacterInAString387 {
-    public int firstUniqChar(String s) {
+    public int firstUniqChar0(String s) {
         Map<Character, Integer> map = new HashMap<>();
 
         int length = s.length();
@@ -29,6 +29,23 @@ public class FirstUniqueCharacterInAString387 {
 
         for (int i = 0; i < length; i++) {
             if (map.get(s.charAt(i)) == 1) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    public int firstUniqChar(String s) {
+        int[] map = new int[26];
+
+        int length = s.length();
+        for (int i = 0; i < length; i++) {
+            map[s.charAt(i) - 'a']++;
+        }
+
+        for (int i = 0; i < length; i++) {
+            if (map[s.charAt(i) - 'a'] == 1) {
                 return i;
             }
         }

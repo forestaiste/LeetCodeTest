@@ -43,7 +43,7 @@ public class EliminationGame390 {
         return cal(n);
     }
 
-    public int lastRemaining0(int n) {
+    public int lastRemaining1(int n) {
         int[] list = new int[n];
 
         for (int i = 0; i < n; i++) {

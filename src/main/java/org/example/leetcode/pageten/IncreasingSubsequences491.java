@@ -73,4 +73,13 @@ public class IncreasingSubsequences491 {
             dfs(cur + 1, last, nums);
         }
     }
+
+    public static void main(String[] args) {
+        IncreasingSubsequences491 increasingSubsequences = new IncreasingSubsequences491();
+        int[] nums = {4, 6, 7, 7};
+        System.out.println(Arrays.toString(increasingSubsequences.findSubsequences(nums).toArray()));
+
+        int[] nums1 = new int[]{1,2,3,4,5,6,7,8,9,10,1,1,1,1,1};
+        System.out.println(Arrays.toString(increasingSubsequences.findSubsequences1(nums1).toArray()));
+    }
 }

@@ -1,7 +1,7 @@
 package org.example;
 
 import org.example.leetcode.pagethirteen.AverageOfLevelsInBinaryTree637;
-import org.example.leetcode.pagethirteen.MergeTwoBinaryTrees613;
+import org.example.leetcode.pagethirteen.MergeTwoBinaryTrees617;
 import org.example.leetcode.pagethirteen.PalindromicSubstrings647;
 import org.example.models.TreeNode;
 import org.junit.Test;
@@ -46,7 +46,7 @@ public class PageThirteen {
 
         TreeNode root2 = new TreeNode(2, left2, right2);
 
-        MergeTwoBinaryTrees613 mergeTwoBinaryTrees = new MergeTwoBinaryTrees613();
+        MergeTwoBinaryTrees617 mergeTwoBinaryTrees = new MergeTwoBinaryTrees617();
 //        mergeTwoBinaryTrees.mergeTrees(root1, root2);
         mergeTwoBinaryTrees.mergeTrees2(root1, root2);
     }
