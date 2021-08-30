@@ -78,4 +78,26 @@ public class TrimABinarySearchTree669 {
 
         return root;
     }
+
+    public static void main(String[] args) {
+                TreeNode rightLeft = new TreeNode(1);
+
+        TreeNode rightRight = new TreeNode(2, rightLeft, null);
+
+        TreeNode right = new TreeNode(4);
+
+        TreeNode left = new TreeNode(0, null, rightRight);
+
+        TreeNode root = new TreeNode(3, left, right);
+
+//        TreeNode right = new TreeNode(2);
+//
+//        TreeNode left = new TreeNode(0);
+//
+//        TreeNode root = new TreeNode(1, left, right);
+
+        TrimABinarySearchTree669 trimABinarySearchTree = new TrimABinarySearchTree669();
+        trimABinarySearchTree.trimBST1(root, 3, 4);
+//        trimABinarySearchTree.trimBST1(root, 1, 2);
+    }
 }
