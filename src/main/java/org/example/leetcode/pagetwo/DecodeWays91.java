@@ -60,6 +60,6 @@ public class DecodeWays91 {
 
     public static void main(String[] args) {
         DecodeWays91 decodeWays = new DecodeWays91();
-        System.out.println(decodeWays.numDecodings("0226"));
+        System.out.println(decodeWays.numDecodings("226"));
     }
 }
