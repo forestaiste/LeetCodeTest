@@ -16,6 +16,8 @@ package org.example.leetcode.pagefive;
 //        进阶：
 //        你可以在常数空间复杂度内完成这个题目吗？（ 出于对空间复杂度分析的目的，输出数组不被视为额外空间。）
 
+import java.util.Arrays;
+
 public class ProductOfArrayExceptSelf238 {
     public int[] productExceptSelf(int[] nums) {
         int length = nums.length;
@@ -56,5 +58,18 @@ public class ProductOfArrayExceptSelf238 {
         }
 
         return nums;
+    }
+
+    public static void main(String[] args) {
+        ProductOfArrayExceptSelf238 productOfArrayExceptSelf = new ProductOfArrayExceptSelf238();
+
+//        int[] nums0 = {0, 0};
+//        System.out.println(Arrays.toString(productOfArrayExceptSelf.productExceptSelf(nums0)));
+
+        int[] nums = {1, 2, 3, 4};
+        System.out.println(Arrays.toString(productOfArrayExceptSelf.productExceptSelf1(nums)));
+
+        int[] nums1 = {-1,1,0,-3,3};
+        System.out.println(Arrays.toString(productOfArrayExceptSelf.productExceptSelf(nums1)));
     }
 }
