@@ -43,4 +43,9 @@ public class PalindromicSubstrings647 {
 
         return count;
     }
+
+    public static void main(String[] args) {
+        PalindromicSubstrings647 palindromicSubstrings = new PalindromicSubstrings647();
+        System.out.println(palindromicSubstrings.countSubstrings("aaa"));
+    }
 }
