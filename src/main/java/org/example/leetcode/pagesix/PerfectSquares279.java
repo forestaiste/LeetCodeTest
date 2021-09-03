@@ -26,14 +26,12 @@ public class PerfectSquares279 {
 
     // 理解困难
     public int numSquares1(int n) {
-        int num = (int)Math.sqrt(n);
-
         int[] f = new int[n + 1];
 
         Arrays.fill(f, Integer.MAX_VALUE);
         f[0] = 0;
 
-        for (int i = 1; i <= num; i++) {
+        for (int i = 1; i * i <= n; i++) {
             for (int j = i * i; j <= n ; j++) {
                 f[j] = Math.min(f[j], f[j - i * i]  + 1);
             }
@@ -59,7 +57,7 @@ public class PerfectSquares279 {
 
     public static void main(String[] args) {
         PerfectSquares279 perfectSquares = new PerfectSquares279();
-        System.out.println(perfectSquares.numSquares(12));
+        System.out.println(perfectSquares.numSquares1(12));
         System.out.println(perfectSquares.numSquares(13));
     }
 }

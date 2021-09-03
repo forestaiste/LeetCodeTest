@@ -43,4 +43,10 @@ public class RemoveDuplicateLetters316 {
         }
         return sb.toString();
     }
+
+    public static void main(String[] args) {
+        RemoveDuplicateLetters316 removeDuplicateLetters = new RemoveDuplicateLetters316();
+        System.out.println(removeDuplicateLetters.removeDuplicateLetters("bcabc"));
+        System.out.println(removeDuplicateLetters.removeDuplicateLetters("cbacdcbc"));
+    }
 }
