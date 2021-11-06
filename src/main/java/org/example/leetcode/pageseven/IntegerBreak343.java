@@ -14,6 +14,9 @@ package org.example.leetcode.pageseven;
 //        输出: 36
 //        解释: 10 = 3 + 3 + 4, 3 × 3 × 4 = 36。
 
+import java.util.Hashtable;
+import java.util.concurrent.ConcurrentHashMap;
+
 public class IntegerBreak343 {
     public int integerBreak(int n) {
         int[] f = new int[n + 1];
@@ -33,5 +36,6 @@ public class IntegerBreak343 {
         IntegerBreak343 integerBreak = new IntegerBreak343();
 
         System.out.println(integerBreak.integerBreak(10));
+
     }
 }

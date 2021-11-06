@@ -16,10 +16,22 @@ package org.example.leetcode.pagetwo;
 
 public class MaximumSubarray53 {
     public int maxSubArray(int[] nums) {
+        int start = 0, end = 0;
         int pre = 0, maxAns = nums[0];
-        for (int x : nums) {
-            pre = Math.max(pre + x, x);
+        for (int i = 0; i < nums.length; i++) {
+            pre = Math.max(pre + nums[i], nums[i]);
+
+            if (pre == nums[i]) {
+                start = i;
+                end = i;
+            }
+
             maxAns = Math.max(maxAns, pre);
+
+            if (maxAns == pre) {
+                end = i;
+            }
+
         }
         return maxAns;
     }
@@ -60,7 +72,7 @@ public class MaximumSubarray53 {
         MaximumSubarray53 maximumSubarray = new MaximumSubarray53();
         int[] nums = {-2,1,-3,4,-1,2,1,-5,4};
 
-        System.out.println(maximumSubarray.maxSubArray2(nums));
+        System.out.println(maximumSubarray.maxSubArray(nums));
 
         nums = new int[] {-2, -1};
         System.out.println(maximumSubarray.maxSubArray2(nums));
