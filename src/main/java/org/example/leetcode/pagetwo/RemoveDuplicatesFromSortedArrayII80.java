@@ -36,7 +36,7 @@ package org.example.leetcode.pagetwo;
 //        输出：7, nums = [0,0,1,1,2,3,3]
 //        解释：函数应返回新长度 length = 7, 并且原数组的前五个元素被修改为 0, 0, 1, 1, 2, 3, 3 。 不需要考虑数组中超出新长度后面的元素。
 
-public class RemoveDuplicatesFromSortedArrayII80 {
+public class  RemoveDuplicatesFromSortedArrayII80 {
     public int removeDuplicates0(int[] nums) {
         int length = nums.length;
 

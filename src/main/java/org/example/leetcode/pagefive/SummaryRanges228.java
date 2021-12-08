@@ -41,6 +41,7 @@ package org.example.leetcode.pagefive;
 //        输出：["0"]
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class SummaryRanges228 {
@@ -105,5 +106,24 @@ public class SummaryRanges228 {
         }
 
         return result;
+    }
+
+    public static void main(String[] args) {
+        SummaryRanges228 summaryRanges = new SummaryRanges228();
+        int[] nums = {0,2,3,4,6,8,9};
+        List<String> result = summaryRanges.summaryRanges(nums);
+        System.out.println(Arrays.toString(result.toArray()));
+
+        int[] nums0 = {0,1,2,4,5,7};
+        List<String> result0 = summaryRanges.summaryRanges(nums0);
+        System.out.println(Arrays.toString(result0.toArray()));
+
+        int[] nums1 = new int[0];
+        List<String> result1 = summaryRanges.summaryRanges(nums1);
+        System.out.println(Arrays.toString(result1.toArray()));
+
+        int[] nums2 = {0};
+        List<String> result2 = summaryRanges.summaryRanges(nums2);
+        System.out.println(Arrays.toString(result2.toArray()));
     }
 }

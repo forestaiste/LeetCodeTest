@@ -17,6 +17,7 @@ package org.example.leetcode.pagefour;
 //        输出：["AAAAAAAAAA"]
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 
@@ -33,4 +34,10 @@ public class RepeatedDNASequences187 {
         }
         return new ArrayList<String>(output);
      }
+
+    public static void main(String[] args) {
+        RepeatedDNASequences187 repeatedDNASequences = new RepeatedDNASequences187();
+        List<String> result = repeatedDNASequences.findRepeatedDnaSequences("AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT");
+        System.out.println(Arrays.toString(result.toArray()));
+    }
 }
