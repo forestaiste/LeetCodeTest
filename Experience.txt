@@ -22,7 +22,7 @@
     a. 在要求时间复杂度为O(logn)时或一个有序数组，一般使用二分法。一个局部有序的数组，会弄出很多花招，如RotatedSortedArray
     b. 使用二分法查找也可以不匹配相等的，也可以匹配大于或者小于某个数，如FirstLastElementPositionInSortedArray
 7. 回溯算法
-    a. 回溯算法跟递归调用一起使用可以生成所有各种组合。如ConcatenateWords，CombinationSum，CombinationSumII，SudokuSolver1
+    a. 回溯算法跟递归调用一起使用可以生成所有各种组合。如ConcatenateWords，CombinationSum(题39)，CombinationSumII(题40)，SudokuSolver1
     b. 生成的组合可以通过使用条件，Hash表等按题目要求生成重复，非重复，唯一等结果。
         i. ConcatenateWords，给出重复单词生成所有可能的组合。使用Hash表避免同一个单词被使用多次，使用跳重条件
            (i > 0 && words[i] == words[i - 1])，避免重复单词造成多余相同组合。
