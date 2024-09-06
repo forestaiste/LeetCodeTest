@@ -13,7 +13,7 @@
 3. 双指针
 
 4. Hash表
-    a. 寻找匹配的数字，最好的办法是存到Hash表中，而不是一遍一遍的遍历，如TwoSum，ConcatenateWords（从Hash表中匹配是否是要查找的单词）
+    a. 寻找匹配的数字，最好的办法是存到Hash表中，而不是一遍一遍的遍历，如TwoSum(题1)，ConcatenateWords（从Hash表中匹配是否是要查找的单词）
     b. 统计出现的次数用Hash也是很好的办法。
 5. 绝妙算法
     a. NextPermutation：找到下一个稍大一点的数，注意寻找相对有序子列，需要把一眼能看出的东西转换成算法
