@@ -4,8 +4,8 @@
 这种走不通就退回再走的技术为回溯法，而满足回溯条件的某个状态的点称为“回溯点”。许多复杂的，规模较大的问题都可以使用回溯法，有“通用解题方法”的美称。
 
 1. 递归调用需要强化
-    a. 链表操作常用递归操作，递归参数通常为下一次操作的头指针，如RandomPointer
-    b. 生成所有可能组合，例子：GenerateParentheses，ConcatenateWords（生成所有的单词排列组合），LetterCombination
+    a. 链表操作常用递归操作，递归参数通常为下一次操作的头指针，如RandomPointer(题138)
+    b. 生成所有可能组合，例子：GenerateParentheses(题22)，ConcatenateWords（生成所有的单词排列组合），LetterCombination
     c. 可以在所有组合中寻找符合条件的例子，如CombinationSum
 2. 移动指针遍历
     a. 两个链表同一个循环遍历，只要有一个链表没有遍历结束则继续，如AddTwoNumbers
