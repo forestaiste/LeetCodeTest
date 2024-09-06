@@ -8,7 +8,7 @@
     b. 生成所有可能组合，例子：GenerateParentheses(题22)，ConcatenateWords（生成所有的单词排列组合），LetterCombination(题17)
     c. 可以在所有组合中寻找符合条件的例子，如CombinationSum(题39)
 2. 移动指针遍历
-    a. 两个链表同一个循环遍历，只要有一个链表没有遍历结束则继续，如AddTwoNumbers
+    a. 两个链表同一个循环遍历，只要有一个链表没有遍历结束则继续，如AddTwoNumbers(题2)
     b. 一次移动一步指针匹配相应字符，LongestPalindromicSubstring，ConcatenateWords（找匹配的组合字串），LongestSubstringWithoutRepeatingCharacters
 3. 双指针
 
