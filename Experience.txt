@@ -357,7 +357,35 @@
 5. 题181. Left Join。SELECT a.NAME AS Employee FROM Employee AS a JOIN Employee AS b ON a.ManagerId = b.Id AND a.Salary > b.Salary
 6. 题182. group， having, count。select email from Person group by email having count(Email) > 1
 7. 题183. (not) in. select Name as Customers from Customers where Id not in (select CustomerId from Orders)
-6. select结果作为参数， in/not in。题183，184
+8. 题184. in。 select Department.name, Employee.name, salary from Employee join Department on Employee.DepartmendId=Department.Id 
+          where (Employee.DepartmentId, Salary) in (Select DepartmentId, max(Salary) from Employee group by DepartmentId)
+9. 题196. 表内不同行比较。delete p1 from Person p1, Person p2 where p1.Email = p2.Email and p1.Id > p2.Id
+10. 题197. 表内不同行比较, 日期比较。select p1.id from Weather w1 join Weather w2 on datediff(p1.recordDate, p2.recordDate)=1 and p1.temperature > p2.temperature
+11. 题511. group by, min。select player_id, min(event_date) as first_login from Activity group by player_id
+12. 题550. round, avg, is (not)。select round(avg(a.event_date is not null), 2) fraction from
+                (select player_id, min(event_date) as login
+                from activity group by player_id) p
+                left join activiy a on p.player_id=a.player_id and datediff(a.event_date, p.login)=1
+13. 题570. group, count()。select name from Employee as e join (select managerId from Employee group by managerId having count(id) >=5) as m on e.id=m.mangerId 
+14. 题577. left join。select name, bonus from Employee as e left join Bonus as b on e.empId=b.empId where bonus is null or bonus < 1000
+15. 题584. is null。select name from Customer where referee_id<>2 or referee_id is null
+16. 题585. 窗口函数， 每行在窗口内统计并计入每行对应的列。select round(sum(tiv_2016), 2) tiv_2016 from 
+                (select
+                    tiv_2016, 
+                    count(*) over (partition by tiv_2015) count_tiv_2015,
+                    count(*) over (partition by lat, lon) count_lat_lon
+                from insurance) as temp
+            where count_lat_lon = 1 and count_tiv_2015 > 1
+17. 题586. 子表。select customer_number from 
+            (select customer_number, count(order_number) as order_count from Orders group by customer_number)
+            order by order_count desc limit 1
+18. 题595. select name, population, area from World where area >= 3000000 or population >= 25000000
+19. 题596. select class from Courses group by class having count(student) >= 5
+20. 题602. select a.id, count(*) as num from
+            (select requester_id as id, accepter_id as a_id from ReqeustAccepted
+             union
+             select accepter_id as id, requested_id as a_id from RequestAccepted) as a
+            group by a.id order by num desc limit 1
 
 
 
