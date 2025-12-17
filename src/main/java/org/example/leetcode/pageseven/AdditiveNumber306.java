@@ -31,12 +31,14 @@ public class AdditiveNumber306 {
                 return false;
 
             numA = numA * 10 + num.charAt(i) - '0';
+            System.out.println("numA:" + numA);
             long numB = 0;
             for (int j = i + 1; j < length - 1; j++) {
                 if (j != i + 1 && numB == 0)
                     break;
 
                 numB = numB * 10 + num.charAt(j) - '0';
+                System.out.println("numB:" + numB);
 
                 if (backTrack(num, j + 1, length, numA, numB))
                     return true;
@@ -61,6 +63,7 @@ public class AdditiveNumber306 {
                     return true;
                 }
                 else {
+                    System.out.println("numC:" + numC);
                     return backTrack(num, i + 1, length, numB, numC);
                 }
             }

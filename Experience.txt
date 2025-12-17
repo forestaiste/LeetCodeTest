@@ -402,5 +402,11 @@
                 when id%2=1 and id <(select max(id) from Seat) then id+1
                 else id
             end) id, student from Seat order by id
+26. 题627. CASE的赋值用法。 update salary set sex = case sex
+                when 'm' then 'f'
+                else 'm'
+                end
+27. 题1045. having count。 select customer_id from Customer group by customer_id having count(distinct product_key)=(select count(*) from Product)
+28. 题1050. group by的复合键。select actor_id, director_id from ActorDirector group by (actor_id, director_id) having count(timestamp) >= 3
 
 
