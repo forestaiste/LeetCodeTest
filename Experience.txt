@@ -350,11 +350,13 @@
 
 
 五. SQL
-1. Left Join。题175
-2. Limit。题176，177
-3. Dense_Rank。题178
-4. 在同一个表中查找自关联记录。题180，181
-5. group+count。题182
+1. 题175. Left Join。select p.FirstName, p.LastName, a.City, a.State from Person as p left join Address as a on p.PersonId=a.PersonId
+2. 题176, 177. Limit。select distinct salary from Employee order by salary desc limit 1, 1
+3. 题178. Dense_Rank。select Score, dense_rank() over (order by Score desc) as 'Rank' from Scores
+4. 题180. 连续查询。select distinct l1.Num as ConsecutiveNums from Logs l1, Logs l2, Logs l3 where l1.Id=l2-1 and l2.Id=l3.Id-1
+5. 题181. Left Join。SELECT a.NAME AS Employee FROM Employee AS a JOIN Employee AS b ON a.ManagerId = b.Id AND a.Salary > b.Salary
+6. 题182. group， having, count。select email from Person group by email having count(Email) > 1
+7. 题183. (not) in. select Name as Customers from Customers where Id not in (select CustomerId from Orders)
 6. select结果作为参数， in/not in。题183，184
 
 
