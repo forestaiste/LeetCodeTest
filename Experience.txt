@@ -381,13 +381,26 @@
             order by order_count desc limit 1
 18. 题595. select name, population, area from World where area >= 3000000 or population >= 25000000
 19. 题596. select class from Courses group by class having count(student) >= 5
-20. 题602. select a.id, count(*) as num from
+20. 题602. union。select a.id, count(*) as num from
             (select requester_id as id, accepter_id as a_id from ReqeustAccepted
              union
              select accepter_id as id, requested_id as a_id from RequestAccepted) as a
             group by a.id order by num desc limit 1
-
-
-
+21. 题607. 三个表，先两个处理，提高效率。SELECT s.name FROM salesperson s WHERE s.sales_id NOT IN 
+                (SELECT o.sales_id FROM orders o LEFT JOIN company c ON o.com_id = c.com_id WHERE c.name = 'RED')
+22. 题610. CASE用法， case用作根据条件生成一列。select x, y, z, 
+                        case
+                            when x+y>z and y+z>x and z+x>y then 'yes'
+                            eles 'no'
+                        end as 'triangle'
+                        from triangle
+23. 题619. 利用第一次的搜索结果，进行in (not)操作。select max(num) as num from MyNumbers where num not in (select num from MyNumbers group by num having count(num)>1) 
+24. 题620. mod用法。select * from cinema where mod(id, 2) = 1 and description != 'boring' order by rating DESC
+25. 题626. case用法。select (
+            case
+                when id%2=0 then id-1
+                when id%2=1 and id <(select max(id) from Seat) then id+1
+                else id
+            end) id, student from Seat order by id
 
 
