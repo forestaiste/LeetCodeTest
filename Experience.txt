@@ -413,6 +413,21 @@
 28. 题1050. group by的复合键。select actor_id, director_id from ActorDirector group by (actor_id, director_id) having count(timestamp) >= 3
 
 *线性相关
+WITH DataStats AS (
+    SELECT 
+        AVG(x) OVER () AS avg_x, 
+        AVG(y) OVER () AS avg_y, 
+        SUM((x - AVG(x) OVER ()) * (y - AVG(y) OVER ())) AS cov_xy,
+        SUM(POWER(x - AVG(x) OVER (), 2)) AS var_x,
+        SUM(POWER(y - AVG(y) OVER (), 2)) AS var_y
+    FROM 
+        your_table
+)
+SELECT 
+    cov_xy / SQRT(var_x * var_y) AS pearson_correlation_coefficient
+FROM 
+    DataStats;
+
 SELECT
        (SUM(column1 * column2) - SUM(column1) * SUM(column2) / COUNT(*)) /
        (SQRT(SUM(column1 * column1) - SUM(column1) * SUM(column1) / COUNT(*)) *
