@@ -360,7 +360,7 @@
 5. 题181. Left Join。SELECT a.NAME AS Employee FROM Employee AS a JOIN Employee AS b ON a.ManagerId = b.Id AND a.Salary > b.Salary
 6. 题182. group， having, count。select email from Person group by email having count(Email) > 1
 7. 题183. (not) in. select Name as Customers from Customers where Id not in (select CustomerId from Orders)
-8. 题184. in。 select Department.name, Employee.name, salary from Employee join Department on Employee.DepartmendId=Department.Id 
+8. 题184. in, 支持复合键， 比Join的效率更高。 select Department.name, Employee.name, salary from Employee join Department on Employee.DepartmendId=Department.Id 
           where (Employee.DepartmentId, Salary) in (Select DepartmentId, max(Salary) from Employee group by DepartmentId)
 9. 题196. 表内不同行比较。delete p1 from Person p1, Person p2 where p1.Email = p2.Email and p1.Id > p2.Id
 10. 题197. 表内不同行比较, 日期比较。select p1.id from Weather w1 join Weather w2 on datediff(p1.recordDate, p2.recordDate)=1 and p1.temperature > p2.temperature
